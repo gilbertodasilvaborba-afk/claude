@@ -1,0 +1,118 @@
+{
+ "leva": "L2",
+ "produto": "Tchau Chupeta",
+ "cta_tela": "TOQUE EM SAIBA MAIS",
+ "voz": {
+  "id": "c9611be8-aae9-4a93-bb1c-98dd6b7d52a4"
+ },
+ "legenda_estilo": "amarela",
+ "legenda_posicao": "meio",
+ "musica": "../L1/musicas/m05.m4a",
+ "ganchos": [
+  {
+   "titulo": [
+    "TIRA, CHORA",
+    "E DEVOLVE?"
+   ],
+   "fala": "Você tira a chupeta, seu filho chora e no fim você acaba devolvendo?"
+  },
+  {
+   "titulo": [
+    "TIRAR DE REPENTE",
+    "É O ERRO?"
+   ],
+   "fala": "O erro pode estar em tirar a chupeta de uma hora para outra."
+  },
+  {
+   "titulo": [
+    "ME DÁ A",
+    "CHUPETA, MÃE!"
+   ],
+   "fala": "Se você está cansada de ouvir me dá a chupeta o dia inteiro, veja isso."
+  }
+ ],
+ "corpos": [
+  {
+   "fala": "Para muitas crianças, a chupeta é conforto. Por isso, sumir com ela de repente costuma virar choro. No Tchau Chupeta, a retirada vira uma despedida: você prepara seu filho, conta uma história sobre o tchau e ele entende que uma mudança está chegando."
+  },
+  {
+   "fala": "Em vez de a chupeta simplesmente sumir, seu filho participa da despedida. Ele é preparado antes, faz parte do momento do tchau e sente que a mudança não veio de surpresa. Quando a criança participa, pode ficar mais fácil entender o que está acontecendo."
+  },
+  {
+   "fala": "Você não precisa descobrir sozinha o que fazer. O Tchau Chupeta organiza tudo em etapas: como preparar seu filho, como fazer o dia da despedida e como acolher nos dias seguintes. Você sabe o que fazer em cada fase, no ritmo da sua criança."
+  },
+  {
+   "fala": "Se você já tentou esconder, limitar ou jogar fora e não deu certo, não é falta de vontade sua. Talvez tenha faltado uma estratégia de transição. O Tchau Chupeta não é força nem castigo. É um caminho acolhedor, que respeita o tempo de cada criança."
+  },
+  {
+   "fala": "Imagina seu filho contando que deu tchau para a chupeta, em vez de lembrar de uma briga. E você tranquila, sabendo que conduziu esse momento com carinho. Cada criança tem seu ritmo, e o Tchau Chupeta te ajuda em cada passo."
+  }
+ ],
+ "cta": {
+  "fala": "Toque em saiba mais e conheça o Tchau Chupeta."
+ },
+ "cenas": {
+  "excluir": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   35,
+   36,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59,
+   60,
+   61,
+   63,
+   64
+  ]
+ }
+}
