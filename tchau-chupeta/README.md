@@ -292,3 +292,42 @@ Métricas para decidir: CTR (link), custo por clique, taxa de retenção de 3 s 
 - [ ] Preferir: "pode ajudar", "uma forma de conduzir", "passo a passo", "cada criança tem seu próprio ritmo".
 - [ ] Depoimentos só se forem reais e autorizados; atores não devem ser apresentados como clientes.
 - [ ] Conferir se as etapas do feed-06 e do carrossel batem com o conteúdo real do produto.
+
+---
+
+## 10. Página de vendas
+
+`pagina-vendas/index.html` — página longa (mobile-first) na identidade visual dos criativos, com o mascote Chupi e as fontes locais em `pagina-vendas/fonts/`. Para publicar, suba a pasta `pagina-vendas/` inteira na hospedagem.
+
+**Antes de publicar**, edite o bloco `OFERTA` no topo de `src/pagina.mjs` e rode `node src/pagina.mjs`:
+
+| Campo | O que colocar |
+|---|---|
+| `checkout` | Link do checkout (UTMs do anúncio são repassadas automaticamente) |
+| `preco` / `precoDe` / `parcelas` | Valores reais (hoje aparece `R$ XX,XX`) |
+| `garantiaDias` | Prazo de garantia (7 = mínimo legal do CDC) |
+| `formato` | Formato real do produto (PDF, área de membros…) |
+| `bonus` | Bônus reais, se houver (a lista só aparece se estiver preenchida) |
+| `pixelMeta` | ID do Pixel da Meta (dispara PageView e InitiateCheckout no clique) |
+
+**Estrutura e gatilhos**
+
+| # | Seção | Gatilho |
+|---|---|---|
+| 1 | Hero: "Não é só tirar a chupeta. É ensinar seu filho a se despedir dela." | Big Idea + curiosidade |
+| 2 | Checklist "Marque o que acontece aí" (responde conforme o nº marcado) | Identificação + microcompromisso |
+| 3 | O ciclo tira → chora → devolve | Inimigo comum + alívio de culpa |
+| 4 | Tirar × Se despedir | Contraste / mecanismo único |
+| 5 | Apresentação do produto | Solução |
+| 6 | As 5 etapas | Especificidade |
+| 7 | "Agora imagine" | Futuro desejado |
+| 8 | 3 erros que mantêm o ciclo | Reciprocidade (entrega valor antes) |
+| 9 | É / não é para você | Exclusividade + qualificação |
+| 10 | Oferta com empilhamento do que recebe | Valor percebido + urgência honesta |
+| 11 | Garantia | Reversão de risco |
+| 12 | FAQ | Quebra de objeções |
+| 13 | "Caminho 1 × Caminho 2" | Escolha / fechamento emocional |
+
+Barra de CTA fixa no celular (some na seção de oferta).
+
+> ⚠️ **Confirmar:** as 5 etapas e os 4 itens da oferta seguem o mesmo mecanismo suposto do feed-06 — troque pelos módulos reais. A seção de **depoimentos** está comentada no HTML: só ative com relatos reais e autorizados. Não há contador regressivo nem escassez falsa, de propósito.
