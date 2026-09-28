@@ -65,36 +65,36 @@ const scenes = {
   'noite-chupi': `<body class="night">${stars(26, 3)}
     <div class="a" style="right:110px;top:260px;${anim('glow', 4)}">${moon(260)}</div>
     <div class="a" style="left:0;top:1350px;animation:drift 12s linear infinite alternate">${cloud(520, '#fff', .12)}</div>
-    <div class="a" style="left:330px;top:780px;${anim('bob', 3)}"><div style="${anim('sway', 2)}">${pacifier({ size: 420, wave: true })}</div></div></body>`,
+    <div class="a" style="left:350px;top:1330px;${anim('bob', 3)}"><div style="${anim('sway', 2)}">${pacifier({ size: 380, wave: true })}</div></div></body>`,
 
   // Criança acena e a chupeta voa para a lua
   'crianca-despedida': `<body class="night">${stars(22, 7)}
     <div class="a" style="right:90px;top:220px">${moon(230)}</div>
-    <div class="a" style="left:520px;top:1100px;animation:flyToMoon ${SEG}s ease-in-out forwards">${pacifier({ size: 260, wave: true })}</div>
-    <div class="a" style="left:110px;top:1180px;${anim('bob', 2.4)}">${childWaving({ size: 420 })}</div></body>`,
+    <div class="a" style="left:560px;top:1380px;animation:flyToMoon ${SEG}s ease-in-out forwards">${pacifier({ size: 260, wave: true })}</div>
+    <div class="a" style="left:110px;top:1380px;${anim('bob', 2.4)}">${childWaving({ size: 360 })}</div></body>`,
 
   // Mãe e criança abraçadas, corações subindo
   'abraco-coracoes': `<body style="background:linear-gradient(180deg,#FFEDE4,${C.cream})">
     <div class="a" style="left:-200px;top:900px;width:1480px;height:1400px;border-radius:50%;background:${C.mint};opacity:.35"></div>
     ${floating((s) => heart(s), 10, 5, 120, 960, 1500)}
-    <div class="a" style="left:120px;top:760px;animation:zoom ${SEG}s ease-in-out forwards">${familyHug({ size: 860 })}</div></body>`,
+    <div class="a" style="left:160px;top:1100px;animation:zoom ${SEG}s ease-in-out forwards">${familyHug({ size: 760 })}</div></body>`,
 
   // Chupi preocupada, balançando (a dor / resistência)
   'chupi-preocupada': `<body style="background:${C.cream}"><div class="dots"></div>
-    <div class="a" style="left:240px;top:620px;${anim('shake', 1.6)}">${pacifier({ size: 600, mood: 'sad' })}</div>
-    <div class="a" style="left:160px;top:520px;${anim('twinkle', 1.8)}">${sparkle(60, C.lavender)}</div>
-    <div class="a" style="left:860px;top:600px;${anim('twinkle', 2.2)}">${sparkle(46, C.peachDeep)}</div></body>`,
+    <div class="a" style="left:310px;top:1290px;${anim('shake', 1.6)}">${pacifier({ size: 460, mood: 'sad' })}</div>
+    <div class="a" style="left:160px;top:1250px;${anim('twinkle', 1.8)}">${sparkle(60, C.lavender)}</div>
+    <div class="a" style="left:860px;top:1330px;${anim('twinkle', 2.2)}">${sparkle(46, C.peachDeep)}</div></body>`,
 
   // O ciclo tira → chora → devolve girando
   'ciclo': `<body style="background:#FFEDE4"><div class="dots"></div>
-    <div class="a" style="left:90px;top:510px;width:900px;height:900px;animation:spin 8s linear infinite">
+    <div class="a" style="left:90px;top:1150px;width:900px;height:900px;transform-origin:450px 450px;scale:.74;animation:spin 8s linear infinite">
       <svg class="a" width="900" height="900"><circle cx="450" cy="450" r="330" fill="none" stroke="${C.lavenderDeep}" stroke-width="12" stroke-dasharray="6 30" stroke-linecap="round"/></svg>
       ${['✋', '😭', '🔁'].map((e, i) => {
         const ang = (i * 120 - 90) * Math.PI / 180, x = 450 + 330 * Math.cos(ang) - 110, y = 450 + 330 * Math.sin(ang) - 110;
         return `<div class="a" style="left:${x}px;top:${y}px;width:220px;height:220px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:110px;box-shadow:0 14px 0 rgba(58,53,99,.08);animation:unspin 8s linear infinite">${e}</div>`;
       }).join('')}
     </div>
-    <div class="a" style="left:400px;top:820px;${anim('pulse', 1.4)}">${pacifier({ size: 280, mood: 'sad' })}</div></body>`,
+    <div class="a" style="left:430px;top:1480px;${anim('pulse', 1.4)}">${pacifier({ size: 220, mood: 'sad' })}</div></body>`,
 
   // Trilha do passo a passo, Chupi subindo pelas etapas
   'trilha-passos': `<body style="background:#E6F6EF"><div class="dots"></div>
@@ -111,36 +111,30 @@ const scenes = {
     <div class="a" style="left:150px;top:1250px;width:780px;height:300px;border-radius:60px;background:${C.lavender}"></div>
     <div class="a" style="left:190px;top:1180px;width:280px;height:140px;border-radius:70px;background:#fff"></div>
     <div class="a" style="left:130px;top:1440px;width:820px;height:230px;border-radius:40px;background:${C.peach}"></div>
-    <div class="a" style="left:620px;top:1020px;${anim('bob', 3)}">${pacifier({ size: 230, wave: true })}</div>
+    <div class="a" style="left:640px;top:1290px;${anim('bob', 3)}">${pacifier({ size: 200, wave: true })}</div>
     <div class="a" style="inset:0;background:radial-gradient(circle at 540px 700px, rgba(255,214,107,.35), transparent 60%);${anim('glow', 4)}"></div></body>`,
 
   // Chupi feliz pulando com estrelas caindo (celebração leve)
   'chupi-festa': `<body style="background:linear-gradient(180deg,#EEE8FF,${C.cream})">
     ${Array.from({ length: 16 }, (_, i) => `<div class="a" style="left:${(i * 67) % 1000 + 20}px;top:0;animation:fall ${4 + (i % 4)}s linear infinite;animation-delay:${-(i * 0.7).toFixed(1)}s">${i % 2 ? star(46, [C.sun, C.peach, C.mint, C.lavenderDeep][i % 4]) : sparkle(40, C.sun)}</div>`).join('')}
-    <div class="a" style="left:260px;top:700px;${anim('bob', 1.1)}">${pacifier({ size: 560, wave: true })}</div></body>`,
+    <div class="a" style="left:300px;top:1260px;${anim('bob', 1.1)}">${pacifier({ size: 460, wave: true })}</div></body>`,
 
   // Chupi dormindo numa nuvem, nuvens passando
   'chupi-nuvem': `<body class="night">${stars(20, 17)}
     <div class="a" style="left:0;top:420px;animation:driftBack 10s linear infinite alternate">${cloud(420, '#fff', .15)}</div>
     <div class="a" style="left:500px;top:1500px;animation:drift 9s linear infinite alternate">${cloud(460, '#fff', .12)}</div>
-    <div class="a" style="left:150px;top:900px;${anim('bob', 4)}">${cloud(780, '#fff', .95)}
+    <div class="a" style="left:150px;top:1480px;${anim('bob', 4)}">${cloud(780, '#fff', .95)}
       <div class="a" style="left:250px;top:-190px"><div style="${anim('sway', 4)}">${pacifier({ size: 280 })}</div></div></div>
     <div class="a" style="right:100px;top:260px">${moon(200)}</div></body>`,
 
   // Criança e Chupi lado a lado dentro de um coração que pulsa
   'coracao-amigos': `<body style="background:${C.cream}"><div class="dots"></div>
-    <div class="a" style="left:40px;top:560px;${anim('pulse', 2)}">${heart(1000, '#FFD9CD')}</div>
-    <div class="a" style="left:170px;top:880px">${childWaving({ size: 380 })}</div>
-    <div class="a" style="left:600px;top:860px;${anim('sway', 1.6)}">${pacifier({ size: 280, wave: true })}</div>
+    <div class="a" style="left:90px;top:1000px;${anim('pulse', 2)}">${heart(900, '#FFD9CD')}</div>
+    <div class="a" style="left:210px;top:1320px">${childWaving({ size: 320 })}</div>
+    <div class="a" style="left:600px;top:1320px;${anim('sway', 1.6)}">${pacifier({ size: 240, wave: true })}</div>
     ${stars(8, 23, [60, 300, 1000, 600])}</body>`,
 
-  // Tela do produto (logo) — importada com --produto para a tela final
-  'produto-logo': `<body class="night">${stars(24, 29)}
-    <div class="a" style="left:0;right:0;top:560px;display:flex;flex-direction:column;align-items:center">
-      <div style="${anim('bob', 3)}">${pacifier({ size: 380, wave: true })}</div>
-      <div style="font-family:'Baloo 2';font-weight:800;font-size:170px;line-height:.9;text-align:center;color:#fff;margin-top:30px;text-transform:uppercase">Tchau<br><span style="color:${C.sun}">Chupeta</span></div>
-    </div></body>`,
-};
+  };
 
 mkdirSync(OUT, { recursive: true });
 const filter = process.argv[2];
