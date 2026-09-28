@@ -14,7 +14,7 @@ const out = join(root, 'pagina-vendas');
 const OFERTA = {
   checkout: '#COLE-AQUI-O-LINK-DO-CHECKOUT', // link da Hotmart/Kiwify/Eduzz etc.
   precoDe: '',                // preço "de" riscado (deixe vazio se não houver)
-  preco: 'XX,XX',             // preço à vista, sem "R$"
+  preco: '29,90',             // preço à vista, sem "R$"
   parcelas: '',               // ex.: '5x de R$ 9,90' (vazio esconde a linha)
   garantiaDias: 7,            // 7 é o mínimo legal (CDC, art. 49)
   formato: 'Guia digital',    // confirme o formato real (PDF, área de membros...)
