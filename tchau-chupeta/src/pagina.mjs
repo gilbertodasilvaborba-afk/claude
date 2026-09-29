@@ -12,7 +12,7 @@ const out = join(root, 'pagina-vendas');
 
 // ─── PREENCHA ANTES DE PUBLICAR ────────────────────────────────────────────
 const OFERTA = {
-  checkout: 'https://pay.kiwify.com.br/FNnEI3E', // link da Hotmart/Kiwify/Eduzz etc.
+  checkout: 'https://pay.kiwify.com.br/pZIVc6a', // link da Hotmart/Kiwify/Eduzz etc.
   precoDe: '',                // preço "de" riscado (deixe vazio se não houver)
   preco: '29,90',             // preço à vista, sem "R$"
   parcelas: '',               // ex.: '5x de R$ 9,90' (vazio esconde a linha)
@@ -27,7 +27,10 @@ const OFERTA = {
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
+// Botões ao longo da página rolam até o preço; só o botão da oferta leva ao checkout.
 const cta = (texto = 'Quero começar a despedida', extra = '') =>
+  `<a class="btn ${extra}" href="#preco">${texto} <span aria-hidden="true">→</span></a>`;
+const ctaCheckout = (texto, extra = '') =>
   `<a class="btn ${extra}" href="${esc(OFERTA.checkout)}" data-checkout>${texto} <span aria-hidden="true">→</span></a>`;
 
 const selos = `<ul class="selos">
@@ -229,7 +232,7 @@ section{padding:80px 0}
 .box li{display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed rgba(58,53,99,.15);text-align:left}
 .box .selos{margin:18px 0 0}.box .selos li{border:0;padding:0;display:block}
 .box .ic{font-size:22px;line-height:1.3}
-.preco{text-align:center;margin-bottom:22px}
+.preco{text-align:center;margin-bottom:22px;scroll-margin-top:30vh}
 .preco .de{text-decoration:line-through;opacity:.55;font-weight:700}
 .preco .por{font-family:'Baloo 2';font-weight:800;font-size:60px;line-height:1;color:var(--night)}
 .preco .por small{font-size:26px}
@@ -525,12 +528,12 @@ ${pixel}
         <li><span class="ic">💬</span><div><b>O que responder quando ele pedir a chupeta</b><br>Para os dias seguintes, sem voltar à estaca zero.</div></li>
         ${bonusHtml}
       </ul>
-      <div class="preco">
+      <div class="preco" id="preco">
         ${OFERTA.precoDe ? `<div class="de">De R$ ${esc(OFERTA.precoDe)}</div>` : ''}
         <div class="por"><small>R$</small> ${esc(OFERTA.preco)}</div>
         ${OFERTA.parcelas ? `<div class="parc">ou ${esc(OFERTA.parcelas)}</div>` : ''}
       </div>
-      ${cta('Quero começar a despedida', 'full pulse')}
+      ${ctaCheckout('Quero começar a despedida', 'full pulse')}
       ${selos}
     </div>
     <p class="center reveal" style="margin-top:28px;opacity:.85;max-width:620px;margin-left:auto;margin-right:auto">Cada noite de “me dá a chupeta” é mais uma volta no mesmo ciclo. A preparação pode começar hoje, com calma e no ritmo do seu filho.</p>
