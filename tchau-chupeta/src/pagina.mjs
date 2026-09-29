@@ -21,7 +21,7 @@ const OFERTA = {
   bonus: [
     // { titulo: 'Nome do bônus', texto: 'O que ele entrega.' },
   ],
-  pixelMeta: '',              // ID do Pixel da Meta (vazio = não carrega)
+  pixelMeta: '1137389055898462',            // ID do Pixel da Meta (vazio = não carrega)
 };
 // ───────────────────────────────────────────────────────────────────────────
 
@@ -71,8 +71,12 @@ const bonusHtml = OFERTA.bonus.length
   ? OFERTA.bonus.map((b) => `<li><span class="ic">🎁</span><div><b>Bônus: ${esc(b.titulo)}</b><br>${esc(b.texto)}</div></li>`).join('')
   : '';
 
+// Valor numérico para os eventos do Pixel (ex.: '29,90' → 29.9)
+const valor = Number(OFERTA.preco.replace(/\./g, '').replace(',', '.')) || 0;
+
 const pixel = OFERTA.pixelMeta
-  ? `<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${esc(OFERTA.pixelMeta)}');fbq('track','PageView');</script>`
+  ? `<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${esc(OFERTA.pixelMeta)}');fbq('track','PageView');fbq('track','ViewContent',{content_name:'Tchau Chupeta',value:${valor},currency:'BRL'});</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=${esc(OFERTA.pixelMeta)}&ev=PageView&noscript=1"></noscript>`
   : '';
 
 const html = `<!doctype html>
@@ -596,7 +600,7 @@ ${pixel}
   var q = location.search.slice(1);
   document.querySelectorAll('[data-checkout]').forEach(function(a){
     if (q && a.href.indexOf('http') === 0) a.href += (a.href.indexOf('?') < 0 ? '?' : '&') + q;
-    a.addEventListener('click', function(){ if (window.fbq) fbq('track', 'InitiateCheckout'); });
+    a.addEventListener('click', function(){ if (window.fbq) fbq('track', 'InitiateCheckout', { value: ${valor}, currency: 'BRL' }); });
   });
 })();
 
