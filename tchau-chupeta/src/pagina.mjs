@@ -12,7 +12,7 @@ const out = join(root, 'pagina-vendas');
 
 // ─── PREENCHA ANTES DE PUBLICAR ────────────────────────────────────────────
 const OFERTA = {
-  checkout: '#COLE-AQUI-O-LINK-DO-CHECKOUT', // link da Hotmart/Kiwify/Eduzz etc.
+  checkout: 'https://pay.kiwify.com.br/FNnEI3E', // link da Hotmart/Kiwify/Eduzz etc.
   precoDe: '',                // preço "de" riscado (deixe vazio se não houver)
   preco: '29,90',             // preço à vista, sem "R$"
   parcelas: '',               // ex.: '5x de R$ 9,90' (vazio esconde a linha)
