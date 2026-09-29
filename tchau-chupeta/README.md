@@ -308,7 +308,7 @@ Métricas para decidir: CTR (link), custo por clique, taxa de retenção de 3 s 
 | `garantiaDias` | Prazo de garantia (7 = mínimo legal do CDC) |
 | `formato` | Formato real do produto (PDF, área de membros…) |
 | `bonus` | Bônus reais, se houver (a lista só aparece se estiver preenchida) |
-| `pixelMeta` | ID do Pixel da Meta (dispara PageView e InitiateCheckout no clique) |
+| `pixelMeta` | ID do Pixel da Meta (dispara PageView e ViewContent ao abrir e InitiateCheckout no clique, com valor em BRL) |
 
 **Estrutura e gatilhos**
 
@@ -329,5 +329,9 @@ Métricas para decidir: CTR (link), custo por clique, taxa de retenção de 3 s 
 | 13 | "Caminho 1 × Caminho 2" | Escolha / fechamento emocional |
 
 Barra de CTA fixa no celular (some na seção de oferta).
+
+> 🔒 **Token da API de Conversões:** nunca coloque na página (o HTML é público). Ele vai na integração de Pixel da plataforma de checkout (Kiwify, Hotmart…), que envia o evento **Purchase** pelo servidor.
+
+**Publicação:** o projeto `pagina-vendas` na Vercel está ligado a este repositório (Root Directory `tchau-chupeta/pagina-vendas`). Rode `node src/pagina.mjs`, faça commit e push na branch de produção, e o site atualiza sozinho.
 
 > ⚠️ **Confirmar:** as 5 etapas e os 4 itens da oferta seguem o mesmo mecanismo suposto do feed-06 — troque pelos módulos reais. A seção de **depoimentos** está comentada no HTML: só ative com relatos reais e autorizados. Não há contador regressivo nem escassez falsa, de propósito.
