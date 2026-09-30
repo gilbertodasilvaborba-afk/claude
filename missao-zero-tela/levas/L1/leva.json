@@ -1,0 +1,117 @@
+{
+ "leva": "L1",
+ "produto": "Missão Zero Tela",
+ "cta_tela": "TOQUE EM SAIBA MAIS",
+ "voz": {
+  "id": "c9611be8-aae9-4a93-bb1c-98dd6b7d52a4"
+ },
+ "legenda_estilo": "amarela",
+ "legenda_posicao": "meio",
+ "musica": "musicas/m03.m4a",
+ "ganchos": [
+  {
+   "titulo": [
+    "TIROU O CELULAR",
+    "E VEIO A BIRRA?"
+   ],
+   "fala": "Você tira o celular e começa a birra, o choro e a negociação?"
+  },
+  {
+   "titulo": [
+    "O PROBLEMA",
+    "NÃO É A TELA"
+   ],
+   "fala": "O problema não é a tela. É o vazio de ideias quando você desliga."
+  },
+  {
+   "titulo": [
+    "MÃE, SÓ MAIS",
+    "UM VÍDEO?"
+   ],
+   "fala": "Mãe, se seu filho vive pedindo só mais um vídeo, veja isso."
+  }
+ ],
+ "corpos": [
+  {
+   "fala": "A criança não troca o desenho por vai brincar. Ela troca por um convite. No Missão Zero Tela, cada brincadeira começa com uma historinha em quadrinhos. Seu filho vira o herói, aceita a missão e brinca de verdade, com papel, giz, caixa ou lençol."
+  },
+  {
+   "fala": "Você não precisa inventar nada nem comprar material. Cada missão já diz a idade, o tempo e quanta bagunça faz. Leva cinco minutos para começar e usa o que tem em casa: papel, colher, caixa, lençol. Tem até missão para ele fazer sozinho enquanto você faz o jantar."
+  },
+  {
+   "fala": "Você pode pensar: meu filho não vai largar o tablet por uma brincadeira. Mas a diferença está no convite. Em vez de mandar ir brincar, você lê uma missão secreta. Ele sorteia a carta no pote, vira agente e quer carimbar o passaporte. Pode ser ele quem pede a próxima."
+  },
+  {
+   "fala": "Imagina um dia de chuva sem briga pelo celular. Seu filho construindo uma cabana de lençol, uma cidade de papel, contando a aventura no jantar. E você sem aquela culpa no fim do dia, sabendo que teve um momento de verdade com ele. A infância passa rápido."
+  },
+  {
+   "fala": "São cem historinhas-missão para imprimir ou usar no celular, separadas por idade, de três a oito anos, e por momento do dia. Vem com o pote de missões, o passaporte do explorador e o guia desligar sem birra. Tudo por vinte e sete e noventa, com sete dias de garantia."
+  }
+ ],
+ "cta": {
+  "fala": "Toque em saiba mais e pegue sua primeira missão hoje."
+ },
+ "cenas": {
+  "excluir": [
+   1,
+   2,
+   4,
+   5,
+   6,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   18,
+   19,
+   20,
+   21,
+   22,
+   24,
+   25,
+   26,
+   28,
+   30,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   46,
+   47,
+   48,
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59,
+   62,
+   63,
+   64,
+   65,
+   66,
+   67,
+   68,
+   71,
+   73,
+   75
+  ]
+ }
+}
