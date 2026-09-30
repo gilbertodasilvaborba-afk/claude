@@ -984,5 +984,26 @@
   "duracao": 3.0,
   "produto": false,
   "origem": "b2-controle.mp4"
+ },
+ {
+  "n": 111,
+  "arquivo": "c111.mp4",
+  "duracao": 2.8,
+  "produto": false,
+  "origem": "b3-bracos.mp4"
+ },
+ {
+  "n": 112,
+  "arquivo": "c112.mp4",
+  "duracao": 2.8,
+  "produto": false,
+  "origem": "b4-choro.mp4"
+ },
+ {
+  "n": 113,
+  "arquivo": "c113.mp4",
+  "duracao": 3.0,
+  "produto": false,
+  "origem": "b5-tablet2.mp4"
  }
 ]

@@ -25,14 +25,22 @@
     "O PROBLEMA",
     "NÃO É A TELA"
    ],
-   "fala": "O problema não é a tela. É o vazio de ideias quando você desliga."
+   "fala": "O problema não é a tela. É o vazio de ideias quando você desliga.",
+   "cenas": [
+    111,
+    112
+   ]
   },
   {
    "titulo": [
     "MÃE, SÓ MAIS",
     "UM VÍDEO?"
    ],
-   "fala": "Mãe, se seu filho vive pedindo só mais um vídeo, veja isso."
+   "fala": "Mãe, se seu filho vive pedindo só mais um vídeo, veja isso.",
+   "cenas": [
+    113,
+    111
+   ]
   }
  ],
  "corpos": [
@@ -150,7 +158,10 @@
    105,
    106,
    107,
-   108
+   108,
+   111,
+   112,
+   113
   ]
  }
 }
