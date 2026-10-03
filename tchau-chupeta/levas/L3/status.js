@@ -1,0 +1,1 @@
+window.LEVA_STATUS = {"inicio": 1791062574.589126, "fim": null, "etapa": "Escrevendo as copies", "leva": "L3", "produto": "", "ganchos": [], "corpos": 5, "videos": [], "log": ["Buscando música: musica emocional piano, musica reflexiva instrumental", "2 músicas prontas"]};

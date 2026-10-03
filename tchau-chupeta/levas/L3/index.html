@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Leva de criativos</title>
+<style>
+:root {
+  --fundo: #f4f3ef;
+  --painel: #ffffff;
+  --borda: #dedcd5;
+  --texto: #16171b;
+  --suave: #626670;
+  --destaque: #a67c00;
+  --ok: #17864a;
+  --vazio: #ecebe6;
+}
+:root[data-theme="dark"] {
+  --fundo: #0c0d10;
+  --painel: #16181d;
+  --borda: #2a2d35;
+  --texto: #f3f3f1;
+  --suave: #9ba0aa;
+  --destaque: #ffd400;
+  --ok: #34d17a;
+  --vazio: #121419;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding: 20px 24px 12px;
+}
+.nome { font-size: 15px; color: var(--suave); letter-spacing: .04em; text-transform: uppercase; }
+.nome b { color: var(--texto); font-size: 22px; letter-spacing: 0; text-transform: none; display: block; margin-top: 2px; }
+.relogio {
+  font-size: clamp(56px, 9vw, 112px);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  color: var(--destaque);
+}
+.relogio.fim { color: var(--ok); }
+.placar { text-align: right; }
+.placar .n { font-size: clamp(28px, 4vw, 44px); font-weight: 800; font-variant-numeric: tabular-nums; }
+.placar .etapa { color: var(--suave); font-size: 15px; margin-top: 4px; }
+.log { padding: 0 24px 14px; color: var(--suave); font-size: 14px; min-height: 20px; }
+.acoes { display: flex; gap: 8px; margin-top: 8px; justify-content: flex-end; }
+button {
+  font: inherit; font-size: 14px; color: var(--texto); background: var(--painel);
+  border: 1px solid var(--borda); border-radius: 8px; padding: 7px 12px; cursor: pointer;
+}
+button:hover { border-color: var(--destaque); }
+.rolagem { overflow-x: auto; padding: 0 24px 24px; }
+table { border-collapse: separate; border-spacing: 10px; margin: 0 auto; }
+th { font-size: 13px; color: var(--suave); font-weight: 600; text-align: center; padding: 0 0 2px; }
+th.linha { text-align: left; width: 150px; max-width: 150px; vertical-align: middle; }
+th.linha b { display: block; color: var(--texto); font-size: 15px; }
+th.linha span { display: block; font-weight: 500; font-size: 13px; line-height: 1.3; margin-top: 2px; }
+td { padding: 0; }
+.celula {
+  width: clamp(92px, 11vw, 150px);
+  aspect-ratio: 9 / 16;
+  border-radius: 10px;
+  border: 1px dashed var(--borda);
+  background: var(--vazio);
+  position: relative;
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--suave); font-size: 13px; font-weight: 600;
+}
+.celula.pronto { border: 1px solid var(--borda); cursor: pointer; animation: surgir .35s ease-out; }
+.celula img, .celula video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.codigo {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; font-weight: 600;
+  color: var(--suave); text-align: center; margin: 0 0 4px; letter-spacing: .02em;
+}
+.celula .rotulo {
+  position: absolute; left: 6px; bottom: 6px; background: rgba(0,0,0,.72); color: #fff;
+  font-size: 12px; font-weight: 700; padding: 2px 6px; border-radius: 5px;
+}
+@keyframes surgir { from { transform: scale(.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+#modal {
+  position: fixed; inset: 0; background: rgba(0,0,0,.86); display: flex;
+  align-items: center; justify-content: center; padding: 16px; z-index: 10;
+}
+#modal[hidden] { display: none; }
+#modal video { max-height: 92vh; max-width: 100%; border-radius: 12px; background: #000; }
+@media (max-width: 640px) {
+  header { padding: 16px 16px 8px; }
+  .log { padding: 0 16px 12px; }
+  .rolagem { padding: 0 16px 16px; }
+  .placar { text-align: left; }
+  .acoes { justify-content: flex-start; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="nome">Leva <span id="leva"></span><b id="produto">Preparando</b></div>
+  <div class="relogio" id="relogio">00:00</div>
+  <div class="placar">
+    <div class="n"><span id="prontos">0</span>/<span id="total">15</span></div>
+    <div class="etapa" id="etapa">Preparando</div>
+    <div class="acoes">
+      <button id="todos" type="button">Tocar todos</button>
+      <button id="tema" type="button" aria-label="Trocar tema">Tema</button>
+    </div>
+  </div>
+</header>
+<div class="log" id="log"></div>
+<div class="rolagem"><table id="grade"></table></div>
+<div id="modal" hidden><video id="player" controls playsinline></video></div>
+<script>
+(function () {
+  var estado = null, tocandoTodos = false, montado = '';
+  var $ = function (id) { return document.getElementById(id); };
+
+  try { var t = localStorage.getItem('leva-tema'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  $('tema').onclick = function () {
+    var novo = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = novo;
+    try { localStorage.setItem('leva-tema', novo); } catch (e) {}
+  };
+  $('todos').onclick = function () {
+    tocandoTodos = !tocandoTodos;
+    this.textContent = tocandoTodos ? 'Parar' : 'Tocar todos';
+    document.querySelectorAll('.celula.pronto').forEach(preencher);
+  };
+  $('modal').onclick = function (e) {
+    if (e.target.id === 'modal') { $('player').pause(); $('modal').hidden = true; }
+  };
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { $('player').pause(); $('modal').hidden = true; }
+  });
+
+  function mmss(s) {
+    s = Math.max(0, Math.floor(s));
+    return String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0');
+  }
+
+  function preencher(cel) {
+    var nome = cel.dataset.nome;
+    cel.innerHTML = '';
+    var midia;
+    if (tocandoTodos) {
+      midia = document.createElement('video');
+      midia.src = 'videos/' + nome + '.mp4';
+      midia.muted = true; midia.loop = true; midia.autoplay = true; midia.playsInline = true;
+    } else {
+      midia = document.createElement('img');
+      midia.src = 'miniaturas/' + nome + '.jpg';
+      midia.alt = nome;
+    }
+    cel.appendChild(midia);
+    var r = document.createElement('span');
+    r.className = 'rotulo'; r.textContent = nome;
+    cel.appendChild(r);
+  }
+
+  function montarGrade(st) {
+    var ganchos = Array.isArray(st.ganchos) && st.ganchos.length ? st.ganchos : ['', '', ''];
+    var corpos = st.corpos || 5;
+    var chave = ganchos.join('|') + '#' + corpos + '#' + (st.leva || '');
+    if (chave === montado) return;
+    montado = chave;
+    var html = '<tr><th></th>';
+    for (var c = 1; c <= corpos; c++) html += '<th>Corpo ' + c + '</th>';
+    html += '</tr>';
+    ganchos.forEach(function (g, i) {
+      html += '<tr><th class="linha"><b>Gancho ' + (i + 1) + '</b><span></span></th>';
+      for (var c = 1; c <= corpos; c++) {
+        var n = i * corpos + c;
+        html += '<td><div class="codigo">' + (st.leva || 'L') + ' · G' + (i + 1) + ' · C' + c + '</div>'
+          + '<div class="celula" data-nome="' + (st.leva || 'L') + 'V' + n + '">' + (st.leva || '') + 'V' + n + '</div></td>';
+      }
+      html += '</tr>';
+    });
+    $('grade').innerHTML = html;
+    var spans = $('grade').querySelectorAll('th.linha span');
+    ganchos.forEach(function (g, i) { if (spans[i]) spans[i].textContent = g; });
+    $('grade').querySelectorAll('.celula').forEach(function (cel) {
+      cel.onclick = function () {
+        if (!cel.classList.contains('pronto')) return;
+        $('player').src = 'videos/' + cel.dataset.nome + '.mp4';
+        $('modal').hidden = false;
+        $('player').play();
+      };
+    });
+  }
+
+  function desenhar(st) {
+    if (!st) return;
+    estado = st;
+    $('leva').textContent = st.leva || '';
+    $('produto').textContent = st.produto || 'Nova leva';
+    $('etapa').textContent = st.etapa || '';
+    var log = st.log || [];
+    $('log').textContent = log.length ? log[log.length - 1] : '';
+    montarGrade(st);
+    var videos = st.videos || [];
+    var total = videos.length || (Array.isArray(st.ganchos) && st.ganchos.length ? st.ganchos.length : 3) * (st.corpos || 5);
+    $('total').textContent = total;
+    var prontos = 0;
+    videos.forEach(function (v) {
+      if (!v.pronto) return;
+      prontos++;
+      var cel = document.querySelector('.celula[data-nome="' + v.nome + '"]');
+      if (cel && !cel.classList.contains('pronto')) {
+        cel.classList.add('pronto');
+        preencher(cel);
+      }
+    });
+    $('prontos').textContent = prontos;
+  }
+
+  function tique() {
+    if (estado && estado.inicio) {
+      var fim = estado.fim || Date.now() / 1000;
+      $('relogio').textContent = mmss(fim - estado.inicio);
+      $('relogio').classList.toggle('fim', !!estado.fim);
+    }
+  }
+
+  function buscar() {
+    var s = document.createElement('script');
+    s.src = 'status.js?t=' + Date.now();
+    s.onload = function () { desenhar(window.LEVA_STATUS); s.remove(); };
+    s.onerror = function () { s.remove(); };
+    document.body.appendChild(s);
+  }
+
+  buscar();
+  setInterval(buscar, 1000);
+  setInterval(tique, 250);
+})();
+</script>
+</body>
+</html>
