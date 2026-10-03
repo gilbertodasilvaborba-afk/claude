@@ -27,9 +27,9 @@ const OFERTA = {
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-// Botões ao longo da página rolam até o preço; só o botão da oferta leva ao checkout.
-const cta = (texto = 'Quero começar a despedida', extra = '') =>
-  `<a class="btn ${extra}" href="#preco">${texto} <span aria-hidden="true">→</span></a>`;
+// O botão do topo leva à próxima seção; os demais rolam até o preço; só o da oferta leva ao checkout.
+const cta = (texto = 'Quero começar a despedida', extra = '', alvo = '#preco') =>
+  `<a class="btn ${extra}" href="${alvo}">${texto} <span aria-hidden="true">→</span></a>`;
 const ctaCheckout = (texto, extra = '') =>
   `<a class="btn ${extra}" href="${esc(OFERTA.checkout)}" data-checkout>${texto} <span aria-hidden="true">→</span></a>`;
 
@@ -312,7 +312,7 @@ ${pixel}
       <p class="pre">Você tira, ele chora e a chupeta volta?</p>
       <h1>Não é só tirar a chupeta. <span class="soft">É ensinar seu filho a se despedir dela.</span></h1>
       <p class="sub">O <b>Tchau Chupeta</b> é o passo a passo lúdico e acolhedor que mostra como preparar seu filho, contar a história da despedida e viver o dia do tchau <b>junto com ele</b>, no ritmo da sua criança.</p>
-      ${cta('Quero começar a despedida', 'pulse')}
+      ${cta('Quero começar a despedida', 'pulse', '#identificacao')}
       ${selos}
     </div>
     <div class="art" aria-hidden="true">
