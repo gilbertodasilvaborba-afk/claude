@@ -1,0 +1,72 @@
+[
+ {
+  "n": 1,
+  "arquivo": "c01.mp4",
+  "duracao": 6.0,
+  "produto": false,
+  "origem": "dente-preocupado.mp4"
+ },
+ {
+  "n": 2,
+  "arquivo": "c02.mp4",
+  "duracao": 6.0,
+  "produto": false,
+  "origem": "mordida.mp4"
+ },
+ {
+  "n": 3,
+  "arquivo": "c03.mp4",
+  "duracao": 6.0,
+  "produto": false,
+  "origem": "ampulheta.mp4"
+ },
+ {
+  "n": 4,
+  "arquivo": "c04.mp4",
+  "duracao": 6.0,
+  "produto": false,
+  "origem": "dente-feliz.mp4"
+ },
+ {
+  "n": 5,
+  "arquivo": "c05.mp4",
+  "duracao": 6.0,
+  "produto": false,
+  "origem": "crianca-despedida.mp4"
+ },
+ {
+  "n": 6,
+  "arquivo": "c06.mp4",
+  "duracao": 6.0,
+  "produto": false,
+  "origem": "abraco-coracoes.mp4"
+ },
+ {
+  "n": 7,
+  "arquivo": "c07.mp4",
+  "duracao": 6.0,
+  "produto": false,
+  "origem": "ciclo.mp4"
+ },
+ {
+  "n": 8,
+  "arquivo": "c08.mp4",
+  "duracao": 6.0,
+  "produto": false,
+  "origem": "trilha-passos.mp4"
+ },
+ {
+  "n": 9,
+  "arquivo": "c09.mp4",
+  "duracao": 6.0,
+  "produto": false,
+  "origem": "quarto-noite.mp4"
+ },
+ {
+  "n": 10,
+  "arquivo": "c10.mp4",
+  "duracao": 6.0,
+  "produto": false,
+  "origem": "chupi-festa.mp4"
+ }
+]

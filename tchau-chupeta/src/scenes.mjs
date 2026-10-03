@@ -37,6 +37,14 @@ body{position:relative;background:${C.cream}}
 @keyframes glow{0%,100%{opacity:.35}50%{opacity:.8}}
 @keyframes lightUp{0%,15%{background:#fff;transform:scale(1)}25%,100%{transform:scale(1.08)}}
 @keyframes walk{from{transform:translate(0,0)}to{transform:translate(0,-1050px)}}
+@keyframes push{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes drain{from{transform:scaleY(1)}to{transform:scaleY(.25)}}
+@keyframes fill{from{transform:scaleY(.3)}to{transform:scaleY(1)}}
+@keyframes flow{to{stroke-dashoffset:-64}}
+.paci-push{animation:push 1.4s ease-in-out infinite;transform-box:fill-box}
+.sand-top{transform-origin:100px 146px;animation:drain 6s linear forwards}
+.sand-bot{transform-origin:100px 262px;animation:fill 6s linear forwards}
+.sand-fall{animation:flow .6s linear infinite}
 @keyframes fall{from{transform:translateY(-200px) rotate(0)}to{transform:translateY(2100px) rotate(540deg)}}
 `;
 
@@ -59,6 +67,43 @@ const floating = (svgFn, n, seed, x0, x1, y) => {
     return `<div class="a" style="left:${x}px;top:${y}px;animation:rise ${d}s linear infinite;animation-delay:${dl}s">${svgFn(34 + r() * 30)}</div>`;
   }).join('');
 };
+
+
+// Dentinho personagem (cartoon, nada assustador). mood: 'sad' | 'happy'
+const tooth = (size = 300, mood = 'sad') => `<svg width="${size}" height="${size * 1.1}" viewBox="0 0 200 220">
+  <path d="M40 40 C40 10 90 10 100 30 C110 10 160 10 160 40 C168 90 150 120 146 170 C143 200 122 205 118 175 C115 150 108 140 100 140 C92 140 85 150 82 175 C78 205 57 200 54 170 C50 120 32 90 40 40 Z" fill="#fff" stroke="${C.lavender}" stroke-width="6"/>
+  <ellipse cx="70" cy="44" rx="12" ry="8" fill="${C.lavender}" opacity=".35"/>
+  ${mood === 'sad'
+    ? `<circle cx="80" cy="78" r="6" fill="${C.ink}"/><circle cx="120" cy="78" r="6" fill="${C.ink}"/>
+       <path d="M68 66 L84 60 M132 66 L116 60" stroke="${C.ink}" stroke-width="4" stroke-linecap="round"/>
+       <path d="M86 104 Q100 94 114 104" stroke="${C.ink}" stroke-width="5" fill="none" stroke-linecap="round"/>
+       <path d="M140 62 q6 10 0 16 q-6 -6 0 -16z" fill="#9FD3F2"/>`
+    : `<path d="M72 80 Q80 70 88 80 M112 80 Q120 70 128 80" stroke="${C.ink}" stroke-width="5" fill="none" stroke-linecap="round"/>
+       <path d="M84 98 Q100 114 116 98" stroke="${C.ink}" stroke-width="5" fill="none" stroke-linecap="round"/>`}
+  <circle cx="66" cy="96" r="8" fill="${C.peachDeep}" opacity=".35"/><circle cx="134" cy="96" r="8" fill="${C.peachDeep}" opacity=".35"/>
+</svg>`;
+
+// Boca estilizada: a chupeta entre os dentes da frente, que ficam inclinados (mordida aberta, em desenho)
+const mouth = (w = 760) => `<svg width="${w}" height="${w * 0.66}" viewBox="0 0 600 400">
+  <rect x="20" y="20" width="560" height="360" rx="180" fill="#F7A8B8"/>
+  <rect x="70" y="70" width="460" height="260" rx="130" fill="#7A3550"/>
+  ${[100, 160, 220, 380, 440].map((x) => `<rect x="${x - 26}" y="70" width="52" height="64" rx="16" fill="#fff"/>`).join('')}
+  <rect x="249" y="68" width="46" height="78" rx="16" fill="#fff" transform="rotate(-14 272 70)"/>
+  <rect x="305" y="68" width="46" height="78" rx="16" fill="#fff" transform="rotate(14 328 70)"/>
+  ${[100, 160, 220, 380, 440, 500].map((x) => `<rect x="${x - 26}" y="266" width="52" height="64" rx="16" fill="#fff"/>`).join('')}
+  <rect x="249" y="252" width="46" height="70" rx="16" fill="#fff" transform="rotate(10 272 330)"/>
+  <rect x="305" y="252" width="46" height="70" rx="16" fill="#fff" transform="rotate(-10 328 330)"/>
+  <g class="paci-push"><ellipse cx="300" cy="200" rx="46" ry="40" fill="${C.peach}"/><ellipse cx="286" cy="188" rx="12" ry="8" fill="#fff" opacity=".5"/></g>
+</svg>`;
+
+// Ampulheta com areia caindo
+const hourglass = (h = 520) => `<svg width="${h * 0.66}" height="${h}" viewBox="0 0 200 300">
+  <rect x="20" y="10" width="160" height="22" rx="10" fill="${C.lavenderDeep}"/><rect x="20" y="268" width="160" height="22" rx="10" fill="${C.lavenderDeep}"/>
+  <path d="M40 32 L160 32 L160 50 C160 100 108 130 108 150 C108 170 160 200 160 250 L160 268 L40 268 L40 250 C40 200 92 170 92 150 C92 130 40 100 40 50 Z" fill="#fff" fill-opacity=".85" stroke="${C.lavender}" stroke-width="6"/>
+  <path class="sand-top" d="M52 56 L148 56 C146 96 104 122 100 146 C96 122 54 96 52 56 Z" fill="${C.sun}"/>
+  <path class="sand-bot" d="M50 262 L150 262 C150 226 122 214 100 206 C78 214 50 226 50 262 Z" fill="${C.sun}"/>
+  <line class="sand-fall" x1="100" y1="146" x2="100" y2="250" stroke="${C.sun}" stroke-width="6" stroke-dasharray="6 10"/>
+</svg>`;
 
 const scenes = {
   // Céu noturno, Chupi acenando e flutuando perto da lua
@@ -134,7 +179,30 @@ const scenes = {
     <div class="a" style="left:600px;top:1320px;${anim('sway', 1.6)}">${pacifier({ size: 240, wave: true })}</div>
     ${stars(8, 23, [60, 300, 1000, 600])}</body>`,
 
-  };
+  
+  // Dentinho preocupado com a chupeta por perto
+  'dente-preocupado': `<body style="background:#EAF4FF"><div class="dots"></div>
+    <div class="a" style="left:300px;top:1250px;${anim('shake', 1.8)}">${tooth(420, 'sad')}</div>
+    <div class="a" style="left:120px;top:1300px;${anim('bob', 2.6)}">${pacifier({ size: 170, mood: 'sad' })}</div>
+    ${stars(6, 31, [60, 200, 1000, 600], C.lavender)}</body>`,
+
+  // A chupeta entre os dentes da frente (ilustração da mordida aberta)
+  'mordida': `<body style="background:#FFEDE4"><div class="dots"></div>
+    <div class="a" style="left:160px;top:1330px">${mouth(760)}</div>
+    ${stars(6, 37, [60, 220, 1000, 600], C.peachDeep)}</body>`,
+
+  // Ampulheta: o tempo conta
+  'ampulheta': `<body style="background:linear-gradient(180deg,#EEE8FF,${C.cream})">
+    <div class="a" style="left:368px;top:1230px">${hourglass(520)}</div>
+    <div class="a" style="left:120px;top:1500px;${anim('bob', 2.4)}">${pacifier({ size: 150 })}</div>
+    ${stars(8, 41, [60, 200, 1000, 600])}</body>`,
+
+  // Dentinho feliz dando tchau para a chupeta que vai embora
+  'dente-feliz': `<body style="background:#E6F6EF"><div class="dots"></div>
+    <div class="a" style="left:180px;top:1260px;${anim('bob', 2)}">${tooth(400, 'happy')}</div>
+    <div class="a" style="left:640px;top:1500px;animation:flyToMoon ${SEG}s ease-in-out forwards">${pacifier({ size: 200, wave: true })}</div>
+    ${stars(10, 43, [60, 200, 1000, 600])}</body>`,
+};
 
 mkdirSync(OUT, { recursive: true });
 const filter = process.argv[2];
