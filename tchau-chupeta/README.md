@@ -360,3 +360,22 @@ Barra de CTA fixa no celular (some na seção de oferta).
 Botões: cada um leva à seção seguinte; só os da oferta e do P.S. abrem o checkout.
 
 **Medição do teste:** os eventos do Pixel levam `content_category` = `pagina-a` ou `pagina-b`. A página B também envia os eventos personalizados `QuizConcluido` e `DataEscolhida`. Nos anúncios, use a mesma campanha com dois links (`/` e `/b`) e `utm_content=pagina-a` / `utm_content=pagina-b` para a Kiwify separar as vendas.
+
+---
+
+## 12. Página C (teste A/B/C) — `/c`
+
+`pagina-vendas/c/index.html`, publicada em **tchauchupeta.vercel.app/c**. Gerada por `node src/pagina-c.mjs` (usa o mesmo `src/oferta.mjs`).
+
+**Ângulo:** página curta e direta para a mãe cansada — “Você não precisa ser ~~mais firme~~. Precisa de um plano.”
+
+| # | Seção | Gatilho |
+|---|---|---|
+| 1 | “Você não precisa ser mais firme” | Reenquadramento de identidade (tira o peso da culpa) |
+| 2 | Conversa em formato de chat, mensagens aparecendo uma a uma | Formato nativo + quebra de objeções (marcada como conversa ilustrativa) |
+| 3 | 3 coisas que o Tchau Chupeta **não** promete | Honestidade radical / confiança |
+| 4 | Abas “Hoje × Com um plano” (manhã, passeio, hora de dormir) | Contraste concreto do dia a dia |
+| 5 | Oferta “no seu celular, em 2 minutos” | Facilidade / baixo atrito |
+| 6 | “Hoje à noite pode ser a primeira noite do plano” | Fechamento curto |
+
+Evento extra do Pixel: `ComparacaoUsada`. Eventos levam `content_category: pagina-c`. Nos anúncios, use `utm_content=pagina-c`.
