@@ -27,7 +27,7 @@ const OFERTA = {
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-// O botão do topo leva à próxima seção; os demais rolam até o preço; só o da oferta leva ao checkout.
+// Cada botão leva no máximo à próxima etapa da página; só os botões depois do preço levam ao checkout.
 const cta = (texto = 'Quero começar a despedida', extra = '', alvo = '#preco') =>
   `<a class="btn ${extra}" href="${alvo}">${texto} <span aria-hidden="true">→</span></a>`;
 const ctaCheckout = (texto, extra = '') =>
@@ -412,13 +412,13 @@ ${pixel}
       <h2>Tchau Chupeta: o caminho claro que você estava procurando</h2>
       <p>Um ${esc(OFERTA.formato.toLowerCase())} feito para mães e pais que querem conduzir a retirada da chupeta de um jeito <b>lúdico, acolhedor e estruturado</b>.</p>
       <p>Nada de fórmula mágica nem de força. Você recebe um passo a passo organizado em etapas, para saber exatamente o que fazer em cada fase, sem improvisar e sem ficar refém dos conselhos que cada um dá.</p>
-      <p style="margin-top:26px">${cta('Quero o Tchau Chupeta')}</p>
+      <p style="margin-top:26px">${cta('Quero o Tchau Chupeta', '', '#etapas')}</p>
     </div>
   </div>
 </section>
 
 <!-- 6. AS ETAPAS (especificidade) -->
-<section>
+<section id="etapas">
   <div class="narrow">
     <div class="center reveal">
       <span class="kicker">Como funciona</span>
@@ -464,13 +464,13 @@ ${pixel}
     </div>
     <div class="center reveal" style="margin-top:36px">
       <p style="margin-bottom:20px"><b>Saber o que não fazer é o começo. O Tchau Chupeta te mostra o que fazer no lugar.</b></p>
-      ${cta('Quero o passo a passo completo')}
+      ${cta('Quero o passo a passo completo', '', '#para-quem')}
     </div>
   </div>
 </section>
 
 <!-- 9. PARA QUEM É -->
-<section>
+<section id="para-quem">
   <div class="wrap">
     <div class="narrow center reveal"><h2>O Tchau Chupeta é para você?</h2></div>
     <div class="quem">
@@ -572,7 +572,7 @@ ${pixel}
       <div class="c1"><b>Caminho 1</b>Continuar tentando do jeito de sempre: esconder, ceder, recomeçar… e torcer para que dessa vez dê certo.</div>
       <div class="c2"><b>Caminho 2</b>Seguir um passo a passo pensado para preparar seu filho e transformar o tchau em um momento de carinho e crescimento.</div>
     </div>
-    <div class="reveal">${cta('Escolho o caminho 2', 'pulse')}${selos}</div>
+    <div class="reveal">${ctaCheckout('Escolho o caminho 2', 'pulse')}${selos}</div>
   </div>
 </section>
 
@@ -581,7 +581,7 @@ ${pixel}
   <p>Este material é educativo e não substitui a orientação de pediatras, odontopediatras ou outros profissionais de saúde. Cada criança tem seu próprio ritmo, e os resultados podem variar de família para família.</p>
 </footer>
 
-<div class="sticky" id="sticky">${cta('Quero começar a despedida')}</div>
+<div class="sticky" id="sticky">${cta('Quero começar a despedida', '', '#identificacao')}</div>
 
 <script>
 // Checklist: resposta conforme o número de itens marcados
@@ -604,6 +604,20 @@ ${pixel}
   document.querySelectorAll('[data-checkout]').forEach(function(a){
     if (q && a.href.indexOf('http') === 0) a.href += (a.href.indexOf('?') < 0 ? '?' : '&') + q;
     a.addEventListener('click', function(){ if (window.fbq) fbq('track', 'InitiateCheckout', { value: ${valor}, currency: 'BRL' }); });
+  });
+})();
+
+// Barra fixa: leva à próxima seção abaixo da tela atual (nunca pula direto para o preço)
+(function(){
+  var btn = document.querySelector('#sticky .btn');
+  btn.addEventListener('click', function(ev){
+    var secs = document.querySelectorAll('header.hero, section'), alvo = null;
+    for (var i = 0; i < secs.length; i++) {
+      if (secs[i].getBoundingClientRect().top > 80) { alvo = secs[i]; break; }
+    }
+    if (!alvo) return;
+    ev.preventDefault();
+    alvo.scrollIntoView({ behavior: 'smooth' });
   });
 })();
 
