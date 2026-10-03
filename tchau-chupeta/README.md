@@ -335,3 +335,28 @@ Barra de CTA fixa no celular (some na seção de oferta).
 **Publicação:** o projeto `pagina-vendas` na Vercel está ligado a este repositório (Root Directory `tchau-chupeta/pagina-vendas`). Rode `node src/pagina.mjs`, faça commit e push na branch de produção, e o site atualiza sozinho.
 
 > ⚠️ **Confirmar:** as 5 etapas e os 4 itens da oferta seguem o mesmo mecanismo suposto do feed-06 — troque pelos módulos reais. A seção de **depoimentos** está comentada no HTML: só ative com relatos reais e autorizados. Não há contador regressivo nem escassez falsa, de propósito.
+
+---
+
+## 11. Página B (teste A/B) — `/b`
+
+`pagina-vendas/b/index.html`, publicada em **tchauchupeta.vercel.app/b**. Gerada por `node src/pagina-b.mjs`. Preço, checkout e Pixel ficam em `src/oferta.mjs`, compartilhado com a página A: altere uma vez e rode os dois geradores.
+
+**Ângulo:** a própria chupeta (Chupi) pede uma despedida — “Eu não quero sumir. Eu quero me despedir.”
+
+| # | Seção | Gatilho |
+|---|---|---|
+| 1 | A chupeta fala (balão) | Curiosidade + quebra de padrão |
+| 2 | Carta da chupeta | Storytelling + empatia + alívio de culpa |
+| 3 | Contador de “me dá a chupeta” (slider) | Especificidade + custo de continuar igual |
+| 4 | Diagnóstico de 3 perguntas | Personalização + microcompromisso |
+| 5 | Mitos × verdades | Quebra de objeções |
+| 6 | Antes / durante / depois | Mecanismo |
+| 7 | Escolha a data do tchau | Compromisso e coerência (a data aparece na caixa da oferta) |
+| 8 | Oferta “menos de R$ 1 por dia” | Ancoragem de preço |
+| 9 | “7 dias para testar” | Reversão de risco |
+| 10 | P.S. e P.P.S. | Fechamento em formato de carta |
+
+Botões: cada um leva à seção seguinte; só os da oferta e do P.S. abrem o checkout.
+
+**Medição do teste:** os eventos do Pixel levam `content_category` = `pagina-a` ou `pagina-b`. A página B também envia os eventos personalizados `QuizConcluido` e `DataEscolhida`. Nos anúncios, use a mesma campanha com dois links (`/` e `/b`) e `utm_content=pagina-a` / `utm_content=pagina-b` para a Kiwify separar as vendas.

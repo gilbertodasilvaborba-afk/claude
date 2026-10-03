@@ -1,31 +1,15 @@
 // Gera a página de vendas do Tchau Chupeta em pagina-vendas/index.html.
 // Uso: node src/pagina.mjs
-// Edite o bloco OFERTA abaixo antes de publicar (preço, checkout, garantia).
+// Preço, checkout, garantia e Pixel ficam em src/oferta.mjs (compartilhado com a página B).
 
 import { writeFileSync, mkdirSync, copyFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { OFERTA, esc, valor, pixelTag } from './oferta.mjs';
 import { C, pacifier, star, sparkle, heart, moon, cloud, familyHug, childWaving } from './illustrations.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const out = join(root, 'pagina-vendas');
-
-// ─── PREENCHA ANTES DE PUBLICAR ────────────────────────────────────────────
-const OFERTA = {
-  checkout: 'https://pay.kiwify.com.br/pZIVc6a', // link da Hotmart/Kiwify/Eduzz etc.
-  precoDe: '',                // preço "de" riscado (deixe vazio se não houver)
-  preco: '29,90',             // preço à vista, sem "R$"
-  parcelas: '',               // ex.: '5x de R$ 9,90' (vazio esconde a linha)
-  garantiaDias: 7,            // 7 é o mínimo legal (CDC, art. 49)
-  formato: 'Guia digital',    // confirme o formato real (PDF, área de membros...)
-  bonus: [
-    // { titulo: 'Nome do bônus', texto: 'O que ele entrega.' },
-  ],
-  pixelMeta: '1137389055898462',            // ID do Pixel da Meta (vazio = não carrega)
-};
-// ───────────────────────────────────────────────────────────────────────────
-
-const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 // Cada botão leva no máximo à próxima etapa da página; só os botões depois do preço levam ao checkout.
 const cta = (texto = 'Quero começar a despedida', extra = '', alvo = '#preco') =>
@@ -74,13 +58,7 @@ const bonusHtml = OFERTA.bonus.length
   ? OFERTA.bonus.map((b) => `<li><span class="ic">🎁</span><div><b>Bônus: ${esc(b.titulo)}</b><br>${esc(b.texto)}</div></li>`).join('')
   : '';
 
-// Valor numérico para os eventos do Pixel (ex.: '29,90' → 29.9)
-const valor = Number(OFERTA.preco.replace(/\./g, '').replace(',', '.')) || 0;
-
-const pixel = OFERTA.pixelMeta
-  ? `<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${esc(OFERTA.pixelMeta)}');fbq('track','PageView');fbq('track','ViewContent',{content_name:'Tchau Chupeta',value:${valor},currency:'BRL'});</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=${esc(OFERTA.pixelMeta)}&ev=PageView&noscript=1"></noscript>`
-  : '';
+const pixel = pixelTag('pagina-a');
 
 const html = `<!doctype html>
 <html lang="pt-BR">
@@ -603,7 +581,7 @@ ${pixel}
   var q = location.search.slice(1);
   document.querySelectorAll('[data-checkout]').forEach(function(a){
     if (q && a.href.indexOf('http') === 0) a.href += (a.href.indexOf('?') < 0 ? '?' : '&') + q;
-    a.addEventListener('click', function(){ if (window.fbq) fbq('track', 'InitiateCheckout', { value: ${valor}, currency: 'BRL' }); });
+    a.addEventListener('click', function(){ if (window.fbq) fbq('track', 'InitiateCheckout', { content_category: 'pagina-a', value: ${valor}, currency: 'BRL' }); });
   });
 })();
 
