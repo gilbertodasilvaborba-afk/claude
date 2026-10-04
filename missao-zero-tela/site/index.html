@@ -39,7 +39,7 @@ html{scroll-behavior:smooth}
 [hidden]{display:none!important}
 img{max-width:100%;display:block}
 body{margin:0;background:var(--cream);color:var(--navy);font-family:var(--body);font-size:17px;line-height:1.55}
-h1,h2,h3{font-family:var(--display);line-height:1.05;text-wrap:balance;margin:0}
+h1,h2,h3{font-family:var(--display);line-height:1.18;text-wrap:balance;margin:0}
 h2{font-size:clamp(28px,6.4vw,44px);font-weight:800}
 h3{font-size:22px;font-weight:700}
 p{margin:0}
@@ -50,14 +50,14 @@ section{padding-block:64px}
 .center .lead{margin-inline:auto}
 .lead{font-size:19px;color:var(--navy-soft);max-width:60ch}
 .hand{font-family:var(--hand);font-weight:400}
-.eyebrow{font-family:var(--hand);font-size:27px;color:var(--purple);display:block;margin-bottom:6px;transform:rotate(-2deg)}
+.eyebrow{font-family:var(--hand);font-size:27px;line-height:1.35;color:var(--purple);display:block;margin-bottom:6px;transform:rotate(-2deg)}
 mark{background:linear-gradient(transparent 45%,var(--yellow) 45%,var(--yellow) 92%,transparent 92%);color:inherit;padding:0 4px}
 .purple{color:var(--purple)}
 
 /* Botões no estilo da referência: pílula amarela, texto marinho */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--display);font-weight:800;font-size:21px;text-transform:uppercase;letter-spacing:.02em;
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--display);font-weight:800;font-size:20px;text-transform:uppercase;letter-spacing:.02em;
   color:var(--navy);background:var(--yellow);border:3px solid var(--navy);border-radius:999px;padding:14px 30px;text-decoration:none;cursor:pointer;
-  box-shadow:0 6px 0 var(--navy);transition:transform .12s, box-shadow .12s;text-align:center;line-height:1.1}
+  box-shadow:0 6px 0 var(--navy);transition:transform .12s, box-shadow .12s;text-align:center;line-height:1.25}
 .btn:hover{transform:translateY(3px);box-shadow:0 3px 0 var(--navy)}
 .btn small{display:block;font-family:var(--body);font-size:13px;font-weight:700;text-transform:none;letter-spacing:0}
 .btn svg{flex:none}
@@ -77,19 +77,19 @@ mark{background:linear-gradient(transparent 45%,var(--yellow) 45%,var(--yellow) 
 .logo{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:800;font-size:21px;margin-bottom:16px}
 .logo .zero{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--purple);color:var(--yellow);font-size:18px;position:relative}
 .logo .zero::after{content:"";position:absolute;width:40px;height:4px;background:var(--coral);transform:rotate(-40deg);border-radius:2px}
-.kicker{font-family:var(--hand);font-size:clamp(26px,5vw,36px);transform:rotate(-3deg);display:inline-block}
-.hero h1{isolation:isolate;font-size:clamp(40px,9.6vw,74px);font-weight:800;letter-spacing:-1px;margin-top:2px;line-height:.95}
-.hero h1 .l1{display:block;white-space:nowrap;color:var(--navy);position:relative;width:fit-content}
+.kicker{font-family:var(--hand);font-size:clamp(26px,5vw,36px);transform:rotate(-3deg);display:inline-block;line-height:1.3;padding:.1em .05em}
+.hero h1{isolation:isolate;font-size:clamp(40px,9.6vw,74px);font-weight:800;letter-spacing:-1px;margin-top:2px;line-height:1.08;padding-top:.08em}
+.hero h1 .l1{display:block;color:var(--navy);position:relative;width:fit-content}
 .hero h1 .l1::before{content:"";position:absolute;inset:38% -10px 4% -6px;background:var(--yellow);z-index:-1;border-radius:6px;transform:rotate(-1.5deg)}
 .hero h1 .l2{display:block;color:var(--purple)}
 .not-alone{margin-top:22px;transform:rotate(-2.5deg);transform-origin:left}
-.not-alone .hand{font-size:clamp(26px,5vw,32px);display:block;line-height:1}
-.not-alone p{font-size:19px;font-weight:700;margin-top:6px;max-width:30ch}
-.not-alone mark{font-family:var(--hand);font-weight:400;font-size:25px}
+.not-alone .hand{font-size:clamp(26px,5vw,32px);display:block;line-height:1.3}
+.not-alone p{font-size:19px;font-weight:700;margin-top:6px;max-width:30ch;line-height:1.7}
+.not-alone mark{font-family:var(--hand);font-weight:400;font-size:24px;line-height:1.3;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .feats{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-direction:column;gap:14px}
 .feats li{display:flex;gap:14px;align-items:center}
 .feats .ic{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center}
-.feats b{display:block;font-family:var(--display);font-size:18px;line-height:1.1}
+.feats b{display:block;font-family:var(--display);font-size:18px;line-height:1.25}
 .feats span{font-size:15px;color:var(--navy-soft)}
 .hero-cta{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-top:28px}
 .hero-cta .fine{font-size:14px;color:var(--navy-soft);font-weight:700}
@@ -97,10 +97,10 @@ mark{background:linear-gradient(transparent 45%,var(--yellow) 45%,var(--yellow) 
 .hero-photo{position:relative;align-self:center}
 .hero-photo .frame{border-radius:46% 54% 42% 58% / 52% 44% 56% 48%;overflow:hidden;aspect-ratio:6/7;border:6px solid var(--white);box-shadow:0 20px 50px rgba(30,43,111,.18);max-width:100%}
 .hero-photo .frame img{width:100%;height:100%;object-fit:cover}
-.note-yellow{position:absolute;right:-6px;bottom:18%;background:var(--yellow);padding:14px 18px 10px;border-radius:6px 14px 8px 16px;transform:rotate(-6deg);font-family:var(--hand);font-size:25px;line-height:1.05;text-align:center;box-shadow:0 8px 18px rgba(30,43,111,.15);max-width:190px}
+.note-yellow{position:absolute;right:-6px;bottom:18%;background:var(--yellow);padding:14px 18px 12px;line-height:1.2;border-radius:6px 14px 8px 16px;transform:rotate(-6deg);font-family:var(--hand);font-size:25px;text-align:center;box-shadow:0 8px 18px rgba(30,43,111,.15);max-width:190px}
 .mini-card{position:absolute;left:-10px;top:12%;background:var(--white);border:3px solid var(--navy);border-radius:16px;padding:10px 12px;transform:rotate(-5deg);width:190px;box-shadow:5px 6px 0 var(--lav)}
 .mini-card .n{font-size:12px;font-weight:800;background:var(--navy);color:#fff;border-radius:999px;padding:2px 9px;display:inline-block}
-.mini-card h4{font-family:var(--display);font-size:19px;margin:6px 0 4px;line-height:1.05}
+.mini-card h4{font-family:var(--display);font-size:19px;margin:6px 0 4px;line-height:1.2}
 .mini-card .t{display:flex;gap:5px;flex-wrap:wrap}
 .tag{font-size:11px;font-weight:800;border-radius:8px;padding:2px 7px;background:var(--lilac)}
 .stars{position:absolute;color:var(--gold);font-size:30px;pointer-events:none}
@@ -116,15 +116,15 @@ mark{background:linear-gradient(transparent 45%,var(--yellow) 45%,var(--yellow) 
 
 /* Faixa pincelada "Chegou..." */
 .brush-wrap{text-align:center;margin-bottom:28px}
-.brush{display:inline-block;background:var(--navy);color:var(--yellow);font-family:var(--display);font-weight:800;font-size:clamp(28px,6vw,46px);line-height:1;padding:18px 38px 14px;transform:rotate(-2deg);
+.brush{display:inline-block;background:var(--navy);color:var(--yellow);font-family:var(--display);font-weight:800;font-size:clamp(28px,6vw,46px);line-height:1.15;padding:22px 42px 18px;transform:rotate(-2deg);
   clip-path:polygon(2% 8%,12% 0,30% 6%,52% 1%,74% 7%,92% 0,100% 12%,98% 50%,100% 88%,86% 100%,64% 94%,40% 100%,18% 93%,3% 100%,0 70%,3% 40%)}
-.brush small{display:block;color:#fff;font-family:var(--hand);font-weight:400;font-size:24px;margin-bottom:2px}
+.brush small{display:block;color:#fff;font-family:var(--hand);font-weight:400;font-size:24px;line-height:1.3;margin-bottom:2px}
 
 /* Dor */
 .pain-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:32px;text-align:left}
 .pain{display:flex;gap:12px;align-items:flex-start;background:var(--white);border-radius:var(--r);padding:16px;box-shadow:0 4px 0 #E4DCF6}
 .box{flex:none;width:28px;height:28px;border-radius:50%;background:var(--coral-bg);color:var(--coral);display:grid;place-items:center;font-weight:900}
-.note{font-family:var(--hand);font-size:31px;line-height:1.2;margin-top:30px;text-align:center}
+.note{font-family:var(--hand);font-size:31px;line-height:1.35;margin-top:30px;text-align:center}
 
 /* Galeria de brincadeiras (fotos estilo polaroid) */
 .gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 22px;margin-top:38px}
@@ -133,7 +133,7 @@ mark{background:linear-gradient(transparent 45%,var(--yellow) 45%,var(--yellow) 
 .polaroid:nth-child(even){transform:rotate(1.8deg)}
 .polaroid::before{content:"";position:absolute;top:-12px;left:50%;width:84px;height:24px;margin-left:-42px;background:rgba(255,228,92,.85);transform:rotate(-3deg)}
 .polaroid img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:3px}
-.polaroid figcaption{font-family:var(--hand);font-size:23px;text-align:center;margin-top:8px;line-height:1.1}
+.polaroid figcaption{font-family:var(--hand);font-size:23px;text-align:center;margin-top:8px;line-height:1.3}
 .polaroid figcaption span{display:block;font-family:var(--body);font-size:13px;color:var(--navy-soft);font-weight:700;margin-top:2px}
 
 /* Virada */
@@ -162,10 +162,10 @@ mark{background:linear-gradient(transparent 45%,var(--yellow) 45%,var(--yellow) 
 .big-card .meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:14px 0}
 .big-card .meta div{background:var(--lilac);border-radius:10px;padding:8px 10px;font-size:14px}
 .big-card .meta b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--navy-soft)}
-.invite{font-family:var(--hand);font-size:24px;background:var(--gold-bg);border-radius:12px;padding:10px 14px;margin:8px 0 12px;line-height:1.15}
+.invite{font-family:var(--hand);font-size:24px;line-height:1.3;background:var(--gold-bg);border-radius:12px;padding:10px 14px;margin:8px 0 12px}
 .big-card ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:4px;font-size:15px}
 .comic{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-bottom:12px}
-.comic div{aspect-ratio:1;border:2px solid var(--navy);border-radius:8px;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:13px;text-align:center;padding:4px;line-height:1.05}
+.comic div{aspect-ratio:1;border:2px solid var(--navy);border-radius:8px;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:13px;text-align:center;padding:4px;line-height:1.15}
 .callouts{display:flex;flex-direction:column;gap:16px}
 .callout{display:flex;gap:14px;align-items:flex-start}
 .callout .dot{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--purple);color:#fff;font-weight:900}
@@ -194,7 +194,7 @@ mark{background:linear-gradient(transparent 45%,var(--yellow) 45%,var(--yellow) 
 .plan.pro{border-color:var(--navy);box-shadow:10px 12px 0 var(--yellow);position:relative}
 .ribbon{position:absolute;top:-18px;left:50%;transform:translateX(-50%);background:var(--purple);color:#fff;font-family:var(--display);font-weight:800;padding:6px 18px;border-radius:999px;white-space:nowrap;font-size:16px}
 .plan h3{font-size:26px}
-.price{font-family:var(--display);font-weight:800;line-height:1}
+.price{font-family:var(--display);font-weight:800;line-height:1.15}
 .price .cur{font-size:22px;vertical-align:top}
 .price .val{font-size:64px;font-variant-numeric:tabular-nums}
 .price .cents{font-size:28px;vertical-align:top}
@@ -211,7 +211,7 @@ mark{background:linear-gradient(transparent 45%,var(--yellow) 45%,var(--yellow) 
 
 /* Garantia */
 .guarantee{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:var(--white);border-radius:28px;padding:28px;box-shadow:0 6px 0 #E4DCF6}
-.seal{width:150px;height:150px;border-radius:50%;background:var(--yellow);border:4px dashed var(--navy);display:grid;place-items:center;text-align:center;font-family:var(--display);font-weight:800;line-height:.95}
+.seal{width:156px;height:156px;border-radius:50%;background:var(--yellow);border:4px dashed var(--navy);display:grid;place-items:center;text-align:center;font-family:var(--display);font-weight:800;line-height:1.05}
 .seal span{font-size:58px;display:block}
 
 /* Para quem é */
@@ -241,7 +241,7 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
 /* Barra fixa no celular */
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--white);border-top:3px solid var(--navy);
   padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:none;align-items:center;gap:12px;justify-content:space-between}
-.sticky .p{font-family:var(--display);font-weight:800;line-height:1.05;font-size:15px}
+.sticky .p{font-family:var(--display);font-weight:800;line-height:1.2;font-size:15px}
 .sticky .p b{font-size:22px;color:var(--purple)}
 .sticky .btn{font-size:16px;padding:10px 18px;box-shadow:0 4px 0 var(--navy)}
 
