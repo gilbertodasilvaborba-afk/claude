@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Missão Zero Tela · 100 missões para trocar a tela por brincadeira</title>
+<meta name="description" content="100 historinhas-missão ilustradas para crianças de 3 a 8 anos trocarem a tela por brincadeira, com material que você já tem em casa. PDF com acesso imediato.">
+<meta property="og:title" content="Missão Zero Tela">
+<meta property="og:description" content="Troque o 'só mais um vídeo' por 100 missões que seu filho vai pedir para repetir.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FFD23F">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23E5483B'/%3E%3Ctext x='16' y='22' font-size='17' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3E0%3C/text%3E%3C/svg%3E">
+<!-- META PIXEL: cole aqui o código do seu Pixel do Facebook/Instagram -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Caveat:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: página mobile-first em coluna única (tráfego vem do Instagram), blocos alternando
+   folha de caderno e céu; o produto aparece como cartas de missão empilhadas. Visual único e claro por escolha. */
+:root{
+  color-scheme: light;
+  --ink:#1E2A4A;        /* azul-caneta: texto */
+  --ink-soft:#4A5677;
+  --paper:#FFFFFF;      /* folha sulfite */
+  --line:#DCE6F5;       /* pauta do caderno */
+  --sky:#EAF3FF;        /* blocos alternados */
+  --sun:#FFD23F;        /* giz amarelo: destaque */
+  --crayon:#E5483B;     /* giz vermelho: alerta/dor */
+  --leaf:#1F9D55;       /* giz verde: compra */
+  --leaf-dark:#157A41;
+  --blue:#2F6FDE;
+  --display:"Baloo 2", "Trebuchet MS", system-ui, sans-serif;
+  --body:"Nunito", "Segoe UI", system-ui, sans-serif;
+  --hand:"Caveat", "Comic Sans MS", cursive;
+  --r:18px;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;margin:0}
+h1,h2,h3{font-family:var(--display);line-height:1.08;text-wrap:balance;margin:0}
+h2{font-size:clamp(28px,6.4vw,42px);font-weight:800}
+h3{font-size:22px;font-weight:700}
+p{margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:18px}
+section{padding-block:64px}
+.sky{background:var(--sky)}
+.notebook{background-color:var(--paper);background-image:repeating-linear-gradient(to bottom,transparent 0 31px,var(--line) 31px 32px)}
+.eyebrow{font-family:var(--hand);font-size:26px;color:var(--crayon);font-weight:700;display:block;margin-bottom:6px}
+.lead{font-size:19px;color:var(--ink-soft);max-width:60ch}
+.center{text-align:center}
+.center .lead{margin-inline:auto}
+.stack{display:flex;flex-direction:column;gap:18px}
+mark{background:linear-gradient(transparent 55%,var(--sun) 55%);color:inherit;padding:0 2px}
+
+/* Botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--display);font-weight:800;font-size:21px;
+  color:#fff;background:var(--leaf);border:0;border-radius:999px;padding:16px 30px;text-decoration:none;cursor:pointer;
+  box-shadow:0 6px 0 var(--leaf-dark);transition:transform .12s, box-shadow .12s;text-align:center}
+.btn:hover{transform:translateY(2px);box-shadow:0 4px 0 var(--leaf-dark)}
+.btn:focus-visible,.plan-btn:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.btn small{display:block;font-family:var(--body);font-size:13px;font-weight:700;opacity:.9}
+.btn.ghost{background:var(--paper);color:var(--ink);box-shadow:0 4px 0 var(--line);border:2px solid var(--line)}
+.pulse{animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+@media (prefers-reduced-motion:reduce){.pulse,.card-stack .mcard{animation:none!important}}
+
+/* Faixa superior */
+.topbar{background:var(--ink);color:#fff;text-align:center;font-weight:700;font-size:14px;padding:9px 16px}
+.topbar b{color:var(--sun)}
+
+/* Hero */
+.hero{background:var(--sun);padding-block:40px 56px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+.hero-grid > *{min-width:0}
+.logo{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:800;font-size:22px;margin-bottom:22px}
+.logo .zero{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--crayon);color:#fff;font-size:18px;position:relative}
+.logo .zero::after{content:"";position:absolute;width:40px;height:4px;background:var(--ink);transform:rotate(-40deg);border-radius:2px}
+.speech{display:inline-block;background:var(--paper);border:3px solid var(--ink);border-radius:22px;padding:8px 18px;font-family:var(--hand);font-size:28px;font-weight:700;position:relative;margin-bottom:18px;transform:rotate(-2deg)}
+.speech::after{content:"";position:absolute;left:28px;bottom:-14px;width:22px;height:22px;background:var(--paper);border-right:3px solid var(--ink);border-bottom:3px solid var(--ink);transform:rotate(45deg) skew(12deg,12deg)}
+.hero h1{font-size:clamp(34px,7.6vw,58px);font-weight:800;letter-spacing:-.5px}
+.hero .lead{color:var(--ink);margin-top:14px}
+.hero-cta{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-top:26px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.chip{background:rgba(255,255,255,.7);border:2px solid var(--ink);border-radius:999px;padding:4px 12px;font-size:14px;font-weight:800}
+
+/* Cartas de missão (mockup do produto) */
+.card-stack{position:relative;height:420px;max-width:100%}
+.mcard{position:absolute;width:280px;max-width:86%;background:var(--paper);border:3px solid var(--ink);border-radius:20px;padding:16px;box-shadow:6px 8px 0 rgba(30,42,74,.18)}
+.mcard .top{display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:13px}
+.mcard .num{background:var(--ink);color:#fff;border-radius:999px;padding:2px 10px}
+.mcard .art{height:130px;border-radius:12px;margin:12px 0;display:grid;place-items:center}
+.mcard h4{font-family:var(--display);font-size:22px;margin:0 0 4px;line-height:1.1}
+.mcard .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.tag{font-size:12px;font-weight:800;border-radius:8px;padding:3px 8px;background:var(--sky);color:var(--ink)}
+.c1{left:4%;top:26px;transform:rotate(-8deg);animation:float 6s ease-in-out infinite}
+.c2{right:2%;top:6px;transform:rotate(7deg);animation:float 7s ease-in-out infinite .6s}
+.c3{left:50%;top:70px;margin-left:-140px;transform:rotate(-1deg);z-index:2;animation:float 5s ease-in-out infinite .3s}
+@keyframes float{50%{translate:0 -8px}}
+.sticker{position:absolute;z-index:3;right:0;bottom:6px;width:118px;height:118px;border-radius:50%;background:var(--crayon);color:#fff;display:grid;place-items:center;text-align:center;font-family:var(--display);font-weight:800;line-height:1;transform:rotate(10deg);border:3px solid var(--ink)}
+.sticker span{font-size:40px;display:block}
+.sticker small{font-size:14px}
+
+/* Dor */
+.pain-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:32px}
+.pain{display:flex;gap:12px;align-items:flex-start;background:var(--paper);border:2px solid var(--line);border-radius:var(--r);padding:16px}
+.box{flex:none;width:26px;height:26px;border:3px solid var(--crayon);border-radius:6px;display:grid;place-items:center;color:var(--crayon);font-weight:900;margin-top:2px}
+.note{font-family:var(--hand);font-size:30px;line-height:1.2;color:var(--ink);margin-top:30px;text-align:center}
+
+/* Virada */
+.turn{background:var(--ink);color:#fff}
+.turn .lead{color:#C9D3EC}
+.turn h2 mark{background:linear-gradient(transparent 55%,var(--crayon) 55%)}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+.compare > div{border-radius:var(--r);padding:20px;min-width:0}
+.compare .bad{background:rgba(255,255,255,.07);border:2px dashed #56618A}
+.compare .good{background:var(--paper);color:var(--ink)}
+.compare ul{margin:10px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+
+/* Como funciona */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:34px;counter-reset:s}
+.step{background:var(--paper);border:3px solid var(--ink);border-radius:var(--r);padding:22px;position:relative}
+.step::before{counter-increment:s;content:counter(s);position:absolute;top:-20px;left:18px;width:40px;height:40px;border-radius:50%;background:var(--sun);border:3px solid var(--ink);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:20px}
+.step h3{margin-top:10px;margin-bottom:6px}
+
+/* Anatomia da missão */
+.anatomy{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;margin-top:34px}
+.anatomy > *{min-width:0}
+.big-card{background:var(--paper);border:3px solid var(--ink);border-radius:24px;padding:22px;box-shadow:8px 10px 0 var(--sun)}
+.big-card .meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:14px 0}
+.big-card .meta div{background:var(--sky);border-radius:10px;padding:8px 10px;font-size:14px}
+.big-card .meta b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+.invite{font-family:var(--hand);font-size:26px;background:#FFF4C7;border-radius:12px;padding:10px 14px;margin:8px 0 12px;line-height:1.15}
+.big-card ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:4px;font-size:15px}
+.comic{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-bottom:12px}
+.comic div{aspect-ratio:1;border:2px solid var(--ink);border-radius:8px;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:13px;text-align:center;padding:4px;line-height:1.05}
+.callouts{display:flex;flex-direction:column;gap:14px}
+.callout{display:flex;gap:14px;align-items:flex-start}
+.callout .dot{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font-weight:900}
+.callout p{color:var(--ink-soft)}
+.callout b{color:var(--ink)}
+
+/* Momentos */
+.moments{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:32px}
+.moment{border-radius:var(--r);padding:18px;border:2px solid var(--ink);background:var(--paper)}
+.moment .ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;margin-bottom:10px}
+.moment h3{font-size:20px}
+.moment p{font-size:15px;color:var(--ink-soft);margin-top:4px}
+
+/* Habilidades */
+.skills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:28px}
+.skill{font-family:var(--display);font-weight:700;font-size:18px;padding:8px 18px;border-radius:999px;border:3px solid var(--ink)}
+
+/* Bônus */
+.bonus-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:32px}
+.bonus{display:flex;gap:16px;background:var(--paper);border:3px solid var(--ink);border-radius:var(--r);padding:18px;align-items:flex-start}
+.bonus .gift{flex:none;width:58px;height:58px;border-radius:14px;background:var(--crayon);display:grid;place-items:center}
+.bonus .label{font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--crayon)}
+.bonus p{font-size:15px;color:var(--ink-soft);margin-top:4px}
+
+/* Planos */
+.plans{display:grid;grid-template-columns:1fr 1.15fr;gap:22px;margin-top:36px;align-items:stretch}
+.plan{background:var(--paper);border:3px solid var(--line);border-radius:24px;padding:26px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.plan.pro{border-color:var(--ink);box-shadow:10px 12px 0 var(--sun);position:relative}
+.ribbon{position:absolute;top:-18px;left:50%;transform:translateX(-50%);background:var(--crayon);color:#fff;font-family:var(--display);font-weight:800;padding:6px 18px;border-radius:999px;border:3px solid var(--ink);white-space:nowrap;font-size:16px}
+.plan h3{font-size:26px}
+.price{font-family:var(--display);font-weight:800;line-height:1}
+.price .cur{font-size:22px;vertical-align:top}
+.price .val{font-size:64px;font-variant-numeric:tabular-nums}
+.price .cents{font-size:28px;vertical-align:top}
+.per{font-size:14px;font-weight:800;color:var(--leaf-dark);background:#E3F6EB;border-radius:8px;padding:4px 10px;align-self:flex-start}
+.plan ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;flex:1}
+.plan li{display:flex;gap:10px;align-items:flex-start;font-size:16px}
+.plan li::before{content:"";flex:none;width:20px;height:20px;margin-top:3px;border-radius:50%;background:var(--leaf) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3 3 7-7' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat}
+.plan li.no{color:#9AA3BC;text-decoration:line-through}
+.plan li.no::before{background:#D7DDEA url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6.5 6.5l7 7M13.5 6.5l-7 7' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") center/100% no-repeat}
+.plan-btn{display:block;text-align:center;text-decoration:none;font-family:var(--display);font-weight:800;font-size:19px;border-radius:999px;padding:14px 20px;border:3px solid var(--ink);color:var(--ink);background:var(--paper);cursor:pointer}
+.plan.pro .plan-btn{background:var(--leaf);color:#fff;border-color:var(--leaf-dark);box-shadow:0 6px 0 var(--leaf-dark);font-size:21px}
+.secure{font-size:13px;color:var(--ink-soft);text-align:center}
+
+/* Depoimentos (espaço reservado) */
+.proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:30px}
+.slot{border:3px dashed #A9B6D3;border-radius:var(--r);padding:22px;text-align:center;color:var(--ink-soft);background:var(--paper);min-height:170px;display:flex;flex-direction:column;justify-content:center;gap:6px}
+.slot b{color:var(--ink);font-family:var(--display);font-size:18px}
+
+/* Garantia */
+.guarantee{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:var(--paper);border:3px solid var(--ink);border-radius:26px;padding:28px}
+.seal{width:150px;height:150px;border-radius:50%;background:var(--sun);border:4px dashed var(--ink);display:grid;place-items:center;text-align:center;font-family:var(--display);font-weight:800;line-height:.95}
+.seal span{font-size:58px;display:block}
+
+/* Para quem é */
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.fit > div{border-radius:var(--r);padding:22px;min-width:0}
+.fit .yes{background:#E3F6EB}
+.fit .nope{background:#FDE7E5}
+.fit ul{margin:10px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+
+/* FAQ */
+.faq{max-width:760px;margin:30px auto 0;display:flex;flex-direction:column;gap:10px}
+details{background:var(--paper);border:2px solid var(--ink);border-radius:14px;padding:4px 18px}
+summary{cursor:pointer;font-weight:800;padding:12px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--display);font-size:24px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{padding-bottom:14px;color:var(--ink-soft)}
+
+/* CTA final */
+.final{background:var(--sun);text-align:center}
+.final .btn{margin-top:26px}
+
+footer{background:var(--ink);color:#C9D3EC;font-size:13px;text-align:center;padding-block:28px 110px}
+
+/* Barra fixa no celular */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--paper);border-top:3px solid var(--ink);
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:none;align-items:center;gap:12px;justify-content:space-between}
+.sticky .p{font-family:var(--display);font-weight:800;line-height:1.05;font-size:15px}
+.sticky .p b{font-size:22px;color:var(--leaf-dark)}
+.sticky .btn{font-size:17px;padding:12px 20px;box-shadow:0 4px 0 var(--leaf-dark)}
+
+/* Janela de upgrade (ao escolher o plano simples) */
+.modal{position:fixed;inset:0;z-index:40;background:rgba(30,42,74,.6);display:grid;place-items:center;padding:16px}
+.modal-box{background:var(--paper);border:3px solid var(--ink);border-radius:24px;max-width:440px;width:100%;padding:26px;text-align:center;display:flex;flex-direction:column;gap:14px}
+.modal-box .eyebrow{margin:0}
+.modal-box .btn{width:100%}
+.modal-box a.skip{color:var(--ink-soft);font-size:14px;text-decoration:underline;cursor:pointer}
+
+/* Nota do esboço */
+.draft{background:#FFF4C7;border:2px dashed var(--ink);border-radius:12px;padding:10px 14px;font-size:13px;margin-top:14px}
+
+@media (max-width:760px){
+  section{padding-block:48px}
+  .hero-grid,.anatomy,.plans,.compare,.fit{grid-template-columns:1fr}
+  .pain-list,.bonus-grid{grid-template-columns:1fr}
+  .steps,.proof{grid-template-columns:1fr;gap:28px}
+  .moments{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .card-stack{height:360px}
+  .mcard{width:230px}
+  .c3{margin-left:-115px;top:56px}
+  .sticker{width:96px;height:96px}
+  .sticker span{font-size:32px}
+  .plan.pro{order:-1;margin-top:14px}
+  .guarantee{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .sticky{display:flex}
+  .hero-cta .btn{width:100%}
+}
+</style>
+<style>html{scroll-behavior:smooth}[hidden]{display:none!important}img{max-width:100%}</style>
+</head>
+<body>
+<div class="topbar">Oferta de lançamento: plano completo por <b>R$ 27,90</b> · acesso imediato no seu e-mail</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="logo"><span class="zero">0</span> Missão Zero Tela</div>
+      <div class="speech">"Mãe, só mais um vídeo?"</div>
+      <h1>Troque o <mark>"só mais um vídeo"</mark> por 100 missões que seu filho vai pedir para repetir</h1>
+      <p class="lead">Historinhas-missão ilustradas e prontas para imprimir. Seu filho lê a historinha, aceita a missão e brinca de verdade. Leva 5 minutos para começar e usa só o que você já tem em casa: papel, giz, caixa, colher, lençol.</p>
+      <div class="hero-cta">
+        <a class="btn pulse" href="#planos">Quero as missões <small>a partir de R$ 11,00</small></a>
+        <div class="chips">
+          <span class="chip">3 a 8 anos</span>
+          <span class="chip">PDF para imprimir ou usar no celular</span>
+          <span class="chip">Garantia de 7 dias</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-stack" aria-label="Exemplo das cartas de missão">
+      <div class="mcard c1">
+        <div class="top"><span class="num">Missão 42</span><span>🌧️</span></div>
+        <div class="art" style="background:#E3F6EB">
+          <svg width="110" height="90" viewBox="0 0 110 90"><path d="M10 80 L55 12 L100 80 Z" fill="#FFD23F" stroke="#1E2A4A" stroke-width="4" stroke-linejoin="round"/><rect x="45" y="52" width="20" height="28" fill="#E5483B" stroke="#1E2A4A" stroke-width="4"/></svg>
+        </div>
+        <h4>Cabana do Explorador</h4>
+        <div class="tags"><span class="tag">3–5 anos</span><span class="tag">30 min</span></div>
+      </div>
+      <div class="mcard c2">
+        <div class="top"><span class="num">Missão 15</span><span>🍽️</span></div>
+        <div class="art" style="background:#FFF4C7">
+          <svg width="110" height="90" viewBox="0 0 110 90"><circle cx="55" cy="45" r="34" fill="#fff" stroke="#1E2A4A" stroke-width="4"/><circle cx="43" cy="40" r="5" fill="#1E2A4A"/><circle cx="67" cy="40" r="5" fill="#1E2A4A"/><path d="M40 56 Q55 70 70 56" fill="none" stroke="#E5483B" stroke-width="5" stroke-linecap="round"/></svg>
+        </div>
+        <h4>Detetive de Cores</h4>
+        <div class="tags"><span class="tag">Sozinho</span><span class="tag">10 min</span></div>
+      </div>
+      <div class="mcard c3">
+        <div class="top"><span class="num">Missão 07</span><span>✂️</span></div>
+        <div class="art" style="background:#EAF3FF">
+          <svg width="150" height="100" viewBox="0 0 150 100"><path d="M8 92 H142" stroke="#1E2A4A" stroke-width="4" stroke-linecap="round"/><path d="M18 92 V52 L40 32 L62 52 V92" fill="#fff" stroke="#1E2A4A" stroke-width="4" stroke-linejoin="round"/><rect x="33" y="68" width="14" height="24" fill="#FFD23F" stroke="#1E2A4A" stroke-width="3"/><path d="M78 92 V44 L104 20 L130 44 V92" fill="#fff" stroke="#1E2A4A" stroke-width="4" stroke-linejoin="round"/><rect x="92" y="54" width="10" height="10" fill="#2F6FDE"/><rect x="108" y="54" width="10" height="10" fill="#2F6FDE"/><rect x="97" y="70" width="14" height="22" fill="#E5483B" stroke="#1E2A4A" stroke-width="3"/></svg>
+        </div>
+        <h4>Cidade de Papel</h4>
+        <div class="tags"><span class="tag">5–8 anos</span><span class="tag">20 min</span><span class="tag">Juntos</span></div>
+      </div>
+      <div class="sticker"><div><span>100</span><small>missões</small></div></div>
+    </div>
+  </div>
+</header>
+
+<!-- DOR -->
+<section class="notebook">
+  <div class="wrap center">
+    <span class="eyebrow">Você se reconhece aqui?</span>
+    <h2>Toda mãe já viveu pelo menos uma dessas cenas</h2>
+    <div class="pain-list" style="text-align:left">
+      <div class="pain"><span class="box">✓</span><p>Você tira o celular e começa a birra, o choro e a negociação sem fim.</p></div>
+      <div class="pain"><span class="box">✓</span><p>Você quer oferecer outra coisa, mas na hora a cabeça dá branco: <b>"o que eu ofereço no lugar?"</b></p></div>
+      <div class="pain"><span class="box">✓</span><p>Você entrega a tela para conseguir fazer o jantar ou trabalhar, e depois bate a culpa.</p></div>
+      <div class="pain"><span class="box">✓</span><p>Você já procurou atividades no Pinterest, mas todas pedem material que você não tem.</p></div>
+      <div class="pain"><span class="box">✓</span><p>Seu filho diz "tô entediado" cinco minutos depois de largar o tablet.</p></div>
+      <div class="pain"><span class="box">✓</span><p>Você sente que o tempo passa rápido e queria mais momentos de verdade com ele.</p></div>
+    </div>
+    <p class="note">Se marcou pelo menos uma, a culpa não é sua.<br>Faltava um plano pronto para a hora H.</p>
+  </div>
+</section>
+
+<!-- VIRADA -->
+<section class="turn">
+  <div class="wrap center">
+    <span class="eyebrow" style="color:var(--sun)">A virada</span>
+    <h2>O problema não é a tela. É o <mark>vazio de ideias</mark> quando você desliga ela.</h2>
+    <p class="lead" style="margin-top:16px">A criança não troca o desenho por "vai brincar". Ela troca por um convite irresistível. O Missão Zero Tela entrega esse convite pronto, em forma de historinha, com a criança como heroína.</p>
+    <div class="compare" style="text-align:left">
+      <div class="bad">
+        <h3>Sem o Missão Zero Tela</h3>
+        <ul><li>"Vai brincar com seus brinquedos"</li><li>Birra, choro e negociação</li><li>Em 10 minutos a tela volta</li><li>Culpa no fim do dia</li></ul>
+      </div>
+      <div class="good">
+        <h3>Com o Missão Zero Tela</h3>
+        <ul><li>"Tem uma missão secreta para você!"</li><li>A criança escolhe a carta e se anima</li><li>20 a 40 minutos de brincadeira de verdade</li><li>Um momento para lembrar</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="sky">
+  <div class="wrap center">
+    <span class="eyebrow">Simples assim</span>
+    <h2>Como funciona na sua casa</h2>
+    <div class="steps" style="text-align:left">
+      <div class="step"><h3>Sorteie uma missão</h3><p>Imprima as cartas, coloque num pote e deixe seu filho sortear. Ou escolha pelo momento: dia de chuva, antes do jantar, viagem.</p></div>
+      <div class="step"><h3>Leia a historinha</h3><p>Cada missão começa com uma historinha curta em quadrinhos que chama a criança para a aventura. É ela quem aceita o desafio.</p></div>
+      <div class="step"><h3>Brinquem e carimbem</h3><p>Passo a passo simples, material de casa. Missão cumprida vira carimbo no Passaporte do Explorador.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ANATOMIA -->
+<section class="notebook">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Por dentro de uma missão</span>
+      <h2>Tudo pensado para você não precisar pensar</h2>
+    </div>
+    <div class="anatomy">
+      <div class="big-card">
+        <div class="comic">
+          <div style="background:#FFF4C7">A cidade sumiu!</div>
+          <div style="background:#EAF3FF">Só você pode salvar</div>
+          <div style="background:#E3F6EB">Pegue papel e giz</div>
+          <div style="background:#FDE7E5">Construa!</div>
+        </div>
+        <h3>Missão 07 · Cidade de Papel</h3>
+        <div class="meta">
+          <div><b>Idade</b>5 a 8 anos</div>
+          <div><b>Tempo</b>20 minutos</div>
+          <div><b>Material</b>Folhas e giz de cera</div>
+          <div><b>Bagunça</b>Pouca</div>
+          <div><b>Modo</b>Juntos</div>
+          <div><b>Desenvolve</b>Coordenação fina</div>
+        </div>
+        <div class="invite">"Agente, os moradores ficaram sem casa! Você aceita construir uma cidade nova?"</div>
+        <ol>
+          <li>Dobre a folha ao meio para fazer a casinha em pé.</li>
+          <li>Desenhe portas, janelas e telhado.</li>
+          <li>Faça uma rua em outra folha e monte a cidade.</li>
+        </ol>
+      </div>
+      <div class="callouts">
+        <div class="callout"><span class="dot">1</span><p><b>Historinha em quadrinhos:</b> a criança vira personagem e aceita a missão. É isso que faz ela largar a tela sem briga.</p></div>
+        <div class="callout"><span class="dot">2</span><p><b>Idade, tempo e bagunça:</b> em 3 segundos você sabe se dá para fazer agora.</p></div>
+        <div class="callout"><span class="dot">3</span><p><b>Só material de casa:</b> nada de comprar kit, EVA ou tinta especial.</p></div>
+        <div class="callout"><span class="dot">4</span><p><b>Frase-convite pronta:</b> você lê em voz alta e a brincadeira já começa.</p></div>
+        <div class="callout"><span class="dot">5</span><p><b>Habilidade trabalhada:</b> você sabe o que seu filho está desenvolvendo enquanto se diverte.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOMENTOS -->
+<section class="sky">
+  <div class="wrap center">
+    <span class="eyebrow">Uma missão para cada momento</span>
+    <h2>Organizadas pela situação que você está vivendo agora</h2>
+    <div class="moments" style="text-align:left">
+      <div class="moment"><div class="ico" style="background:#EAF3FF">🌧️</div><h3>Dia de chuva</h3><p>Aventuras dentro de casa para gastar energia.</p></div>
+      <div class="moment"><div class="ico" style="background:#FFF4C7">🍳</div><h3>Enquanto faço o jantar</h3><p>Missões que a criança faz sozinha, perto de você.</p></div>
+      <div class="moment"><div class="ico" style="background:#FDE7E5">🍽️</div><h3>Restaurante e espera</h3><p>Só com guardanapo, caneta ou nada.</p></div>
+      <div class="moment"><div class="ico" style="background:#E3F6EB">🚗</div><h3>Viagem de carro</h3><p>Jogos de olhar, falar e adivinhar.</p></div>
+      <div class="moment"><div class="ico" style="background:#EAF3FF">🌙</div><h3>Antes de dormir</h3><p>Missões calmas para desacelerar.</p></div>
+      <div class="moment"><div class="ico" style="background:#FFF4C7">⏱️</div><h3>Só 5 minutos</h3><p>Para aquele intervalo em que ela pede o celular.</p></div>
+    </div>
+    <div class="skills">
+      <span class="skill" style="background:#FFF4C7">Coordenação fina</span>
+      <span class="skill" style="background:#EAF3FF">Linguagem</span>
+      <span class="skill" style="background:#E3F6EB">Criatividade</span>
+      <span class="skill" style="background:#FDE7E5">Autonomia</span>
+      <span class="skill" style="background:#FFF4C7">Raciocínio</span>
+      <span class="skill" style="background:#EAF3FF">Vínculo com a família</span>
+    </div>
+  </div>
+</section>
+
+<!-- BÔNUS -->
+<section class="notebook">
+  <div class="wrap center">
+    <span class="eyebrow">Só no plano completo</span>
+    <h2>4 bônus que transformam as missões num hábito</h2>
+    <div class="bonus-grid" style="text-align:left">
+      <div class="bonus"><div class="gift"><svg width="30" height="30" viewBox="0 0 30 30"><rect x="4" y="12" width="22" height="15" rx="2" fill="#fff"/><rect x="2" y="8" width="26" height="6" rx="2" fill="#FFD23F"/><rect x="13" y="8" width="4" height="19" fill="#E5483B"/></svg></div><div><span class="label">Bônus 1</span><h3>Pote de Missões recortável</h3><p>Cartas para imprimir, recortar e sortear. A criança escolhe e se sente dona da decisão.</p></div></div>
+      <div class="bonus"><div class="gift"><svg width="30" height="30" viewBox="0 0 30 30"><rect x="4" y="12" width="22" height="15" rx="2" fill="#fff"/><rect x="2" y="8" width="26" height="6" rx="2" fill="#FFD23F"/><rect x="13" y="8" width="4" height="19" fill="#E5483B"/></svg></div><div><span class="label">Bônus 2</span><h3>Passaporte do Explorador + certificado</h3><p>Um carimbo para cada missão cumprida e um certificado para comemorar.</p></div></div>
+      <div class="bonus"><div class="gift"><svg width="30" height="30" viewBox="0 0 30 30"><rect x="4" y="12" width="22" height="15" rx="2" fill="#fff"/><rect x="2" y="8" width="26" height="6" rx="2" fill="#FFD23F"/><rect x="13" y="8" width="4" height="19" fill="#E5483B"/></svg></div><div><span class="label">Bônus 3</span><h3>Guia "Desligar sem birra"</h3><p>Frases prontas e combinados de família para a hora de tirar a tela.</p></div></div>
+      <div class="bonus"><div class="gift"><svg width="30" height="30" viewBox="0 0 30 30"><rect x="4" y="12" width="22" height="15" rx="2" fill="#fff"/><rect x="2" y="8" width="26" height="6" rx="2" fill="#FFD23F"/><rect x="13" y="8" width="4" height="19" fill="#E5483B"/></svg></div><div><span class="label">Bônus 4</span><h3>Desafio 30 Dias Zero Tela</h3><p>Calendário com uma missão por dia e quadro de conquistas para colar na geladeira.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section class="sky" id="planos">
+  <div class="wrap center">
+    <span class="eyebrow">Escolha seu plano</span>
+    <h2>Menos que um lanche para ter meses de brincadeira</h2>
+    <div class="plans" style="text-align:left">
+      <div class="plan">
+        <h3>Plano Simples</h3>
+        <div class="price"><span class="cur">R$</span><span class="val">11</span><span class="cents">,00</span></div>
+        <span class="per">R$ 0,55 por missão</span>
+        <ul>
+          <li>20 historinhas-missão ilustradas</li>
+          <li>PDF para imprimir ou usar no celular</li>
+          <li>Acesso imediato</li>
+          <li class="no">80 missões extras</li>
+          <li class="no">Missões por momento do dia</li>
+          <li class="no">4 bônus exclusivos</li>
+        </ul>
+        <button class="plan-btn" type="button" id="btn-simples">Quero o simples</button>
+      </div>
+      <div class="plan pro">
+        <span class="ribbon">Recomendado</span>
+        <h3>Plano Completo</h3>
+        <div class="price"><span class="cur">R$</span><span class="val">27</span><span class="cents">,90</span></div>
+        <span class="per">Menos de R$ 0,28 por missão</span>
+        <ul>
+          <li><b>100 historinhas-missão ilustradas</b></li>
+          <li>Separadas por idade: 3–4, 5–6 e 7–8 anos</li>
+          <li>Organizadas por momento do dia</li>
+          <li>Missões "Juntos" e "Sozinho"</li>
+          <li>Bônus 1: Pote de Missões recortável</li>
+          <li>Bônus 2: Passaporte + certificado</li>
+          <li>Bônus 3: Guia "Desligar sem birra"</li>
+          <li>Bônus 4: Desafio 30 Dias Zero Tela</li>
+          <li>Versão preto e branco para economizar tinta</li>
+        </ul>
+        <a class="plan-btn" href="#" data-checkout="completo">Quero o completo</a>
+        <p class="secure">Pagamento seguro · Pix ou cartão · Acesso imediato</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL: remova o atributo hidden quando tiver depoimentos reais -->
+<section class="notebook" hidden>
+  <div class="wrap center">
+    <span class="eyebrow">Quem já usou</span>
+    <h2>O que as mães estão dizendo</h2>
+    <div class="proof">
+      <div class="slot"><b>Depoimento 1</b><span>Print real de WhatsApp ou comentário de cliente. Colete nas primeiras vendas.</span></div>
+      <div class="slot"><b>Depoimento 2</b><span>Foto da criança fazendo a missão, com autorização da família.</span></div>
+      <div class="slot"><b>Depoimento 3</b><span>Vídeo curto de uma mãe contando o resultado.</span></div>
+    </div>
+      </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="sky">
+  <div class="wrap">
+    <div class="guarantee">
+      <div class="seal"><div><span>7</span>dias de<br>garantia</div></div>
+      <div class="stack">
+        <h2>Risco zero para você</h2>
+        <p class="lead">Faça as missões com seu filho por 7 dias. Se não gostar, peça o reembolso e devolvemos 100% do valor. Sem perguntas e sem burocracia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM É -->
+<section class="notebook">
+  <div class="wrap center">
+    <span class="eyebrow">Sinceridade</span>
+    <h2>Para quem é o Missão Zero Tela</h2>
+    <div class="fit" style="text-align:left">
+      <div class="yes"><h3>É para você se…</h3><ul><li>Tem filho de 3 a 8 anos</li><li>Quer reduzir a tela sem guerra em casa</li><li>Tem pouco tempo e quer ideias prontas</li><li>Não quer gastar com material caro</li><li>Também serve para avós, tias e professoras</li></ul></div>
+      <div class="nope"><h3>Não é para você se…</h3><ul><li>Espera que a criança nunca mais use tela</li><li>Procura um tratamento ou terapia</li><li>Não pretende brincar nem 10 minutos por dia</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sky">
+  <div class="wrap center">
+    <span class="eyebrow">Dúvidas</span>
+    <h2>Perguntas frequentes</h2>
+    <div class="faq" style="text-align:left">
+      <details><summary>Como recebo o material?</summary><p>Logo após a confirmação do pagamento você recebe o acesso no seu e-mail. Pelo Pix, a liberação costuma ser em poucos minutos.</p></details>
+      <details><summary>Preciso imprimir?</summary><p>Não é obrigatório. Dá para ler as missões no celular. As cartas do pote e o passaporte ficam melhores impressos, e há versão preto e branco.</p></details>
+      <details><summary>Serve para qual idade?</summary><p>De 3 a 8 anos. No plano completo cada missão tem a faixa de idade indicada: 3–4, 5–6 e 7–8 anos.</p></details>
+      <details><summary>Qual a diferença entre os planos?</summary><p>O simples tem 20 historinhas-missão. O completo tem 100 missões separadas por idade e momento do dia, missões para a criança fazer sozinha e os 4 bônus.</p></details>
+      <details><summary>Preciso comprar algum material?</summary><p>Não. As missões usam o que já existe em casa: papel, giz, caixas, lençol, colheres, potes.</p></details>
+      <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia. É só pedir o reembolso e devolvemos 100% do valor.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--ink)">A próxima vez que ele pedir o celular…</span>
+    <h2>…você vai ter uma missão pronta para oferecer</h2>
+    <p class="lead" style="margin:14px auto 0;color:var(--ink)">A infância passa rápido. As brincadeiras de hoje são as lembranças de amanhã.</p>
+    <a class="btn pulse" href="#planos">Quero o Missão Zero Tela <small>100 missões + 4 bônus por R$ 27,90</small></a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Missão Zero Tela · Produto digital (PDF) · Este material não substitui orientação de pediatra ou psicólogo.</div>
+</footer>
+
+<div class="sticky" aria-label="Comprar">
+  <div class="p">100 missões + bônus<br><b>R$ 27,90</b></div>
+  <a class="btn" href="#planos">Quero agora</a>
+</div>
+
+<div class="modal" id="upgrade" hidden role="dialog" aria-modal="true" aria-labelledby="up-title">
+  <div class="modal-box">
+    <span class="eyebrow">Espera!</span>
+    <h3 id="up-title" style="font-size:26px">Por mais R$ 16,90 você leva 80 missões extras e os 4 bônus</h3>
+    <p style="color:var(--ink-soft)">São 5 vezes mais brincadeiras, com o Pote de Missões, o Passaporte e o Guia "Desligar sem birra".</p>
+    <a class="btn" href="#" data-checkout="completo" id="up-yes">Sim, quero o completo</a>
+    <a class="skip" href="#" data-checkout="simples" id="up-no">Não, quero só as 20 missões</a>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('upgrade');
+  document.getElementById('btn-simples').addEventListener('click', () => { modal.hidden = false; document.getElementById('up-yes').focus(); });
+  modal.addEventListener('click', e => { if (e.target === modal) modal.hidden = true; });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') modal.hidden = true; });
+  ['up-yes','up-no'].forEach(id => document.getElementById(id).addEventListener('click', () => { modal.hidden = true; }));
+</script>
+<script>
+  /* ===== CONFIGURE AQUI ===== cole os links de checkout da sua plataforma (Kiwify, Hotmart, Cakto...) */
+  const CHECKOUT = {
+    simples:  "https://SEU-CHECKOUT-PLANO-SIMPLES",
+    completo: "https://SEU-CHECKOUT-PLANO-COMPLETO"
+  };
+  document.querySelectorAll('[data-checkout]').forEach(a => {
+    a.href = CHECKOUT[a.dataset.checkout];
+    a.addEventListener('click', () => { if (window.fbq) fbq('track', 'InitiateCheckout', { value: a.dataset.checkout === 'completo' ? 27.90 : 11.00, currency: 'BRL' }); });
+  });
+</script>
+</body>
+</html>
