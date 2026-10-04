@@ -409,3 +409,14 @@ A versão A original foi movida para **tchauchupeta.vercel.app/a/** (`node src/p
 | `/b/` | B — a chupeta conta a história |
 | `/c/` | C — curta e direta |
 | `/d/` | D (mesma da principal) |
+
+---
+
+## 15. Página principal: mecanismo único + promessa
+
+A página principal (D) deixou de listar os formatos entregues (PDF, áudios, imprimíveis, mockup do kit). Agora ela vende:
+
+- **Grande ideia:** “a chupeta não precisa sumir. Ela pode se despedir.” (❌ quando a chupeta some × ✅ quando a criança se despede)
+- **Mecanismo único — Despedida Participativa:** 1. Preparar · 2. Participar · 3. Acolher
+- **Promessa:** “Imagine daqui a algumas semanas…” (filho orgulhoso do tchau, você sem improviso, família no mesmo combinado, lembrança bonita em vez de briga)
+- **Oferta:** o método completo da Despedida Participativa, o que fazer e dizer em cada momento, família no mesmo combinado, acesso imediato.
