@@ -130,8 +130,8 @@ const builders = {
       <div id="vp" style="position:absolute;left:0;right:0;top:220px;bottom:0;overflow:hidden">
         <div id="c" style="padding:10px 70px 0">
           <div class="tiny" style="text-align:center;font-size:26px">hoje às 23:41</div>
-          <div id="tt" style="font-size:62px;font-weight:800;line-height:1.15;margin-top:30px;letter-spacing:-.5px;min-height:1.15em"></div>
-          <ol id="ol" style="margin-top:40px;padding-left:56px;font-size:44px;line-height:1.42;font-weight:450">
+          <div id="tt" style="font-size:74px;font-weight:800;line-height:1.15;margin-top:30px;letter-spacing:-.5px;min-height:1.15em"></div>
+          <ol id="ol" style="margin-top:44px;padding-left:66px;font-size:54px;line-height:1.38;font-weight:450">
             ${v.itens.map((_, i) => `<li id="i${i}" style="margin-bottom:30px;display:none"></li>`).join('')}
           </ol>
         </div>
@@ -168,15 +168,15 @@ const builders = {
     const bubble = ([name, color, text], i) => {
       const first = i === 0 || msgs[i - 1][0] !== name;
       return `<div id="m${i}" style="align-self:flex-start;max-width:880px;background:#fff;border-radius:${first ? '8px' : '30px'} 30px 30px 30px;padding:16px 26px 12px;margin-top:${first ? 22 : 8}px;box-shadow:0 2px 2px rgba(0,0,0,.06);opacity:0">
-        ${first ? `<div style="color:${color};font-weight:700;font-size:30px">${name}</div>` : ''}
-        <div style="font-size:40px;line-height:1.35">${text} <span style="font-size:24px;color:#8e8e93;margin-left:10px">22:${String(3 + i * 2).padStart(2, '0')}</span></div></div>`;
+        ${first ? `<div style="color:${color};font-weight:700;font-size:34px">${name}</div>` : ''}
+        <div style="font-size:48px;line-height:1.32">${text} <span style="font-size:24px;color:#8e8e93;margin-left:10px">22:${String(3 + i * 2).padStart(2, '0')}</span></div></div>`;
     };
     const html = page(`
-      <div style="background:#5B4F9C;color:#fff;padding-bottom:26px">${status('22:17', '#fff')}
+      <div style="background:#5B4F9C;color:#fff;padding-bottom:26px;position:relative;z-index:5">${status('22:17', '#fff')}
         <div style="display:flex;align-items:center;gap:24px;padding:14px 44px 0"><span style="font-size:46px">‹</span>
         <div style="width:90px;height:90px;border-radius:50%;background:${C.peach};display:flex;align-items:center;justify-content:center;font-size:46px">👶</div>
         <div><div style="font-weight:700;font-size:40px">Mães da turminha 💛</div><div id="sub" style="font-size:28px;opacity:.85">Ju, Carol, Bia, Fê, você</div></div></div></div>
-      <div style="display:flex;flex-direction:column;padding:16px 40px">${msgs.map(bubble).join('')}</div>
+      <div id="chat" style="display:flex;flex-direction:column;padding:16px 40px">${msgs.map(bubble).join('')}</div>
       <div class="cta" id="cta" style="flex-direction:column;align-items:flex-start;gap:10px;background:#fff;color:${C.ink}">
         <div style="font-family:'Baloo 2';font-weight:800;font-size:50px;line-height:1.1">Se você se viu nessa conversa…</div>
         <div style="font-size:36px;line-height:1.4;color:#3c3c43">existe um jeito mais leve: <b>a criança se despede da chupeta</b>, com historinha, dia escolhido junto e um ritual de tchau.</div>
@@ -189,6 +189,7 @@ const builders = {
         const ty=TL.typing.findIndex(([a,b])=>t>=a&&t<b);
         document.getElementById('sub').textContent= ty>=0 ? N[ty]+' está digitando…' : 'Ju, Carol, Bia, Fê, você';
         appear(document.getElementById('cta'),TL.cta,t,80);
+        const k=t<TL.cta?0:ease((t-TL.cta)/.4);document.getElementById('chat').style.transform='translateY('+(-k*360)+'px)';
       };`);
     return { html, dur, voz, sfx };
   },
@@ -244,7 +245,7 @@ const builders = {
     tl.l = v.linhas.map((_, i) => { const a = t; voz.push([`vo4_${i}`, t]); sfx.push(['pop', t]); t += D[`vo4_${i}`] + 0.25; return a; });
     tl.cta = t; voz.push(['vo4_fim', t]); sfx.push(['pop', t]);
     const dur = t + D.vo4_fim + 1.2;
-    const hl = (txt, i, bg = '#fff', color = '#1c1c1e') => `<div id="l${i}" style="opacity:0;margin-top:${i === 2 || i === 5 ? 40 : 6}px"><span style="background:${bg};color:${color};padding:8px 20px;border-radius:12px;box-decoration-break:clone;-webkit-box-decoration-break:clone;line-height:1.7">${txt}</span></div>`;
+    const hl = (txt, i, bg = '#fff', color = '#1c1c1e') => `<div id="l${i}" style="opacity:0;margin-top:${i === 2 || i === 5 ? 28 : 4}px"><span style="background:${bg};color:${color};padding:8px 20px;border-radius:12px;box-decoration-break:clone;-webkit-box-decoration-break:clone;line-height:1.7">${txt}</span></div>`;
     const html = page(`
       <div class="a" style="inset:0;filter:blur(20px) brightness(.72);transform:scale(1.2)">${SC.leitura(1400)}</div>
       <div class="a" style="left:40px;right:40px;top:70px;display:flex;gap:8px">${[1, 1, 0].map((f) => `<div style="flex:1;height:6px;border-radius:3px;background:rgba(255,255,255,${f ? .95 : .4})"></div>`).join('')}</div>
@@ -253,7 +254,7 @@ const builders = {
       <div id="q" class="a" style="left:110px;right:110px;top:300px;border-radius:44px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,.25);opacity:0">
         <div style="background:linear-gradient(90deg,#F58529,#DD2A7B,#8134AF);color:#fff;text-align:center;font-weight:700;font-size:36px;padding:28px">Faça uma pergunta</div>
         <div style="background:#fff;text-align:center;font-weight:600;font-size:48px;line-height:1.25;padding:44px 46px">${v.pergunta} 😭</div></div>
-      <div class="a" style="left:70px;right:70px;top:820px;text-align:center;font-weight:700;font-size:48px">
+      <div class="a" style="left:70px;right:70px;top:690px;text-align:center;font-weight:700;font-size:46px">
         ${v.linhas.map(([txt], i) => i < 2 ? hl(txt, i) : i < 5 ? hl(txt, i, '#FFD66B') : hl(txt, i, C.night, '#fff')).join('')}</div>
       ${ctaCard('o passo a passo completo 👇')}`, 'body{background:#2a2556}', `
       const TL=${JSON.stringify(tl)};
