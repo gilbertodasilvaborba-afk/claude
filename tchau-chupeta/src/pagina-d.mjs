@@ -1,0 +1,465 @@
+// Gera a variante D da página de vendas em pagina-vendas/d/index.html (publicada em /d).
+// Uso: node src/pagina-d.mjs
+// Modelada na arte de referência enviada pelo cliente: foto real da criança, título com
+// marca-texto amarelo, benefícios com ícones redondos, faixa "Chegou o método", mockup do
+// produto (guia + áudios + imprimíveis) e botões em pílula amarela.
+// A foto (pagina-vendas/d/crianca.jpg) foi recortada da arte de referência; troque pelo
+// arquivo original em alta resolução quando tiver.
+
+import { writeFileSync, mkdirSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { OFERTA, esc, valor, pixelTag } from './oferta.mjs';
+import { pacifier, star, childWaving } from './illustrations.mjs';
+
+const root = join(dirname(fileURLToPath(import.meta.url)), '..');
+const out = join(root, 'pagina-vendas', 'd');
+
+const K = {
+  navy: '#1F2A6B', navyDeep: '#151D52', purple: '#7B3FBF', purpleSoft: '#EFE6FB',
+  yellow: '#FFD84D', yellowSoft: '#FFF4C7', pink: '#F7738A', mint: '#6CC7A8', lilac: '#B79BEA',
+  cream: '#FFFBF4', ink: '#1F2A6B', inkSoft: '#56608F',
+};
+
+// Cada botão leva no máximo à próxima seção; só os botões da oferta e do final levam ao checkout.
+const prox = (texto, alvo, extra = '') =>
+  `<a class="btn ${extra}" href="${alvo}"><span class="cur" aria-hidden="true">👆</span>${texto}</a>`;
+const ctaCheckout = (texto, extra = '') =>
+  `<a class="btn compra ${extra}" href="${esc(OFERTA.checkout)}" data-checkout>${texto} <span aria-hidden="true">→</span></a>`;
+
+const ic = {
+  heart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M12 20s-7-4.4-9-8.8C1.6 8 3.6 4.8 6.8 4.8c2 0 3.6 1.2 5.2 3 1.6-1.8 3.2-3 5.2-3 3.2 0 5.2 3.2 3.8 6.4C19 15.6 12 20 12 20z"/></svg>',
+  smile: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M8 14c1 1.4 2.4 2 4 2s3-.6 4-2"/><circle cx="9" cy="9.5" r=".6" fill="currentColor"/><circle cx="15" cy="9.5" r=".6" fill="currentColor"/></svg>',
+  house: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>',
+  star: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg>',
+  book: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 5.5C5.5 4.5 8.5 4.5 12 6.5c3.5-2 6.5-2 9-1V19c-2.5-1-5.5-1-9 1-3.5-2-6.5-2-9-1z"/><path d="M12 6.5V20"/></svg>',
+  phones: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 15v-3a8 8 0 0116 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg>',
+  print: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M7 9V3h10v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/></svg>',
+};
+
+const beneficios = [
+  [ic.heart, K.yellow, 'Método prático', 'e fácil de aplicar na rotina que você já tem.'],
+  [ic.smile, K.lilac, 'Ajuda a criança', 'a lidar com a mudança com mais segurança.'],
+  [ic.house, K.mint, 'Mais leve para a família', 'com todo mundo seguindo o mesmo combinado.'],
+  [ic.star, K.pink, 'Com recursos extras', 'para tornar o processo ainda mais leve e divertido.'],
+];
+
+const recebe = [
+  [ic.book, 'Guia em PDF', 'O passo a passo da despedida: como preparar seu filho, contar a história, viver o dia do tchau e acolher os dias seguintes.'],
+  [ic.phones, 'Histórias em áudio', 'Histórias para ouvir com seu filho e ajudar a acalmar e apoiar a transição.'],
+  [ic.print, 'Imprimíveis', 'A “Minha Jornada” e outros materiais para a criança acompanhar o caminho e tornar tudo mais divertido.'],
+];
+
+const passos = [
+  ['Leia o guia', 'Em poucos minutos você entende o caminho e sabe o que fazer em cada fase.'],
+  ['Prepare seu filho', 'Use as histórias em áudio para ele entender que a chupeta vai se despedir.'],
+  ['Viva a jornada juntos', 'Com os imprimíveis, cada passo vira uma conquista que ele acompanha e comemora.'],
+];
+
+const faq = [
+  ['Meu filho é muito apegado. Serve para ele?', 'Sim. O método começa preparando a criança, justamente porque os mais apegados são os que mais sentem quando a chupeta some de repente. Tudo respeita o tempo de cada criança.'],
+  ['Como recebo o material?', 'Assim que o pagamento é aprovado, você recebe o acesso no seu e-mail. Dá para ler, ouvir e imprimir pelo celular ou computador.'],
+  ['Qual a idade certa para tirar a chupeta?', 'Não existe uma data igual para todas as crianças. Em caso de dúvida sobre saúde bucal ou desenvolvimento, converse com o pediatra ou odontopediatra. O Tchau Chupeta ajuda no <i>como</i> fazer quando a família decidir.'],
+  ['E se eu não gostar?', `Você tem ${OFERTA.garantiaDias} dias de garantia. Se não for para a sua família, peça o reembolso e receba 100% do valor de volta, sem perguntas.`],
+];
+
+const bonusHtml = OFERTA.bonus.length
+  ? OFERTA.bonus.map((b) => `<li>🎁 <b>Bônus: ${esc(b.titulo)}</b> — ${esc(b.texto)}</li>`).join('')
+  : '';
+
+// Mockup do produto em HTML/CSS: livro + celular com áudio + folha "Minha Jornada"
+const mockup = (classe = '') => `<div class="mock ${classe}" aria-hidden="true">
+  <div class="livro">
+    <div class="lt">Tchau<br><b>Chupeta!</b></div>
+    <div class="li">${childWaving({ size: 90 })}</div>
+    <div class="ls">Guia prático</div>
+  </div>
+  <div class="fone">
+    <div class="tela">
+      <span class="lua">🌙</span>
+      <span class="ft">Histórias para ajudar na transição</span>
+      <span class="play">▶</span>
+      <span class="barra"><i></i></span>
+    </div>
+  </div>
+  <div class="folha">
+    <b>Minha Jornada</b>
+    <span>☑ ─────</span><span>☑ ─────</span><span>☐ ─────</span><span>☐ ─────</span>
+    <em>${star(18, K.yellow)}</em>
+  </div>
+</div>`;
+
+const html = `<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tchau Chupeta — Seu filho ainda chupa chupeta?</title>
+<meta name="description" content="Você não está sozinha. Conheça o método Tchau Chupeta: guia em PDF, histórias em áudio e imprimíveis para uma despedida carinhosa da chupeta.">
+<meta property="og:title" content="Seu filho(a) ainda chupa chupeta?">
+<meta property="og:description" content="Chegou o método Tchau Chupeta: um passo a passo carinhoso, no tempo do seu filho.">
+<meta property="og:image" content="crianca.jpg">
+<meta name="theme-color" content="${K.navy}">
+<link rel="preload" href="../fonts/Baloo2-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="crianca.jpg" as="image">
+<style>
+@font-face{font-family:'Baloo 2';font-weight:400 800;font-display:swap;src:url(../fonts/Baloo2-latin.woff2) format('woff2')}
+@font-face{font-family:'Nunito';font-weight:200 1000;font-display:swap;src:url(../fonts/Nunito-latin.woff2) format('woff2')}
+:root{--navy:${K.navy};--navy-deep:${K.navyDeep};--purple:${K.purple};--purple-soft:${K.purpleSoft};--yellow:${K.yellow};--yellow-soft:${K.yellowSoft};
+  --pink:${K.pink};--mint:${K.mint};--lilac:${K.lilac};--cream:${K.cream};--ink:${K.ink};--ink-soft:${K.inkSoft};--r:24px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',system-ui,sans-serif;font-size:18px;line-height:1.55;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+svg{max-width:100%;height:auto;display:block}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:'Baloo 2',system-ui,sans-serif;font-weight:800;line-height:1.05;letter-spacing:-.01em}
+h2{font-size:clamp(30px,4.6vw,44px);margin-bottom:14px}
+h3{font-size:21px;line-height:1.2}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.narrow{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+.center{text-align:center}
+.mt{background:linear-gradient(transparent 52%,var(--yellow) 52%,var(--yellow) 90%,transparent 90%);padding:0 6px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.acao{margin-top:34px;text-align:center}
+
+/* botões em pílula amarela, como na referência */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Baloo 2',sans-serif;font-weight:800;font-size:21px;letter-spacing:.01em;
+  color:var(--navy);background:var(--yellow);padding:16px 34px;border-radius:999px;text-decoration:none;text-transform:uppercase;
+  box-shadow:0 6px 0 #E0B21E,0 14px 30px rgba(31,42,107,.18);transition:transform .15s,box-shadow .15s;text-align:center}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(4px);box-shadow:0 2px 0 #E0B21E}
+.btn .cur{font-size:20px}
+.btn.compra{background:var(--pink);color:#fff;box-shadow:0 6px 0 #D2556C,0 14px 30px rgba(247,115,138,.35)}
+.btn.compra:active{box-shadow:0 2px 0 #D2556C}
+.btn.full{width:100%}
+.btn.pulse{animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+.selos{list-style:none;display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;margin-top:16px;font-size:14px;font-weight:700;opacity:.8}
+
+/* pincelada azul, como a faixa "Chegou o método" */
+.pincel{position:relative;display:inline-block;color:#fff;padding:14px 34px 18px;transform:rotate(-3deg)}
+.pincel::before{content:'';position:absolute;inset:0;background:var(--navy);z-index:-1;
+  clip-path:polygon(2% 14%,10% 4%,30% 9%,52% 2%,74% 8%,94% 3%,99% 22%,97% 48%,100% 76%,92% 96%,70% 90%,48% 98%,26% 91%,6% 97%,0% 74%,3% 46%)}
+.pincel b{color:var(--yellow)}
+.risquinhos{display:inline-block;color:var(--yellow);font-weight:900;font-size:.8em;transform:translateY(-.1em)}
+
+/* hero */
+.hero{position:relative;background:linear-gradient(180deg,#FFF6E9 0%,#FDEFF6 100%);overflow:hidden}
+.hero .grid{display:grid;grid-template-columns:1fr;align-items:center;min-height:620px}
+.hero .txt{max-width:56%}
+.hero .txt{padding:56px 0 56px;position:relative;z-index:2}
+.hero h1{font-size:clamp(40px,6.4vw,78px);transform:rotate(-3deg);transform-origin:left;margin-bottom:22px}
+.hero h1 .l1{display:block;font-size:.55em;color:var(--navy)}
+.hero h1 .l2{display:inline-block;color:var(--navy);background:linear-gradient(transparent 40%,var(--yellow) 40%,var(--yellow) 88%,transparent 88%);padding:0 8px}
+.hero h1 .l3{display:block;color:var(--purple)}
+.hero .sozinha{font-family:'Baloo 2';font-weight:800;font-size:26px;line-height:1.15;transform:rotate(-2deg);transform-origin:left}
+.hero .sozinha span{display:block;font-family:'Nunito';font-weight:600;font-size:19px;color:var(--ink-soft);margin-top:6px;line-height:1.45}
+.hero .sozinha mark{background:linear-gradient(transparent 45%,var(--yellow) 45%);color:var(--navy);font-weight:800;padding:0 4px}
+.hero .foto{position:absolute;top:0;right:0;bottom:0;width:46%}
+.hero .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 28%);mask-image:linear-gradient(90deg,transparent 0%,#000 28%)}
+.sticker{position:absolute;right:24px;bottom:34px;background:var(--yellow);color:var(--navy);font-family:'Baloo 2';font-weight:800;font-size:24px;line-height:1.05;
+  padding:16px 20px;transform:rotate(-6deg);box-shadow:0 10px 26px rgba(31,42,107,.18);text-align:center;
+  clip-path:polygon(3% 6%,96% 0,100% 90%,6% 100%)}
+.nope{position:absolute;top:30px;right:30px;width:84px;height:84px;border-radius:50%;border:7px solid var(--pink);background:rgba(255,255,255,.85);display:grid;place-content:center;z-index:2}
+.nope::after{content:'';position:absolute;left:50%;top:50%;width:84%;height:7px;background:var(--pink);transform:translate(-50%,-50%) rotate(-45deg);border-radius:4px}
+.nope svg{width:50px}
+
+/* benefícios */
+.bens{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 30px;margin-top:30px}
+.ben{display:flex;gap:18px;align-items:center;background:#fff;border-radius:var(--r);padding:20px 22px;box-shadow:0 8px 30px rgba(31,42,107,.06)}
+.ben .bola{flex:0 0 66px;height:66px;border-radius:50%;display:grid;place-content:center;color:#fff}
+.ben .bola svg{width:34px}
+.ben h3{color:var(--navy)}
+.ben p{color:var(--ink-soft);font-size:17px}
+
+/* chegou o método */
+.metodo{background:radial-gradient(ellipse at 50% 0%,#FFF6E9,var(--cream))}
+.metodo h2{font-size:clamp(34px,5.4vw,56px)}
+.metodo .sub{font-size:20px;max-width:620px;margin:22px auto 0}
+
+/* mockup */
+.mock{position:relative;width:min(560px,100%);height:330px;margin:34px auto 0}
+.livro{position:absolute;left:4%;bottom:0;width:46%;height:92%;border-radius:8px 16px 16px 8px;background:linear-gradient(160deg,#EAF2FF,#F7EEFF);
+  box-shadow:inset 10px 0 0 rgba(31,42,107,.08),0 22px 40px rgba(31,42,107,.25);transform:rotate(-6deg);padding:18px 16px;text-align:center;overflow:hidden;z-index:1}
+.livro .lt{font-family:'Baloo 2';font-weight:800;font-size:30px;line-height:.95;color:var(--navy)}
+.livro .lt b{color:var(--purple)}
+.livro .li{width:96px;margin:8px auto 0}
+.livro .ls{position:absolute;left:12px;right:12px;bottom:14px;font-size:11px;font-weight:800;color:var(--navy);background:rgba(255,255,255,.75);border-radius:8px;padding:5px}
+.fone{position:absolute;left:44%;bottom:6px;width:23%;height:84%;background:var(--navy-deep);border-radius:22px;padding:7px;box-shadow:0 22px 40px rgba(31,42,107,.3);z-index:3}
+.fone .tela{height:100%;border-radius:16px;background:linear-gradient(180deg,#2B3990,#4A3C9C);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:10px;text-align:center}
+.fone .lua{font-size:30px}
+.fone .ft{font-size:12px;font-weight:800;line-height:1.25}
+.fone .play{width:34px;height:34px;border-radius:50%;background:#fff;color:var(--navy);display:grid;place-content:center;font-size:13px}
+.fone .barra{width:80%;height:4px;background:rgba(255,255,255,.3);border-radius:4px}
+.fone .barra i{display:block;width:40%;height:100%;background:var(--yellow);border-radius:4px}
+.folha{position:absolute;right:2%;bottom:14px;width:30%;height:76%;background:#fff;border-radius:6px;box-shadow:0 18px 34px rgba(31,42,107,.2);transform:rotate(5deg);padding:16px 12px;display:flex;flex-direction:column;gap:9px;z-index:2;font-size:12px;color:#9AA0C3}
+.folha b{font-family:'Baloo 2';color:var(--navy);font-size:15px;border-bottom:2px solid var(--yellow);padding-bottom:4px}
+.folha span{white-space:nowrap;overflow:hidden}
+.folha em{position:absolute;right:10px;bottom:10px}
+
+/* o que você recebe (faixa azul com ícones, como o rodapé da referência) */
+.recebe{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.recebe .kick{color:var(--yellow)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:26px 22px}
+.card .ico{width:64px;height:64px;border-radius:50%;border:2px solid rgba(255,255,255,.6);display:grid;place-content:center;margin-bottom:14px}
+.card .ico svg{width:32px}
+.card h3{margin-bottom:6px}
+.card p{opacity:.85;font-size:17px}
+.kick{display:inline-block;font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);margin-bottom:10px}
+
+/* como funciona */
+.passos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px;counter-reset:p}
+.passo{background:#fff;border-radius:var(--r);padding:28px 24px 24px;position:relative;box-shadow:0 8px 30px rgba(31,42,107,.06)}
+.passo::before{counter-increment:p;content:counter(p);position:absolute;top:-20px;left:24px;width:44px;height:44px;border-radius:50%;background:var(--yellow);color:var(--navy);
+  font-family:'Baloo 2';font-weight:800;font-size:24px;display:grid;place-content:center;box-shadow:0 4px 0 #E0B21E}
+.passo h3{margin:10px 0 6px}
+.passo p{color:var(--ink-soft);font-size:17px}
+
+/* oferta */
+.oferta{background:linear-gradient(180deg,#FDEFF6,#FFF6E9)}
+.box{background:#fff;border-radius:30px;max-width:560px;margin:10px auto 0;padding:10px 26px 30px;box-shadow:0 30px 70px rgba(31,42,107,.18);border:3px solid var(--yellow)}
+.box .mock{height:250px;margin-top:0;transform:scale(.86)}
+.box ul{list-style:none;margin:4px 0 20px}
+.box li{padding:9px 0 9px 32px;position:relative;border-bottom:1px dashed rgba(31,42,107,.14)}
+.box li::before{content:'✓';position:absolute;left:4px;top:8px;width:20px;height:20px;border-radius:50%;background:var(--mint);color:#fff;font-size:12px;font-weight:900;display:grid;place-content:center}
+.preco{text-align:center;margin-bottom:18px}
+.preco .de{text-decoration:line-through;opacity:.55;font-weight:700}
+.preco .por{font-family:'Baloo 2';font-weight:800;font-size:66px;line-height:1;color:var(--purple)}
+.preco .por small{font-size:28px;color:var(--navy)}
+.preco .parc{font-weight:700;color:var(--ink-soft)}
+.box ul.selos{margin:14px 0 0}
+.box .selos li{padding:0;border:0}
+.box .selos li::before{display:none}
+.gar{display:flex;gap:14px;align-items:center;margin-top:20px;background:var(--yellow-soft);border-radius:16px;padding:14px 16px;font-size:15px}
+.gar .s{flex:0 0 56px;height:56px;border-radius:50%;background:var(--yellow);display:grid;place-content:center;font-family:'Baloo 2';font-weight:800;font-size:24px;color:var(--navy)}
+
+/* faq */
+details{background:#fff;border-radius:18px;margin-top:12px;box-shadow:0 4px 18px rgba(31,42,107,.06)}
+summary{list-style:none;cursor:pointer;padding:18px 54px 18px 22px;font-weight:800;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';position:absolute;right:20px;top:50%;transform:translateY(-50%);font-family:'Baloo 2';font-size:28px;color:var(--purple);transition:transform .2s}
+details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+details p{padding:0 22px 20px;color:var(--ink-soft)}
+
+/* final */
+.final{background:var(--navy);color:#fff;text-align:center;position:relative;overflow:hidden}
+.final h2{max-width:680px;margin:0 auto}
+.final h2 b{color:var(--yellow)}
+.final .selos{color:#fff}
+footer{background:var(--navy-deep);color:rgba(255,255,255,.6);font-size:13px;text-align:center;padding:30px 20px 110px}
+footer p+p{margin-top:8px}
+.star{position:absolute;opacity:.9}
+
+.sticky{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(255,251,244,.96);backdrop-filter:blur(8px);box-shadow:0 -6px 24px rgba(31,42,107,.15);z-index:50;transform:translateY(110%);transition:transform .3s}
+.sticky.on{transform:none}
+.sticky .btn{width:100%;font-size:18px;padding:14px 20px}
+@media(min-width:861px){.sticky{display:none}footer{padding-bottom:30px}}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.vis{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+@media(max-width:860px){
+  body{font-size:17px}
+  section{padding:56px 0}
+  .hero{display:flex;flex-direction:column}
+  .hero .grid{grid-template-columns:1fr;min-height:0;width:100%}
+  .hero .foto{position:relative;order:-1;width:100%;height:380px}
+  .hero .foto img{object-position:50% 55%;-webkit-mask-image:linear-gradient(180deg,#000 78%,transparent 100%);mask-image:linear-gradient(180deg,#000 78%,transparent 100%)}
+  .hero .txt{max-width:none;padding:4px 0 46px}
+  .sticker{font-size:17px;right:14px;bottom:auto;top:18px;left:auto;padding:10px 12px}
+  .nope{right:auto;left:16px}
+  .nope{width:62px;height:62px;border-width:5px;top:16px;right:16px}
+  .nope svg{width:36px}
+  .bens,.cards,.passos{grid-template-columns:1fr}
+  .passos{gap:30px}
+  .mock{height:250px}
+  .livro .lt{font-size:22px}
+  .livro .li{width:66px}
+  .livro .ls{font-size:9px}
+  .fone .ft{font-size:9px}
+  .fone .lua{font-size:22px}
+  .folha{font-size:10px;padding:12px 8px}
+  .folha b{font-size:12px}
+  .box .mock{height:210px}
+  .btn{font-size:18px;padding:15px 22px;width:100%}
+}
+</style>
+${pixelTag('pagina-d')}
+</head>
+<body>
+
+<!-- 1. HERO: foto real + pergunta direta + "você não está sozinha" -->
+<header class="hero" id="topo">
+  <div class="wrap grid">
+    <div class="txt">
+      <h1><span class="l1">Seu filho(a) ainda</span><span class="l2">chupa</span><span class="l3">Chupeta?</span></h1>
+      <p class="sozinha">Você não está sozinha!
+        <span>Muitas mães passam por isso e se sentem frustradas, mas <mark>existe um caminho carinhoso!</mark></span></p>
+      <div class="acao" style="text-align:left">${prox('Quero saber mais', '#beneficios', 'pulse')}</div>
+    </div>
+  </div>
+  <div class="foto">
+    <img src="crianca.jpg" alt="Criança pequena com chupeta abraçada a um ursinho de pelúcia" width="424" height="680" fetchpriority="high">
+    <span class="nope" aria-hidden="true">${pacifier({ size: 50 })}</span>
+    <span class="sticker">Mais sorrisos,<br>menos briga<br>pela chupeta! 💛</span>
+  </div>
+</header>
+
+<!-- 2. BENEFÍCIOS com ícones redondos -->
+<section id="beneficios">
+  <div class="wrap">
+    <div class="narrow center reveal">
+      <span class="kick">Por que funciona melhor que “sumir” com a chupeta</span>
+      <h2>Uma despedida <span class="mt">carinhosa</span>, no tempo do seu filho</h2>
+    </div>
+    <div class="bens">
+      ${beneficios.map(([i, cor, t, d]) => `<div class="ben reveal"><span class="bola" style="background:${cor}">${i}</span><div><h3>${t}</h3><p>${d}</p></div></div>`).join('\n      ')}
+    </div>
+    <div class="acao reveal">${prox('Conhecer o método', '#metodo')}</div>
+  </div>
+</section>
+
+<!-- 3. CHEGOU O MÉTODO (faixa em pincelada + mockup) -->
+<section class="metodo" id="metodo">
+  <div class="narrow center">
+    <h2 class="reveal"><span class="pincel">Chegou o método <b>Tchau Chupeta!</b></span></h2>
+    <p class="sub reveal">Um passo a passo simples e carinhoso para ajudar seu filho(a) a se despedir da chupeta, <b>no tempo dele</b>, com a família inteira no mesmo caminho.</p>
+  </div>
+  <div class="wrap reveal">${mockup()}</div>
+  <div class="acao reveal">${prox('Ver o que vem no kit', '#recebe')}</div>
+</section>
+
+<!-- 4. O QUE VOCÊ RECEBE (3 formatos) -->
+<section class="recebe" id="recebe">
+  <span class="star" style="top:12%;left:6%">${star(22, K.yellow)}</span>
+  <span class="star" style="bottom:14%;right:7%">${star(18, K.yellow)}</span>
+  <div class="wrap">
+    <div class="narrow center reveal">
+      <span class="kick">O que você recebe</span>
+      <h2>Tudo em um só lugar, para ler, ouvir e imprimir</h2>
+    </div>
+    <div class="cards">
+      ${recebe.map(([i, t, d]) => `<div class="card reveal"><span class="ico">${i}</span><h3>${t}</h3><p>${d}</p></div>`).join('\n      ')}
+    </div>
+    <div class="acao reveal">${prox('Ver como funciona', '#passos')}</div>
+  </div>
+</section>
+
+<!-- 5. COMO FUNCIONA em 3 passos -->
+<section id="passos">
+  <div class="wrap">
+    <div class="narrow center reveal">
+      <span class="kick">Como funciona</span>
+      <h2>Em 3 passos, <span class="mt">sem complicação</span></h2>
+    </div>
+    <div class="passos">
+      ${passos.map(([t, d]) => `<div class="passo reveal"><h3>${t}</h3><p>${d}</p></div>`).join('\n      ')}
+    </div>
+    <div class="acao reveal">${prox('Quero começar', '#oferta')}</div>
+  </div>
+</section>
+
+<!-- 6. OFERTA -->
+<section class="oferta" id="oferta">
+  <div class="narrow center reveal">
+    <span class="kick">Oferta especial</span>
+    <h2>Leve o kit completo <span class="mt">Tchau Chupeta</span></h2>
+  </div>
+  <div class="wrap">
+    <div class="box reveal">
+      ${mockup()}
+      <ul>
+        <li><b>Guia em PDF</b> com o passo a passo da despedida</li>
+        <li><b>Histórias em áudio</b> para acalmar e apoiar seu filho</li>
+        <li><b>Imprimíveis</b> “Minha Jornada” para a criança acompanhar</li>
+        <li>Acesso imediato no seu e-mail</li>
+        ${bonusHtml}
+      </ul>
+      <div class="preco" id="preco">
+        ${OFERTA.precoDe ? `<div class="de">De R$ ${esc(OFERTA.precoDe)}</div>` : ''}
+        <div class="por"><small>R$</small> ${esc(OFERTA.preco)}</div>
+        ${OFERTA.parcelas ? `<div class="parc">ou ${esc(OFERTA.parcelas)}</div>` : ''}
+        <div class="parc">pagamento único</div>
+      </div>
+      ${ctaCheckout('Quero o Tchau Chupeta', 'full pulse')}
+      <div class="gar"><span class="s">${OFERTA.garantiaDias}</span><div><b>${OFERTA.garantiaDias} dias de garantia.</b> Se não for para a sua família, você pede o reembolso e recebe 100% de volta.</div></div>
+      <ul class="selos"><li>🔒 Compra segura</li><li>⚡ Acesso imediato</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- 7. DÚVIDAS -->
+<section id="duvidas" style="padding-top:20px">
+  <div class="narrow">
+    <div class="center reveal"><span class="kick">Dúvidas frequentes</span><h2>Ficou alguma dúvida?</h2></div>
+    ${faq.map(([p, r]) => `<details class="reveal"><summary>${p}</summary><p>${r}</p></details>`).join('\n    ')}
+  </div>
+</section>
+
+<!-- 8. FECHAMENTO -->
+<section class="final" id="final">
+  <span class="star" style="top:14%;left:8%">${star(20, K.yellow)}</span>
+  <span class="star" style="top:24%;right:10%">${star(14, K.yellow)}</span>
+  <div class="narrow">
+    <h2 class="reveal">Transforme a despedida da chupeta em <b>uma lembrança carinhosa</b> para vocês dois.</h2>
+    <div class="acao reveal">${ctaCheckout('Quero o Tchau Chupeta')}
+      <ul class="selos"><li>🔒 Compra segura</li><li>⚡ Acesso imediato</li><li>🛡️ Garantia de ${OFERTA.garantiaDias} dias</li></ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><b>Tchau Chupeta</b> © ${new Date().getFullYear()}. Todos os direitos reservados.</p>
+  <p>Este material é educativo e não substitui a orientação de pediatras, odontopediatras ou outros profissionais de saúde. Cada criança tem seu próprio ritmo, e os resultados podem variar de família para família.</p>
+</footer>
+
+<div class="sticky" id="sticky">${prox('Quero saber mais', '#beneficios')}</div>
+
+<script>
+// Checkout: repassa UTMs e dispara InitiateCheckout
+(function(){
+  var q = location.search.slice(1);
+  document.querySelectorAll('[data-checkout]').forEach(function(a){
+    if (q && a.href.indexOf('http') === 0) a.href += (a.href.indexOf('?') < 0 ? '?' : '&') + q;
+    a.addEventListener('click', function(){ if (window.fbq) fbq('track', 'InitiateCheckout', { content_category: 'pagina-d', value: ${valor}, currency: 'BRL' }); });
+  });
+})();
+
+// Barra fixa: leva à próxima seção abaixo da tela atual
+(function(){
+  var btn = document.querySelector('#sticky .btn');
+  btn.addEventListener('click', function(ev){
+    var secs = document.querySelectorAll('header.hero, section'), alvo = null;
+    for (var i = 0; i < secs.length; i++) { if (secs[i].getBoundingClientRect().top > 80) { alvo = secs[i]; break; } }
+    if (!alvo) return;
+    ev.preventDefault();
+    alvo.scrollIntoView({ behavior: 'smooth' });
+  });
+  var sticky = document.getElementById('sticky'), hero = document.querySelector('.hero'), oferta = document.getElementById('oferta'), fim = document.getElementById('final');
+  var pastHero = false, onOffer = false, onFim = false;
+  function set(){ sticky.classList.toggle('on', pastHero && !onOffer && !onFim); }
+  new IntersectionObserver(function(e){ pastHero = !e[0].isIntersecting; set(); }).observe(hero);
+  new IntersectionObserver(function(e){ onOffer = e[0].isIntersecting; set(); }, { threshold: .2 }).observe(oferta);
+  new IntersectionObserver(function(e){ onFim = e[0].isIntersecting; set(); }, { threshold: .2 }).observe(fim);
+})();
+
+// Revela as seções ao rolar
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { els.forEach(function(e){ e.classList.add('vis'); }); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+</body>
+</html>
+`;
+
+mkdirSync(out, { recursive: true });
+writeFileSync(join(out, 'index.html'), html);
+console.log('ok → pagina-vendas/d/index.html');

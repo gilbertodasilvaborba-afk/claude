@@ -379,3 +379,17 @@ Botões: cada um leva à seção seguinte; só os da oferta e do P.S. abrem o ch
 | 6 | “Hoje à noite pode ser a primeira noite do plano” | Fechamento curto |
 
 Evento extra do Pixel: `ComparacaoUsada`. Eventos levam `content_category: pagina-c`. Nos anúncios, use `utm_content=pagina-c`.
+
+---
+
+## 13. Página D (teste A/B/C/D) — `/d`
+
+`pagina-vendas/d/index.html`, publicada em **tchauchupeta.vercel.app/d**. Gerada por `node src/pagina-d.mjs` (usa o mesmo `src/oferta.mjs`).
+
+**Modelada na arte de referência do cliente:** foto real da criança, “Seu filho(a) ainda chupa chupeta?” com marca-texto amarelo, “Você não está sozinha!”, 4 benefícios com ícones redondos, faixa em pincelada “Chegou o método Tchau Chupeta!”, mockup do kit (livro + celular com áudio + imprimível “Minha Jornada”), faixa azul com os 3 formatos e botões em pílula amarela.
+
+- A foto `pagina-vendas/d/crianca.jpg` foi recortada da arte de referência (424×680). Troque pelo arquivo original em alta resolução quando tiver; confirme que a imagem pode ser usada (IA, banco de imagens licenciado ou autorização dos pais).
+- ⚠️ A página cita **Guia em PDF, Histórias em áudio e Imprimíveis**, como a arte. Confirme que o produto entrega os três.
+- Frases da arte que viram promessa absoluta foram suavizadas: “Funciona de verdade, sem estresse” → “Mais leve para a família”; “sem traumas” saiu; “mais noites tranquilas” → “menos briga pela chupeta”.
+
+Eventos do Pixel com `content_category: pagina-d`. Nos anúncios, use `utm_content=pagina-d`.
