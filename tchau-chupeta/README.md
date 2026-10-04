@@ -393,3 +393,19 @@ Evento extra do Pixel: `ComparacaoUsada`. Eventos levam `content_category: pagin
 - Frases da arte que viram promessa absoluta foram suavizadas: “Funciona de verdade, sem estresse” → “Mais leve para a família”; “sem traumas” saiu; “mais noites tranquilas” → “menos briga pela chupeta”.
 
 Eventos do Pixel com `content_category: pagina-d`. Nos anúncios, use `utm_content=pagina-d`.
+
+---
+
+## 14. Página principal = versão D
+
+A partir de agora, **tchauchupeta.vercel.app** mostra a versão D. `node src/pagina-d.mjs` gera as duas cópias: `pagina-vendas/index.html` (principal) e `pagina-vendas/d/index.html` (/d).
+
+A versão A original foi movida para **tchauchupeta.vercel.app/a/** (`node src/pagina.mjs` → `pagina-vendas/a/index.html`). B e C continuam em `/b/` e `/c/`.
+
+| Endereço | Versão |
+|---|---|
+| `/` | D (principal) |
+| `/a/` | A — carta de vendas longa |
+| `/b/` | B — a chupeta conta a história |
+| `/c/` | C — curta e direta |
+| `/d/` | D (mesma da principal) |

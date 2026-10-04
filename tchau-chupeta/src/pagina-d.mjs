@@ -1,4 +1,5 @@
-// Gera a variante D da página de vendas em pagina-vendas/d/index.html (publicada em /d).
+// Gera a página principal (/) e a cópia em /d a partir da variante D.
+// Saídas: pagina-vendas/index.html (página principal) e pagina-vendas/d/index.html.
 // Uso: node src/pagina-d.mjs
 // Modelada na arte de referência enviada pelo cliente: foto real da criança, título com
 // marca-texto amarelo, benefícios com ícones redondos, faixa "Chegou o método", mockup do
@@ -98,7 +99,7 @@ const html = `<!doctype html>
 <meta name="description" content="Você não está sozinha. Conheça o método Tchau Chupeta: guia em PDF, histórias em áudio e imprimíveis para uma despedida carinhosa da chupeta.">
 <meta property="og:title" content="Seu filho(a) ainda chupa chupeta?">
 <meta property="og:description" content="Chegou o método Tchau Chupeta: um passo a passo carinhoso, no tempo do seu filho.">
-<meta property="og:image" content="crianca.jpg">
+<meta property="og:image" content="https://tchauchupeta.vercel.app/d/crianca.jpg">
 <meta name="theme-color" content="${K.navy}">
 <link rel="preload" href="../fonts/Baloo2-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="crianca.jpg" as="image">
@@ -462,4 +463,10 @@ ${pixelTag('pagina-d')}
 
 mkdirSync(out, { recursive: true });
 writeFileSync(join(out, 'index.html'), html);
-console.log('ok → pagina-vendas/d/index.html');
+
+// Página principal: mesmo HTML com os caminhos ajustados para a raiz do site.
+const principal = html
+  .replaceAll('../fonts/', 'fonts/')
+  .replaceAll('"crianca.jpg"', '"d/crianca.jpg"');
+writeFileSync(join(root, 'pagina-vendas', 'index.html'), principal);
+console.log('ok → pagina-vendas/index.html (principal) e pagina-vendas/d/index.html');

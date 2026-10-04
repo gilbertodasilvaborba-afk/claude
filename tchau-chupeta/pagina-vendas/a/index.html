@@ -1,68 +1,4 @@
-// Gera a página de vendas A do Tchau Chupeta em pagina-vendas/a/index.html (publicada em /a).
-// A página principal (/) agora é a versão D — veja src/pagina-d.mjs.
-// Uso: node src/pagina.mjs
-// Preço, checkout, garantia e Pixel ficam em src/oferta.mjs (compartilhado com a página B).
-
-import { writeFileSync, mkdirSync, copyFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { OFERTA, esc, valor, pixelTag } from './oferta.mjs';
-import { C, pacifier, star, sparkle, heart, moon, cloud, familyHug, childWaving } from './illustrations.mjs';
-
-const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const out = join(root, 'pagina-vendas', 'a');
-const fontesDir = join(root, 'pagina-vendas', 'fonts');
-
-// Cada botão leva no máximo à próxima etapa da página; só os botões depois do preço levam ao checkout.
-const cta = (texto = 'Quero começar a despedida', extra = '', alvo = '#preco') =>
-  `<a class="btn ${extra}" href="${alvo}">${texto} <span aria-hidden="true">→</span></a>`;
-const ctaCheckout = (texto, extra = '') =>
-  `<a class="btn ${extra}" href="${esc(OFERTA.checkout)}" data-checkout>${texto} <span aria-hidden="true">→</span></a>`;
-
-const selos = `<ul class="selos">
-  <li>🔒 Compra segura</li><li>⚡ Acesso imediato</li><li>🛡️ Garantia de ${OFERTA.garantiaDias} dias</li>
-</ul>`;
-
-const dores = [
-  'Você tira a chupeta, ele chora… e no fim você acaba devolvendo.',
-  'Ouve <b>“mãe, me dá a chupeta”</b> tantas vezes que já perdeu a conta.',
-  'Já escondeu, jogou fora ou “deu pro bebê que precisava”… e voltou atrás.',
-  'Tem medo de mexer na chupeta e bagunçar o sono da casa inteira.',
-  'Cada adulto da família fala uma coisa, e ninguém segue o mesmo combinado.',
-  'Sabe que chegou a hora, mas não faz ideia de <b>por onde começar</b>.',
-];
-
-const etapas = [
-  { n: 1, cor: C.peach, titulo: 'Preparar', texto: 'Como começar a conversa semanas antes, para a mudança não chegar de surpresa. Seu filho vai sendo avisado com leveza, no tempo dele.' },
-  { n: 2, cor: C.lavender, titulo: 'Contar a história', texto: 'Como criar a narrativa da despedida: uma história simples, com começo, meio e fim, que dá sentido ao “tchau” para a cabecinha da criança.' },
-  { n: 3, cor: C.mint, titulo: 'Envolver seu filho', texto: 'Como fazer a criança participar das escolhas e se sentir parte do momento, em vez de alguém de quem “tiraram” alguma coisa.' },
-  { n: 4, cor: C.sun, titulo: 'O dia do tchau', texto: 'O roteiro do grande dia: o que fazer, o que dizer e como transformar a despedida em um marco de crescimento para lembrar com carinho.' },
-  { n: 5, cor: C.peachDeep, titulo: 'Acolher os dias seguintes', texto: 'O que fazer quando ele pedir a chupeta de novo, como manter a família no mesmo combinado e como acolher as noites de adaptação.' },
-];
-
-const erros = [
-  { t: 'Sumir com a chupeta sem avisar', d: 'Para a criança, algo que dava segurança desaparece sem explicação. A reação costuma ser de perda e não de entendimento.' },
-  { t: 'Voltar atrás no meio do caminho', d: 'Quando a chupeta volta depois de muito choro, a criança aprende que o choro traz a chupeta de volta. É assim que nasce o ciclo.' },
-  { t: 'Cada adulto fazer de um jeito', d: 'Se a mãe tira, a avó devolve e o pai não sabe o que dizer, a criança fica confusa. Combinado da família vem antes do dia do tchau.' },
-];
-
-const faq = [
-  { p: 'Meu filho é muito apegado. Vai funcionar para ele?', r: 'O Tchau Chupeta começa justamente pela preparação, porque crianças apegadas são as que mais sofrem quando a chupeta some de repente. O processo respeita o ritmo de cada criança. Não prometemos prazos mágicos: cada filho tem seu tempo, e o guia mostra como conduzir esse tempo com segurança.' },
-  { p: 'Não é só tirar? Por que eu precisaria de um guia?', r: 'Tirar de repente é exatamente o que costuma gerar o ciclo “tira, chora, devolve”. O guia existe para você saber o que fazer antes, durante e depois do tchau, sem precisar improvisar às 2 da manhã.' },
-  { p: 'Tenho pouco tempo. Consigo aplicar?', r: 'Sim. O conteúdo é organizado em etapas curtas e práticas. Você lê a etapa, aplica na rotina que já existe e segue para a próxima. Não é um curso longo: é um caminho claro para seguir.' },
-  { p: 'Qual a idade certa para tirar a chupeta?', r: 'Não existe uma data igual para todas as crianças. Se você tiver dúvidas sobre a saúde bucal ou o desenvolvimento do seu filho, converse com o pediatra ou odontopediatra. O Tchau Chupeta ajuda no <i>como</i> conduzir a despedida quando a família decidir que é a hora.' },
-  { p: 'Como eu recebo o material?', r: `É um ${esc(OFERTA.formato.toLowerCase())}. Assim que o pagamento é aprovado, você recebe o acesso no seu e-mail e pode ler no celular, no tablet ou no computador.` },
-  { p: 'E se eu não gostar?', r: `Você tem ${OFERTA.garantiaDias} dias de garantia. Se achar que o Tchau Chupeta não é para a sua família, basta pedir o reembolso dentro do prazo e você recebe 100% do valor de volta, sem perguntas.` },
-  { p: 'Serve para o pai, os avós e a babá também?', r: 'Serve e é recomendado. Uma das etapas é justamente colocar todos os adultos da casa no mesmo combinado, para a criança receber a mesma mensagem de todo mundo.' },
-];
-
-const bonusHtml = OFERTA.bonus.length
-  ? OFERTA.bonus.map((b) => `<li><span class="ic">🎁</span><div><b>Bônus: ${esc(b.titulo)}</b><br>${esc(b.texto)}</div></li>`).join('')
-  : '';
-
-const pixel = pixelTag('pagina-a');
-
-const html = `<!doctype html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
@@ -71,15 +7,15 @@ const html = `<!doctype html>
 <meta name="description" content="O passo a passo lúdico e acolhedor para transformar a retirada da chupeta em uma despedida da qual seu filho participa.">
 <meta property="og:title" content="Tchau Chupeta — Não é só tirar. É se despedir.">
 <meta property="og:description" content="O passo a passo para conduzir a despedida da chupeta com preparação, participação e acolhimento.">
-<meta name="theme-color" content="${C.night}">
+<meta name="theme-color" content="#3B3470">
 <link rel="preload" href="../fonts/Baloo2-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 @font-face{font-family:'Baloo 2';font-weight:400 800;font-display:swap;src:url(../fonts/Baloo2-latin.woff2) format('woff2')}
 @font-face{font-family:'Nunito';font-weight:200 1000;font-display:swap;src:url(../fonts/Nunito-latin.woff2) format('woff2')}
 :root{
-  --cream:${C.cream};--peach:${C.peach};--peach-deep:${C.peachDeep};--lav:${C.lavender};--lav-deep:${C.lavenderDeep};
-  --mint:${C.mint};--mint-deep:${C.mintDeep};--sun:${C.sun};--night:${C.night};--night-deep:${C.nightDeep};
-  --ink:${C.ink};--ink-soft:${C.inkSoft};--r:22px;
+  --cream:#FFF7EE;--peach:#FFB59E;--peach-deep:#F28E78;--lav:#C9B8F2;--lav-deep:#8C74D6;
+  --mint:#A9DEC9;--mint-deep:#5DB896;--sun:#FFD66B;--night:#3B3470;--night-deep:#2A2556;
+  --ink:#3A3563;--ink-soft:#6B6690;--r:22px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -275,7 +211,8 @@ footer p+p{margin-top:8px}
   .hide-m{display:none}
 }
 </style>
-${pixel}
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1137389055898462');fbq('track','PageView');fbq('track','ViewContent',{content_name:'Tchau Chupeta',content_category:'pagina-a',value:29.9,currency:'BRL'});</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1137389055898462&ev=PageView&noscript=1"></noscript>
 </head>
 <body>
 
@@ -283,25 +220,73 @@ ${pixel}
 
 <!-- 1. HERO: promessa + mecanismo -->
 <header class="hero">
-  <span class="star" style="top:8%;left:6%">${star(18)}</span>
-  <span class="star hide-m" style="top:30%;left:46%;animation-delay:.8s">${sparkle(16)}</span>
-  <span class="star" style="top:14%;left:62%;animation-delay:1.6s">${star(14)}</span>
-  <span class="star" style="top:70%;left:3%;animation-delay:.4s">${sparkle(20)}</span>
+  <span class="star" style="top:8%;left:6%"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 1.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 8.7l7.1-.6z" fill="#FFD66B" stroke="#FFD66B" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+  <span class="star hide-m" style="top:30%;left:46%;animation-delay:.8s"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 0 C13 8 16 11 24 12 C16 13 13 16 12 24 C11 16 8 13 0 12 C8 11 11 8 12 0Z" fill="#FFD66B"/></svg></span>
+  <span class="star" style="top:14%;left:62%;animation-delay:1.6s"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 1.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 8.7l7.1-.6z" fill="#FFD66B" stroke="#FFD66B" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+  <span class="star" style="top:70%;left:3%;animation-delay:.4s"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 0 C13 8 16 11 24 12 C16 13 13 16 12 24 C11 16 8 13 0 12 C8 11 11 8 12 0Z" fill="#FFD66B"/></svg></span>
   <div class="wrap grid">
     <div class="txt">
       <p class="pre">Você tira, ele chora e a chupeta volta?</p>
       <h1>Não é só tirar a chupeta. <span class="soft">É ensinar seu filho a se despedir dela.</span></h1>
       <p class="sub">O <b>Tchau Chupeta</b> é o passo a passo lúdico e acolhedor que mostra como preparar seu filho, contar a história da despedida e viver o dia do tchau <b>junto com ele</b>, no ritmo da sua criança.</p>
-      ${cta('Quero começar a despedida', 'pulse', '#identificacao')}
-      ${selos}
+      <a class="btn pulse" href="#identificacao">Quero começar a despedida <span aria-hidden="true">→</span></a>
+      <ul class="selos">
+  <li>🔒 Compra segura</li><li>⚡ Acesso imediato</li><li>🛡️ Garantia de 7 dias</li>
+</ul>
     </div>
     <div class="art" aria-hidden="true">
-      <div class="moon">${moon(120)}</div>
-      <div class="chupi">${pacifier({ size: 140, wave: true })}</div>
-      <div class="fam">${familyHug({ size: 440 })}</div>
+      <div class="moon"><svg width="120" height="120" viewBox="0 0 100 100"><path d="M64 8 A44 44 0 1 0 92 70 A36 36 0 1 1 64 8Z" fill="#FFD66B"/>
+  <circle cx="40" cy="60" r="5" fill="#000" opacity=".06"/><circle cx="30" cy="40" r="3" fill="#000" opacity=".06"/></svg></div>
+      <div class="chupi"><svg width="140" height="161" viewBox="0 0 230 265" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="212" r="38" fill="none" stroke="#8C74D6" stroke-width="14"/>
+    <rect x="88" y="150" width="24" height="34" rx="10" fill="#8C74D6"/>
+    <path d="M168 104 Q186 90 190 66" stroke="#FFB59E" stroke-width="11" fill="none" stroke-linecap="round"/>
+       <circle cx="191" cy="60" r="11" fill="#FFB59E"/>
+       <path d="M204 44 q6 -6 12 0 M208 62 q8 -2 12 4" stroke="#FFD66B" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M22 110 C22 58 62 46 100 62 C138 46 178 58 178 110 C178 152 140 166 100 154 C60 166 22 152 22 110 Z" fill="#FFB59E"/>
+    <ellipse cx="62" cy="86" rx="14" ry="9" fill="#fff" opacity=".45"/>
+    <circle cx="70" cy="120" r="9" fill="#F28E78" opacity=".45"/>
+    <circle cx="130" cy="120" r="9" fill="#F28E78" opacity=".45"/>
+    <path d="M78 104 Q84 96 90 104" stroke="#3A3563" stroke-width="5" fill="none" stroke-linecap="round"/>
+         <path d="M110 104 Q116 96 122 104" stroke="#3A3563" stroke-width="5" fill="none" stroke-linecap="round"/>
+         <path d="M88 118 Q100 130 112 118" stroke="#3A3563" stroke-width="5" fill="none" stroke-linecap="round"/>
+  </svg></div>
+      <div class="fam"><svg width="440" height="404.8" viewBox="0 0 440 405" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="220" cy="388" rx="190" ry="16" fill="#3A3563" opacity=".07"/>
+    <!-- adulto -->
+    <path d="M120 390 C112 270 140 200 206 196 C272 200 300 270 292 390Z" fill="#C9B8F2"/>
+    <path d="M186 196 L206 226 L226 196" fill="#8C74D6" opacity=".35"/>
+    <rect x="194" y="160" width="24" height="40" rx="10" fill="#E9B08D"/>
+    <circle cx="206" cy="120" r="44" fill="#F4C7A6"/>
+    <circle cx="206" cy="46" r="20" fill="#6B4332"/>
+         <path d="M162 108 C154 58 250 50 250 104 C250 132 244 150 238 160 L238 110 C224 96 196 90 170 104 L170 160 C164 150 160 128 162 108Z" fill="#6B4332"/>
+    <path d="M186 124 Q192 118 198 124 M214 124 Q220 118 226 124" stroke="#3A3563" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M196 140 Q206 148 216 140" stroke="#3A3563" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <circle cx="182" cy="138" r="7" fill="#F28E78" opacity=".35"/><circle cx="230" cy="138" r="7" fill="#F28E78" opacity=".35"/>
+    <!-- criança -->
+    <path d="M250 392 C246 318 262 282 300 280 C338 282 352 318 348 392Z" fill="#A9DEC9"/>
+    <circle cx="300" cy="238" r="40" fill="#F4C7A6"/>
+    <path d="M262 232 C258 194 336 188 340 228 C330 214 312 208 300 216 C292 206 272 208 262 232Z" fill="#6B4332"/>
+    <path d="M284 240 Q290 234 296 240 M306 240 Q312 234 318 240" stroke="#3A3563" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M290 254 Q301 264 312 254" stroke="#3A3563" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <circle cx="276" cy="254" r="6" fill="#F28E78" opacity=".4"/><circle cx="324" cy="254" r="6" fill="#F28E78" opacity=".4"/>
+    <!-- braço da criança acenando, com a chupeta -->
+    <path d="M336 300 Q370 280 380 236" stroke="#A9DEC9" stroke-width="20" fill="none" stroke-linecap="round"/>
+    <circle cx="381" cy="228" r="13" fill="#F4C7A6"/>
+    <g transform="translate(362 170) scale(.24)">
+      <circle cx="100" cy="212" r="38" fill="none" stroke="#8C74D6" stroke-width="14"/>
+      <rect x="88" y="150" width="24" height="34" rx="10" fill="#8C74D6"/>
+      <path d="M22 110 C22 58 62 46 100 62 C138 46 178 58 178 110 C178 152 140 166 100 154 C60 166 22 152 22 110 Z" fill="#FFB59E"/>
+    </g>
+    <path d="M404 176 q10 -8 18 2 M408 206 q12 0 16 10" stroke="#FFD66B" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <!-- braço do adulto abraçando -->
+    <path d="M150 262 C170 330 250 344 300 322" stroke="#C9B8F2" stroke-width="30" fill="none" stroke-linecap="round"/>
+    <circle cx="304" cy="320" r="15" fill="#F4C7A6"/>
+    <g transform="translate(96 60)"><path transform="scale(1.4)" d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 3 4.5 6.6 4.5c2.2 0 3.9 1.3 5.4 3.2 1.5-1.9 3.2-3.2 5.4-3.2 3.6 0 5.7 3.8 4.2 7.2C19.5 16.4 12 21 12 21z" fill="#F28E78"/></g>
+  </svg></div>
     </div>
   </div>
-  <svg class="hill" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70 C360 0 1080 0 1440 70Z" fill="${C.cream}"/></svg>
+  <svg class="hill" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70 C360 0 1080 0 1440 70Z" fill="#FFF7EE"/></svg>
 </header>
 
 <!-- 2. IDENTIFICAÇÃO + microcompromisso -->
@@ -312,7 +297,12 @@ ${pixel}
       <h2>Marque o que acontece aí na sua casa:</h2>
     </div>
     <div class="check reveal" role="group" aria-label="Situações da sua casa">
-      ${dores.map((d) => `<label><input type="checkbox"><span>${d}</span></label>`).join('\n      ')}
+      <label><input type="checkbox"><span>Você tira a chupeta, ele chora… e no fim você acaba devolvendo.</span></label>
+      <label><input type="checkbox"><span>Ouve <b>“mãe, me dá a chupeta”</b> tantas vezes que já perdeu a conta.</span></label>
+      <label><input type="checkbox"><span>Já escondeu, jogou fora ou “deu pro bebê que precisava”… e voltou atrás.</span></label>
+      <label><input type="checkbox"><span>Tem medo de mexer na chupeta e bagunçar o sono da casa inteira.</span></label>
+      <label><input type="checkbox"><span>Cada adulto da família fala uma coisa, e ninguém segue o mesmo combinado.</span></label>
+      <label><input type="checkbox"><span>Sabe que chegou a hora, mas não faz ideia de <b>por onde começar</b>.</span></label>
     </div>
     <div class="resp" id="resp" aria-live="polite"></div>
   </div>
@@ -381,7 +371,20 @@ ${pixel}
       <div class="mock" aria-hidden="true">
         <span class="notch"></span>
         <div class="tela">
-          <div class="chupi">${pacifier({ size: 120, wave: true })}</div>
+          <div class="chupi"><svg width="120" height="138" viewBox="0 0 230 265" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="212" r="38" fill="none" stroke="#8C74D6" stroke-width="14"/>
+    <rect x="88" y="150" width="24" height="34" rx="10" fill="#8C74D6"/>
+    <path d="M168 104 Q186 90 190 66" stroke="#FFB59E" stroke-width="11" fill="none" stroke-linecap="round"/>
+       <circle cx="191" cy="60" r="11" fill="#FFB59E"/>
+       <path d="M204 44 q6 -6 12 0 M208 62 q8 -2 12 4" stroke="#FFD66B" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M22 110 C22 58 62 46 100 62 C138 46 178 58 178 110 C178 152 140 166 100 154 C60 166 22 152 22 110 Z" fill="#FFB59E"/>
+    <ellipse cx="62" cy="86" rx="14" ry="9" fill="#fff" opacity=".45"/>
+    <circle cx="70" cy="120" r="9" fill="#F28E78" opacity=".45"/>
+    <circle cx="130" cy="120" r="9" fill="#F28E78" opacity=".45"/>
+    <path d="M78 104 Q84 96 90 104" stroke="#3A3563" stroke-width="5" fill="none" stroke-linecap="round"/>
+         <path d="M110 104 Q116 96 122 104" stroke="#3A3563" stroke-width="5" fill="none" stroke-linecap="round"/>
+         <path d="M88 118 Q100 130 112 118" stroke="#3A3563" stroke-width="5" fill="none" stroke-linecap="round"/>
+  </svg></div>
           <div class="t">Tchau<b>Chupeta</b></div>
           <small>O passo a passo da despedida</small>
         </div>
@@ -390,9 +393,9 @@ ${pixel}
     <div class="reveal">
       <span class="kicker">Apresentando</span>
       <h2>Tchau Chupeta: o caminho claro que você estava procurando</h2>
-      <p>Um ${esc(OFERTA.formato.toLowerCase())} feito para mães e pais que querem conduzir a retirada da chupeta de um jeito <b>lúdico, acolhedor e estruturado</b>.</p>
+      <p>Um guia digital feito para mães e pais que querem conduzir a retirada da chupeta de um jeito <b>lúdico, acolhedor e estruturado</b>.</p>
       <p>Nada de fórmula mágica nem de força. Você recebe um passo a passo organizado em etapas, para saber exatamente o que fazer em cada fase, sem improvisar e sem ficar refém dos conselhos que cada um dá.</p>
-      <p style="margin-top:26px">${cta('Quero o Tchau Chupeta', '', '#etapas')}</p>
+      <p style="margin-top:26px"><a class="btn " href="#etapas">Quero o Tchau Chupeta <span aria-hidden="true">→</span></a></p>
     </div>
   </div>
 </section>
@@ -406,10 +409,26 @@ ${pixel}
       <p>Cada etapa prepara a próxima. Você segue a trilha no ritmo do seu filho.</p>
     </div>
     <div class="trilha">
-      ${etapas.map((e) => `<div class="etapa reveal">
-        <div class="num" style="background:${e.cor}">${e.n}</div>
-        <div class="card"><h3>${e.titulo}</h3><p>${e.texto}</p></div>
-      </div>`).join('\n      ')}
+      <div class="etapa reveal">
+        <div class="num" style="background:#FFB59E">1</div>
+        <div class="card"><h3>Preparar</h3><p>Como começar a conversa semanas antes, para a mudança não chegar de surpresa. Seu filho vai sendo avisado com leveza, no tempo dele.</p></div>
+      </div>
+      <div class="etapa reveal">
+        <div class="num" style="background:#C9B8F2">2</div>
+        <div class="card"><h3>Contar a história</h3><p>Como criar a narrativa da despedida: uma história simples, com começo, meio e fim, que dá sentido ao “tchau” para a cabecinha da criança.</p></div>
+      </div>
+      <div class="etapa reveal">
+        <div class="num" style="background:#A9DEC9">3</div>
+        <div class="card"><h3>Envolver seu filho</h3><p>Como fazer a criança participar das escolhas e se sentir parte do momento, em vez de alguém de quem “tiraram” alguma coisa.</p></div>
+      </div>
+      <div class="etapa reveal">
+        <div class="num" style="background:#FFD66B">4</div>
+        <div class="card"><h3>O dia do tchau</h3><p>O roteiro do grande dia: o que fazer, o que dizer e como transformar a despedida em um marco de crescimento para lembrar com carinho.</p></div>
+      </div>
+      <div class="etapa reveal">
+        <div class="num" style="background:#F28E78">5</div>
+        <div class="card"><h3>Acolher os dias seguintes</h3><p>O que fazer quando ele pedir a chupeta de novo, como manter a família no mesmo combinado e como acolher as noites de adaptação.</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -427,7 +446,18 @@ ${pixel}
         <li>E você tranquila, sabendo que conduziu esse momento com carinho, e não com briga.</li>
       </ul>
     </div>
-    <div class="art reveal" aria-hidden="true">${childWaving({ size: 220 })}</div>
+    <div class="art reveal" aria-hidden="true"><svg width="220" height="264" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="96" cy="232" rx="70" ry="8" fill="#000" opacity=".15"/>
+    <path d="M54 232 C50 160 66 130 96 128 C126 130 142 160 138 232Z" fill="#A9DEC9"/>
+    <circle cx="96" cy="88" r="42" fill="#F4C7A6"/>
+    <path d="M56 82 C52 40 138 34 140 80 C128 64 108 58 96 66 C86 56 64 58 56 82Z" fill="#6B4332"/>
+    <path d="M78 92 Q84 86 90 92 M102 92 Q108 86 114 92" stroke="#3A3563" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M84 106 Q96 116 108 106" stroke="#3A3563" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <circle cx="72" cy="104" r="6" fill="#F28E78" opacity=".4"/><circle cx="120" cy="104" r="6" fill="#F28E78" opacity=".4"/>
+    <path d="M132 150 Q164 130 170 86" stroke="#A9DEC9" stroke-width="18" fill="none" stroke-linecap="round"/>
+    <circle cx="171" cy="78" r="12" fill="#F4C7A6"/>
+    <path d="M182 60 q8 -6 14 2 M186 84 q9 0 12 8" stroke="#FFD66B" stroke-width="4" fill="none" stroke-linecap="round"/>
+  </svg></div>
   </div>
 </section>
 
@@ -440,11 +470,13 @@ ${pixel}
       <p>Mesmo que você não leve o guia hoje, evitar esses três já pode deixar a próxima tentativa mais leve:</p>
     </div>
     <div class="erros">
-      ${erros.map((e, i) => `<div class="erro reveal"><div class="x">0${i + 1}</div><h3>${e.t}</h3><p>${e.d}</p></div>`).join('\n      ')}
+      <div class="erro reveal"><div class="x">01</div><h3>Sumir com a chupeta sem avisar</h3><p>Para a criança, algo que dava segurança desaparece sem explicação. A reação costuma ser de perda e não de entendimento.</p></div>
+      <div class="erro reveal"><div class="x">02</div><h3>Voltar atrás no meio do caminho</h3><p>Quando a chupeta volta depois de muito choro, a criança aprende que o choro traz a chupeta de volta. É assim que nasce o ciclo.</p></div>
+      <div class="erro reveal"><div class="x">03</div><h3>Cada adulto fazer de um jeito</h3><p>Se a mãe tira, a avó devolve e o pai não sabe o que dizer, a criança fica confusa. Combinado da família vem antes do dia do tchau.</p></div>
     </div>
     <div class="center reveal" style="margin-top:36px">
       <p style="margin-bottom:20px"><b>Saber o que não fazer é o começo. O Tchau Chupeta te mostra o que fazer no lugar.</b></p>
-      ${cta('Quero o passo a passo completo', '', '#para-quem')}
+      <a class="btn " href="#para-quem">Quero o passo a passo completo <span aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
@@ -491,9 +523,9 @@ ${pixel}
 
 <!-- 10. OFERTA -->
 <section class="oferta" id="oferta">
-  <span class="star" style="top:10%;left:8%">${star(18)}</span>
-  <span class="star" style="top:22%;right:10%;animation-delay:1s">${sparkle(18)}</span>
-  <span class="star" style="bottom:14%;left:14%;animation-delay:2s">${star(14)}</span>
+  <span class="star" style="top:10%;left:8%"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 1.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 8.7l7.1-.6z" fill="#FFD66B" stroke="#FFD66B" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+  <span class="star" style="top:22%;right:10%;animation-delay:1s"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 0 C13 8 16 11 24 12 C16 13 13 16 12 24 C11 16 8 13 0 12 C8 11 11 8 12 0Z" fill="#FFD66B"/></svg></span>
+  <span class="star" style="bottom:14%;left:14%;animation-delay:2s"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 1.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 8.7l7.1-.6z" fill="#FFD66B" stroke="#FFD66B" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
   <div class="narrow center reveal">
     <span class="kicker" style="color:var(--sun)">Comece hoje</span>
     <h2>Tudo o que você precisa para conduzir a despedida da chupeta</h2>
@@ -506,15 +538,17 @@ ${pixel}
         <li><span class="ic">🌙</span><div><b>O roteiro do dia do tchau</b><br>O que fazer e o que dizer no grande dia.</div></li>
         <li><span class="ic">👨‍👩‍👧</span><div><b>O combinado da família</b><br>Para pai, avós e babá seguirem o mesmo caminho.</div></li>
         <li><span class="ic">💬</span><div><b>O que responder quando ele pedir a chupeta</b><br>Para os dias seguintes, sem voltar à estaca zero.</div></li>
-        ${bonusHtml}
+        
       </ul>
       <div class="preco" id="preco">
-        ${OFERTA.precoDe ? `<div class="de">De R$ ${esc(OFERTA.precoDe)}</div>` : ''}
-        <div class="por"><small>R$</small> ${esc(OFERTA.preco)}</div>
-        ${OFERTA.parcelas ? `<div class="parc">ou ${esc(OFERTA.parcelas)}</div>` : ''}
+        
+        <div class="por"><small>R$</small> 29,90</div>
+        
       </div>
-      ${ctaCheckout('Quero começar a despedida', 'full pulse')}
-      ${selos}
+      <a class="btn full pulse" href="https://pay.kiwify.com.br/pZIVc6a" data-checkout>Quero começar a despedida <span aria-hidden="true">→</span></a>
+      <ul class="selos">
+  <li>🔒 Compra segura</li><li>⚡ Acesso imediato</li><li>🛡️ Garantia de 7 dias</li>
+</ul>
     </div>
     <p class="center reveal" style="margin-top:28px;opacity:.85;max-width:620px;margin-left:auto;margin-right:auto">Cada noite de “me dá a chupeta” é mais uma volta no mesmo ciclo. A preparação pode começar hoje, com calma e no ritmo do seu filho.</p>
   </div>
@@ -524,10 +558,10 @@ ${pixel}
 <section>
   <div class="narrow">
     <div class="garantia reveal">
-      <div class="selo"><span class="d">${OFERTA.garantiaDias}</span><small>dias de<br>garantia</small></div>
+      <div class="selo"><span class="d">7</span><small>dias de<br>garantia</small></div>
       <div>
         <h2 style="font-size:30px;margin-bottom:10px">O risco é todo nosso</h2>
-        <p>Leia, conheça as etapas e veja se o Tchau Chupeta faz sentido para a sua família. Se nos próximos ${OFERTA.garantiaDias} dias você sentir que não é para você, é só pedir o reembolso e devolvemos <b>100% do valor</b>. Sem perguntas e sem burocracia.</p>
+        <p>Leia, conheça as etapas e veja se o Tchau Chupeta faz sentido para a sua família. Se nos próximos 7 dias você sentir que não é para você, é só pedir o reembolso e devolvemos <b>100% do valor</b>. Sem perguntas e sem burocracia.</p>
       </div>
     </div>
   </div>
@@ -537,31 +571,52 @@ ${pixel}
 <section style="padding-top:0">
   <div class="narrow">
     <div class="center reveal"><span class="kicker">Dúvidas frequentes</span><h2>Ainda com alguma dúvida?</h2></div>
-    ${faq.map((f) => `<details class="reveal"><summary>${f.p}</summary><div class="r"><p>${f.r}</p></div></details>`).join('\n    ')}
+    <details class="reveal"><summary>Meu filho é muito apegado. Vai funcionar para ele?</summary><div class="r"><p>O Tchau Chupeta começa justamente pela preparação, porque crianças apegadas são as que mais sofrem quando a chupeta some de repente. O processo respeita o ritmo de cada criança. Não prometemos prazos mágicos: cada filho tem seu tempo, e o guia mostra como conduzir esse tempo com segurança.</p></div></details>
+    <details class="reveal"><summary>Não é só tirar? Por que eu precisaria de um guia?</summary><div class="r"><p>Tirar de repente é exatamente o que costuma gerar o ciclo “tira, chora, devolve”. O guia existe para você saber o que fazer antes, durante e depois do tchau, sem precisar improvisar às 2 da manhã.</p></div></details>
+    <details class="reveal"><summary>Tenho pouco tempo. Consigo aplicar?</summary><div class="r"><p>Sim. O conteúdo é organizado em etapas curtas e práticas. Você lê a etapa, aplica na rotina que já existe e segue para a próxima. Não é um curso longo: é um caminho claro para seguir.</p></div></details>
+    <details class="reveal"><summary>Qual a idade certa para tirar a chupeta?</summary><div class="r"><p>Não existe uma data igual para todas as crianças. Se você tiver dúvidas sobre a saúde bucal ou o desenvolvimento do seu filho, converse com o pediatra ou odontopediatra. O Tchau Chupeta ajuda no <i>como</i> conduzir a despedida quando a família decidir que é a hora.</p></div></details>
+    <details class="reveal"><summary>Como eu recebo o material?</summary><div class="r"><p>É um guia digital. Assim que o pagamento é aprovado, você recebe o acesso no seu e-mail e pode ler no celular, no tablet ou no computador.</p></div></details>
+    <details class="reveal"><summary>E se eu não gostar?</summary><div class="r"><p>Você tem 7 dias de garantia. Se achar que o Tchau Chupeta não é para a sua família, basta pedir o reembolso dentro do prazo e você recebe 100% do valor de volta, sem perguntas.</p></div></details>
+    <details class="reveal"><summary>Serve para o pai, os avós e a babá também?</summary><div class="r"><p>Serve e é recomendado. Uma das etapas é justamente colocar todos os adultos da casa no mesmo combinado, para a criança receber a mesma mensagem de todo mundo.</p></div></details>
   </div>
 </section>
 
 <!-- 13. FECHAMENTO: escolha -->
 <section class="final">
-  <span class="star" style="top:12%;left:10%">${star(16)}</span>
-  <span class="star" style="top:20%;right:12%;animation-delay:1.2s">${sparkle(18)}</span>
+  <span class="star" style="top:12%;left:10%"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 1.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 8.7l7.1-.6z" fill="#FFD66B" stroke="#FFD66B" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+  <span class="star" style="top:20%;right:12%;animation-delay:1.2s"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 0 C13 8 16 11 24 12 C16 13 13 16 12 24 C11 16 8 13 0 12 C8 11 11 8 12 0Z" fill="#FFD66B"/></svg></span>
   <div class="narrow">
-    <div class="reveal" style="width:130px;margin:0 auto 18px">${pacifier({ size: 130, wave: true })}</div>
+    <div class="reveal" style="width:130px;margin:0 auto 18px"><svg width="130" height="149.5" viewBox="0 0 230 265" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="212" r="38" fill="none" stroke="#8C74D6" stroke-width="14"/>
+    <rect x="88" y="150" width="24" height="34" rx="10" fill="#8C74D6"/>
+    <path d="M168 104 Q186 90 190 66" stroke="#FFB59E" stroke-width="11" fill="none" stroke-linecap="round"/>
+       <circle cx="191" cy="60" r="11" fill="#FFB59E"/>
+       <path d="M204 44 q6 -6 12 0 M208 62 q8 -2 12 4" stroke="#FFD66B" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M22 110 C22 58 62 46 100 62 C138 46 178 58 178 110 C178 152 140 166 100 154 C60 166 22 152 22 110 Z" fill="#FFB59E"/>
+    <ellipse cx="62" cy="86" rx="14" ry="9" fill="#fff" opacity=".45"/>
+    <circle cx="70" cy="120" r="9" fill="#F28E78" opacity=".45"/>
+    <circle cx="130" cy="120" r="9" fill="#F28E78" opacity=".45"/>
+    <path d="M78 104 Q84 96 90 104" stroke="#3A3563" stroke-width="5" fill="none" stroke-linecap="round"/>
+         <path d="M110 104 Q116 96 122 104" stroke="#3A3563" stroke-width="5" fill="none" stroke-linecap="round"/>
+         <path d="M88 118 Q100 130 112 118" stroke="#3A3563" stroke-width="5" fill="none" stroke-linecap="round"/>
+  </svg></div>
     <h2 class="reveal">Um dia seu filho vai largar a chupeta. A pergunta é: como essa história vai ser lembrada?</h2>
     <div class="dois reveal">
       <div class="c1"><b>Caminho 1</b>Continuar tentando do jeito de sempre: esconder, ceder, recomeçar… e torcer para que dessa vez dê certo.</div>
       <div class="c2"><b>Caminho 2</b>Seguir um passo a passo pensado para preparar seu filho e transformar o tchau em um momento de carinho e crescimento.</div>
     </div>
-    <div class="reveal">${ctaCheckout('Escolho o caminho 2', 'pulse')}${selos}</div>
+    <div class="reveal"><a class="btn pulse" href="https://pay.kiwify.com.br/pZIVc6a" data-checkout>Escolho o caminho 2 <span aria-hidden="true">→</span></a><ul class="selos">
+  <li>🔒 Compra segura</li><li>⚡ Acesso imediato</li><li>🛡️ Garantia de 7 dias</li>
+</ul></div>
   </div>
 </section>
 
 <footer>
-  <p><b>Tchau Chupeta</b> © ${new Date().getFullYear()}. Todos os direitos reservados.</p>
+  <p><b>Tchau Chupeta</b> © 2026. Todos os direitos reservados.</p>
   <p>Este material é educativo e não substitui a orientação de pediatras, odontopediatras ou outros profissionais de saúde. Cada criança tem seu próprio ritmo, e os resultados podem variar de família para família.</p>
 </footer>
 
-<div class="sticky" id="sticky">${cta('Quero começar a despedida', '', '#identificacao')}</div>
+<div class="sticky" id="sticky"><a class="btn " href="#identificacao">Quero começar a despedida <span aria-hidden="true">→</span></a></div>
 
 <script>
 // Checklist: resposta conforme o número de itens marcados
@@ -583,7 +638,7 @@ ${pixel}
   var q = location.search.slice(1);
   document.querySelectorAll('[data-checkout]').forEach(function(a){
     if (q && a.href.indexOf('http') === 0) a.href += (a.href.indexOf('?') < 0 ? '?' : '&') + q;
-    a.addEventListener('click', function(){ if (window.fbq) fbq('track', 'InitiateCheckout', { content_category: 'pagina-a', value: ${valor}, currency: 'BRL' }); });
+    a.addEventListener('click', function(){ if (window.fbq) fbq('track', 'InitiateCheckout', { content_category: 'pagina-a', value: 29.9, currency: 'BRL' }); });
   });
 })();
 
@@ -622,10 +677,3 @@ ${pixel}
 </script>
 </body>
 </html>
-`;
-
-mkdirSync(out, { recursive: true });
-mkdirSync(fontesDir, { recursive: true });
-for (const f of ['Baloo2-latin.woff2', 'Nunito-latin.woff2']) copyFileSync(join(root, 'fonts', f), join(fontesDir, f));
-writeFileSync(join(out, 'index.html'), html);
-console.log('ok → pagina-vendas/a/index.html');
