@@ -4,7 +4,7 @@
 import { chromium } from 'playwright';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { C, pacifier, star, sparkle, heart, moon, logo } from './illustrations.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -123,7 +123,7 @@ const book = (x, y, s = 1) => `<g transform="translate(${x} ${y}) scale(${s})"><
   <path d="M22 110 C22 58 62 46 100 62 C138 46 178 58 178 110 C178 152 140 166 100 154 C60 166 22 152 22 110 Z" fill="${C.peach}"/></g>
   <circle cx="40" cy="0" r="5" fill="${C.sun}"/><circle cx="90" cy="50" r="4" fill="${C.sun}"/></g>`;
 
-const SC = {
+export const SC = {
   // 3 da manhã: criança chorando na cama, mãe cansada na porta
   noite: (w) => svg(w, `
     <rect width="1000" height="700" fill="#3E3A70"/><rect y="560" width="1000" height="140" fill="#2F2B5A"/>
@@ -303,6 +303,7 @@ add('L3RS2-ritual-stories', STORY, story('ritual',
   <div class="body" style="margin-top:16px;font-size:36px">Historinhas, um dia escolhido junto e um ritual de tchau. <b>Quanto antes, melhor para os dentinhos.</b></div>
   <div style="margin-top:auto"></div>${foot('Comece a despedida ↑')}`));
 
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
 mkdirSync(OUT, { recursive: true });
 const filter = process.argv[2];
 const browser = await chromium.launch();
@@ -317,3 +318,4 @@ for (const it of items) {
   console.log('ok', it.id);
 }
 await browser.close();
+}
