@@ -195,7 +195,7 @@ section{padding:72px 0}
 .box ul{list-style:none;margin:4px 0 20px}
 .box li{padding:9px 0 9px 32px;position:relative;border-bottom:1px dashed rgba(31,42,107,.14)}
 .box li::before{content:'✓';position:absolute;left:4px;top:8px;width:20px;height:20px;border-radius:50%;background:var(--mint);color:#fff;font-size:12px;font-weight:900;display:grid;place-content:center}
-.preco{text-align:center;margin-bottom:18px}
+.preco{scroll-margin-top:28vh;text-align:center;margin-bottom:18px}
 .preco .de{text-decoration:line-through;opacity:.55;font-weight:700}
 .preco .ancora{font-size:19px;color:var(--ink-soft);margin-bottom:4px}
 .preco .por{font-family:'Baloo 2';font-weight:800;font-size:66px;line-height:1;color:var(--purple)}
@@ -260,7 +260,7 @@ ${pixelTag('pagina-d')}
       <h1><span class="l1">Seu filho(a) ainda</span><span class="l2">chupa</span><span class="l3">Chupeta?</span></h1>
       <p class="sozinha">Você não está sozinha!
         <span>Muitas mães passam por isso e se sentem frustradas, mas <mark>existe um caminho carinhoso!</mark></span></p>
-      <div class="acao" style="text-align:left">${prox('Quero saber mais', '#beneficios', 'pulse')}</div>
+      <div class="acao" style="text-align:left">${prox('Quero o Tchau Chupeta', '#preco', 'pulse')}</div>
     </div>
   </div>
   <div class="foto">
@@ -280,7 +280,7 @@ ${pixelTag('pagina-d')}
     <div class="bens">
       ${beneficios.map(([i, cor, t, d]) => `<div class="ben reveal"><span class="bola" style="background:${cor}">${i}</span><div><h3>${t}</h3><p>${d}</p></div></div>`).join('\n      ')}
     </div>
-    <div class="acao reveal">${prox('Conhecer o método', '#metodo')}</div>
+    <div class="acao reveal">${prox('Quero começar a despedida', '#preco')}</div>
   </div>
 </section>
 
@@ -296,7 +296,7 @@ ${pixelTag('pagina-d')}
       <div class="bom reveal"><span>✅ Quando a criança se despede</span>Ela entende o que está acontecendo, participa do tchau e se sente grande por isso.</div>
     </div>
   </div>
-  <div class="narrow acao reveal">${prox('Como isso funciona', '#mecanismo')}</div>
+  <div class="narrow acao reveal">${prox('Quero o Tchau Chupeta', '#preco')}</div>
 </section>
 
 <!-- 4. O MECANISMO ÚNICO: Despedida Participativa -->
@@ -312,7 +312,7 @@ ${pixelTag('pagina-d')}
     <div class="cards">
       ${pilares.map(([i, t, d]) => `<div class="card reveal"><span class="ico">${i}</span><h3>${t}</h3><p>${d}</p></div>`).join('\n      ')}
     </div>
-    <div class="acao reveal">${prox('Ver o que muda', '#promessa')}</div>
+    <div class="acao reveal">${prox('Quero começar a despedida', '#preco')}</div>
   </div>
 </section>
 
@@ -326,7 +326,7 @@ ${pixelTag('pagina-d')}
     <ul class="imagine">
       ${imagine.map((t) => `<li class="reveal">${t}</li>`).join('\n      ')}
     </ul>
-    <div class="acao reveal">${prox('Quero começar', '#oferta')}</div>
+    <div class="acao reveal">${prox('Quero o Tchau Chupeta', '#preco')}</div>
   </div>
 </section>
 
@@ -384,7 +384,7 @@ ${pixelTag('pagina-d')}
   <p>Este material é educativo e não substitui a orientação de pediatras, odontopediatras ou outros profissionais de saúde. Cada criança tem seu próprio ritmo, e os resultados podem variar de família para família.</p>
 </footer>
 
-<div class="sticky" id="sticky">${prox('Quero saber mais', '#beneficios')}</div>
+<div class="sticky" id="sticky">${prox('Quero o Tchau Chupeta', '#preco')}</div>
 
 <script>
 // Checkout: repassa UTMs e dispara InitiateCheckout
@@ -396,16 +396,8 @@ ${pixelTag('pagina-d')}
   });
 })();
 
-// Barra fixa: leva à próxima seção abaixo da tela atual
+// Barra fixa: leva direto ao preço; some quando a oferta ou o fechamento estão na tela
 (function(){
-  var btn = document.querySelector('#sticky .btn');
-  btn.addEventListener('click', function(ev){
-    var secs = document.querySelectorAll('header.hero, section'), alvo = null;
-    for (var i = 0; i < secs.length; i++) { if (secs[i].getBoundingClientRect().top > 80) { alvo = secs[i]; break; } }
-    if (!alvo) return;
-    ev.preventDefault();
-    alvo.scrollIntoView({ behavior: 'smooth' });
-  });
   var sticky = document.getElementById('sticky'), hero = document.querySelector('.hero'), oferta = document.getElementById('oferta'), fim = document.getElementById('final');
   var pastHero = false, onOffer = false, onFim = false;
   function set(){ sticky.classList.toggle('on', pastHero && !onOffer && !onFim); }
