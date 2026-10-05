@@ -24,19 +24,16 @@ const K = {
 };
 
 // Cada botão leva no máximo à próxima seção; só os botões da oferta e do final levam ao checkout.
-// Páginas reais do entregável (entregavel/tchau-chupeta-historinhas.pdf) exibidas em "Veja por dentro".
-const grupos = [
-  { ico: '📖', titulo: '5 historinhas ilustradas para ler juntos',
-    texto: 'Cada história prepara seu filho para o tchau de um jeito lúdico: a Chupi que vai morar na Lua, a Fada Pipoca, o ursinho Bento, a árvore das chupetas e os 7 dias da Nina.',
-    paginas: [['capa', 'Capa do livro de historinhas'], ['chupi-lua', 'A Chupi vai morar na Lua'], ['bento', 'Bento, o ursinho corajoso'], ['arvore', 'A árvore das chupetas'], ['nina-calendario', 'Os 7 dias da Nina']] },
-  { ico: '✂️', titulo: 'Brincadeiras e atividades para imprimir',
-    texto: 'Para a criança participar de verdade: ela pinta o calendário, escreve a cartinha, faz o desenho e ganha o certificado de despedida.',
-    paginas: [['calendario', 'Meu calendário do tchau'], ['bilhetes', 'Bilhetes mágicos da Chupi e da Fada Pipoca'], ['cartinha', 'Cartinha para a minha chupeta'], ['desenho', 'Desenho da despedida'], ['certificado', 'Certificado de despedida da chupeta']] },
-  { ico: '✍️', titulo: '1 história para personalizar com o seu filho',
-    texto: 'Vocês completam juntos a história da despedida dele, com o nome, o dia escolhido e um desenho.',
-    paginas: [['minha-historia', 'A minha história de tchau']] },
+// "Veja por dentro": fotos ilustrativas (Unsplash License) + duas cenas com páginas do entregável
+// em baixa resolução (dá para ver títulos e ilustrações, não para usar o material).
+// Fotos (Unsplash License): Vitaly Gariev (história, unsplash.com/photos/fQ-Hp3waO1A), Lucas Alexander
+// (colorir, sJuDgtkUyYs), Erika Fletcher (desenhar, YfNWGrQI3a4), Vivek Kumar (abraço, a-_1PPjnbUg).
+const momentos = [
+  ['foto-historia', 'Hora da historinha', 'Mãe lendo uma história para a criança, as duas rindo'],
+  ['foto-colorir', 'Colorir e pintar', 'Mãos de criança colorindo um desenho com giz de cera'],
+  ['foto-desenhar', 'Desenhar o tchau', 'Criança pequena desenhando numa folha'],
+  ['foto-abraco', 'Mais abraço, menos briga', 'Mãe e filha abraçadas e sorrindo'],
 ];
-
 const prox = (texto, alvo, extra = '') =>
   `<a class="btn ${extra}" href="${alvo}"><span class="cur" aria-hidden="true">👆</span>${texto}</a>`;
 const ctaCheckout = (texto, extra = '') =>
@@ -194,17 +191,18 @@ section{padding:72px 0}
 /* o que você recebe (faixa azul com ícones, como o rodapé da referência) */
 .recebe{background:var(--navy);color:#fff;position:relative;overflow:hidden}
 .dentro{background:linear-gradient(180deg,var(--cream),#FFF4E4)}
-.dentro .grupo{margin-top:40px}
-.dentro .grupo h3{font-size:24px;color:var(--navy)}
-.dentro .grupo .sub{color:var(--ink-soft);margin:6px 0 16px;max-width:720px}
-.dentro .trilho{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 14px;-webkit-overflow-scrolling:touch}
-.dentro figure{flex:0 0 200px;scroll-snap-align:start;margin:0}
-.dentro figure img{width:100%;height:auto;border-radius:14px;box-shadow:0 10px 26px rgba(31,42,107,.16);background:#fff}
-.dentro figcaption{font-size:14px;font-weight:700;color:var(--ink-soft);margin-top:8px;text-align:center;line-height:1.3}
-.dentro .dica{display:none;font-size:14px;font-weight:800;color:var(--purple);margin:-6px 0 8px}
-@media(max-width:860px){.dentro .dica{display:block}}
-.dentro .formato{margin:28px auto 0;max-width:640px;text-align:center;font-weight:700;background:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 6px 18px rgba(31,42,107,.08)}
-@media(max-width:860px){.dentro figure{flex-basis:62%}}
+.dentro .momentos{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px}
+.dentro .momentos figure{margin:0}
+.dentro .momentos img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:18px;box-shadow:0 10px 24px rgba(31,42,107,.14)}
+.dentro .momentos figcaption{font-weight:800;color:var(--navy);margin-top:8px;text-align:center;font-size:16px}
+.dentro .ilustr{font-size:12px;color:var(--ink-soft);opacity:.7;text-align:right;margin-top:6px}
+.dentro .kit{display:grid;gap:28px;margin-top:36px}
+.dentro .item{display:grid;grid-template-columns:1.2fr 1fr;gap:26px;align-items:center}
+.dentro .item img{width:100%;height:auto;border-radius:22px}
+.dentro .item h3{font-size:24px;color:var(--navy);margin-bottom:8px}
+.dentro .item p{color:var(--ink-soft)}
+.dentro .formato{margin:30px auto 0;max-width:640px;text-align:center;font-weight:700;background:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 6px 18px rgba(31,42,107,.08)}
+@media(max-width:860px){.dentro .momentos{grid-template-columns:1fr 1fr}.dentro .item{grid-template-columns:1fr;gap:12px}}
 .recebe .kick{color:var(--yellow)}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
 .card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:26px 22px}
@@ -347,17 +345,25 @@ ${pixelTag('pagina-d')}
     <div class="narrow center reveal">
       <span class="kick">Veja por dentro</span>
       <h2>Um gostinho do que você <span class="mt">recebe</span></h2>
-      <p>Nada de teoria solta: são histórias, brincadeiras e atividades prontas para você fazer junto com seu filho, do primeiro aviso ao grande dia do tchau.</p>
+      <p>Histórias e brincadeiras para fazer junto com seu filho. Ele pinta, desenha, escuta e participa, e o tchau vira um momento gostoso para vocês dois.</p>
     </div>
-    ${grupos.map((g) => `<div class="grupo reveal">
-      <h3><span aria-hidden="true">${g.ico}</span> ${g.titulo}</h3>
-      <p class="sub">${g.texto}</p>
-      ${g.paginas.length > 1 ? '<span class="dica">arraste para o lado →</span>' : ''}
-      <div class="trilho">
-        ${g.paginas.map(([arq, leg]) => `<figure><img src="dentro/${arq}.webp" alt="${leg}" width="642" height="909" loading="lazy" decoding="async"><figcaption>${leg}</figcaption></figure>`).join('\n        ')}
+    <div class="momentos reveal">
+      ${momentos.map(([arq, leg, alt]) => `<figure><img src="dentro/${arq}.webp" alt="${alt}" width="640" height="427" loading="lazy" decoding="async"><figcaption>${leg}</figcaption></figure>`).join('\n      ')}
+    </div>
+    <p class="ilustr">Fotos ilustrativas.</p>
+    <div class="kit">
+      <div class="item reveal">
+        <img src="dentro/historinhas.webp" alt="Livro de historinhas Tchau Chupeta e páginas ilustradas sobre a mesa" width="900" height="600" loading="lazy" decoding="async">
+        <div><h3>📖 5 historinhas ilustradas + 1 para personalizar</h3>
+        <p>A Chupi que vai morar na Lua, a Fada Pipoca, o ursinho Bento e outras histórias que preparam seu filho para o tchau. E uma história em branco para vocês completarem juntos, com o nome dele.</p></div>
       </div>
-    </div>`).join('\n    ')}
-    <p class="formato reveal">📲 Material digital ilustrado, com 47 páginas. Você recebe no e-mail, lê no celular e imprime as atividades em casa.</p>
+      <div class="item reveal">
+        <img src="dentro/atividades.webp" alt="Atividades impressas do Tchau Chupeta com gizes de cera" width="900" height="600" loading="lazy" decoding="async">
+        <div><h3>✂️ Brincadeiras para imprimir</h3>
+        <p>Calendário do tchau para pintar, bilhetes mágicos, cartinha para a chupeta, desenho da despedida e um certificado para ele guardar com orgulho.</p></div>
+      </div>
+    </div>
+    <p class="formato reveal">📲 Material digital ilustrado. Você recebe no e-mail, lê no celular e imprime as brincadeiras em casa.</p>
     <div class="acao reveal">${prox('Ver o que muda', '#promessa')}</div>
   </div>
 </section>
