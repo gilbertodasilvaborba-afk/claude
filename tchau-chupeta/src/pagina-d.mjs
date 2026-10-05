@@ -24,6 +24,19 @@ const K = {
 };
 
 // Cada botão leva no máximo à próxima seção; só os botões da oferta e do final levam ao checkout.
+// Páginas reais do entregável (entregavel/tchau-chupeta-historinhas.pdf) exibidas em "Veja por dentro".
+const grupos = [
+  { ico: '📖', titulo: '5 historinhas ilustradas para ler juntos',
+    texto: 'Cada história prepara seu filho para o tchau de um jeito lúdico: a Chupi que vai morar na Lua, a Fada Pipoca, o ursinho Bento, a árvore das chupetas e os 7 dias da Nina.',
+    paginas: [['capa', 'Capa do livro de historinhas'], ['chupi-lua', 'A Chupi vai morar na Lua'], ['bento', 'Bento, o ursinho corajoso'], ['arvore', 'A árvore das chupetas'], ['nina-calendario', 'Os 7 dias da Nina']] },
+  { ico: '✂️', titulo: 'Brincadeiras e atividades para imprimir',
+    texto: 'Para a criança participar de verdade: ela pinta o calendário, escreve a cartinha, faz o desenho e ganha o certificado de despedida.',
+    paginas: [['calendario', 'Meu calendário do tchau'], ['bilhetes', 'Bilhetes mágicos da Chupi e da Fada Pipoca'], ['cartinha', 'Cartinha para a minha chupeta'], ['desenho', 'Desenho da despedida'], ['certificado', 'Certificado de despedida da chupeta']] },
+  { ico: '✍️', titulo: '1 história para personalizar com o seu filho',
+    texto: 'Vocês completam juntos a história da despedida dele, com o nome, o dia escolhido e um desenho.',
+    paginas: [['minha-historia', 'A minha história de tchau']] },
+];
+
 const prox = (texto, alvo, extra = '') =>
   `<a class="btn ${extra}" href="${alvo}"><span class="cur" aria-hidden="true">👆</span>${texto}</a>`;
 const ctaCheckout = (texto, extra = '') =>
@@ -180,6 +193,18 @@ section{padding:72px 0}
 
 /* o que você recebe (faixa azul com ícones, como o rodapé da referência) */
 .recebe{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.dentro{background:linear-gradient(180deg,var(--cream),#FFF4E4)}
+.dentro .grupo{margin-top:40px}
+.dentro .grupo h3{font-size:24px;color:var(--navy)}
+.dentro .grupo .sub{color:var(--ink-soft);margin:6px 0 16px;max-width:720px}
+.dentro .trilho{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 14px;-webkit-overflow-scrolling:touch}
+.dentro figure{flex:0 0 200px;scroll-snap-align:start;margin:0}
+.dentro figure img{width:100%;height:auto;border-radius:14px;box-shadow:0 10px 26px rgba(31,42,107,.16);background:#fff}
+.dentro figcaption{font-size:14px;font-weight:700;color:var(--ink-soft);margin-top:8px;text-align:center;line-height:1.3}
+.dentro .dica{display:none;font-size:14px;font-weight:800;color:var(--purple);margin:-6px 0 8px}
+@media(max-width:860px){.dentro .dica{display:block}}
+.dentro .formato{margin:28px auto 0;max-width:640px;text-align:center;font-weight:700;background:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 6px 18px rgba(31,42,107,.08)}
+@media(max-width:860px){.dentro figure{flex-basis:62%}}
 .recebe .kick{color:var(--yellow)}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
 .card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:26px 22px}
@@ -260,7 +285,7 @@ ${pixelTag('pagina-d')}
       <h1><span class="l1">Seu filho(a) ainda</span><span class="l2">chupa</span><span class="l3">Chupeta?</span></h1>
       <p class="sozinha">Você não está sozinha!
         <span>Muitas mães passam por isso e se sentem frustradas, mas <mark>existe um caminho carinhoso!</mark></span></p>
-      <div class="acao" style="text-align:left">${prox('Quero o Tchau Chupeta', '#preco', 'pulse')}</div>
+      <div class="acao" style="text-align:left">${prox('Quero saber mais', '#beneficios', 'pulse')}</div>
     </div>
   </div>
   <div class="foto">
@@ -280,7 +305,7 @@ ${pixelTag('pagina-d')}
     <div class="bens">
       ${beneficios.map(([i, cor, t, d]) => `<div class="ben reveal"><span class="bola" style="background:${cor}">${i}</span><div><h3>${t}</h3><p>${d}</p></div></div>`).join('\n      ')}
     </div>
-    <div class="acao reveal">${prox('Quero começar a despedida', '#preco')}</div>
+    <div class="acao reveal">${prox('Conhecer o método', '#metodo')}</div>
   </div>
 </section>
 
@@ -296,7 +321,7 @@ ${pixelTag('pagina-d')}
       <div class="bom reveal"><span>✅ Quando a criança se despede</span>Ela entende o que está acontecendo, participa do tchau e se sente grande por isso.</div>
     </div>
   </div>
-  <div class="narrow acao reveal">${prox('Quero o Tchau Chupeta', '#preco')}</div>
+  <div class="narrow acao reveal">${prox('Como isso funciona', '#mecanismo')}</div>
 </section>
 
 <!-- 4. O MECANISMO ÚNICO: Despedida Participativa -->
@@ -312,7 +337,28 @@ ${pixelTag('pagina-d')}
     <div class="cards">
       ${pilares.map(([i, t, d]) => `<div class="card reveal"><span class="ico">${i}</span><h3>${t}</h3><p>${d}</p></div>`).join('\n      ')}
     </div>
-    <div class="acao reveal">${prox('Quero começar a despedida', '#preco')}</div>
+    <div class="acao reveal">${prox('Ver o que vem no material', '#por-dentro')}</div>
+  </div>
+</section>
+
+<!-- 4b. VEJA POR DENTRO: um gostinho do entregável -->
+<section class="dentro" id="por-dentro">
+  <div class="wrap">
+    <div class="narrow center reveal">
+      <span class="kick">Veja por dentro</span>
+      <h2>Um gostinho do que você <span class="mt">recebe</span></h2>
+      <p>Nada de teoria solta: são histórias, brincadeiras e atividades prontas para você fazer junto com seu filho, do primeiro aviso ao grande dia do tchau.</p>
+    </div>
+    ${grupos.map((g) => `<div class="grupo reveal">
+      <h3><span aria-hidden="true">${g.ico}</span> ${g.titulo}</h3>
+      <p class="sub">${g.texto}</p>
+      ${g.paginas.length > 1 ? '<span class="dica">arraste para o lado →</span>' : ''}
+      <div class="trilho">
+        ${g.paginas.map(([arq, leg]) => `<figure><img src="dentro/${arq}.webp" alt="${leg}" width="642" height="909" loading="lazy" decoding="async"><figcaption>${leg}</figcaption></figure>`).join('\n        ')}
+      </div>
+    </div>`).join('\n    ')}
+    <p class="formato reveal">📲 Material digital ilustrado, com 47 páginas. Você recebe no e-mail, lê no celular e imprime as atividades em casa.</p>
+    <div class="acao reveal">${prox('Ver o que muda', '#promessa')}</div>
   </div>
 </section>
 
@@ -326,7 +372,7 @@ ${pixelTag('pagina-d')}
     <ul class="imagine">
       ${imagine.map((t) => `<li class="reveal">${t}</li>`).join('\n      ')}
     </ul>
-    <div class="acao reveal">${prox('Quero o Tchau Chupeta', '#preco')}</div>
+    <div class="acao reveal">${prox('Quero começar', '#oferta')}</div>
   </div>
 </section>
 
@@ -340,8 +386,10 @@ ${pixelTag('pagina-d')}
     <div class="box reveal">
       <div class="emblema"><span class="ch" aria-hidden="true">${pacifier({ size: 84, wave: true })}</span><div><b>Tchau <em>Chupeta</em></b><small>Despedida Participativa</small></div></div>
       <ul>
-        <li>O método completo da <b>Despedida Participativa</b>, do primeiro aviso ao depois do tchau</li>
-        <li>Um caminho claro para saber <b>o que fazer e o que dizer</b> em cada momento</li>
+        <li><b>5 historinhas ilustradas</b> para preparar seu filho para o tchau</li>
+        <li><b>Brincadeiras para imprimir</b>: calendário do tchau, bilhetes mágicos, cartinha, desenho e certificado</li>
+        <li><b>1 história para personalizar</b> com o nome e o desenho do seu filho</li>
+        <li>O passo a passo da <b>Despedida Participativa</b>: o que fazer e o que dizer em cada momento</li>
         <li>A família inteira <b>no mesmo combinado</b></li>
         <li><b>Acesso imediato</b>, para começar hoje mesmo</li>
         ${bonusHtml}
@@ -384,7 +432,7 @@ ${pixelTag('pagina-d')}
   <p>Este material é educativo e não substitui a orientação de pediatras, odontopediatras ou outros profissionais de saúde. Cada criança tem seu próprio ritmo, e os resultados podem variar de família para família.</p>
 </footer>
 
-<div class="sticky" id="sticky">${prox('Quero o Tchau Chupeta', '#preco')}</div>
+<div class="sticky" id="sticky">${prox('Quero saber mais', '#beneficios')}</div>
 
 <script>
 // Checkout: repassa UTMs e dispara InitiateCheckout
@@ -396,8 +444,16 @@ ${pixelTag('pagina-d')}
   });
 })();
 
-// Barra fixa: leva direto ao preço; some quando a oferta ou o fechamento estão na tela
+// Barra fixa: leva à próxima seção abaixo da tela atual
 (function(){
+  var btn = document.querySelector('#sticky .btn');
+  btn.addEventListener('click', function(ev){
+    var secs = document.querySelectorAll('header.hero, section'), alvo = null;
+    for (var i = 0; i < secs.length; i++) { if (secs[i].getBoundingClientRect().top > 80) { alvo = secs[i]; break; } }
+    if (!alvo) return;
+    ev.preventDefault();
+    alvo.scrollIntoView({ behavior: 'smooth' });
+  });
   var sticky = document.getElementById('sticky'), hero = document.querySelector('.hero'), oferta = document.getElementById('oferta'), fim = document.getElementById('final');
   var pastHero = false, onOffer = false, onFim = false;
   function set(){ sticky.classList.toggle('on', pastHero && !onOffer && !onFim); }
@@ -428,6 +484,7 @@ const principal = html
   .replaceAll('../fonts/', 'fonts/')
   .replaceAll('"crianca.jpg"', '"d/crianca.jpg"')
   .replaceAll('"crianca.avif"', '"d/crianca.avif"')
-  .replaceAll('"crianca.webp"', '"d/crianca.webp"');
+  .replaceAll('"crianca.webp"', '"d/crianca.webp"')
+  .replaceAll('src="dentro/', 'src="d/dentro/');
 writeFileSync(join(root, 'pagina-vendas', 'index.html'), principal);
 console.log('ok → pagina-vendas/index.html (principal) e pagina-vendas/d/index.html');

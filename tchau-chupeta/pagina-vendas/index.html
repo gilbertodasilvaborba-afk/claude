@@ -110,6 +110,18 @@ section{padding:72px 0}
 
 /* o que você recebe (faixa azul com ícones, como o rodapé da referência) */
 .recebe{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.dentro{background:linear-gradient(180deg,var(--cream),#FFF4E4)}
+.dentro .grupo{margin-top:40px}
+.dentro .grupo h3{font-size:24px;color:var(--navy)}
+.dentro .grupo .sub{color:var(--ink-soft);margin:6px 0 16px;max-width:720px}
+.dentro .trilho{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 14px;-webkit-overflow-scrolling:touch}
+.dentro figure{flex:0 0 200px;scroll-snap-align:start;margin:0}
+.dentro figure img{width:100%;height:auto;border-radius:14px;box-shadow:0 10px 26px rgba(31,42,107,.16);background:#fff}
+.dentro figcaption{font-size:14px;font-weight:700;color:var(--ink-soft);margin-top:8px;text-align:center;line-height:1.3}
+.dentro .dica{display:none;font-size:14px;font-weight:800;color:var(--purple);margin:-6px 0 8px}
+@media(max-width:860px){.dentro .dica{display:block}}
+.dentro .formato{margin:28px auto 0;max-width:640px;text-align:center;font-weight:700;background:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 6px 18px rgba(31,42,107,.08)}
+@media(max-width:860px){.dentro figure{flex-basis:62%}}
 .recebe .kick{color:var(--yellow)}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
 .card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:26px 22px}
@@ -191,7 +203,7 @@ footer p+p{margin-top:8px}
       <h1><span class="l1">Seu filho(a) ainda</span><span class="l2">chupa</span><span class="l3">Chupeta?</span></h1>
       <p class="sozinha">Você não está sozinha!
         <span>Muitas mães passam por isso e se sentem frustradas, mas <mark>existe um caminho carinhoso!</mark></span></p>
-      <div class="acao" style="text-align:left"><a class="btn pulse" href="#preco"><span class="cur" aria-hidden="true">👆</span>Quero o Tchau Chupeta</a></div>
+      <div class="acao" style="text-align:left"><a class="btn pulse" href="#beneficios"><span class="cur" aria-hidden="true">👆</span>Quero saber mais</a></div>
     </div>
   </div>
   <div class="foto">
@@ -225,7 +237,7 @@ footer p+p{margin-top:8px}
       <div class="ben reveal"><span class="bola" style="background:#6CC7A8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><div><h3>Família no mesmo combinado</h3><p>todo mundo falando a mesma língua com a criança.</p></div></div>
       <div class="ben reveal"><span class="bola" style="background:#F7738A"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg></span><div><h3>No tempo dele</h3><p>um processo leve, que respeita o ritmo de cada criança.</p></div></div>
     </div>
-    <div class="acao reveal"><a class="btn " href="#preco"><span class="cur" aria-hidden="true">👆</span>Quero começar a despedida</a></div>
+    <div class="acao reveal"><a class="btn " href="#metodo"><span class="cur" aria-hidden="true">👆</span>Conhecer o método</a></div>
   </div>
 </section>
 
@@ -241,7 +253,7 @@ footer p+p{margin-top:8px}
       <div class="bom reveal"><span>✅ Quando a criança se despede</span>Ela entende o que está acontecendo, participa do tchau e se sente grande por isso.</div>
     </div>
   </div>
-  <div class="narrow acao reveal"><a class="btn " href="#preco"><span class="cur" aria-hidden="true">👆</span>Quero o Tchau Chupeta</a></div>
+  <div class="narrow acao reveal"><a class="btn " href="#mecanismo"><span class="cur" aria-hidden="true">👆</span>Como isso funciona</a></div>
 </section>
 
 <!-- 4. O MECANISMO ÚNICO: Despedida Participativa -->
@@ -259,7 +271,52 @@ footer p+p{margin-top:8px}
       <div class="card reveal"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M8 14c1 1.4 2.4 2 4 2s3-.6 4-2"/><circle cx="9" cy="9.5" r=".6" fill="currentColor"/><circle cx="15" cy="9.5" r=".6" fill="currentColor"/></svg></span><h3>2. Participar</h3><p>Em vez de perder a chupeta, ele participa do tchau e se sente grande por isso.</p></div>
       <div class="card reveal"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><h3>3. Acolher</h3><p>Os dias seguintes já têm um plano, para você acolher sem precisar voltar atrás.</p></div>
     </div>
-    <div class="acao reveal"><a class="btn " href="#preco"><span class="cur" aria-hidden="true">👆</span>Quero começar a despedida</a></div>
+    <div class="acao reveal"><a class="btn " href="#por-dentro"><span class="cur" aria-hidden="true">👆</span>Ver o que vem no material</a></div>
+  </div>
+</section>
+
+<!-- 4b. VEJA POR DENTRO: um gostinho do entregável -->
+<section class="dentro" id="por-dentro">
+  <div class="wrap">
+    <div class="narrow center reveal">
+      <span class="kick">Veja por dentro</span>
+      <h2>Um gostinho do que você <span class="mt">recebe</span></h2>
+      <p>Nada de teoria solta: são histórias, brincadeiras e atividades prontas para você fazer junto com seu filho, do primeiro aviso ao grande dia do tchau.</p>
+    </div>
+    <div class="grupo reveal">
+      <h3><span aria-hidden="true">📖</span> 5 historinhas ilustradas para ler juntos</h3>
+      <p class="sub">Cada história prepara seu filho para o tchau de um jeito lúdico: a Chupi que vai morar na Lua, a Fada Pipoca, o ursinho Bento, a árvore das chupetas e os 7 dias da Nina.</p>
+      <span class="dica">arraste para o lado →</span>
+      <div class="trilho">
+        <figure><img src="d/dentro/capa.webp" alt="Capa do livro de historinhas" width="642" height="909" loading="lazy" decoding="async"><figcaption>Capa do livro de historinhas</figcaption></figure>
+        <figure><img src="d/dentro/chupi-lua.webp" alt="A Chupi vai morar na Lua" width="642" height="909" loading="lazy" decoding="async"><figcaption>A Chupi vai morar na Lua</figcaption></figure>
+        <figure><img src="d/dentro/bento.webp" alt="Bento, o ursinho corajoso" width="642" height="909" loading="lazy" decoding="async"><figcaption>Bento, o ursinho corajoso</figcaption></figure>
+        <figure><img src="d/dentro/arvore.webp" alt="A árvore das chupetas" width="642" height="909" loading="lazy" decoding="async"><figcaption>A árvore das chupetas</figcaption></figure>
+        <figure><img src="d/dentro/nina-calendario.webp" alt="Os 7 dias da Nina" width="642" height="909" loading="lazy" decoding="async"><figcaption>Os 7 dias da Nina</figcaption></figure>
+      </div>
+    </div>
+    <div class="grupo reveal">
+      <h3><span aria-hidden="true">✂️</span> Brincadeiras e atividades para imprimir</h3>
+      <p class="sub">Para a criança participar de verdade: ela pinta o calendário, escreve a cartinha, faz o desenho e ganha o certificado de despedida.</p>
+      <span class="dica">arraste para o lado →</span>
+      <div class="trilho">
+        <figure><img src="d/dentro/calendario.webp" alt="Meu calendário do tchau" width="642" height="909" loading="lazy" decoding="async"><figcaption>Meu calendário do tchau</figcaption></figure>
+        <figure><img src="d/dentro/bilhetes.webp" alt="Bilhetes mágicos da Chupi e da Fada Pipoca" width="642" height="909" loading="lazy" decoding="async"><figcaption>Bilhetes mágicos da Chupi e da Fada Pipoca</figcaption></figure>
+        <figure><img src="d/dentro/cartinha.webp" alt="Cartinha para a minha chupeta" width="642" height="909" loading="lazy" decoding="async"><figcaption>Cartinha para a minha chupeta</figcaption></figure>
+        <figure><img src="d/dentro/desenho.webp" alt="Desenho da despedida" width="642" height="909" loading="lazy" decoding="async"><figcaption>Desenho da despedida</figcaption></figure>
+        <figure><img src="d/dentro/certificado.webp" alt="Certificado de despedida da chupeta" width="642" height="909" loading="lazy" decoding="async"><figcaption>Certificado de despedida da chupeta</figcaption></figure>
+      </div>
+    </div>
+    <div class="grupo reveal">
+      <h3><span aria-hidden="true">✍️</span> 1 história para personalizar com o seu filho</h3>
+      <p class="sub">Vocês completam juntos a história da despedida dele, com o nome, o dia escolhido e um desenho.</p>
+      
+      <div class="trilho">
+        <figure><img src="d/dentro/minha-historia.webp" alt="A minha história de tchau" width="642" height="909" loading="lazy" decoding="async"><figcaption>A minha história de tchau</figcaption></figure>
+      </div>
+    </div>
+    <p class="formato reveal">📲 Material digital ilustrado, com 47 páginas. Você recebe no e-mail, lê no celular e imprime as atividades em casa.</p>
+    <div class="acao reveal"><a class="btn " href="#promessa"><span class="cur" aria-hidden="true">👆</span>Ver o que muda</a></div>
   </div>
 </section>
 
@@ -276,7 +333,7 @@ footer p+p{margin-top:8px}
       <li class="reveal">Pai, avós e babá falando a mesma coisa, sem ninguém “devolver escondido”.</li>
       <li class="reveal">Uma despedida que vira lembrança bonita, e não uma briga.</li>
     </ul>
-    <div class="acao reveal"><a class="btn " href="#preco"><span class="cur" aria-hidden="true">👆</span>Quero o Tchau Chupeta</a></div>
+    <div class="acao reveal"><a class="btn " href="#oferta"><span class="cur" aria-hidden="true">👆</span>Quero começar</a></div>
   </div>
 </section>
 
@@ -303,8 +360,10 @@ footer p+p{margin-top:8px}
          <path d="M88 118 Q100 130 112 118" stroke="#3A3563" stroke-width="5" fill="none" stroke-linecap="round"/>
   </svg></span><div><b>Tchau <em>Chupeta</em></b><small>Despedida Participativa</small></div></div>
       <ul>
-        <li>O método completo da <b>Despedida Participativa</b>, do primeiro aviso ao depois do tchau</li>
-        <li>Um caminho claro para saber <b>o que fazer e o que dizer</b> em cada momento</li>
+        <li><b>5 historinhas ilustradas</b> para preparar seu filho para o tchau</li>
+        <li><b>Brincadeiras para imprimir</b>: calendário do tchau, bilhetes mágicos, cartinha, desenho e certificado</li>
+        <li><b>1 história para personalizar</b> com o nome e o desenho do seu filho</li>
+        <li>O passo a passo da <b>Despedida Participativa</b>: o que fazer e o que dizer em cada momento</li>
         <li>A família inteira <b>no mesmo combinado</b></li>
         <li><b>Acesso imediato</b>, para começar hoje mesmo</li>
         
@@ -350,7 +409,7 @@ footer p+p{margin-top:8px}
   <p>Este material é educativo e não substitui a orientação de pediatras, odontopediatras ou outros profissionais de saúde. Cada criança tem seu próprio ritmo, e os resultados podem variar de família para família.</p>
 </footer>
 
-<div class="sticky" id="sticky"><a class="btn " href="#preco"><span class="cur" aria-hidden="true">👆</span>Quero o Tchau Chupeta</a></div>
+<div class="sticky" id="sticky"><a class="btn " href="#beneficios"><span class="cur" aria-hidden="true">👆</span>Quero saber mais</a></div>
 
 <script>
 // Checkout: repassa UTMs e dispara InitiateCheckout
@@ -362,8 +421,16 @@ footer p+p{margin-top:8px}
   });
 })();
 
-// Barra fixa: leva direto ao preço; some quando a oferta ou o fechamento estão na tela
+// Barra fixa: leva à próxima seção abaixo da tela atual
 (function(){
+  var btn = document.querySelector('#sticky .btn');
+  btn.addEventListener('click', function(ev){
+    var secs = document.querySelectorAll('header.hero, section'), alvo = null;
+    for (var i = 0; i < secs.length; i++) { if (secs[i].getBoundingClientRect().top > 80) { alvo = secs[i]; break; } }
+    if (!alvo) return;
+    ev.preventDefault();
+    alvo.scrollIntoView({ behavior: 'smooth' });
+  });
   var sticky = document.getElementById('sticky'), hero = document.querySelector('.hero'), oferta = document.getElementById('oferta'), fim = document.getElementById('final');
   var pastHero = false, onOffer = false, onFim = false;
   function set(){ sticky.classList.toggle('on', pastHero && !onOffer && !onFim); }
