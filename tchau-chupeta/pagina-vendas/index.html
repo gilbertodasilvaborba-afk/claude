@@ -10,10 +10,11 @@
 <meta property="og:image" content="https://tchauchupeta.vercel.app/d/crianca.jpg">
 <meta name="theme-color" content="#1F2A6B">
 <link rel="preload" href="fonts/Baloo2-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="d/crianca.jpg" as="image">
+<link rel="preload" href="fonts/Nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="d/crianca.avif" as="image" type="image/avif" fetchpriority="high">
 <style>
-@font-face{font-family:'Baloo 2';font-weight:400 800;font-display:swap;src:url(fonts/Baloo2-latin.woff2) format('woff2')}
-@font-face{font-family:'Nunito';font-weight:200 1000;font-display:swap;src:url(fonts/Nunito-latin.woff2) format('woff2')}
+@font-face{font-family:'Baloo 2';font-weight:400 800;font-display:optional;src:url(fonts/Baloo2-latin.woff2) format('woff2')}
+@font-face{font-family:'Nunito';font-weight:200 1000;font-display:optional;src:url(fonts/Nunito-latin.woff2) format('woff2')}
 :root{--navy:#1F2A6B;--navy-deep:#151D52;--purple:#7B3FBF;--purple-soft:#EFE6FB;--yellow:#FFD84D;--yellow-soft:#FFF4C7;
   --pink:#F7738A;--mint:#6CC7A8;--lilac:#B79BEA;--cream:#FFFBF4;--ink:#1F2A6B;--ink-soft:#56608F;--r:24px}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -65,7 +66,7 @@ section{padding:72px 0}
 .hero .sozinha span{display:block;font-family:'Nunito';font-weight:600;font-size:19px;color:var(--ink-soft);margin-top:6px;line-height:1.45}
 .hero .sozinha mark{background:linear-gradient(transparent 45%,var(--yellow) 45%);color:var(--navy);font-weight:800;padding:0 4px}
 .hero .foto{position:absolute;top:0;right:0;bottom:0;width:46%}
-.hero .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;
+.hero .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;background:#E9DCCB url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAD7wP8AAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb//gAQTGF2YzYwLjMxLjEwMgD/2wBDAAgUFBcUFxsbGxsbGyAeICEhISAgICAhISEkJCQqKiokJCQhISQkKCgqKi4vLisrKisvLzIyMjw8OTlGRkhWVmf/xABxAAEAAwEBAQEAAAAAAAAAAAAGBwUEAwIACAEBAQEAAAAAAAAAAAAAAAAAAwUEEAACAgECAgoDAQEAAAAAAAACAQADESEEEiIVYXGxUUFS0TEFM6HBkRMRAAMBAQEBAQAAAAAAAAAAAAABEQJBMSFh/8AAEQgAJgAYAwEiAAIRAAMRAP/aAAwDAQACEQMRAD8AeCiEiP05kdbrfb8T4hNpdmkfXWYaEk+fVLDxjrme4AxzSXWiyspgkPu7WOLhTx5qdumQ9D/2A9yh4iS0xD+ka0FqH6jtLjbLGcQpZWdvMyJY8HEdrIU+F4yvh+TlBQNpJi9Nfn2guc9KCk/CL/sAQEify9HjvhTNfXJov+trtLnMn2St6Ho9R/r2iLwx6+sY7g2pwtVwnWNZoRxr4ufbn+rvm+z8g9kDI2+GOw8FxY1Uy/8AZz1b5ysiBn//2Q==) 50% 30%/cover no-repeat;
   -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 28%);mask-image:linear-gradient(90deg,transparent 0%,#000 28%)}
 .sticker{position:absolute;right:24px;bottom:34px;background:var(--yellow);color:var(--navy);font-family:'Baloo 2';font-weight:800;font-size:24px;line-height:1.05;
   padding:16px 20px;transform:rotate(-6deg);box-shadow:0 10px 26px rgba(31,42,107,.18);text-align:center;
@@ -126,6 +127,7 @@ section{padding:72px 0}
 .box li::before{content:'✓';position:absolute;left:4px;top:8px;width:20px;height:20px;border-radius:50%;background:var(--mint);color:#fff;font-size:12px;font-weight:900;display:grid;place-content:center}
 .preco{text-align:center;margin-bottom:18px}
 .preco .de{text-decoration:line-through;opacity:.55;font-weight:700}
+.preco .ancora{font-size:19px;color:var(--ink-soft);margin-bottom:4px}
 .preco .por{font-family:'Baloo 2';font-weight:800;font-size:66px;line-height:1;color:var(--purple)}
 .preco .por small{font-size:28px;color:var(--navy)}
 .preco .parc{font-weight:700;color:var(--ink-soft)}
@@ -167,7 +169,7 @@ footer p+p{margin-top:8px}
   .hero{display:flex;flex-direction:column}
   .hero .grid{grid-template-columns:1fr;min-height:0;width:100%}
   .hero .foto{position:relative;order:-1;width:100%;height:380px}
-  .hero .foto img{object-position:50% 55%;-webkit-mask-image:linear-gradient(180deg,#000 78%,transparent 100%);mask-image:linear-gradient(180deg,#000 78%,transparent 100%)}
+  .hero .foto img{object-position:50% 55%;background-position:50% 55%;-webkit-mask-image:linear-gradient(180deg,#000 78%,transparent 100%);mask-image:linear-gradient(180deg,#000 78%,transparent 100%)}
   .hero .txt{max-width:none;padding:4px 0 46px}
   .sticker{font-size:17px;right:14px;bottom:auto;top:18px;left:auto;padding:10px 12px}
   .nope{right:auto;left:16px}
@@ -177,7 +179,7 @@ footer p+p{margin-top:8px}
   .btn{font-size:18px;padding:15px 22px;width:100%}
 }
 </style>
-<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1137389055898462');fbq('track','PageView');fbq('track','ViewContent',{content_name:'Tchau Chupeta',content_category:'pagina-d',value:29.9,currency:'BRL'});</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1137389055898462');fbq('track','PageView');fbq('track','ViewContent',{content_name:'Tchau Chupeta',content_category:'pagina-d',value:17.9,currency:'BRL'});</script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1137389055898462&ev=PageView&noscript=1"></noscript>
 </head>
 <body>
@@ -193,7 +195,7 @@ footer p+p{margin-top:8px}
     </div>
   </div>
   <div class="foto">
-    <img src="d/crianca.jpg" alt="Criança pequena com chupeta abraçada a um ursinho de pelúcia" width="424" height="680" fetchpriority="high">
+    <picture><source srcset="d/crianca.avif" type="image/avif"><source srcset="d/crianca.webp" type="image/webp"><img src="d/crianca.jpg" alt="Criança pequena com chupeta abraçada a um ursinho de pelúcia" width="424" height="680" fetchpriority="high"></picture>
     <span class="nope" aria-hidden="true"><svg width="50" height="57.49999999999999" viewBox="0 0 230 265" xmlns="http://www.w3.org/2000/svg">
     <circle cx="100" cy="212" r="38" fill="none" stroke="#8C74D6" stroke-width="14"/>
     <rect x="88" y="150" width="24" height="34" rx="10" fill="#8C74D6"/>
@@ -308,12 +310,12 @@ footer p+p{margin-top:8px}
         
       </ul>
       <div class="preco" id="preco">
-        
-        <div class="por"><small>R$</small> 29,90</div>
+        <div class="ancora">de <span class="de">R$ 29,90</span> por apenas</div>
+        <div class="por"><small>R$</small> 17,90</div>
         
         <div class="parc">pagamento único</div>
       </div>
-      <a class="btn compra full pulse" href="https://pay.kiwify.com.br/pZIVc6a" data-checkout>Quero o Tchau Chupeta <span aria-hidden="true">→</span></a>
+      <a class="btn compra full pulse" href="https://pay.kiwify.com.br/0PStBpv" data-checkout>Quero o Tchau Chupeta <span aria-hidden="true">→</span></a>
       <div class="gar"><span class="s">7</span><div><b>7 dias de garantia.</b> Se não for para a sua família, você pede o reembolso e recebe 100% de volta.</div></div>
       <ul class="selos"><li>🔒 Compra segura</li><li>⚡ Acesso imediato</li></ul>
     </div>
@@ -337,7 +339,7 @@ footer p+p{margin-top:8px}
   <span class="star" style="top:24%;right:10%"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 1.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 8.7l7.1-.6z" fill="#FFD84D" stroke="#FFD84D" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
   <div class="narrow">
     <h2 class="reveal">Transforme a despedida da chupeta em <b>uma lembrança carinhosa</b> para vocês dois.</h2>
-    <div class="acao reveal"><a class="btn compra " href="https://pay.kiwify.com.br/pZIVc6a" data-checkout>Quero o Tchau Chupeta <span aria-hidden="true">→</span></a>
+    <div class="acao reveal"><a class="btn compra " href="https://pay.kiwify.com.br/0PStBpv" data-checkout>Quero o Tchau Chupeta <span aria-hidden="true">→</span></a>
       <ul class="selos"><li>🔒 Compra segura</li><li>⚡ Acesso imediato</li><li>🛡️ Garantia de 7 dias</li></ul>
     </div>
   </div>
@@ -356,7 +358,7 @@ footer p+p{margin-top:8px}
   var q = location.search.slice(1);
   document.querySelectorAll('[data-checkout]').forEach(function(a){
     if (q && a.href.indexOf('http') === 0) a.href += (a.href.indexOf('?') < 0 ? '?' : '&') + q;
-    a.addEventListener('click', function(){ if (window.fbq) fbq('track', 'InitiateCheckout', { content_category: 'pagina-d', value: 29.9, currency: 'BRL' }); });
+    a.addEventListener('click', function(){ if (window.fbq) fbq('track', 'InitiateCheckout', { content_category: 'pagina-d', value: 17.9, currency: 'BRL' }); });
   });
 })();
 

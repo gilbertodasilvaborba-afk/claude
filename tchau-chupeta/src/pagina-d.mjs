@@ -80,10 +80,11 @@ const html = `<!doctype html>
 <meta property="og:image" content="https://tchauchupeta.vercel.app/d/crianca.jpg">
 <meta name="theme-color" content="${K.navy}">
 <link rel="preload" href="../fonts/Baloo2-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="crianca.jpg" as="image">
+<link rel="preload" href="../fonts/Nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="crianca.avif" as="image" type="image/avif" fetchpriority="high">
 <style>
-@font-face{font-family:'Baloo 2';font-weight:400 800;font-display:swap;src:url(../fonts/Baloo2-latin.woff2) format('woff2')}
-@font-face{font-family:'Nunito';font-weight:200 1000;font-display:swap;src:url(../fonts/Nunito-latin.woff2) format('woff2')}
+@font-face{font-family:'Baloo 2';font-weight:400 800;font-display:optional;src:url(../fonts/Baloo2-latin.woff2) format('woff2')}
+@font-face{font-family:'Nunito';font-weight:200 1000;font-display:optional;src:url(../fonts/Nunito-latin.woff2) format('woff2')}
 :root{--navy:${K.navy};--navy-deep:${K.navyDeep};--purple:${K.purple};--purple-soft:${K.purpleSoft};--yellow:${K.yellow};--yellow-soft:${K.yellowSoft};
   --pink:${K.pink};--mint:${K.mint};--lilac:${K.lilac};--cream:${K.cream};--ink:${K.ink};--ink-soft:${K.inkSoft};--r:24px}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -135,7 +136,7 @@ section{padding:72px 0}
 .hero .sozinha span{display:block;font-family:'Nunito';font-weight:600;font-size:19px;color:var(--ink-soft);margin-top:6px;line-height:1.45}
 .hero .sozinha mark{background:linear-gradient(transparent 45%,var(--yellow) 45%);color:var(--navy);font-weight:800;padding:0 4px}
 .hero .foto{position:absolute;top:0;right:0;bottom:0;width:46%}
-.hero .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;
+.hero .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;background:#E9DCCB url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAD7wP8AAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb//gAQTGF2YzYwLjMxLjEwMgD/2wBDAAgUFBcUFxsbGxsbGyAeICEhISAgICAhISEkJCQqKiokJCQhISQkKCgqKi4vLisrKisvLzIyMjw8OTlGRkhWVmf/xABxAAEAAwEBAQEAAAAAAAAAAAAGBwUEAwIACAEBAQEAAAAAAAAAAAAAAAAAAwUEEAACAgECAgoDAQEAAAAAAAACAQADESEEEiIVYXGxUUFS0TEFM6HBkRMRAAMBAQEBAQAAAAAAAAAAAAABEQJBMSFh/8AAEQgAJgAYAwEiAAIRAAMRAP/aAAwDAQACEQMRAD8AeCiEiP05kdbrfb8T4hNpdmkfXWYaEk+fVLDxjrme4AxzSXWiyspgkPu7WOLhTx5qdumQ9D/2A9yh4iS0xD+ka0FqH6jtLjbLGcQpZWdvMyJY8HEdrIU+F4yvh+TlBQNpJi9Nfn2guc9KCk/CL/sAQEify9HjvhTNfXJov+trtLnMn2St6Ho9R/r2iLwx6+sY7g2pwtVwnWNZoRxr4ufbn+rvm+z8g9kDI2+GOw8FxY1Uy/8AZz1b5ysiBn//2Q==) 50% 30%/cover no-repeat;
   -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 28%);mask-image:linear-gradient(90deg,transparent 0%,#000 28%)}
 .sticker{position:absolute;right:24px;bottom:34px;background:var(--yellow);color:var(--navy);font-family:'Baloo 2';font-weight:800;font-size:24px;line-height:1.05;
   padding:16px 20px;transform:rotate(-6deg);box-shadow:0 10px 26px rgba(31,42,107,.18);text-align:center;
@@ -196,6 +197,7 @@ section{padding:72px 0}
 .box li::before{content:'✓';position:absolute;left:4px;top:8px;width:20px;height:20px;border-radius:50%;background:var(--mint);color:#fff;font-size:12px;font-weight:900;display:grid;place-content:center}
 .preco{text-align:center;margin-bottom:18px}
 .preco .de{text-decoration:line-through;opacity:.55;font-weight:700}
+.preco .ancora{font-size:19px;color:var(--ink-soft);margin-bottom:4px}
 .preco .por{font-family:'Baloo 2';font-weight:800;font-size:66px;line-height:1;color:var(--purple)}
 .preco .por small{font-size:28px;color:var(--navy)}
 .preco .parc{font-weight:700;color:var(--ink-soft)}
@@ -237,7 +239,7 @@ footer p+p{margin-top:8px}
   .hero{display:flex;flex-direction:column}
   .hero .grid{grid-template-columns:1fr;min-height:0;width:100%}
   .hero .foto{position:relative;order:-1;width:100%;height:380px}
-  .hero .foto img{object-position:50% 55%;-webkit-mask-image:linear-gradient(180deg,#000 78%,transparent 100%);mask-image:linear-gradient(180deg,#000 78%,transparent 100%)}
+  .hero .foto img{object-position:50% 55%;background-position:50% 55%;-webkit-mask-image:linear-gradient(180deg,#000 78%,transparent 100%);mask-image:linear-gradient(180deg,#000 78%,transparent 100%)}
   .hero .txt{max-width:none;padding:4px 0 46px}
   .sticker{font-size:17px;right:14px;bottom:auto;top:18px;left:auto;padding:10px 12px}
   .nope{right:auto;left:16px}
@@ -262,7 +264,7 @@ ${pixelTag('pagina-d')}
     </div>
   </div>
   <div class="foto">
-    <img src="crianca.jpg" alt="Criança pequena com chupeta abraçada a um ursinho de pelúcia" width="424" height="680" fetchpriority="high">
+    <picture><source srcset="crianca.avif" type="image/avif"><source srcset="crianca.webp" type="image/webp"><img src="crianca.jpg" alt="Criança pequena com chupeta abraçada a um ursinho de pelúcia" width="424" height="680" fetchpriority="high"></picture>
     <span class="nope" aria-hidden="true">${pacifier({ size: 50 })}</span>
     <span class="sticker">Mais sorrisos,<br>menos briga<br>pela chupeta! 💛</span>
   </div>
@@ -345,7 +347,7 @@ ${pixelTag('pagina-d')}
         ${bonusHtml}
       </ul>
       <div class="preco" id="preco">
-        ${OFERTA.precoDe ? `<div class="de">De R$ ${esc(OFERTA.precoDe)}</div>` : ''}
+        ${OFERTA.precoDe ? `<div class="ancora">de <span class="de">R$ ${esc(OFERTA.precoDe)}</span> por apenas</div>` : ''}
         <div class="por"><small>R$</small> ${esc(OFERTA.preco)}</div>
         ${OFERTA.parcelas ? `<div class="parc">ou ${esc(OFERTA.parcelas)}</div>` : ''}
         <div class="parc">pagamento único</div>
@@ -432,6 +434,8 @@ writeFileSync(join(out, 'index.html'), html);
 // Página principal: mesmo HTML com os caminhos ajustados para a raiz do site.
 const principal = html
   .replaceAll('../fonts/', 'fonts/')
-  .replaceAll('"crianca.jpg"', '"d/crianca.jpg"');
+  .replaceAll('"crianca.jpg"', '"d/crianca.jpg"')
+  .replaceAll('"crianca.avif"', '"d/crianca.avif"')
+  .replaceAll('"crianca.webp"', '"d/crianca.webp"');
 writeFileSync(join(root, 'pagina-vendas', 'index.html'), principal);
 console.log('ok → pagina-vendas/index.html (principal) e pagina-vendas/d/index.html');
