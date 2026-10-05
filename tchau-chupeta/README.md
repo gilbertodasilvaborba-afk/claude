@@ -292,3 +292,131 @@ Métricas para decidir: CTR (link), custo por clique, taxa de retenção de 3 s 
 - [ ] Preferir: "pode ajudar", "uma forma de conduzir", "passo a passo", "cada criança tem seu próprio ritmo".
 - [ ] Depoimentos só se forem reais e autorizados; atores não devem ser apresentados como clientes.
 - [ ] Conferir se as etapas do feed-06 e do carrossel batem com o conteúdo real do produto.
+
+---
+
+## 10. Página de vendas
+
+`pagina-vendas/index.html` — página longa (mobile-first) na identidade visual dos criativos, com o mascote Chupi e as fontes locais em `pagina-vendas/fonts/`. Para publicar, suba a pasta `pagina-vendas/` inteira na hospedagem.
+
+**Antes de publicar**, edite o bloco `OFERTA` no topo de `src/pagina.mjs` e rode `node src/pagina.mjs`:
+
+| Campo | O que colocar |
+|---|---|
+| `checkout` | Link do checkout (UTMs do anúncio são repassadas automaticamente) |
+| `preco` / `precoDe` / `parcelas` | Valores reais (hoje aparece `R$ XX,XX`) |
+| `garantiaDias` | Prazo de garantia (7 = mínimo legal do CDC) |
+| `formato` | Formato real do produto (PDF, área de membros…) |
+| `bonus` | Bônus reais, se houver (a lista só aparece se estiver preenchida) |
+| `pixelMeta` | ID do Pixel da Meta (dispara PageView e ViewContent ao abrir e InitiateCheckout no clique, com valor em BRL) |
+
+**Estrutura e gatilhos**
+
+| # | Seção | Gatilho |
+|---|---|---|
+| 1 | Hero: "Não é só tirar a chupeta. É ensinar seu filho a se despedir dela." | Big Idea + curiosidade |
+| 2 | Checklist "Marque o que acontece aí" (responde conforme o nº marcado) | Identificação + microcompromisso |
+| 3 | O ciclo tira → chora → devolve | Inimigo comum + alívio de culpa |
+| 4 | Tirar × Se despedir | Contraste / mecanismo único |
+| 5 | Apresentação do produto | Solução |
+| 6 | As 5 etapas | Especificidade |
+| 7 | "Agora imagine" | Futuro desejado |
+| 8 | 3 erros que mantêm o ciclo | Reciprocidade (entrega valor antes) |
+| 9 | É / não é para você | Exclusividade + qualificação |
+| 10 | Oferta com empilhamento do que recebe | Valor percebido + urgência honesta |
+| 11 | Garantia | Reversão de risco |
+| 12 | FAQ | Quebra de objeções |
+| 13 | "Caminho 1 × Caminho 2" | Escolha / fechamento emocional |
+
+Barra de CTA fixa no celular (some na seção de oferta).
+
+> 🔒 **Token da API de Conversões:** nunca coloque na página (o HTML é público). Ele vai na integração de Pixel da plataforma de checkout (Kiwify, Hotmart…), que envia o evento **Purchase** pelo servidor.
+
+**Publicação:** o projeto `pagina-vendas` na Vercel está ligado a este repositório (Root Directory `tchau-chupeta/pagina-vendas`). Rode `node src/pagina.mjs`, faça commit e push na branch de produção, e o site atualiza sozinho.
+
+> ⚠️ **Confirmar:** as 5 etapas e os 4 itens da oferta seguem o mesmo mecanismo suposto do feed-06 — troque pelos módulos reais. A seção de **depoimentos** está comentada no HTML: só ative com relatos reais e autorizados. Não há contador regressivo nem escassez falsa, de propósito.
+
+---
+
+## 11. Página B (teste A/B) — `/b`
+
+`pagina-vendas/b/index.html`, publicada em **tchauchupeta.vercel.app/b**. Gerada por `node src/pagina-b.mjs`. Preço, checkout e Pixel ficam em `src/oferta.mjs`, compartilhado com a página A: altere uma vez e rode os dois geradores.
+
+**Ângulo:** a própria chupeta (Chupi) pede uma despedida — “Eu não quero sumir. Eu quero me despedir.”
+
+| # | Seção | Gatilho |
+|---|---|---|
+| 1 | A chupeta fala (balão) | Curiosidade + quebra de padrão |
+| 2 | Carta da chupeta | Storytelling + empatia + alívio de culpa |
+| 3 | Contador de “me dá a chupeta” (slider) | Especificidade + custo de continuar igual |
+| 4 | Diagnóstico de 3 perguntas | Personalização + microcompromisso |
+| 5 | Mitos × verdades | Quebra de objeções |
+| 6 | Antes / durante / depois | Mecanismo |
+| 7 | Escolha a data do tchau | Compromisso e coerência (a data aparece na caixa da oferta) |
+| 8 | Oferta “menos de R$ 1 por dia” | Ancoragem de preço |
+| 9 | “7 dias para testar” | Reversão de risco |
+| 10 | P.S. e P.P.S. | Fechamento em formato de carta |
+
+Botões: cada um leva à seção seguinte; só os da oferta e do P.S. abrem o checkout.
+
+**Medição do teste:** os eventos do Pixel levam `content_category` = `pagina-a` ou `pagina-b`. A página B também envia os eventos personalizados `QuizConcluido` e `DataEscolhida`. Nos anúncios, use a mesma campanha com dois links (`/` e `/b`) e `utm_content=pagina-a` / `utm_content=pagina-b` para a Kiwify separar as vendas.
+
+---
+
+## 12. Página C (teste A/B/C) — `/c`
+
+`pagina-vendas/c/index.html`, publicada em **tchauchupeta.vercel.app/c**. Gerada por `node src/pagina-c.mjs` (usa o mesmo `src/oferta.mjs`).
+
+**Ângulo:** página curta e direta para a mãe cansada — “Você não precisa ser ~~mais firme~~. Precisa de um plano.”
+
+| # | Seção | Gatilho |
+|---|---|---|
+| 1 | “Você não precisa ser mais firme” | Reenquadramento de identidade (tira o peso da culpa) |
+| 2 | Conversa em formato de chat, mensagens aparecendo uma a uma | Formato nativo + quebra de objeções (marcada como conversa ilustrativa) |
+| 3 | 3 coisas que o Tchau Chupeta **não** promete | Honestidade radical / confiança |
+| 4 | Abas “Hoje × Com um plano” (manhã, passeio, hora de dormir) | Contraste concreto do dia a dia |
+| 5 | Oferta “no seu celular, em 2 minutos” | Facilidade / baixo atrito |
+| 6 | “Hoje à noite pode ser a primeira noite do plano” | Fechamento curto |
+
+Evento extra do Pixel: `ComparacaoUsada`. Eventos levam `content_category: pagina-c`. Nos anúncios, use `utm_content=pagina-c`.
+
+---
+
+## 13. Página D (teste A/B/C/D) — `/d`
+
+`pagina-vendas/d/index.html`, publicada em **tchauchupeta.vercel.app/d**. Gerada por `node src/pagina-d.mjs` (usa o mesmo `src/oferta.mjs`).
+
+**Modelada na arte de referência do cliente:** foto real da criança, “Seu filho(a) ainda chupa chupeta?” com marca-texto amarelo, “Você não está sozinha!”, 4 benefícios com ícones redondos, faixa em pincelada “Chegou o método Tchau Chupeta!”, mockup do kit (livro + celular com áudio + imprimível “Minha Jornada”), faixa azul com os 3 formatos e botões em pílula amarela.
+
+- A foto `pagina-vendas/d/crianca.jpg` foi recortada da arte de referência (424×680). Troque pelo arquivo original em alta resolução quando tiver; confirme que a imagem pode ser usada (IA, banco de imagens licenciado ou autorização dos pais).
+- ⚠️ A página cita **Guia em PDF, Histórias em áudio e Imprimíveis**, como a arte. Confirme que o produto entrega os três.
+- Frases da arte que viram promessa absoluta foram suavizadas: “Funciona de verdade, sem estresse” → “Mais leve para a família”; “sem traumas” saiu; “mais noites tranquilas” → “menos briga pela chupeta”.
+
+Eventos do Pixel com `content_category: pagina-d`. Nos anúncios, use `utm_content=pagina-d`.
+
+---
+
+## 14. Página principal = versão D
+
+A partir de agora, **tchauchupeta.vercel.app** mostra a versão D. `node src/pagina-d.mjs` gera as duas cópias: `pagina-vendas/index.html` (principal) e `pagina-vendas/d/index.html` (/d).
+
+A versão A original foi movida para **tchauchupeta.vercel.app/a/** (`node src/pagina.mjs` → `pagina-vendas/a/index.html`). B e C continuam em `/b/` e `/c/`.
+
+| Endereço | Versão |
+|---|---|
+| `/` | D (principal) |
+| `/a/` | A — carta de vendas longa |
+| `/b/` | B — a chupeta conta a história |
+| `/c/` | C — curta e direta |
+| `/d/` | D (mesma da principal) |
+
+---
+
+## 15. Página principal: mecanismo único + promessa
+
+A página principal (D) deixou de listar os formatos entregues (PDF, áudios, imprimíveis, mockup do kit). Agora ela vende:
+
+- **Grande ideia:** “a chupeta não precisa sumir. Ela pode se despedir.” (❌ quando a chupeta some × ✅ quando a criança se despede)
+- **Mecanismo único — Despedida Participativa:** 1. Preparar · 2. Participar · 3. Acolher
+- **Promessa:** “Imagine daqui a algumas semanas…” (filho orgulhoso do tchau, você sem improviso, família no mesmo combinado, lembrança bonita em vez de briga)
+- **Oferta:** o método completo da Despedida Participativa, o que fazer e dizer em cada momento, família no mesmo combinado, acesso imediato.
