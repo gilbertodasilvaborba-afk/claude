@@ -10,10 +10,11 @@
 <meta property="og:image" content="https://tchauchupeta.vercel.app/d/crianca.jpg">
 <meta name="theme-color" content="#1F2A6B">
 <link rel="preload" href="fonts/Baloo2-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="d/crianca.jpg" as="image">
 <style>
-@font-face{font-family:'Baloo 2';font-weight:400 800;font-display:swap;src:url(fonts/Baloo2-latin.woff2) format('woff2')}
-@font-face{font-family:'Nunito';font-weight:200 1000;font-display:swap;src:url(fonts/Nunito-latin.woff2) format('woff2')}
+@font-face{font-family:'Baloo 2';font-weight:400 800;font-display:optional;src:url(fonts/Baloo2-latin.woff2) format('woff2')}
+@font-face{font-family:'Nunito';font-weight:200 1000;font-display:optional;src:url(fonts/Nunito-latin.woff2) format('woff2')}
 :root{--navy:#1F2A6B;--navy-deep:#151D52;--purple:#7B3FBF;--purple-soft:#EFE6FB;--yellow:#FFD84D;--yellow-soft:#FFF4C7;
   --pink:#F7738A;--mint:#6CC7A8;--lilac:#B79BEA;--cream:#FFFBF4;--ink:#1F2A6B;--ink-soft:#56608F;--r:24px}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -177,7 +178,7 @@ footer p+p{margin-top:8px}
   .btn{font-size:18px;padding:15px 22px;width:100%}
 }
 </style>
-<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1137389055898462');fbq('track','PageView');fbq('track','ViewContent',{content_name:'Tchau Chupeta',content_category:'pagina-d',value:29.9,currency:'BRL'});</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1137389055898462');fbq('track','PageView');fbq('track','ViewContent',{content_name:'Tchau Chupeta',content_category:'pagina-d',value:17.9,currency:'BRL'});</script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1137389055898462&ev=PageView&noscript=1"></noscript>
 </head>
 <body>
@@ -309,11 +310,11 @@ footer p+p{margin-top:8px}
       </ul>
       <div class="preco" id="preco">
         
-        <div class="por"><small>R$</small> 29,90</div>
+        <div class="por"><small>R$</small> 17,90</div>
         
         <div class="parc">pagamento único</div>
       </div>
-      <a class="btn compra full pulse" href="https://pay.kiwify.com.br/pZIVc6a" data-checkout>Quero o Tchau Chupeta <span aria-hidden="true">→</span></a>
+      <a class="btn compra full pulse" href="https://pay.kiwify.com.br/0PStBpv" data-checkout>Quero o Tchau Chupeta <span aria-hidden="true">→</span></a>
       <div class="gar"><span class="s">7</span><div><b>7 dias de garantia.</b> Se não for para a sua família, você pede o reembolso e recebe 100% de volta.</div></div>
       <ul class="selos"><li>🔒 Compra segura</li><li>⚡ Acesso imediato</li></ul>
     </div>
@@ -337,7 +338,7 @@ footer p+p{margin-top:8px}
   <span class="star" style="top:24%;right:10%"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 1.5l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 8.7l7.1-.6z" fill="#FFD84D" stroke="#FFD84D" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
   <div class="narrow">
     <h2 class="reveal">Transforme a despedida da chupeta em <b>uma lembrança carinhosa</b> para vocês dois.</h2>
-    <div class="acao reveal"><a class="btn compra " href="https://pay.kiwify.com.br/pZIVc6a" data-checkout>Quero o Tchau Chupeta <span aria-hidden="true">→</span></a>
+    <div class="acao reveal"><a class="btn compra " href="https://pay.kiwify.com.br/0PStBpv" data-checkout>Quero o Tchau Chupeta <span aria-hidden="true">→</span></a>
       <ul class="selos"><li>🔒 Compra segura</li><li>⚡ Acesso imediato</li><li>🛡️ Garantia de 7 dias</li></ul>
     </div>
   </div>
@@ -356,7 +357,7 @@ footer p+p{margin-top:8px}
   var q = location.search.slice(1);
   document.querySelectorAll('[data-checkout]').forEach(function(a){
     if (q && a.href.indexOf('http') === 0) a.href += (a.href.indexOf('?') < 0 ? '?' : '&') + q;
-    a.addEventListener('click', function(){ if (window.fbq) fbq('track', 'InitiateCheckout', { content_category: 'pagina-d', value: 29.9, currency: 'BRL' }); });
+    a.addEventListener('click', function(){ if (window.fbq) fbq('track', 'InitiateCheckout', { content_category: 'pagina-d', value: 17.9, currency: 'BRL' }); });
   });
 })();
 
