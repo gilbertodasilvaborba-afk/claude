@@ -1,6 +1,6 @@
 // Criativo no "modelo foto": foto real da criança à direita, título grande com destaque,
 // lista com ícones, faixa de pincel com o nome, mockup do produto e barra de entregáveis.
-// Uso: node src/modelo.mjs [caminho/da/foto.jpg] [id-da-peça] [degradê: longo|curto]
+// Uso: node src/modelo.mjs [caminho/da/foto.jpg] [id-da-peça] [degradê: longo|curto] [formato: 2x3|4x5|9x16]
 // Sem foto, sai um espaço cinza marcado "FOTO AQUI" para conferir o layout.
 import { chromium } from 'playwright';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
@@ -9,7 +9,16 @@ import { fileURLToPath } from 'node:url';
 import { C, missionCard, art, heroKid, star } from './illustrations.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const SIZE = { w: 1080, h: 1620 }; // 2:3, igual ao modelo
+// Formatos: 2x3 igual ao modelo; 4x5 para o feed (sem o bloco de apoio e sem a barra de baixo);
+// 9x16 para stories (tudo desce para fora da área do perfil no topo; sem a barra de baixo, onde o Instagram põe o botão)
+const FORMATO = process.argv[5] || '2x3';
+const F = {
+  '2x3': { h: 1620, top: 0, dBase: 0, apoio: true, barra: true },
+  '4x5': { h: 1350, top: 0, dBase: -200, apoio: false, barra: false },
+  '9x16': { h: 1920, top: 200, dBase: 0, apoio: true, barra: false },
+}[FORMATO];
+const SIZE = { w: 1080, h: F.h };
+const FOTO_H = 1180 + F.dBase; // a foto termina atrás da faixa de pincel
 const ID = process.argv[3] || 'modelo-01-so-quer-saber-de-tela';
 // degradê curto: a foto aparece mais, para quando o rosto fica perto do texto
 const FADE = process.argv[4] === 'curto' ? '#FBF7F0 0%,rgba(251,247,240,.92) 30%,rgba(251,247,240,0) 50%' : '#FBF7F0 0%,rgba(251,247,240,.85) 22%,rgba(251,247,240,0) 55%';
@@ -65,11 +74,12 @@ body{font-family:'Nunito',sans-serif;color:${C.ink};background:#FBF7F0;position:
 .abs{position:absolute}
 .hl{background:linear-gradient(transparent 55%, ${C.sun} 55%, ${C.sun} 90%, transparent 90%);padding:0 8px}
 </style></head><body>
+<div class="abs" style="left:0;top:${F.top}px;width:1080px;height:1620px">
 <!-- foto à direita, com degradê para o fundo claro do texto -->
-<div class="abs" style="right:0;top:0;width:680px;height:1180px;${fotoCss}"></div>
+<div class="abs" style="right:0;top:${-F.top}px;width:680px;height:${FOTO_H + F.top}px;${fotoCss}"></div>
 ${existsSync(foto) ? '' : `<div class="abs h" style="right:120px;top:520px;font-size:54px;color:#9AA6BD;transform:rotate(-8deg)">FOTO AQUI</div>`}
-<div class="abs" style="right:0;top:0;width:680px;height:1180px;background:linear-gradient(90deg,${FADE})"></div>
-<div class="abs" style="left:0;right:0;top:960px;height:220px;background:linear-gradient(180deg,rgba(251,247,240,0),#FBF7F0)"></div>
+<div class="abs" style="right:0;top:${-F.top}px;width:680px;height:${FOTO_H + F.top}px;background:linear-gradient(90deg,${FADE})"></div>
+<div class="abs" style="left:0;right:0;top:${FOTO_H - 220}px;height:220px;background:linear-gradient(180deg,rgba(251,247,240,0),#FBF7F0)"></div>
 
 <!-- título -->
 <div class="abs" style="left:64px;top:56px;width:640px;transform:rotate(-3deg)">
@@ -83,14 +93,14 @@ ${existsSync(foto) ? '' : `<div class="abs h" style="right:120px;top:520px;font-
 </div>
 
 <!-- apoio -->
-<div class="abs" style="left:64px;top:430px;width:600px;transform:rotate(-2deg)">
+${F.apoio ? '' : '<!--'}<div class="abs" style="left:64px;top:430px;width:600px;transform:rotate(-2deg)">
   <div class="h" style="font-size:42px;line-height:1.05">Você não está sozinha!</div>
   <div style="font-size:31px;font-weight:700;line-height:1.25;margin-top:6px">Na hora de desligar, a cabeça dá branco: <i>o que eu ofereço no lugar?</i></div>
   <div class="h" style="font-size:38px;margin-top:10px;white-space:nowrap"><span class="hl">Agora tem resposta pronta!</span></div>
-</div>
+</div>${F.apoio ? '' : '-->'}
 
 <!-- lista -->
-<div class="abs" style="left:64px;top:640px;width:620px;display:flex;flex-direction:column;gap:18px">
+<div class="abs" style="left:64px;top:${F.apoio ? 640 : 430}px;width:620px;display:flex;flex-direction:column;gap:18px">
   ${item(C.sun, icons.doc, '100 missões prontas', 'para imprimir ou usar no celular.')}
   ${item(C.blue, icons.star, 'Seu filho vira o herói', 'de cada historinha.')}
   ${item(C.leaf, icons.home, 'Só material de casa', 'papel, giz, caixa e lençol.')}
@@ -100,13 +110,15 @@ ${existsSync(foto) ? '' : `<div class="abs h" style="right:120px;top:520px;font-
 <!-- bilhete -->
 <div class="abs hand" style="right:${process.argv[4] === 'curto' ? '40px;top:40px;width:270px' : '46px;top:720px;width:300px'};padding:26px 24px;background:${C.sun};transform:rotate(-6deg);font-size:50px;line-height:1;text-align:center;box-shadow:6px 8px 0 rgba(30,42,74,.15);clip-path:polygon(2% 4%,98% 0,100% 96%,0 100%)">Menos tela, mais brincadeira de verdade! ♡</div>
 
+<!-- da faixa para baixo: um bloco que sobe no 4x5 -->
+<div class="abs" style="left:0;top:${F.dBase}px;width:1080px;height:1620px">
 <!-- faixa de pincel -->
 <div class="abs" style="left:30px;top:1030px;width:680px;height:150px;background:${C.ink};transform:rotate(-3deg);clip-path:polygon(0 18%,6% 6%,40% 12%,70% 0,100% 10%,97% 52%,100% 90%,62% 100%,30% 92%,3% 100%,1% 60%)"></div>
 <div class="abs h" style="left:84px;top:1056px;transform:rotate(-3deg);color:#fff;font-size:34px;line-height:1">Chegou o</div>
 <div class="abs h" style="left:74px;top:1086px;transform:rotate(-3deg);color:${C.sun};font-size:70px;line-height:1">Missão Zero Tela!</div>
 
 <!-- base azul com mockup -->
-<div class="abs" style="left:0;right:0;bottom:0;height:270px;background:${C.ink};border-radius:60% 40% 0 0 / 40px 70px 0 0"></div>
+<div class="abs" style="left:0;right:0;top:1350px;height:${270 + 400}px;background:${C.ink};border-radius:60% 40% 0 0 / 40px 70px 0 0"></div>
 <div class="abs" style="left:64px;top:1200px;width:330px;font-size:26px;font-weight:700;line-height:1.25;z-index:5">Historinhas-missão para trocar o “só mais um vídeo” por brincadeira de verdade. <b style="color:${C.crayon}">De 3 a 8 anos.</b></div>
 ${passaporte}${capa}${celular}
 
@@ -115,9 +127,10 @@ ${passaporte}${capa}${celular}
 <div class="abs row" style="left:50px;top:1395px;gap:12px;background:${C.sun};border:4px solid ${C.ink};border-radius:999px;padding:14px 28px;font-family:'Baloo 2';font-weight:800;font-size:28px;box-shadow:0 8px 0 #C99E14;z-index:6">QUERO SABER MAIS ➜</div>
 
 <!-- barra de entregáveis -->
-<div class="abs row" style="left:40px;right:40px;bottom:22px;justify-content:space-between;color:#fff;z-index:6">
+${F.barra ? '' : '<!--'}<div class="abs row" style="left:40px;right:40px;bottom:22px;justify-content:space-between;color:#fff;z-index:6">
   ${[['📖', 'Missões em PDF', 'imprimir ou celular'], ['🫙', 'Pote de Missões', 'para sortear'], ['🏅', 'Passaporte', '+ certificado']].map(([e, t, d]) => `<div class="row" style="gap:12px"><div style="width:56px;height:56px;border-radius:50%;border:3px solid #fff;display:grid;place-items:center;font-size:28px">${e}</div><div><div style="font-weight:900;font-size:22px">${t}</div><div style="font-size:19px;opacity:.85">${d}</div></div></div>`).join('')}
-</div>
+</div>${F.barra ? '' : '-->'}
+</div></div>
 </body></html>`;
 
 mkdirSync(join(ROOT, 'html'), { recursive: true });

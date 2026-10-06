@@ -241,4 +241,11 @@ node src/modelo.mjs                        # sem foto: mostra o espaço reservad
 
 A foto fica à direita (680 x 1180 px visíveis, corte automático). Use foto própria, de banco com licença comercial ou gerada por IA. Evite foto de criança real tirada da internet sem autorização.
 
-No feed do Instagram/Facebook, imagens mais altas que 4:5 são cortadas, e neste layout o corte pega o título e a barra de baixo. Para o feed, vale fazer uma versão 4:5 (1080x1350).
+Formatos (quinto argumento):
+
+```bash
+node src/modelo.mjs fotos/modelo-02.jpg modelo-02-menino-celular-feed-4x5 curto 4x5      # feed (sem o bloco de apoio e sem a barra de baixo)
+node src/modelo.mjs fotos/modelo-02.jpg modelo-02-menino-celular-stories-9x16 curto 9x16 # stories (respeita as áreas do perfil e do botão)
+```
+
+Use o 4:5 no feed: imagens mais altas são cortadas pelo Instagram/Facebook.
