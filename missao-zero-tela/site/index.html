@@ -11,7 +11,25 @@
 <meta property="og:image" content="/img/hero.jpg">
 <meta name="theme-color" content="#1E2B6F">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%236B3FB8'/%3E%3Ctext x='16' y='22' font-size='17' text-anchor='middle' fill='%23FFE45C' font-family='Arial' font-weight='bold'%3E0%3C/text%3E%3C/svg%3E">
-<!-- META PIXEL: cole aqui o código do seu Pixel do Facebook/Instagram -->
+<!-- Meta Pixel (ID 1137389055898462) + API de Conversões via /api/evento, com o mesmo event_id para deduplicar -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1137389055898462');
+(function(){
+  function cookie(n){var m=document.cookie.match('(^|;)\\s*'+n+'=([^;]*)');return m?decodeURIComponent(m[2]):undefined}
+  function fbc(){var c=cookie('_fbc');if(c)return c;var id=new URLSearchParams(location.search).get('fbclid');return id?'fb.1.'+Date.now()+'.'+id:undefined}
+  window.mzt = function(nome, dados){
+    var id = nome + '-' + Date.now() + '-' + Math.random().toString(36).slice(2,10);
+    fbq('track', nome, dados || {}, { eventID: id });
+    try {
+      var corpo = JSON.stringify({ event_name: nome, event_id: id, event_source_url: location.href, fbp: cookie('_fbp'), fbc: fbc(), custom_data: dados });
+      fetch('/api/evento', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: corpo, keepalive: true }).catch(function(){});
+    } catch (e) {}
+  };
+  mzt('PageView');
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1137389055898462&ev=PageView&noscript=1"></noscript>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Gochi+Hand&family=Nunito:wght@400;600;700;800&display=swap">
@@ -614,8 +632,14 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
   };
   document.querySelectorAll('[data-checkout]').forEach(a => {
     a.href = CHECKOUT[a.dataset.checkout];
-    a.addEventListener('click', () => { if (window.fbq) fbq('track', 'InitiateCheckout', { value: a.dataset.checkout === 'completo' ? 27.90 : 11.00, currency: 'BRL' }); });
+    a.addEventListener('click', () => { if (window.mzt) mzt('InitiateCheckout', { value: a.dataset.checkout === 'completo' ? 27.90 : 11.00, currency: 'BRL', content_name: 'Missão Zero Tela ' + a.dataset.checkout }); });
   });
+  /* ViewContent: uma vez, quando a seção de planos aparece na tela */
+  const planos = document.getElementById('planos');
+  if (planos && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((es) => { if (es.some(e => e.isIntersecting)) { io.disconnect(); if (window.mzt) mzt('ViewContent', { value: 27.90, currency: 'BRL', content_name: 'Planos Missão Zero Tela' }); } }, { threshold: .3 });
+    io.observe(planos);
+  }
 </script>
 </body>
 </html>
