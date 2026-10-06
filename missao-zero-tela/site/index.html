@@ -628,8 +628,10 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
   /* ===== CONFIGURE AQUI ===== cole os links de checkout da sua plataforma (Kiwify, Hotmart, Cakto...) */
   const CHECKOUT = {
     simples:  "https://SEU-CHECKOUT-PLANO-SIMPLES",
-    completo: "https://SEU-CHECKOUT-PLANO-COMPLETO"
+    completo: "https://pay.kiwify.com.br/iskMF8u"
   };
+  /* enquanto o link do plano simples não for configurado, a opção "só as 20 missões" fica escondida */
+  if (CHECKOUT.simples.includes('SEU-CHECKOUT')) { const n = document.getElementById('up-no'); if (n) n.hidden = true; }
   document.querySelectorAll('[data-checkout]').forEach(a => {
     a.href = CHECKOUT[a.dataset.checkout];
     a.addEventListener('click', () => { if (window.mzt) mzt('InitiateCheckout', { value: a.dataset.checkout === 'completo' ? 27.90 : 11.00, currency: 'BRL', content_name: 'Missão Zero Tela ' + a.dataset.checkout }); });
