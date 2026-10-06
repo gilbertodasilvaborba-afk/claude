@@ -28,6 +28,20 @@ const K = {
 // em baixa resolução (dá para ver títulos e ilustrações, não para usar o material).
 // Fotos (Unsplash License): Vitaly Gariev (história, unsplash.com/photos/fQ-Hp3waO1A), Lucas Alexander
 // (colorir, sJuDgtkUyYs), Erika Fletcher (desenhar, YfNWGrQI3a4), Vivek Kumar (abraço, a-_1PPjnbUg).
+const semMetodo = [
+  ['19h', 'A chupeta “sumiu”. Ninguém avisou. “Mãe, cadê minha chupeta?”'],
+  ['20h', 'Ela procura no berço, no sofá, na sua bolsa… e começa a chorar.'],
+  ['22h', 'O choro não passa. Ela não entende por que perdeu o que dava segurança.'],
+  ['00h', 'A casa inteira acordada. Você exausta, com o coração apertado.'],
+  ['2h', 'Você devolve a chupeta. Ela aprende que o choro traz a chupeta de volta, e a próxima tentativa fica ainda mais difícil.'],
+];
+const comMetodo = [
+  ['Semanas antes', 'Vocês leem as historinhas da Chupi, da Fada Pipoca e do ursinho Bento. A ideia do tchau fica conhecida e gostosa.'],
+  ['Alguns dias antes', 'Ele mesmo escolhe o dia do tchau e vai pintando o calendário.'],
+  ['A noite do tchau', 'Faz a cartinha, o desenho e dá tchau para a chupeta, do jeito dele.'],
+  ['Na hora de dormir', 'Abraça o ursinho, lembra da história e sabe o que aconteceu.'],
+  ['Na manhã seguinte', 'Acorda com o bilhete mágico e o certificado: “Eu já sou grande!”'],
+];
 const riscos = [
   ['🦷', 'Dentes e mordida', 'O uso prolongado pode deixar a mordida aberta e desalinhar os dentes.'],
   ['🗣️', 'Fala', 'Com a chupeta na boca por muito tempo, alguns sons podem ficar mais difíceis de pronunciar.'],
@@ -196,6 +210,27 @@ section{padding:72px 0}
 
 /* o que você recebe (faixa azul com ícones, como o rodapé da referência) */
 .recebe{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.noite{background:linear-gradient(180deg,#F3EEF8,#FFFBF4)}
+.noite .lados{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:960px;margin:32px auto 0}
+.noite .lado{border-radius:var(--r);padding:24px 22px;text-align:left}
+.noite .sem{background:#2A2556;color:#D9D4F0}
+.noite .com{background:#fff;box-shadow:0 0 0 3px var(--mint),0 16px 40px rgba(108,199,168,.22)}
+.noite .topo{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.noite .topo svg{display:block}
+.noite .sem h3{color:#fff;font-size:24px}
+.noite .com h3{color:var(--navy);font-size:24px}
+.noite .linha{list-style:none;padding:0;margin:0;position:relative}
+.noite .linha::before{content:'';position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:currentColor;opacity:.25}
+.noite .linha li{position:relative;padding:0 0 14px 30px;line-height:1.45}
+.noite .linha li::before{content:'';position:absolute;left:3px;top:6px;width:12px;height:12px;border-radius:50%}
+.noite .sem li::before{background:#F7738A}
+.noite .com li::before{background:var(--mint)}
+.noite .linha b{display:block;font-family:'Baloo 2';font-size:18px}
+.noite .sem b{color:#FFB3C0}
+.noite .com b{color:var(--purple)}
+.noite .com li{color:var(--ink-soft)}
+.noite .fecho{max-width:640px;margin:26px auto 0;text-align:center;font-size:19px}
+@media(max-width:860px){.noite .lados{grid-template-columns:1fr}}
 .riscos{background:#FFF7EE}
 .riscos .rgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
 .riscos .rcard{background:#fff;border-radius:var(--r);padding:22px 20px;box-shadow:0 10px 26px rgba(31,42,107,.08);text-align:left}
@@ -203,8 +238,6 @@ section{padding:72px 0}
 .riscos h3{color:var(--navy);margin-bottom:4px}
 .riscos .rcard p{color:var(--ink-soft);font-size:16px}
 .riscos .fonte{max-width:680px;margin:22px auto 0;text-align:center;font-size:14px;color:var(--ink-soft)}
-.vs ol{margin:8px 0 0;padding-left:20px}
-.vs li{margin:7px 0;line-height:1.4}
 .dentro .mock{width:100%;max-width:760px;height:auto;margin:0 auto;display:block;border-radius:24px}
 .dentro .kitlista{list-style:none;padding:0;max-width:760px;margin:18px auto 0;display:grid;gap:12px}
 .dentro .kitlista li{background:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 6px 18px rgba(31,42,107,.07);color:var(--ink-soft)}
@@ -332,6 +365,31 @@ ${pixelTag('pagina-d')}
   </div>
 </section>
 
+<!-- 2c. A NOITE DO TCHAU: sem método × com o Tchau Chupeta -->
+<section class="noite" id="noite">
+  <div class="wrap">
+    <div class="narrow center reveal">
+      <span class="kick">Duas noites bem diferentes</span>
+      <h2>Como é a noite do tchau <span class="mt">sem um método</span>… e com o Tchau Chupeta</h2>
+    </div>
+    <div class="lados">
+      <div class="lado sem reveal">
+        <div class="topo"><span class="ilu" aria-hidden="true">${pacifier({ size: 70, mood: 'sad' })}</span><h3>Sem um método</h3></div>
+        <ol class="linha">
+          ${semMetodo.map(([h, t]) => `<li><b>${h}</b>${t}</li>`).join('\n          ')}
+        </ol>
+      </div>
+      <div class="lado com reveal">
+        <div class="topo"><span class="ilu" aria-hidden="true">${pacifier({ size: 70, wave: true })}</span><h3>Com o Tchau Chupeta</h3></div>
+        <ol class="linha">
+          ${comMetodo.map(([h, t]) => `<li><b>${h}</b>${t}</li>`).join('\n          ')}
+        </ol>
+      </div>
+    </div>
+    <p class="fecho reveal">A diferença não está na força de vontade. Está em <b>preparar a criança antes</b> e deixar ela participar.</p>
+  </div>
+</section>
+
 <!-- 3. CHEGOU O MÉTODO (grande ideia: a chupeta não some, ela se despede) -->
 <section class="metodo" id="metodo">
   <div class="narrow center">
@@ -340,22 +398,8 @@ ${pixelTag('pagina-d')}
   </div>
   <div class="wrap">
     <div class="vs">
-      <div class="ruim reveal"><span>❌ Sem um método</span>
-        <ol>
-          <li>Um dia a chupeta some, sem aviso.</li>
-          <li>A criança não entende o que aconteceu e sente que perdeu algo importante.</li>
-          <li>A noite vira choro, insegurança e coração apertado.</li>
-          <li>Cansada, a família cede e devolve a chupeta.</li>
-          <li>Ela aprende que o choro traz a chupeta de volta, e a próxima tentativa fica ainda mais difícil.</li>
-        </ol></div>
-      <div class="bom reveal"><span>✅ Com o Tchau Chupeta</span>
-        <ol>
-          <li>Seu filho é preparado aos poucos, com historinhas.</li>
-          <li>Ele entende o que vai acontecer e escolhe o dia do tchau.</li>
-          <li>Participa da despedida: faz a cartinha, o desenho e dá tchau.</li>
-          <li>Ganha o certificado e se sente grande e orgulhoso.</li>
-          <li>A família inteira segue o mesmo combinado, sem voltar atrás.</li>
-        </ol></div>
+      <div class="ruim reveal"><span>❌ Quando a chupeta some</span>A criança não entende o que aconteceu, sente a perda… e começa o ciclo “tira, chora, devolve”.</div>
+      <div class="bom reveal"><span>✅ Quando a criança se despede</span>Ela entende o que está acontecendo, participa do tchau e se sente grande por isso.</div>
     </div>
   </div>
 </section>
