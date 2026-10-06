@@ -241,4 +241,4 @@ node src/modelo.mjs                        # sem foto: mostra o espaço reservad
 
 A foto fica à direita (680 x 1180 px visíveis, corte automático). Use foto própria, de banco com licença comercial ou gerada por IA. Evite foto de criança real tirada da internet sem autorização.
 
-No feed, imagens 2:3 aparecem cortadas em 4:5; o conteúdo importante fica dentro da faixa central.
+No feed do Instagram/Facebook, imagens mais altas que 4:5 são cortadas, e neste layout o corte pega o título e a barra de baixo. Para o feed, vale fazer uma versão 4:5 (1080x1350).
