@@ -249,3 +249,9 @@ node src/modelo.mjs fotos/modelo-02.jpg modelo-02-menino-celular-stories-9x16 cu
 ```
 
 Use o 4:5 no feed: imagens mais altas são cortadas pelo Instagram/Facebook.
+
+Versão horizontal 1,91:1 (1200x628), para anúncio de link no feed:
+
+```bash
+node src/modelo-horizontal.mjs fotos/modelo-02.jpg modelo-02-menino-celular-1.91x1
+```
