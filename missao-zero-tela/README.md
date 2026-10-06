@@ -227,3 +227,18 @@ Métricas para decidir: CTR (link), custo por clique e, principalmente, custo po
 - [ ] Sem linguagem de culpa ou medo ("seu filho está viciado", "você está prejudicando").
 - [ ] Depoimentos só se forem reais e autorizados (a página ainda não tem nenhum).
 - [ ] **Conferir as missões de exemplo:** as cartas "Missão 42 Cabana do Explorador", "Missão 15 Detetive de Cores" e "Missão 07 Cidade de Papel" vêm da página de vendas. As cartas **"Missão 63 Foguete de Caixa"** (feed-06, carrossel-03) e **"Missão 88 Caça às Estrelas"** (carrossel-03) foram criadas para ilustrar: troque pelo número e nome de missões reais do PDF em `src/build.mjs` (objeto `cards`) e rode o build de novo.
+
+---
+
+## 9. Modelo com foto (2:3)
+
+Peça no estilo "foto real + lista + mockup do produto" (`png/modelo/`), gerada por `src/modelo.mjs`.
+
+```bash
+node src/modelo.mjs fotos/minha-foto.jpg   # com a foto da criança
+node src/modelo.mjs                        # sem foto: mostra o espaço reservado
+```
+
+A foto fica à direita (680 x 1180 px visíveis, corte automático). Use foto própria, de banco com licença comercial ou gerada por IA. Evite foto de criança real tirada da internet sem autorização.
+
+No feed, imagens 2:3 aparecem cortadas em 4:5; o conteúdo importante fica dentro da faixa central.
