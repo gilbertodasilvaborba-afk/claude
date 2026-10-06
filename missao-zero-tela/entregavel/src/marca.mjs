@@ -193,6 +193,35 @@ const logos = [
   ['logo-checkout-quadrado', 600, 600, `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:18px;${fundo}">${simbolo(300)}${wordmark(78)}</div>`, false],
 ];
 
+
+// ------------------------------------------------------------- capa do Facebook (1640x624, sem preço)
+// Área segura: o conteúdo importante fica no centro (o celular corta as laterais)
+// e longe do canto inferior esquerdo (onde fica a foto de perfil no computador).
+const fotoB64 = (f) => 'data:image/jpeg;base64,' + readFileSync(join(ROOT, '..', 'site', 'img', f)).toString('base64');
+const polaroid = (src, w, rot, legenda) => `<div style="background:#fff;padding:${w * 0.05}px ${w * 0.05}px ${w * 0.03}px;border-radius:6px;box-shadow:0 14px 30px rgba(30,43,111,.18);transform:rotate(${rot}deg);width:${w}px;position:relative">
+  <span style="position:absolute;top:-12px;left:50%;width:${w * 0.4}px;height:22px;margin-left:-${w * 0.2}px;background:rgba(255,228,92,.9);transform:rotate(-3deg)"></span>
+  <img src="${src}" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:3px;display:block">
+  <div style="font-family:'Gochi Hand';font-size:${w * 0.1}px;text-align:center;margin-top:4px;color:${C.navy}">${legenda}</div></div>`;
+const capaFacebook = (t) => `<div style="width:1640px;height:624px;position:relative;overflow:hidden;background:radial-gradient(70% 120% at 50% 40%,#FFFFFF 0%,${C.cream} 45%,${C.lilac} 100%)">
+  <div style="position:absolute;left:0;right:0;bottom:0;height:70px;background:${C.navy}"></div>
+  <div style="position:absolute;left:40px;top:70px;display:flex;flex-direction:column;gap:26px">
+    ${polaroid(fotoB64('aquarela.jpg'), 230, -6, 'Pintor mirim')}
+  </div>
+  <div style="position:absolute;left:250px;top:150px">${polaroid(fotoB64('blocos.jpg'), 210, 5, 'Torre gigante')}</div>
+  <div style="position:absolute;left:470px;right:470px;top:88px;text-align:center;display:flex;flex-direction:column;align-items:center">
+    <div style="display:flex;align-items:center;gap:18px">${simbolo(96)}${wordmark(64)}</div>
+    <div class="wm" style="font-size:44px;line-height:1.14;margin-top:28px;color:${C.navy}">Troque o "só mais um vídeo"<br>por <span style="color:${C.purple}">brincadeira de verdade</span></div>
+    <div style="display:flex;gap:10px;margin-top:28px;justify-content:center">
+      ${['🗺️ 100 historinhas-missão', '🎂 3 a 8 anos', '🧺 Só material de casa'].map((x, i) => `<span style="font-weight:800;font-size:17px;padding:7px 13px;border-radius:999px;white-space:nowrap;background:${[C.yellow, '#E2F6EF', '#EEE7FB'][i]}">${x.replace(/^(\S+)/, '<span class="emo">$1</span>')}</span>`).join('')}
+    </div>
+  </div>
+  <div style="position:absolute;right:262px;top:70px;width:225px;transform:perspective(1200px) rotateY(-14deg) rotate(3deg);box-shadow:16px 22px 40px rgba(30,43,111,.3);border-radius:6px;overflow:hidden;border-left:8px solid ${C.purple}"><img src="${t.capa}" style="width:100%;display:block"></div>
+  <div style="position:absolute;right:40px;top:120px">${polaroid(fotoB64('cozinha.jpg'), 220, 6, 'Chef por um dia')}</div>
+  <span class="emo" style="position:absolute;left:500px;top:430px;font-size:34px">⭐</span>
+  <span class="emo" style="position:absolute;right:520px;top:430px;font-size:34px">✨</span>
+  <div style="position:absolute;left:0;right:0;bottom:18px;text-align:center;color:#fff;font-family:'Gochi Hand';font-size:28px">brincadeiras que vencem a tela · missao-zero-tela.vercel.app</div>
+</div>`;
+
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined });
 const render = async (name, w, h, inner, { png = false, transparent = false, dir = CHECK } = {}) => {
   const pg = await browser.newPage({ viewport: { width: w, height: h } });
@@ -204,6 +233,12 @@ const render = async (name, w, h, inner, { png = false, transparent = false, dir
   console.log('ok', name);
 };
 
+if (process.argv[2] === 'capa') {
+  const tc = await capturar(browser);
+  await render('capa-facebook', 1640, 624, capaFacebook(tc), { dir: join(ROOT, '..', 'redes') });
+  await browser.close();
+  process.exit(0);
+}
 for (const [n, w, h, inner, tr] of logos) await render(n, w, h, inner, { png: true, transparent: tr, dir: LOGO });
 const t = await capturar(browser);
 for (const k of ['completo', 'simples']) {
