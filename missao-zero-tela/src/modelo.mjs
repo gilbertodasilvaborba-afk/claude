@@ -1,6 +1,6 @@
 // Criativo no "modelo foto": foto real da criança à direita, título grande com destaque,
 // lista com ícones, faixa de pincel com o nome, mockup do produto e barra de entregáveis.
-// Uso: node src/modelo.mjs [caminho/da/foto.jpg]
+// Uso: node src/modelo.mjs [caminho/da/foto.jpg] [id-da-peça] [degradê: longo|curto]
 // Sem foto, sai um espaço cinza marcado "FOTO AQUI" para conferir o layout.
 import { chromium } from 'playwright';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
@@ -10,7 +10,9 @@ import { C, missionCard, art, heroKid, star } from './illustrations.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SIZE = { w: 1080, h: 1620 }; // 2:3, igual ao modelo
-const ID = 'modelo-01-so-quer-saber-de-tela';
+const ID = process.argv[3] || 'modelo-01-so-quer-saber-de-tela';
+// degradê curto: a foto aparece mais, para quando o rosto fica perto do texto
+const FADE = process.argv[4] === 'curto' ? '#FBF7F0 0%,rgba(251,247,240,.92) 30%,rgba(251,247,240,0) 50%' : '#FBF7F0 0%,rgba(251,247,240,.85) 22%,rgba(251,247,240,0) 55%';
 
 const foto = process.argv[2] || join(ROOT, 'fotos', 'modelo-01.jpg');
 const fotoCss = existsSync(foto)
@@ -66,7 +68,7 @@ body{font-family:'Nunito',sans-serif;color:${C.ink};background:#FBF7F0;position:
 <!-- foto à direita, com degradê para o fundo claro do texto -->
 <div class="abs" style="right:0;top:0;width:680px;height:1180px;${fotoCss}"></div>
 ${existsSync(foto) ? '' : `<div class="abs h" style="right:120px;top:520px;font-size:54px;color:#9AA6BD;transform:rotate(-8deg)">FOTO AQUI</div>`}
-<div class="abs" style="right:0;top:0;width:680px;height:1180px;background:linear-gradient(90deg,#FBF7F0 0%,rgba(251,247,240,.85) 22%,rgba(251,247,240,0) 55%)"></div>
+<div class="abs" style="right:0;top:0;width:680px;height:1180px;background:linear-gradient(90deg,${FADE})"></div>
 <div class="abs" style="left:0;right:0;top:960px;height:220px;background:linear-gradient(180deg,rgba(251,247,240,0),#FBF7F0)"></div>
 
 <!-- título -->
@@ -96,7 +98,7 @@ ${existsSync(foto) ? '' : `<div class="abs h" style="right:120px;top:520px;font-
 </div>
 
 <!-- bilhete -->
-<div class="abs hand" style="right:46px;top:720px;width:300px;padding:26px 24px;background:${C.sun};transform:rotate(-6deg);font-size:50px;line-height:1;text-align:center;box-shadow:6px 8px 0 rgba(30,42,74,.15);clip-path:polygon(2% 4%,98% 0,100% 96%,0 100%)">Menos tela, mais brincadeira de verdade! ♡</div>
+<div class="abs hand" style="right:${process.argv[4] === 'curto' ? '40px;top:40px;width:270px' : '46px;top:720px;width:300px'};padding:26px 24px;background:${C.sun};transform:rotate(-6deg);font-size:50px;line-height:1;text-align:center;box-shadow:6px 8px 0 rgba(30,42,74,.15);clip-path:polygon(2% 4%,98% 0,100% 96%,0 100%)">Menos tela, mais brincadeira de verdade! ♡</div>
 
 <!-- faixa de pincel -->
 <div class="abs" style="left:30px;top:1030px;width:680px;height:150px;background:${C.ink};transform:rotate(-3deg);clip-path:polygon(0 18%,6% 6%,40% 12%,70% 0,100% 10%,97% 52%,100% 90%,62% 100%,30% 92%,3% 100%,1% 60%)"></div>
