@@ -222,6 +222,15 @@ const capaFacebook = (t) => `<div style="width:1640px;height:624px;position:rela
   <div style="position:absolute;left:0;right:0;bottom:18px;text-align:center;color:#fff;font-family:'Gochi Hand';font-size:28px">brincadeiras que vencem a tela · missao-zero-tela.vercel.app</div>
 </div>`;
 
+
+// ------------------------------------------------------------- foto de perfil (o Facebook mostra em círculo)
+const perfil = (dark) => `<div style="width:1080px;height:1080px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;background:${dark ? `radial-gradient(circle at 50% 40%,#2B3A8A,${C.navy} 70%)` : `radial-gradient(circle at 50% 40%,#FFFFFF,${C.cream} 55%,${C.lilac})`}">
+  ${simbolo(500)}
+  <div style="text-align:center;line-height:.95">
+    <div class="wm" style="font-size:118px;color:${dark ? '#fff' : C.navy}">Missão</div>
+    <div class="wm" style="font-size:118px;color:${dark ? C.yellow : C.purple}">Zero Tela</div>
+  </div></div>`;
+
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined });
 const render = async (name, w, h, inner, { png = false, transparent = false, dir = CHECK } = {}) => {
   const pg = await browser.newPage({ viewport: { width: w, height: h } });
@@ -233,6 +242,12 @@ const render = async (name, w, h, inner, { png = false, transparent = false, dir
   console.log('ok', name);
 };
 
+if (process.argv[2] === 'perfil') {
+  await render('perfil-facebook', 1080, 1080, perfil(false), { png: true, dir: join(ROOT, '..', 'redes') });
+  await render('perfil-facebook-azul', 1080, 1080, perfil(true), { png: true, dir: join(ROOT, '..', 'redes') });
+  await browser.close();
+  process.exit(0);
+}
 if (process.argv[2] === 'capa') {
   const tc = await capturar(browser);
   await render('capa-facebook', 1640, 624, capaFacebook(tc), { dir: join(ROOT, '..', 'redes') });
