@@ -16,6 +16,7 @@ const F = {
   '2x3': { h: 1620, top: 0, dBase: 0, apoio: true, barra: true },
   '4x5': { h: 1350, top: 0, dBase: -200, apoio: false, barra: false },
   '9x16': { h: 1920, top: 200, dBase: 0, apoio: true, barra: false },
+  '9x16-completo': { h: 1920, top: 170, dBase: 0, apoio: true, barra: true }, // igual ao 2:3, com a barra de baixo
 }[FORMATO];
 const SIZE = { w: 1080, h: F.h };
 const FOTO_H = 1180 + F.dBase; // a foto termina atrás da faixa de pincel
