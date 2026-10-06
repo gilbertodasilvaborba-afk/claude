@@ -295,7 +295,6 @@ ${pixelTag('pagina-d')}
       <h1><span class="l1">Seu filho(a) ainda</span><span class="l2">chupa</span><span class="l3">Chupeta?</span></h1>
       <p class="sozinha">Você não está sozinha!
         <span>Muitas mães passam por isso e se sentem frustradas, mas <mark>existe um caminho carinhoso!</mark></span></p>
-      <div class="acao" style="text-align:left">${prox('Quero saber mais', '#beneficios', 'pulse')}</div>
     </div>
   </div>
   <div class="foto">
@@ -315,7 +314,6 @@ ${pixelTag('pagina-d')}
     <div class="bens">
       ${beneficios.map(([i, cor, t, d]) => `<div class="ben reveal"><span class="bola" style="background:${cor}">${i}</span><div><h3>${t}</h3><p>${d}</p></div></div>`).join('\n      ')}
     </div>
-    <div class="acao reveal">${prox('Por que não adiar', '#riscos')}</div>
   </div>
 </section>
 
@@ -331,7 +329,6 @@ ${pixelTag('pagina-d')}
       ${riscos.map(([i, t, d]) => `<div class="rcard reveal"><span class="ico" aria-hidden="true">${i}</span><h3>${t}</h3><p>${d}</p></div>`).join('\n      ')}
     </div>
     <p class="fonte reveal">Pediatras e odontopediatras costumam recomendar deixar a chupeta por volta dos 2 a 3 anos. Em caso de dúvida, converse com o pediatra do seu filho.</p>
-    <div class="acao reveal">${prox('Conhecer o método', '#metodo')}</div>
   </div>
 </section>
 
@@ -361,7 +358,6 @@ ${pixelTag('pagina-d')}
         </ol></div>
     </div>
   </div>
-  <div class="narrow acao reveal">${prox('Como isso funciona', '#mecanismo')}</div>
 </section>
 
 <!-- 4. O MECANISMO ÚNICO: Despedida Participativa -->
@@ -377,7 +373,6 @@ ${pixelTag('pagina-d')}
     <div class="cards">
       ${pilares.map(([i, t, d]) => `<div class="card reveal"><span class="ico">${i}</span><h3>${t}</h3><p>${d}</p></div>`).join('\n      ')}
     </div>
-    <div class="acao reveal">${prox('Ver o que vem no material', '#por-dentro')}</div>
   </div>
 </section>
 
@@ -402,7 +397,6 @@ ${pixelTag('pagina-d')}
       </ul>
     </div>
     <p class="formato reveal">📲 Material digital ilustrado. Você recebe no e-mail, lê no celular e imprime as brincadeiras em casa.</p>
-    <div class="acao reveal">${prox('Ver o que muda', '#promessa')}</div>
   </div>
 </section>
 
@@ -416,7 +410,6 @@ ${pixelTag('pagina-d')}
     <ul class="imagine">
       ${imagine.map((t) => `<li class="reveal">${t}</li>`).join('\n      ')}
     </ul>
-    <div class="acao reveal">${prox('Quero começar', '#oferta')}</div>
   </div>
 </section>
 
@@ -465,7 +458,7 @@ ${pixelTag('pagina-d')}
   <span class="star" style="top:24%;right:10%">${star(14, K.yellow)}</span>
   <div class="narrow">
     <h2 class="reveal">Transforme a despedida da chupeta em <b>uma lembrança carinhosa</b> para vocês dois.</h2>
-    <div class="acao reveal">${ctaCheckout('Quero o Tchau Chupeta')}
+    <div class="acao reveal">
       <ul class="selos"><li>🔒 Compra segura</li><li>⚡ Acesso imediato</li><li>🛡️ Garantia de ${OFERTA.garantiaDias} dias</li></ul>
     </div>
   </div>
