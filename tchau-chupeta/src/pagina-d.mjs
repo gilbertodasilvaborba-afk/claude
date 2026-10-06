@@ -107,6 +107,28 @@ const cenaCom = `<svg viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg" r
   <path d="M102 88 Q108 80 114 88 M126 88 Q132 80 138 88" stroke="${C.ink}" stroke-width="3.5" fill="none" stroke-linecap="round"/>
   <path d="M106 102 Q120 116 134 102" stroke="${C.ink}" stroke-width="3.5" fill="${C.ink}" stroke-linecap="round"/>
 </svg>`;
+// Bônus (entregavel/bonus/*.pdf, gerados por src/bonus.mjs).
+const caixa = (x, y, w, h, cor, fita) => `<g transform="translate(${x} ${y})">
+    <ellipse cx="${w / 2}" cy="${h + 4}" rx="${w * .55}" ry="6" fill="#000" opacity=".08"/>
+    <rect y="${h * .28}" width="${w}" height="${h * .72}" rx="5" fill="${cor}"/>
+    <rect x="-4" y="${h * .16}" width="${w + 8}" height="${h * .18}" rx="4" fill="${cor}" style="filter:brightness(1.12)"/>
+    <rect x="${w / 2 - 5}" y="${h * .16}" width="10" height="${h * .84}" fill="${fita}"/>
+    <path d="M${w / 2} ${h * .16} C${w / 2 - 26} ${h * .16 - 22} ${w / 2 - 30} ${h * .16 + 4} ${w / 2} ${h * .16}Z M${w / 2} ${h * .16} C${w / 2 + 26} ${h * .16 - 22} ${w / 2 + 30} ${h * .16 + 4} ${w / 2} ${h * .16}Z" fill="${fita}"/>
+  </g>`;
+const presentes = `<svg viewBox="0 0 360 170" role="img" aria-label="Quatro presentes">
+  ${caixa(40, 52, 92, 96, '#1F2A6B', '#E9B23A')}
+  ${caixa(130, 22, 100, 126, '#F7738A', '#FFD84D')}
+  ${caixa(232, 70, 66, 78, '#B79BEA', '#E9B23A')}
+  ${caixa(286, 96, 56, 56, '#6CC7A8', '#FFD84D')}
+  <path d="M20 40 l3 7 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1Z" fill="#FFD84D"/>
+  <path d="M330 30 l2 5 5 .7 -3.6 3.4 .9 4.9 -4.3 -2.3 -4.3 2.3 .9 -4.9 -3.6 -3.4 5 -.7Z" fill="#FFD84D"/>
+</svg>`;
+const bonus = [
+  ['bonus-1', 'Jogo da memória da Chupi', '12 pares de cartas ilustradas para imprimir e brincar juntos, conversando sobre a despedida.'],
+  ['bonus-2', 'Livro de colorir Tchau Chupeta', '8 desenhos para pintar enquanto o dia do tchau se aproxima.'],
+  ['bonus-3', 'Kit festa do tchau', 'Bandeirinhas “TCHAU CHUPETA”, coroa “Eu já sou grande!” e medalhas de coragem.'],
+  ['bonus-4', 'O que dizer nos dias seguintes', 'Frases prontas para acolher seu filho quando ele pedir a chupeta, sem voltar atrás.'],
+];
 const prox = (texto, alvo, extra = '') =>
   `<a class="btn ${extra}" href="${alvo}"><span class="cur" aria-hidden="true">👆</span>${texto}</a>`;
 const ctaCheckout = (texto, extra = '') =>
@@ -302,6 +324,16 @@ section{padding:72px 0}
 
 /* o que você recebe (faixa azul com ícones, como o rodapé da referência) */
 .recebe{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.bonus{background:#FFF7EE}
+.bonus .presentes{max-width:380px;margin:10px auto 0}
+.bonus .presentes svg{display:block;width:100%;height:auto}
+.bonus .bgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:900px;margin:22px auto 0}
+.bonus .bcard{display:flex;gap:16px;align-items:center;background:#fff;border-radius:var(--r);padding:16px;box-shadow:0 10px 26px rgba(31,42,107,.08);text-align:left}
+.bonus .bcard img{flex:0 0 96px;width:96px;height:auto;border-radius:8px;box-shadow:0 6px 14px rgba(31,42,107,.18)}
+.bonus .tag{display:inline-block;background:var(--navy);color:#fff;font-family:'Baloo 2',system-ui,sans-serif;font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase;padding:3px 12px;border-radius:6px}
+.bonus h3{font-size:20px;color:var(--navy);margin:6px 0 4px}
+.bonus .bcard p{font-size:15px;color:var(--ink-soft);line-height:1.4}
+@media(max-width:860px){.bonus .bgrid{grid-template-columns:1fr}}
 .noite{background:linear-gradient(180deg,#F3EEF8,#FFFBF4)}
 .noite .lados{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:960px;margin:32px auto 0}
 .noite .lado{border-radius:var(--r);padding:24px 22px;text-align:left}
@@ -549,6 +581,20 @@ ${pixelTag('pagina-d')}
   </div>
 </section>
 
+<!-- 5b. BÔNUS -->
+<section class="bonus" id="bonus">
+  <div class="wrap">
+    <div class="narrow center reveal">
+      <span class="kick">E tem mais</span>
+      <h2>Você também vai receber <span class="mt">4 bônus</span></h2>
+      <div class="presentes">${presentes}</div>
+    </div>
+    <div class="bgrid">
+      ${bonus.map(([img, t, d], i) => `<div class="bcard reveal"><img src="dentro/${img}.webp" alt="Capa do bônus ${t}" width="496" height="702" loading="lazy" decoding="async"><div><span class="tag">Bônus ${i + 1}</span><h3>${t}</h3><p>${d}</p></div></div>`).join('\n      ')}
+    </div>
+  </div>
+</section>
+
 <!-- 6. OFERTA -->
 <section class="oferta" id="oferta">
   <div class="narrow center reveal">
@@ -564,6 +610,7 @@ ${pixelTag('pagina-d')}
         <li><b>1 história para personalizar</b> com o nome e o desenho do seu filho</li>
         <li>O passo a passo da <b>Despedida Participativa</b>: o que fazer e o que dizer em cada momento</li>
         <li>A família inteira <b>no mesmo combinado</b></li>
+        <li><b>+ 4 bônus</b>: jogo da memória, livro de colorir, kit festa do tchau e guia “o que dizer nos dias seguintes”</li>
         <li><b>Acesso imediato</b>, para começar hoje mesmo</li>
         ${bonusHtml}
       </ul>
