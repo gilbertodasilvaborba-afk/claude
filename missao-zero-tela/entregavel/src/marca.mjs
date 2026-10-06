@@ -231,6 +231,18 @@ const perfil = (dark) => `<div style="width:1080px;height:1080px;display:flex;fl
     <div class="wm" style="font-size:118px;color:${dark ? C.yellow : C.purple}">Zero Tela</div>
   </div></div>`;
 
+
+// ------------------------------------------------------------- perfil redondo (círculo ocupando o quadro, cantos transparentes)
+const perfilCirculo = (dark) => `<div style="width:1080px;height:1080px;border-radius:50%;overflow:hidden;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;
+  background:${dark ? `radial-gradient(circle at 50% 38%,#2E3D90,${C.navy} 72%)` : `radial-gradient(circle at 50% 38%,#FFFFFF,${C.cream} 55%,${C.lilac})`}">
+  <div style="position:absolute;inset:26px;border-radius:50%;border:10px solid ${dark ? C.yellow : C.purple}"></div>
+  <div style="position:absolute;inset:52px;border-radius:50%;border:4px dashed ${dark ? 'rgba(255,228,92,.45)' : 'rgba(107,63,184,.35)'}"></div>
+  <div style="margin-top:-10px">${simbolo(440)}</div>
+  <div style="text-align:center;line-height:.95">
+    <div class="wm" style="font-size:112px;color:${dark ? '#fff' : C.navy}">Missão</div>
+    <div class="wm" style="font-size:112px;color:${dark ? C.yellow : C.purple}">Zero Tela</div>
+  </div></div>`;
+
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined });
 const render = async (name, w, h, inner, { png = false, transparent = false, dir = CHECK } = {}) => {
   const pg = await browser.newPage({ viewport: { width: w, height: h } });
@@ -242,6 +254,12 @@ const render = async (name, w, h, inner, { png = false, transparent = false, dir
   console.log('ok', name);
 };
 
+if (process.argv[2] === 'circulo') {
+  await render('perfil-facebook-redondo', 1080, 1080, perfilCirculo(false), { png: true, transparent: true, dir: join(ROOT, '..', 'redes') });
+  await render('perfil-facebook-redondo-azul', 1080, 1080, perfilCirculo(true), { png: true, transparent: true, dir: join(ROOT, '..', 'redes') });
+  await browser.close();
+  process.exit(0);
+}
 if (process.argv[2] === 'perfil') {
   await render('perfil-facebook', 1080, 1080, perfil(false), { png: true, dir: join(ROOT, '..', 'redes') });
   await render('perfil-facebook-azul', 1080, 1080, perfil(true), { png: true, dir: join(ROOT, '..', 'redes') });
