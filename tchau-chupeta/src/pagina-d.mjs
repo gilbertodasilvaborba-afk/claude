@@ -133,11 +133,48 @@ const pilares = [
   [ic.house, '3. Acolher', 'Os dias seguintes já têm um plano, para você acolher sem precisar voltar atrás.'],
 ];
 
+// Mini ilustrações (SVG 64x64) para cada frase da promessa.
+const iluImagine = {
+  orgulho: `<svg viewBox="0 0 64 64" aria-hidden="true">
+    <circle cx="32" cy="32" r="31" fill="#FFF4C7"/>
+    <path d="M14 64 C14 48 22 42 32 42 C42 42 50 48 50 64Z" fill="${C.mint}"/>
+    <circle cx="32" cy="30" r="13" fill="${C.skin}"/>
+    <path d="M19 28 C18 14 46 12 46 27 C42 22 36 20 32 23 C28 19 22 20 19 28Z" fill="${C.hair}"/>
+    <path d="M26 30 q2 -3 4 0 M34 30 q2 -3 4 0 M27 35 q5 5 10 0" stroke="${C.ink}" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M48 6 l2.5 5 5.5 .8 -4 3.8 1 5.4 -5 -2.6 -5 2.6 1 -5.4 -4 -3.8 5.5 -.8Z" fill="${C.sun}"/>
+    <path d="M10 14 l1.5 3 3 .5 -2.2 2 .5 3 -2.8 -1.5 -2.8 1.5 .5 -3 -2.2 -2 3 -.5Z" fill="${C.sun}"/>
+  </svg>`,
+  plano: `<svg viewBox="0 0 64 64" aria-hidden="true">
+    <circle cx="32" cy="32" r="31" fill="#EFE6FB"/>
+    <rect x="17" y="12" width="30" height="40" rx="5" fill="#fff" stroke="${C.lavenderDeep}" stroke-width="2.5"/>
+    <rect x="25" y="8" width="14" height="8" rx="3" fill="${C.lavenderDeep}"/>
+    <path d="M22 24 l3 3 5 -6 M22 34 l3 3 5 -6 M22 44 l3 3 5 -6" stroke="#5DB896" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M33 25h9 M33 35h9 M33 45h7" stroke="${C.lavender}" stroke-width="2.5" stroke-linecap="round"/>
+  </svg>`,
+  familia: `<svg viewBox="0 0 64 64" aria-hidden="true">
+    <circle cx="32" cy="32" r="31" fill="#E6F6EF"/>
+    <path d="M18 8 h28 a6 6 0 0 1 6 6 v6 a6 6 0 0 1 -6 6 h-12 l-5 5 v-5 h-11 a6 6 0 0 1 -6 -6 v-6 a6 6 0 0 1 6 -6Z" fill="#fff" stroke="${C.mint}" stroke-width="2"/>
+    <path d="M23 17 h18" stroke="${C.lavenderDeep}" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="16" cy="42" r="7" fill="${C.skin}"/><path d="M9 41 C9 33 23 33 23 41 C20 38 12 38 9 41Z" fill="${C.hair2}"/><path d="M6 60 C6 51 26 51 26 60Z" fill="${C.lavenderDeep}"/>
+    <circle cx="32" cy="44" r="7" fill="${C.skin}"/><path d="M25 43 C25 35 39 35 39 43 C36 39 28 39 25 43Z" fill="#D9D9E3"/><path d="M22 62 C22 53 42 53 42 62Z" fill="${C.peachDeep}"/>
+    <circle cx="48" cy="42" r="7" fill="${C.skin2}"/><path d="M41 41 C41 33 55 33 55 41 C52 37 44 37 41 41Z" fill="${C.hair}"/><path d="M38 60 C38 51 58 51 58 60Z" fill="${C.mint}"/>
+  </svg>`,
+  lembranca: `<svg viewBox="0 0 64 64" aria-hidden="true">
+    <circle cx="32" cy="32" r="31" fill="#FFEDE4"/>
+    <rect x="13" y="14" width="38" height="34" rx="4" fill="#fff" stroke="${C.peachDeep}" stroke-width="2.5" transform="rotate(-6 32 31)"/>
+    <g transform="rotate(-6 32 31)">
+      <path d="M22 30 C22 25 26 24 30 26 C34 24 38 25 38 30 C38 35 34 36 30 34 C26 36 22 35 22 30Z" fill="${C.peach}"/>
+      <circle cx="30" cy="40" r="4" fill="none" stroke="${C.lavenderDeep}" stroke-width="2"/>
+      <path d="M38 27 q4 -3 4 -8" stroke="${C.peach}" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </g>
+    <path d="M44 48 C44 44 47 43 50 45 C53 43 56 44 56 48 C56 52 50 56 50 56 C50 56 44 52 44 48Z" fill="${C.peachDeep}"/>
+  </svg>`,
+};
 const imagine = [
-  'Seu filho contando, todo orgulhoso, que deu tchau para a chupeta.',
-  'Você sabendo exatamente o que fazer, sem depender de conselhos que se contradizem.',
-  'Pai, avós e babá falando a mesma coisa, sem ninguém “devolver escondido”.',
-  'Uma despedida que vira lembrança bonita, e não uma briga.',
+  ['orgulho', 'Seu filho contando, todo orgulhoso, que deu tchau para a chupeta.'],
+  ['plano', 'Você sabendo exatamente o que fazer, sem depender de conselhos que se contradizem.'],
+  ['familia', 'Pai, avós e babá falando a mesma coisa, sem ninguém “devolver escondido”.'],
+  ['lembranca', 'Uma despedida que vira lembrança bonita, e não uma briga.'],
 ];
 
 const faq = [
@@ -252,8 +289,9 @@ section{padding:72px 0}
 
 /* imagine */
 .imagine{list-style:none;max-width:640px;margin:26px auto 0}
-.imagine li{position:relative;background:#fff;border-radius:18px;padding:16px 20px 16px 58px;margin-top:12px;box-shadow:0 6px 22px rgba(31,42,107,.06);font-weight:600}
-.imagine li::before{content:'💛';position:absolute;left:20px;top:15px;font-size:22px}
+.imagine li{position:relative;display:flex;align-items:center;gap:16px;background:#fff;border-radius:18px;padding:14px 20px 14px 14px;margin-top:12px;box-shadow:0 6px 22px rgba(31,42,107,.06);font-weight:600}
+.imagine .mini{flex:0 0 64px;width:64px;height:64px}
+.imagine .mini svg{display:block;width:100%;height:100%}
 
 /* emblema da oferta */
 .emblema{display:flex;align-items:center;gap:16px;justify-content:center;margin:18px 0 8px}
@@ -506,7 +544,7 @@ ${pixelTag('pagina-d')}
       <h2>Imagine daqui a algumas semanas…</h2>
     </div>
     <ul class="imagine">
-      ${imagine.map((t) => `<li class="reveal">${t}</li>`).join('\n      ')}
+      ${imagine.map(([k, t]) => `<li class="reveal"><span class="mini">${iluImagine[k]}</span><span>${t}</span></li>`).join('\n      ')}
     </ul>
   </div>
 </section>
