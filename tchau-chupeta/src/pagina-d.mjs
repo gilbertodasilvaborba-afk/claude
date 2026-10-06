@@ -129,6 +129,15 @@ const bonus = [
   ['bonus-3', 'Kit festa do tchau', 'Bandeirinhas “TCHAU CHUPETA”, coroa “Eu já sou grande!” e medalhas de coragem.'],
   ['bonus-4', 'O que dizer nos dias seguintes', 'Frases prontas para acolher seu filho quando ele pedir a chupeta, sem voltar atrás.'],
 ];
+// Valores reais de cada item (os bônus estão à venda separadamente na Kiwify por R$ 29,90 cada).
+const valores = [
+  ['Tchau Chupeta: historinhas + passo a passo', '29,90'],
+  ['Bônus 1: Jogo da memória da Chupi', '29,90'],
+  ['Bônus 2: Livro de colorir', '29,90'],
+  ['Bônus 3: Kit festa do tchau', '29,90'],
+  ['Bônus 4: O que dizer nos dias seguintes', '29,90'],
+];
+const valorTotal = valores.reduce((t, [, v]) => t + Number(v.replace(',', '.')), 0).toFixed(2).replace('.', ',');
 const prox = (texto, alvo, extra = '') =>
   `<a class="btn ${extra}" href="${alvo}"><span class="cur" aria-hidden="true">👆</span>${texto}</a>`;
 const ctaCheckout = (texto, extra = '') =>
@@ -393,6 +402,12 @@ section{padding:72px 0}
 .box li::before{content:'✓';position:absolute;left:4px;top:8px;width:20px;height:20px;border-radius:50%;background:var(--mint);color:#fff;font-size:12px;font-weight:900;display:grid;place-content:center}
 .preco{scroll-margin-top:28vh;text-align:center;margin-bottom:18px}
 .preco .de{text-decoration:line-through;opacity:.55;font-weight:700}
+.preco .valores{list-style:none;padding:0;margin:4px 0 10px;text-align:left;font-size:15px}
+.preco .valores li{display:flex;justify-content:space-between;gap:10px;padding:7px 2px !important;border-bottom:1px dashed rgba(31,42,107,.14);color:var(--ink-soft)}
+.preco .valores li::before{content:none !important}
+.preco .valores b{white-space:nowrap;color:var(--ink-soft);text-decoration:line-through;opacity:.8}
+.preco .total{font-size:18px;font-weight:800;color:var(--navy);margin-top:6px}
+.preco .total .de{font-size:20px}
 .preco .ancora{font-size:19px;color:var(--ink-soft);margin-bottom:4px}
 .preco .por{font-family:'Baloo 2',system-ui,sans-serif;font-weight:800;font-size:66px;line-height:1;color:var(--purple)}
 .preco .por small{font-size:28px;color:var(--navy)}
@@ -615,7 +630,11 @@ ${pixelTag('pagina-d')}
         ${bonusHtml}
       </ul>
       <div class="preco" id="preco">
-        ${OFERTA.precoDe ? `<div class="ancora">de <span class="de">R$ ${esc(OFERTA.precoDe)}</span> por apenas</div>` : ''}
+        <ul class="valores">
+          ${valores.map(([t, v]) => `<li><span>${t}</span><b>R$ ${v}</b></li>`).join('\n          ')}
+        </ul>
+        <div class="total">Valor total: <span class="de">R$ ${valorTotal}</span></div>
+        <div class="ancora">Hoje, tudo isso por apenas</div>
         <div class="por"><small>R$</small> ${esc(OFERTA.preco)}</div>
         ${OFERTA.parcelas ? `<div class="parc">ou ${esc(OFERTA.parcelas)}</div>` : ''}
         <div class="parc">pagamento único</div>

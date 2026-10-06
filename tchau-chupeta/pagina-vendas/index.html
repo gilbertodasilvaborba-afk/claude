@@ -181,6 +181,12 @@ section{padding:72px 0}
 .box li::before{content:'✓';position:absolute;left:4px;top:8px;width:20px;height:20px;border-radius:50%;background:var(--mint);color:#fff;font-size:12px;font-weight:900;display:grid;place-content:center}
 .preco{scroll-margin-top:28vh;text-align:center;margin-bottom:18px}
 .preco .de{text-decoration:line-through;opacity:.55;font-weight:700}
+.preco .valores{list-style:none;padding:0;margin:4px 0 10px;text-align:left;font-size:15px}
+.preco .valores li{display:flex;justify-content:space-between;gap:10px;padding:7px 2px !important;border-bottom:1px dashed rgba(31,42,107,.14);color:var(--ink-soft)}
+.preco .valores li::before{content:none !important}
+.preco .valores b{white-space:nowrap;color:var(--ink-soft);text-decoration:line-through;opacity:.8}
+.preco .total{font-size:18px;font-weight:800;color:var(--navy);margin-top:6px}
+.preco .total .de{font-size:20px}
 .preco .ancora{font-size:19px;color:var(--ink-soft);margin-bottom:4px}
 .preco .por{font-family:'Baloo 2',system-ui,sans-serif;font-weight:800;font-size:66px;line-height:1;color:var(--purple)}
 .preco .por small{font-size:28px;color:var(--navy)}
@@ -578,7 +584,15 @@ footer p+p{margin-top:8px}
         
       </ul>
       <div class="preco" id="preco">
-        <div class="ancora">de <span class="de">R$ 29,90</span> por apenas</div>
+        <ul class="valores">
+          <li><span>Tchau Chupeta: historinhas + passo a passo</span><b>R$ 29,90</b></li>
+          <li><span>Bônus 1: Jogo da memória da Chupi</span><b>R$ 29,90</b></li>
+          <li><span>Bônus 2: Livro de colorir</span><b>R$ 29,90</b></li>
+          <li><span>Bônus 3: Kit festa do tchau</span><b>R$ 29,90</b></li>
+          <li><span>Bônus 4: O que dizer nos dias seguintes</span><b>R$ 29,90</b></li>
+        </ul>
+        <div class="total">Valor total: <span class="de">R$ 149,50</span></div>
+        <div class="ancora">Hoje, tudo isso por apenas</div>
         <div class="por"><small>R$</small> 17,90</div>
         
         <div class="parc">pagamento único</div>
