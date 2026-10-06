@@ -8,7 +8,8 @@ const PERMITIDOS = new Set(['PageView', 'ViewContent', 'InitiateCheckout']);
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ erro: 'Use POST' });
-  const token = process.env.META_CAPI_TOKEN;
+  // remove espaços, quebras de linha e aspas que às vezes vêm junto ao colar o token
+  const token = (process.env.META_CAPI_TOKEN || '').replace(/[\s"']/g, '');
   if (!token) return res.status(500).json({ erro: 'META_CAPI_TOKEN não configurado na Vercel' });
 
   let body = req.body;
