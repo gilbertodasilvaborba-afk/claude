@@ -28,6 +28,12 @@ const K = {
 // em baixa resolução (dá para ver títulos e ilustrações, não para usar o material).
 // Fotos (Unsplash License): Vitaly Gariev (história, unsplash.com/photos/fQ-Hp3waO1A), Lucas Alexander
 // (colorir, sJuDgtkUyYs), Erika Fletcher (desenhar, YfNWGrQI3a4), Vivek Kumar (abraço, a-_1PPjnbUg).
+const riscos = [
+  ['🦷', 'Dentes e mordida', 'O uso prolongado pode deixar a mordida aberta e desalinhar os dentes.'],
+  ['🗣️', 'Fala', 'Com a chupeta na boca por muito tempo, alguns sons podem ficar mais difíceis de pronunciar.'],
+  ['👂', 'Ouvidos', 'O uso frequente é associado a mais episódios de otite.'],
+  ['😢', 'Dependência', 'Quanto mais o tempo passa, mais apego, e mais difícil fica dar tchau sem choro.'],
+];
 const momentos = [
   ['foto-historia', 'Hora da historinha', 'Mãe lendo uma história para a criança, as duas rindo'],
   ['foto-colorir', 'Colorir e pintar', 'Mãos de criança colorindo um desenho com giz de cera'],
@@ -190,19 +196,29 @@ section{padding:72px 0}
 
 /* o que você recebe (faixa azul com ícones, como o rodapé da referência) */
 .recebe{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.riscos{background:#FFF7EE}
+.riscos .rgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
+.riscos .rcard{background:#fff;border-radius:var(--r);padding:22px 20px;box-shadow:0 10px 26px rgba(31,42,107,.08);text-align:left}
+.riscos .ico{font-size:34px;display:block;margin-bottom:6px}
+.riscos h3{color:var(--navy);margin-bottom:4px}
+.riscos .rcard p{color:var(--ink-soft);font-size:16px}
+.riscos .fonte{max-width:680px;margin:22px auto 0;text-align:center;font-size:14px;color:var(--ink-soft)}
+.vs ol{margin:8px 0 0;padding-left:20px}
+.vs li{margin:7px 0;line-height:1.4}
+.dentro .mock{width:100%;max-width:760px;height:auto;margin:0 auto;display:block;border-radius:24px}
+.dentro .kitlista{list-style:none;padding:0;max-width:760px;margin:18px auto 0;display:grid;gap:12px}
+.dentro .kitlista li{background:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 6px 18px rgba(31,42,107,.07);color:var(--ink-soft)}
+.dentro .kitlista b{display:block;color:var(--navy);font-size:18px;margin-bottom:2px}
+.boxoferta{width:100%;height:auto;border-radius:18px;margin-bottom:10px}
+@media(max-width:860px){.riscos .rgrid{grid-template-columns:1fr 1fr}}
 .dentro{background:linear-gradient(180deg,var(--cream),#FFF4E4)}
 .dentro .momentos{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px}
 .dentro .momentos figure{margin:0}
 .dentro .momentos img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:18px;box-shadow:0 10px 24px rgba(31,42,107,.14)}
 .dentro .momentos figcaption{font-weight:800;color:var(--navy);margin-top:8px;text-align:center;font-size:16px}
 .dentro .ilustr{font-size:12px;color:var(--ink-soft);opacity:.7;text-align:right;margin-top:6px}
-.dentro .kit{display:grid;gap:28px;margin-top:36px}
-.dentro .item{display:grid;grid-template-columns:1.2fr 1fr;gap:26px;align-items:center}
-.dentro .item img{width:100%;height:auto;border-radius:22px}
-.dentro .item h3{font-size:24px;color:var(--navy);margin-bottom:8px}
-.dentro .item p{color:var(--ink-soft)}
 .dentro .formato{margin:30px auto 0;max-width:640px;text-align:center;font-weight:700;background:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 6px 18px rgba(31,42,107,.08)}
-@media(max-width:860px){.dentro .momentos{grid-template-columns:1fr 1fr}.dentro .item{grid-template-columns:1fr;gap:12px}}
+@media(max-width:860px){.dentro .momentos{grid-template-columns:1fr 1fr}}
 .recebe .kick{color:var(--yellow)}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
 .card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:26px 22px}
@@ -243,14 +259,10 @@ details p{padding:0 22px 20px;color:var(--ink-soft)}
 .final h2{max-width:680px;margin:0 auto}
 .final h2 b{color:var(--yellow)}
 .final .selos{color:#fff}
-footer{background:var(--navy-deep);color:rgba(255,255,255,.6);font-size:13px;text-align:center;padding:30px 20px 110px}
+footer{background:var(--navy-deep);color:rgba(255,255,255,.6);font-size:13px;text-align:center;padding:30px 20px 30px}
 footer p+p{margin-top:8px}
 .star{position:absolute;opacity:.9}
 
-.sticky{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(255,251,244,.96);backdrop-filter:blur(8px);box-shadow:0 -6px 24px rgba(31,42,107,.15);z-index:50;transform:translateY(110%);transition:transform .3s}
-.sticky.on{transform:none}
-.sticky .btn{width:100%;font-size:18px;padding:14px 20px}
-@media(min-width:861px){.sticky{display:none}footer{padding-bottom:30px}}
 
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.vis{opacity:1;transform:none}
@@ -303,6 +315,22 @@ ${pixelTag('pagina-d')}
     <div class="bens">
       ${beneficios.map(([i, cor, t, d]) => `<div class="ben reveal"><span class="bola" style="background:${cor}">${i}</span><div><h3>${t}</h3><p>${d}</p></div></div>`).join('\n      ')}
     </div>
+    <div class="acao reveal">${prox('Por que não adiar', '#riscos')}</div>
+  </div>
+</section>
+
+<!-- 2b. POR QUE NÃO ADIAR: o que o uso prolongado pode causar (sem alarmismo) -->
+<section class="riscos" id="riscos">
+  <div class="wrap">
+    <div class="narrow center reveal">
+      <span class="kick">Por que não adiar</span>
+      <h2>O que a chupeta por <span class="mt">tempo demais</span> pode causar</h2>
+      <p>Não é para assustar. É para mostrar por que vale a pena começar agora, com carinho e do jeito certo.</p>
+    </div>
+    <div class="rgrid">
+      ${riscos.map(([i, t, d]) => `<div class="rcard reveal"><span class="ico" aria-hidden="true">${i}</span><h3>${t}</h3><p>${d}</p></div>`).join('\n      ')}
+    </div>
+    <p class="fonte reveal">Pediatras e odontopediatras costumam recomendar deixar a chupeta por volta dos 2 a 3 anos. Em caso de dúvida, converse com o pediatra do seu filho.</p>
     <div class="acao reveal">${prox('Conhecer o método', '#metodo')}</div>
   </div>
 </section>
@@ -315,8 +343,22 @@ ${pixelTag('pagina-d')}
   </div>
   <div class="wrap">
     <div class="vs">
-      <div class="ruim reveal"><span>❌ Quando a chupeta some</span>A criança não entende o que aconteceu, sente a perda… e começa o ciclo “tira, chora, devolve”.</div>
-      <div class="bom reveal"><span>✅ Quando a criança se despede</span>Ela entende o que está acontecendo, participa do tchau e se sente grande por isso.</div>
+      <div class="ruim reveal"><span>❌ Sem um método</span>
+        <ol>
+          <li>Um dia a chupeta some, sem aviso.</li>
+          <li>A criança não entende o que aconteceu e sente que perdeu algo importante.</li>
+          <li>A noite vira choro, insegurança e coração apertado.</li>
+          <li>Cansada, a família cede e devolve a chupeta.</li>
+          <li>Ela aprende que o choro traz a chupeta de volta, e a próxima tentativa fica ainda mais difícil.</li>
+        </ol></div>
+      <div class="bom reveal"><span>✅ Com o Tchau Chupeta</span>
+        <ol>
+          <li>Seu filho é preparado aos poucos, com historinhas.</li>
+          <li>Ele entende o que vai acontecer e escolhe o dia do tchau.</li>
+          <li>Participa da despedida: faz a cartinha, o desenho e dá tchau.</li>
+          <li>Ganha o certificado e se sente grande e orgulhoso.</li>
+          <li>A família inteira segue o mesmo combinado, sem voltar atrás.</li>
+        </ol></div>
     </div>
   </div>
   <div class="narrow acao reveal">${prox('Como isso funciona', '#mecanismo')}</div>
@@ -351,17 +393,13 @@ ${pixelTag('pagina-d')}
       ${momentos.map(([arq, leg, alt]) => `<figure><img src="dentro/${arq}.webp" alt="${alt}" width="640" height="427" loading="lazy" decoding="async"><figcaption>${leg}</figcaption></figure>`).join('\n      ')}
     </div>
     <p class="ilustr">Fotos ilustrativas.</p>
-    <div class="kit">
-      <div class="item reveal">
-        <img src="dentro/historinhas.webp" alt="Livro de historinhas Tchau Chupeta e páginas ilustradas sobre a mesa" width="900" height="600" loading="lazy" decoding="async">
-        <div><h3>📖 5 historinhas ilustradas + 1 para personalizar</h3>
-        <p>A Chupi que vai morar na Lua, a Fada Pipoca, o ursinho Bento e outras histórias que preparam seu filho para o tchau. E uma história em branco para vocês completarem juntos, com o nome dele.</p></div>
-      </div>
-      <div class="item reveal">
-        <img src="dentro/atividades.webp" alt="Atividades impressas do Tchau Chupeta com gizes de cera" width="900" height="600" loading="lazy" decoding="async">
-        <div><h3>✂️ Brincadeiras para imprimir</h3>
-        <p>Calendário do tchau para pintar, bilhetes mágicos, cartinha para a chupeta, desenho da despedida e um certificado para ele guardar com orgulho.</p></div>
-      </div>
+    <div class="kit reveal">
+      <img class="mock" src="dentro/box.webp" alt="Livro de historinhas Tchau Chupeta com as folhas de atividades e o guia no tablet" width="1000" height="860" loading="lazy" decoding="async">
+      <ul class="kitlista">
+        <li><b>📖 5 historinhas ilustradas + 1 para personalizar</b> A Chupi que vai morar na Lua, a Fada Pipoca, o ursinho Bento e outras histórias que preparam seu filho para o tchau.</li>
+        <li><b>✂️ Brincadeiras para imprimir</b> Calendário do tchau para pintar, bilhetes mágicos, cartinha para a chupeta, desenho da despedida e certificado.</li>
+        <li><b>📲 Guia para os pais</b> Como usar cada história e o que fazer em cada fase, do primeiro aviso ao dia do tchau.</li>
+      </ul>
     </div>
     <p class="formato reveal">📲 Material digital ilustrado. Você recebe no e-mail, lê no celular e imprime as brincadeiras em casa.</p>
     <div class="acao reveal">${prox('Ver o que muda', '#promessa')}</div>
@@ -390,7 +428,7 @@ ${pixelTag('pagina-d')}
   </div>
   <div class="wrap">
     <div class="box reveal">
-      <div class="emblema"><span class="ch" aria-hidden="true">${pacifier({ size: 84, wave: true })}</span><div><b>Tchau <em>Chupeta</em></b><small>Despedida Participativa</small></div></div>
+      <img class="boxoferta" src="dentro/box.webp" alt="Tchau Chupeta: livro de historinhas e atividades" width="1000" height="860" loading="lazy" decoding="async">
       <ul>
         <li><b>5 historinhas ilustradas</b> para preparar seu filho para o tchau</li>
         <li><b>Brincadeiras para imprimir</b>: calendário do tchau, bilhetes mágicos, cartinha, desenho e certificado</li>
@@ -438,7 +476,6 @@ ${pixelTag('pagina-d')}
   <p>Este material é educativo e não substitui a orientação de pediatras, odontopediatras ou outros profissionais de saúde. Cada criança tem seu próprio ritmo, e os resultados podem variar de família para família.</p>
 </footer>
 
-<div class="sticky" id="sticky">${prox('Quero saber mais', '#beneficios')}</div>
 
 <script>
 // Checkout: repassa UTMs e dispara InitiateCheckout
@@ -450,23 +487,6 @@ ${pixelTag('pagina-d')}
   });
 })();
 
-// Barra fixa: leva à próxima seção abaixo da tela atual
-(function(){
-  var btn = document.querySelector('#sticky .btn');
-  btn.addEventListener('click', function(ev){
-    var secs = document.querySelectorAll('header.hero, section'), alvo = null;
-    for (var i = 0; i < secs.length; i++) { if (secs[i].getBoundingClientRect().top > 80) { alvo = secs[i]; break; } }
-    if (!alvo) return;
-    ev.preventDefault();
-    alvo.scrollIntoView({ behavior: 'smooth' });
-  });
-  var sticky = document.getElementById('sticky'), hero = document.querySelector('.hero'), oferta = document.getElementById('oferta'), fim = document.getElementById('final');
-  var pastHero = false, onOffer = false, onFim = false;
-  function set(){ sticky.classList.toggle('on', pastHero && !onOffer && !onFim); }
-  new IntersectionObserver(function(e){ pastHero = !e[0].isIntersecting; set(); }).observe(hero);
-  new IntersectionObserver(function(e){ onOffer = e[0].isIntersecting; set(); }, { threshold: .2 }).observe(oferta);
-  new IntersectionObserver(function(e){ onFim = e[0].isIntersecting; set(); }, { threshold: .2 }).observe(fim);
-})();
 
 // Revela as seções ao rolar
 (function(){
