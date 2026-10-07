@@ -255,7 +255,7 @@ details p{padding-bottom:14px;color:var(--navy-soft)}
 .final-photo img{width:100%;height:auto;aspect-ratio:12/7;object-fit:cover}
 .final .btn{margin-top:26px}
 
-footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;padding-block:28px 110px}
+footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;padding-block:28px 32px}
 
 /* Barra fixa no celular */
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--white);border-top:3px solid var(--navy);
@@ -289,7 +289,8 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
   .deliver .it + .it{border-left:0}
   .plan.pro{order:-1;margin-top:14px}
   .guarantee{grid-template-columns:1fr;justify-items:center;text-align:center}
-  .sticky{display:flex}
+  .sticky{display:flex;transform:translateY(110%);transition:transform .25s ease}
+  .sticky.on{transform:none}
   .hero-cta .btn{width:100%}
 }
 </style>
@@ -319,8 +320,6 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
       </ul>
 
       <div class="hero-cta">
-        <a class="btn pulse" href="#planos">Quero as missões
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <span class="fine">A partir de R$ 11,00 · garantia de 7 dias</span>
       </div>
     </div>
@@ -493,49 +492,6 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
   </div>
 </section>
 
-<!-- PLANOS -->
-<section class="lilac" id="planos">
-  <div class="wrap center">
-    <span class="eyebrow">Escolha seu plano</span>
-    <h2>Menos que um lanche para ter meses de brincadeira</h2>
-    <div class="plans">
-      <div class="plan">
-        <h3>Plano Simples</h3>
-        <div class="price"><span class="cur">R$</span><span class="val">11</span><span class="cents">,00</span></div>
-        <span class="per">R$ 0,55 por missão</span>
-        <ul>
-          <li>20 historinhas-missão ilustradas</li>
-          <li>PDF para imprimir ou usar no celular</li>
-          <li>Acesso imediato</li>
-          <li class="no">80 missões extras</li>
-          <li class="no">Missões por momento do dia</li>
-          <li class="no">4 bônus exclusivos</li>
-        </ul>
-        <button class="plan-btn" type="button" id="btn-simples">Quero o simples</button>
-      </div>
-      <div class="plan pro">
-        <span class="ribbon">Recomendado</span>
-        <h3>Plano Completo</h3>
-        <div class="price"><span class="cur">R$</span><span class="val">27</span><span class="cents">,90</span></div>
-        <span class="per">Menos de R$ 0,28 por missão</span>
-        <ul>
-          <li><b>100 historinhas-missão ilustradas</b></li>
-          <li>Separadas por idade: 3–4, 5–6 e 7–8 anos</li>
-          <li>Organizadas por momento do dia</li>
-          <li>Missões "Juntos" e "Sozinho"</li>
-          <li>Bônus 1: Pote de Missões recortável</li>
-          <li>Bônus 2: Passaporte + certificado</li>
-          <li>Bônus 3: Guia "Desligar sem birra"</li>
-          <li>Bônus 4: Desafio 30 Dias Zero Tela</li>
-          <li>Versão preto e branco para economizar tinta</li>
-        </ul>
-        <a class="plan-btn" href="#" data-checkout="completo">Quero o completo</a>
-        <p class="secure">Pagamento seguro · Pix ou cartão · Acesso imediato</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- PROVA SOCIAL: remova o atributo hidden quando tiver depoimentos reais -->
 <section hidden>
   <div class="wrap center">
@@ -592,7 +548,49 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
     <span class="eyebrow">A próxima vez que ele pedir o celular…</span>
     <h2>…você vai ter uma <span class="purple">missão pronta</span> para oferecer</h2>
     <p class="lead" style="margin:14px auto 0">A infância passa rápido. As brincadeiras de hoje são as lembranças de amanhã.</p>
-    <a class="btn pulse" href="#planos">Quero o Missão Zero Tela <small>100 missões + 4 bônus por R$ 27,90</small></a>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section id="planos">
+  <div class="wrap center">
+    <span class="eyebrow">Escolha seu plano</span>
+    <h2>Menos que um lanche para ter meses de brincadeira</h2>
+    <div class="plans">
+      <div class="plan">
+        <h3>Plano Simples</h3>
+        <div class="price"><span class="cur">R$</span><span class="val">11</span><span class="cents">,00</span></div>
+        <span class="per">R$ 0,55 por missão</span>
+        <ul>
+          <li>20 historinhas-missão ilustradas</li>
+          <li>PDF para imprimir ou usar no celular</li>
+          <li>Acesso imediato</li>
+          <li class="no">80 missões extras</li>
+          <li class="no">Missões por momento do dia</li>
+          <li class="no">4 bônus exclusivos</li>
+        </ul>
+        <button class="plan-btn" type="button" id="btn-simples">Quero o simples</button>
+      </div>
+      <div class="plan pro">
+        <span class="ribbon">Recomendado</span>
+        <h3>Plano Completo</h3>
+        <div class="price"><span class="cur">R$</span><span class="val">27</span><span class="cents">,90</span></div>
+        <span class="per">Menos de R$ 0,28 por missão</span>
+        <ul>
+          <li><b>100 historinhas-missão ilustradas</b></li>
+          <li>Separadas por idade: 3–4, 5–6 e 7–8 anos</li>
+          <li>Organizadas por momento do dia</li>
+          <li>Missões "Juntos" e "Sozinho"</li>
+          <li>Bônus 1: Pote de Missões recortável</li>
+          <li>Bônus 2: Passaporte + certificado</li>
+          <li>Bônus 3: Guia "Desligar sem birra"</li>
+          <li>Bônus 4: Desafio 30 Dias Zero Tela</li>
+          <li>Versão preto e branco para economizar tinta</li>
+        </ul>
+        <a class="plan-btn" href="#" data-checkout="completo">Quero o completo</a>
+        <p class="secure">Pagamento seguro · Pix ou cartão · Acesso imediato</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -603,11 +601,6 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
     <p class="credit">Fotos: <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></p>
   </div>
 </footer>
-
-<div class="sticky" aria-label="Comprar">
-  <div class="p">100 missões + bônus<br><b>R$ 27,90</b></div>
-  <a class="btn" href="#planos">Quero agora</a>
-</div>
 
 <div class="modal" id="upgrade" hidden role="dialog" aria-modal="true" aria-labelledby="up-title">
   <div class="modal-box">
@@ -620,6 +613,11 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
 </div>
 
 <script>
+  /* barra fixa do celular: só aparece depois que o botão do topo sai da tela, para não cobri-lo */
+  const barra = document.querySelector('.sticky'), ctaTopo = document.querySelector('.hero-cta');
+  if (barra && ctaTopo && 'IntersectionObserver' in window) {
+    new IntersectionObserver(([e]) => barra.classList.toggle('on', !e.isIntersecting && e.boundingClientRect.top < 0)).observe(ctaTopo);
+  } else if (barra) barra.classList.add('on');
   const modal = document.getElementById('upgrade');
   document.getElementById('btn-simples').addEventListener('click', () => { modal.hidden = false; document.getElementById('up-yes').focus(); });
   modal.addEventListener('click', e => { if (e.target === modal) modal.hidden = true; });
