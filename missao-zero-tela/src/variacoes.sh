@@ -12,14 +12,14 @@ gera() { TEXTO="$2" node src/modelo.mjs "${3:-$FOTO}" "$1-$FMT" curto "$FMT" | t
 gera var-01-birra '{"l1":"Tirou o celular","l2":"e veio a","l3":"birra?","icone":{"left":440,"top":250},
  "apoio1":"Não é falta de pulso!","apoio2":"Na hora de desligar, <i>falta o que oferecer no lugar.</i>",
  "apoio3":"Ofereça uma missão!","bilhete":"Troque a birra por uma missão! ♡",
- "bilheteBaixo":true,"foto":{"size":"auto 125%","pos":"-59px 0"},
+ "bilheteBaixo":true,"foto":{"size":"auto 125%","pos":"-59px 0"},"foto45":{"size":"auto 155%","pos":"-2px 0"},
  "fade":"#FBF7F0 0%,rgba(251,247,240,.92) 24%,rgba(251,247,240,0) 40%"}' "$(foto fotos/var-01.jpg)"
 
 # 2. A crença errada
 gera var-02-nao-e-a-tela '{"l1":"O problema não é a tela.","s1":54,"l2":"É o vazio","l3":"de ideias.","s3":128,"icone":false,
  "apoio1":"Ele quer um convite!","apoio2":"Uma historinha em que <i>ele é o herói e aceita a missão.</i>",
  "apoio3":"O convite vem pronto!","bilhete":"“Tem uma missão secreta para você!” ♡",
- "bilheteBaixo":true,"foto":{"size":"auto 135%","pos":"-16px 0"}}' "$(foto fotos/var-02.jpg)"
+ "bilheteBaixo":true,"foto":{"size":"auto 135%","pos":"-16px 0"},"foto45":{"size":"auto 180%","pos":"-6px -40px"}}' "$(foto fotos/var-02.jpg)"
 
 # 3. A fala do filho
 gera var-03-so-mais-um-video '{"l1":"Cansada de ouvir","l2":"“só mais um","l3":"vídeo”?","icone":{"left":600,"top":250},

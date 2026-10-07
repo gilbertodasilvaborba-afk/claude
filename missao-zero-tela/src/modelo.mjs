@@ -33,6 +33,8 @@ const T = {
   foto: null, // enquadramento opcional: { size: 'auto 150%', pos: '-170px 0' }
   ...JSON.parse(process.env.TEXTO || '{}'),
 };
+// enquadramento próprio do 4:5 (a foto é mais baixa nesse formato)
+if (FORMATO === '4x5' && T.foto45) T.foto = T.foto45;
 const FOTO_H = 1180 + F.dBase; // a foto termina atrás da faixa de pincel
 const ID = process.argv[3] || 'modelo-01-so-quer-saber-de-tela';
 // degradê curto: a foto aparece mais, para quando o rosto fica perto do texto
