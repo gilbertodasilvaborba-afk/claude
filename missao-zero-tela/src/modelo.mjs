@@ -19,6 +19,16 @@ const F = {
   '9x16-completo': { h: 1920, top: 170, dBase: 0, apoio: true, barra: true }, // igual ao 2:3, com a barra de baixo
 }[FORMATO];
 const SIZE = { w: 1080, h: F.h };
+// Textos do gancho (título, apoio e bilhete). Para variar o ângulo, passe TEXTO='{"l1":...}' no ambiente.
+const T = {
+  l1: 'Seu filho(a) só', l2: 'quer saber', l3: 'de tela?', s1: 66, s2: 104, s3: 140,
+  icone: { left: 540, top: 250 },
+  apoio1: 'Você não está sozinha!',
+  apoio2: 'Na hora de desligar, a cabeça dá branco: <i>o que eu ofereço no lugar?</i>',
+  apoio3: 'Agora tem resposta pronta!',
+  bilhete: 'Menos tela, mais brincadeira de verdade! ♡',
+  ...JSON.parse(process.env.TEXTO || '{}'),
+};
 const FOTO_H = 1180 + F.dBase; // a foto termina atrás da faixa de pincel
 const ID = process.argv[3] || 'modelo-01-so-quer-saber-de-tela';
 // degradê curto: a foto aparece mais, para quando o rosto fica perto do texto
@@ -84,20 +94,20 @@ ${existsSync(foto) ? '' : `<div class="abs h" style="right:120px;top:520px;font-
 
 <!-- título -->
 <div class="abs" style="left:64px;top:56px;width:640px;transform:rotate(-3deg)">
-  <div class="h" style="font-size:66px;line-height:1">Seu filho(a) só</div>
-  <div class="h" style="font-size:104px;line-height:.98"><span class="hl">quer saber</span></div>
-  <div class="h" style="font-size:140px;line-height:.92;color:${C.crayon}">de tela?</div>
+  <div class="h" style="font-size:${T.s1}px;line-height:1;white-space:nowrap">${T.l1}</div>
+  <div class="h" style="font-size:${T.s2}px;line-height:.98;white-space:nowrap"><span class="hl">${T.l2}</span></div>
+  <div class="h" style="font-size:${T.s3}px;line-height:.92;color:${C.crayon};white-space:nowrap">${T.l3}</div>
 </div>
-<div class="abs" style="left:540px;top:250px;width:140px;height:140px;border-radius:50%;border:12px solid ${C.crayon};background:rgba(255,255,255,.75);display:grid;place-items:center;transform:rotate(12deg)">
+${T.icone ? '' : '<!--'}<div class="abs" style="left:${T.icone.left}px;top:${T.icone.top}px;width:140px;height:140px;border-radius:50%;border:12px solid ${C.crayon};background:rgba(255,255,255,.75);display:grid;place-items:center;transform:rotate(12deg)">
   <svg width="70" height="100" viewBox="0 0 70 100"><rect x="6" y="4" width="58" height="92" rx="12" fill="${C.ink}"/><rect x="13" y="14" width="44" height="66" rx="4" fill="${C.blue}"/><path d="M29 36 L45 47 L29 58Z" fill="#fff"/></svg>
   <div class="abs" style="width:140px;height:12px;background:${C.crayon};transform:rotate(-45deg);border-radius:6px"></div>
-</div>
+</div>${T.icone ? '' : '-->'}
 
 <!-- apoio -->
 ${F.apoio ? '' : '<!--'}<div class="abs" style="left:64px;top:430px;width:600px;transform:rotate(-2deg)">
-  <div class="h" style="font-size:42px;line-height:1.05">Você não está sozinha!</div>
-  <div style="font-size:31px;font-weight:700;line-height:1.25;margin-top:6px">Na hora de desligar, a cabeça dá branco: <i>o que eu ofereço no lugar?</i></div>
-  <div class="h" style="font-size:38px;margin-top:10px;white-space:nowrap"><span class="hl">Agora tem resposta pronta!</span></div>
+  <div class="h" style="font-size:42px;line-height:1.05">${T.apoio1}</div>
+  <div style="font-size:31px;font-weight:700;line-height:1.25;margin-top:6px">${T.apoio2}</div>
+  <div class="h" style="font-size:38px;margin-top:10px;white-space:nowrap"><span class="hl">${T.apoio3}</span></div>
 </div>${F.apoio ? '' : '-->'}
 
 <!-- lista -->
@@ -109,7 +119,7 @@ ${F.apoio ? '' : '<!--'}<div class="abs" style="left:64px;top:430px;width:600px;
 </div>
 
 <!-- bilhete -->
-<div class="abs hand" style="right:${process.argv[4] === 'curto' ? '40px;top:40px;width:270px' : '46px;top:720px;width:300px'};padding:26px 24px;background:${C.sun};transform:rotate(-6deg);font-size:50px;line-height:1;text-align:center;box-shadow:6px 8px 0 rgba(30,42,74,.15);clip-path:polygon(2% 4%,98% 0,100% 96%,0 100%)">Menos tela, mais brincadeira de verdade! ♡</div>
+<div class="abs hand" style="right:${process.argv[4] === 'curto' ? '40px;top:40px;width:270px' : '46px;top:720px;width:300px'};padding:26px 24px;background:${C.sun};transform:rotate(-6deg);font-size:50px;line-height:1;text-align:center;box-shadow:6px 8px 0 rgba(30,42,74,.15);clip-path:polygon(2% 4%,98% 0,100% 96%,0 100%)">${T.bilhete}</div>
 
 <!-- da faixa para baixo: um bloco que sobe no 4x5 -->
 <div class="abs" style="left:0;top:${F.dBase}px;width:1080px;height:1620px">

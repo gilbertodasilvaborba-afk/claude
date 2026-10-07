@@ -255,3 +255,19 @@ Versão horizontal 1,91:1 (1200x628), para anúncio de link no feed:
 ```bash
 node src/modelo-horizontal.mjs fotos/modelo-02.jpg modelo-02-menino-celular-1.91x1
 ```
+
+---
+
+## 10. Variações para teste de gancho (9:16)
+
+`bash src/variacoes.sh` gera 5 variações do criativo 9:16 completo. Layout, foto, lista, mockup e CTA são iguais nas 5; muda só o ângulo (título, frase de apoio e bilhete). Assim o resultado mostra qual mensagem vende mais.
+
+| Peça | Ângulo | Título |
+|---|---|---|
+| var-01-birra | A cena da dor | Tirou o celular e veio a birra? |
+| var-02-nao-e-a-tela | A crença errada | O problema não é a tela. É o vazio de ideias. |
+| var-03-so-mais-um-video | A fala do filho | Cansada de ouvir "só mais um vídeo"? |
+| var-04-dia-de-chuva | O momento | Dia de chuva e ele grudado na tela? |
+| var-05-oferta | A oferta | 100 brincadeiras sem tela por R$ 27,90 |
+
+Para outro formato: `bash src/variacoes.sh 4x5` (feed) ou `bash src/variacoes.sh 9x16`.
