@@ -258,16 +258,18 @@ node src/modelo-horizontal.mjs fotos/modelo-02.jpg modelo-02-menino-celular-1.91
 
 ---
 
-## 10. Variações para teste de gancho (9:16)
+## 10. Variações para teste (9:16)
 
-`bash src/variacoes.sh` gera 5 variações do criativo 9:16 completo. Layout, foto, lista, mockup e CTA são iguais nas 5; muda só o ângulo (título, frase de apoio e bilhete). Assim o resultado mostra qual mensagem vende mais.
+`bash src/variacoes.sh` gera 5 variações do criativo 9:16 completo. Layout, lista, mockup e CTA são iguais nas 5; muda o ângulo (título, apoio e bilhete) e a foto, escolhida para combinar com o ângulo. Com `FOTO_UNICA=1 bash src/variacoes.sh`, todas usam a mesma foto (teste só de copy).
 
-| Peça | Ângulo | Título |
-|---|---|---|
-| var-01-birra | A cena da dor | Tirou o celular e veio a birra? |
-| var-02-nao-e-a-tela | A crença errada | O problema não é a tela. É o vazio de ideias. |
-| var-03-so-mais-um-video | A fala do filho | Cansada de ouvir "só mais um vídeo"? |
-| var-04-dia-de-chuva | O momento | Dia de chuva e ele grudado na tela? |
-| var-05-oferta | A oferta | 100 brincadeiras sem tela por R$ 27,90 |
+| Peça | Ângulo | Título | Foto |
+|---|---|---|---|
+| var-01-birra | A cena da dor | Tirou o celular e veio a birra? | menino chorando agarrado ao controle (`fotos/var-01.jpg`) |
+| var-02-nao-e-a-tela | A crença errada | O problema não é a tela. É o vazio de ideias. | mãe pensativa, preocupada (`fotos/var-02.jpg`) |
+| var-03-so-mais-um-video | A fala do filho | Cansada de ouvir "só mais um vídeo"? | menino de noite com o celular (`fotos/modelo-02.jpg`) |
+| var-04-dia-de-chuva | O momento | Dia de chuva e ele grudado na tela? | criança no sofá com o celular (`fotos/modelo-01.jpg`) |
+| var-05-oferta | A oferta | 100 brincadeiras sem tela por R$ 27,90 | mãe sorrindo entregando um livro (`fotos/var-05.jpg`) |
+
+As fotos vêm de vídeos de terceiros no TikTok (as de var-02, var-03 e var-05 são imagens geradas por IA por outro criador). Para rodar sem risco de denúncia, troque por fotos próprias ou geradas por você, com o mesmo nome de arquivo, e rode o script de novo.
 
 Para outro formato: `bash src/variacoes.sh 4x5` (feed) ou `bash src/variacoes.sh 9x16`.

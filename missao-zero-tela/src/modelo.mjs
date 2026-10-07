@@ -27,12 +27,16 @@ const T = {
   apoio2: 'Na hora de desligar, a cabeça dá branco: <i>o que eu ofereço no lugar?</i>',
   apoio3: 'Agora tem resposta pronta!',
   bilhete: 'Menos tela, mais brincadeira de verdade! ♡',
+  bilheteBaixo: false, // bilhete embaixo, quando o rosto da foto fica no alto
+  bilheteTop: null, // altura própria do bilhete (px), quando nem em cima nem embaixo serve
+  fade: null, // degradê próprio da variação (cores e paradas do linear-gradient)
+  foto: null, // enquadramento opcional: { size: 'auto 150%', pos: '-170px 0' }
   ...JSON.parse(process.env.TEXTO || '{}'),
 };
 const FOTO_H = 1180 + F.dBase; // a foto termina atrás da faixa de pincel
 const ID = process.argv[3] || 'modelo-01-so-quer-saber-de-tela';
 // degradê curto: a foto aparece mais, para quando o rosto fica perto do texto
-const FADE = process.argv[4] === 'curto' ? '#FBF7F0 0%,rgba(251,247,240,.92) 30%,rgba(251,247,240,0) 50%' : '#FBF7F0 0%,rgba(251,247,240,.85) 22%,rgba(251,247,240,0) 55%';
+const FADE = T.fade || (process.argv[4] === 'curto' ? '#FBF7F0 0%,rgba(251,247,240,.92) 30%,rgba(251,247,240,0) 50%' : '#FBF7F0 0%,rgba(251,247,240,.85) 22%,rgba(251,247,240,0) 55%');
 
 const foto = process.argv[2] || join(ROOT, 'fotos', 'modelo-01.jpg');
 const fotoCss = existsSync(foto)
@@ -87,7 +91,7 @@ body{font-family:'Nunito',sans-serif;color:${C.ink};background:#FBF7F0;position:
 </style></head><body>
 <div class="abs" style="left:0;top:${F.top}px;width:1080px;height:1620px">
 <!-- foto à direita, com degradê para o fundo claro do texto -->
-<div class="abs" style="right:0;top:${-F.top}px;width:680px;height:${FOTO_H + F.top}px;${fotoCss}"></div>
+<div class="abs" style="right:0;top:${-F.top}px;width:680px;height:${FOTO_H + F.top}px;${fotoCss}${T.foto ? `;background-size:${T.foto.size};background-position:${T.foto.pos}` : ''}"></div>
 ${existsSync(foto) ? '' : `<div class="abs h" style="right:120px;top:520px;font-size:54px;color:#9AA6BD;transform:rotate(-8deg)">FOTO AQUI</div>`}
 <div class="abs" style="right:0;top:${-F.top}px;width:680px;height:${FOTO_H + F.top}px;background:linear-gradient(90deg,${FADE})"></div>
 <div class="abs" style="left:0;right:0;top:${FOTO_H - 220}px;height:220px;background:linear-gradient(180deg,rgba(251,247,240,0),#FBF7F0)"></div>
@@ -119,7 +123,7 @@ ${F.apoio ? '' : '<!--'}<div class="abs" style="left:64px;top:430px;width:600px;
 </div>
 
 <!-- bilhete -->
-<div class="abs hand" style="right:${process.argv[4] === 'curto' ? '40px;top:40px;width:270px' : '46px;top:720px;width:300px'};padding:26px 24px;background:${C.sun};transform:rotate(-6deg);font-size:50px;line-height:1;text-align:center;box-shadow:6px 8px 0 rgba(30,42,74,.15);clip-path:polygon(2% 4%,98% 0,100% 96%,0 100%)">${T.bilhete}</div>
+<div class="abs hand" style="right:${T.bilheteTop !== null ? `40px;top:${T.bilheteTop}px;width:270px` : process.argv[4] === 'curto' && !T.bilheteBaixo ? '40px;top:40px;width:270px' : '46px;top:720px;width:300px'};padding:26px 24px;background:${C.sun};transform:rotate(-6deg);font-size:50px;line-height:1;text-align:center;box-shadow:6px 8px 0 rgba(30,42,74,.15);clip-path:polygon(2% 4%,98% 0,100% 96%,0 100%)">${T.bilhete}</div>
 
 <!-- da faixa para baixo: um bloco que sobe no 4x5 -->
 <div class="abs" style="left:0;top:${F.dBase}px;width:1080px;height:1620px">
