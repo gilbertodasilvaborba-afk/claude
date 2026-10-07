@@ -210,8 +210,12 @@ mark{background:linear-gradient(transparent 45%,var(--yellow) 45%,var(--yellow) 
 
 /* Momentos */
 .moments{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:32px;text-align:left}
-.moment{border-radius:var(--r);padding:18px;background:var(--white);box-shadow:0 4px 0 #E4DCF6}
-.moment .ico{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;margin-bottom:10px;font-size:22px}
+.moment{border-radius:var(--r);padding:0 0 18px;background:var(--white);box-shadow:0 4px 0 #E4DCF6;overflow:hidden}
+.moment .mimg{aspect-ratio:16/10;overflow:hidden}
+.moment .mimg img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.moment:hover .mimg img{transform:scale(1.04)}
+.moment .ico{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;font-size:24px;margin:-25px 0 8px 16px;position:relative;border:3px solid var(--white);box-shadow:0 4px 10px rgba(30,43,111,.15)}
+.moment h3,.moment p{padding:0 18px}
 .moment h3{font-size:20px}
 .moment p{font-size:15px;color:var(--navy-soft);margin-top:4px}
 .skills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:28px}
@@ -482,12 +486,12 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
     <span class="eyebrow">Uma missão para cada momento</span>
     <h2>Organizadas pela situação que você está vivendo agora</h2>
     <div class="moments">
-      <div class="moment"><div class="ico" style="background:var(--lilac)">🌧️</div><h3>Dia de chuva</h3><p>Aventuras dentro de casa para gastar energia.</p></div>
-      <div class="moment"><div class="ico" style="background:var(--gold-bg)">🍳</div><h3>Enquanto faço o jantar</h3><p>Missões que a criança faz sozinha, perto de você.</p></div>
-      <div class="moment"><div class="ico" style="background:var(--coral-bg)">🍽️</div><h3>Restaurante e espera</h3><p>Só com guardanapo, caneta ou nada.</p></div>
-      <div class="moment"><div class="ico" style="background:var(--mint-bg)">🚗</div><h3>Viagem de carro</h3><p>Jogos de olhar, falar e adivinhar.</p></div>
-      <div class="moment"><div class="ico" style="background:var(--lilac)">🌙</div><h3>Antes de dormir</h3><p>Missões calmas para desacelerar.</p></div>
-      <div class="moment"><div class="ico" style="background:var(--gold-bg)">⏱️</div><h3>Só 5 minutos</h3><p>Para aquele intervalo em que ela pede o celular.</p></div>
+      <div class="moment"><div class="mimg"><img src="img/momento-chuva.jpg" alt="Cabana de brincar montada dentro de casa" loading="lazy" width="600" height="380"></div><div class="ico" style="background:var(--lilac)">🌧️</div><h3>Dia de chuva</h3><p>Aventuras dentro de casa para gastar energia.</p></div>
+      <div class="moment"><div class="mimg"><img src="img/momento-jantar.jpg" alt="Mãe e filha preparando salada juntas na cozinha" loading="lazy" width="600" height="380"></div><div class="ico" style="background:var(--gold-bg)">🍳</div><h3>Enquanto faço o jantar</h3><p>Missões que a criança faz sozinha, perto de você.</p></div>
+      <div class="moment"><div class="mimg"><img src="img/momento-espera.jpg" alt="Criança desenhando no papel da mesa do restaurante" loading="lazy" width="600" height="380"></div><div class="ico" style="background:var(--coral-bg)">🍽️</div><h3>Restaurante e espera</h3><p>Só com guardanapo, caneta ou nada.</p></div>
+      <div class="moment"><div class="mimg"><img src="img/momento-viagem.jpg" alt="Crianças sentadas no porta-malas do carro durante a viagem" loading="lazy" width="600" height="380"></div><div class="ico" style="background:var(--mint-bg)">🚗</div><h3>Viagem de carro</h3><p>Jogos de olhar, falar e adivinhar.</p></div>
+      <div class="moment"><div class="mimg"><img src="img/momento-dormir.jpg" alt="Mãe lendo um livro para a filha na cama" loading="lazy" width="600" height="380"></div><div class="ico" style="background:var(--lilac)">🌙</div><h3>Antes de dormir</h3><p>Missões calmas para desacelerar.</p></div>
+      <div class="moment"><div class="mimg"><img src="img/momento-cinco.jpg" alt="Mãe e filha rindo juntas" loading="lazy" width="600" height="380"></div><div class="ico" style="background:var(--gold-bg)">⏱️</div><h3>Só 5 minutos</h3><p>Para aquele intervalo em que ela pede o celular.</p></div>
     </div>
     <div class="skills">
       <span class="skill" style="background:var(--gold-bg)">Coordenação fina</span>
@@ -539,11 +543,13 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
 <section class="lilac">
   <div class="wrap center">
     <span class="eyebrow">Sinceridade</span>
-    <h2>Para quem é o Missão Zero Tela</h2>
+    <h2>A missão só funciona <span class="purple">com você do lado</span></h2>
+    <p class="lead" style="margin-top:14px">Nenhum PDF substitui a presença de um pai ou de uma mãe. O que faz a criança largar a tela não é a atividade: é <b>você olhando para ela</b>, lendo a historinha com voz de aventura e comemorando cada missão cumprida. As crianças não lembram do que assistiram. Lembram de quem brincou com elas.</p>
     <div class="fit">
-      <div class="yes"><h3>É para você se…</h3><ul><li>Tem filho de 3 a 8 anos</li><li>Quer reduzir a tela sem guerra em casa</li><li>Tem pouco tempo e quer ideias prontas</li><li>Não quer gastar com material caro</li><li>Também serve para avós, tias e professoras</li></ul></div>
-      <div class="nope"><h3>Não é para você se…</h3><ul><li>Espera que a criança nunca mais use tela</li><li>Procura um tratamento ou terapia</li><li>Não pretende brincar nem 10 minutos por dia</li></ul></div>
+      <div class="yes"><h3>É para você se…</h3><ul><li>Quer ser a pessoa que seu filho vai lembrar das brincadeiras</li><li>Topa ler a historinha e entrar na aventura junto, nem que seja por 10 minutos</li><li>Quer reduzir a tela sem guerra em casa</li><li>Tem pouco tempo e precisa de ideias prontas</li><li>Tem filho de 3 a 8 anos (também serve para avós, tias e professoras)</li></ul></div>
+      <div class="nope"><h3>Não é para você se…</h3><ul><li>Quer só entregar o PDF e esperar que a criança se vire sozinha</li><li>Não pretende brincar nem 10 minutos por dia</li><li>Espera que a criança nunca mais use tela</li><li>Procura um tratamento ou terapia</li></ul></div>
     </div>
+    <p class="note" style="margin-top:28px">Seu filho não precisa de mais um desenho.<br>Precisa de você dizendo: "Agente, temos uma missão!"</p>
   </div>
 </section>
 
