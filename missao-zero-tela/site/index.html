@@ -297,7 +297,22 @@ details p{padding-bottom:14px;color:var(--navy-soft)}
 .carta .mat{font-size:15px;color:var(--navy-soft)}
 .carta.gira{animation:gira .45s ease}
 @keyframes gira{0%{transform:rotateY(90deg)}100%{transform:none}}
-#planos .kit{display:block;width:100%;max-width:620px;height:auto;margin:18px auto 6px}
+/* carrossel com páginas reais do PDF */
+.carrossel{position:relative;max-width:980px;margin:26px auto 10px}
+.car-trilho{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:10px 4px 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.car-trilho::-webkit-scrollbar{display:none}
+.slide{flex:0 0 clamp(220px,30%,300px);scroll-snap-align:center;margin:0;display:flex;flex-direction:column;gap:10px}
+.slide img{width:100%;height:auto;aspect-ratio:794/1123;border-radius:10px;background:#fff;box-shadow:0 12px 28px rgba(30,43,111,.18);border:1px solid #E4DCF6}
+.slide figcaption{font-weight:800;font-size:14px;color:var(--navy);text-align:center}
+.car-btn{position:absolute;top:calc(50% - 40px);z-index:2;width:46px;height:46px;border-radius:50%;border:3px solid var(--navy);background:var(--yellow);color:var(--navy);font-size:28px;font-weight:900;line-height:1;cursor:pointer;display:grid;place-items:center;box-shadow:0 4px 0 var(--navy)}
+.car-btn.prev{left:-8px}.car-btn.next{right:-8px}
+.car-btn:disabled{opacity:.35;cursor:default}
+.car-dots{display:flex;justify-content:center;gap:8px;margin-top:4px}
+.car-dots span{width:9px;height:9px;border-radius:50%;background:#D7D0EE;transition:all .2s}
+.car-dots span.on{background:var(--purple);width:24px;border-radius:5px}
+.car-dica{font-size:13px;color:var(--navy-soft);margin-top:8px;text-align:center}
+@media (max-width:820px){.slide{flex-basis:72%}.car-btn{display:none}}
+@media (prefers-reduced-motion:reduce){.car-trilho{scroll-behavior:auto}}
 .hero-cta .btn{margin-bottom:10px}
 #planos{scroll-margin-top:12px}
 
@@ -600,7 +615,24 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
   <div class="wrap center">
     <span class="eyebrow">Escolha seu plano</span>
     <h2>Escolha o plano e comece <span class="purple">hoje mesmo</span></h2>
-    <img class="kit" src="img/kit.webp" alt="Kit Missão Zero Tela: livro com 100 missões, cartas do pote, passaporte do explorador e quadro de conquistas" width="1000" height="860" loading="lazy" decoding="async">
+    <div class="carrossel" aria-roledescription="carrossel" aria-label="Páginas reais do material">
+      <button class="car-btn prev" type="button" aria-label="Página anterior">‹</button>
+      <div class="car-trilho" tabindex="0">
+        <figure class="slide"><img src="img/paginas/capa.jpg" alt="Página real do material: Capa do livro com as 100 missões" width="794" height="1123" loading="lazy" decoding="async"><figcaption>Capa do livro com as 100 missões</figcaption></figure>
+        <figure class="slide"><img src="img/paginas/indice.jpg" alt="Página real do material: Índice por momento do dia" width="794" height="1123" loading="lazy" decoding="async"><figcaption>Índice por momento do dia</figcaption></figure>
+        <figure class="slide"><img src="img/paginas/missao-cidade-de-papel.jpg" alt="Página real do material: Missão 12 · Cidade de Papel" width="794" height="1123" loading="lazy" decoding="async"><figcaption>Missão 12 · Cidade de Papel</figcaption></figure>
+        <figure class="slide"><img src="img/paginas/missao-mapa-do-tesouro.jpg" alt="Página real do material: Missão 35 · Mapa do Tesouro" width="794" height="1123" loading="lazy" decoding="async"><figcaption>Missão 35 · Mapa do Tesouro</figcaption></figure>
+        <figure class="slide"><img src="img/paginas/missao-vulcao.jpg" alt="Página real do material: Missão 73 · Vulcão em Erupção" width="794" height="1123" loading="lazy" decoding="async"><figcaption>Missão 73 · Vulcão em Erupção</figcaption></figure>
+        <figure class="slide"><img src="img/paginas/pote-de-missoes.jpg" alt="Página real do material: Bônus 1 · Cartas do Pote de Missões" width="794" height="1123" loading="lazy" decoding="async"><figcaption>Bônus 1 · Cartas do Pote de Missões</figcaption></figure>
+        <figure class="slide"><img src="img/paginas/passaporte.jpg" alt="Página real do material: Bônus 2 · Passaporte do Explorador" width="794" height="1123" loading="lazy" decoding="async"><figcaption>Bônus 2 · Passaporte do Explorador</figcaption></figure>
+        <figure class="slide"><img src="img/paginas/certificado.jpg" alt="Página real do material: Bônus 2 · Certificado de Agente" width="794" height="1123" loading="lazy" decoding="async"><figcaption>Bônus 2 · Certificado de Agente</figcaption></figure>
+        <figure class="slide"><img src="img/paginas/guia-desligar-sem-birra.jpg" alt="Página real do material: Bônus 3 · Guia "Desligar sem birra"" width="794" height="1123" loading="lazy" decoding="async"><figcaption>Bônus 3 · Guia "Desligar sem birra"</figcaption></figure>
+        <figure class="slide"><img src="img/paginas/desafio-30-dias.jpg" alt="Página real do material: Bônus 4 · Desafio 30 Dias" width="794" height="1123" loading="lazy" decoding="async"><figcaption>Bônus 4 · Desafio 30 Dias</figcaption></figure>
+      </div>
+      <button class="car-btn next" type="button" aria-label="Próxima página">›</button>
+      <div class="car-dots" aria-hidden="true"></div>
+      <p class="car-dica">Páginas reais do material · arraste para o lado</p>
+    </div>
     <div class="plans">
       <div class="plan">
         <h3>Plano Básico</h3>
@@ -728,6 +760,22 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
         '<p class="mat"><b>Material:</b> ' + m.mat.map(esc).join(' · ') + '</p>';
       bt.textContent = '🎲 Sortear outra missão';
     });
+  })();
+</script>
+<script>
+  /* carrossel das páginas do material */
+  (function(){
+    const c = document.querySelector('.carrossel'); if (!c) return;
+    const t = c.querySelector('.car-trilho'), sl = [...t.children], dots = c.querySelector('.car-dots');
+    sl.forEach((_, i) => { const d = document.createElement('span'); if (!i) d.className = 'on'; dots.appendChild(d); });
+    const passo = () => sl[0].getBoundingClientRect().width + 18;
+    const atual = () => Math.round(t.scrollLeft / passo());
+    const marcar = () => { const i = Math.min(atual(), sl.length - 1); [...dots.children].forEach((d, k) => d.classList.toggle('on', k === i));
+      c.querySelector('.prev').disabled = t.scrollLeft < 5; c.querySelector('.next').disabled = t.scrollLeft + t.clientWidth >= t.scrollWidth - 5; };
+    c.querySelector('.prev').addEventListener('click', () => t.scrollBy({ left: -passo(), behavior: 'smooth' }));
+    c.querySelector('.next').addEventListener('click', () => t.scrollBy({ left: passo(), behavior: 'smooth' }));
+    t.addEventListener('scroll', () => requestAnimationFrame(marcar), { passive: true });
+    window.addEventListener('resize', marcar); marcar();
   })();
 </script>
 </body>
