@@ -297,6 +297,35 @@ details p{padding-bottom:14px;color:var(--navy-soft)}
 .carta .mat{font-size:15px;color:var(--navy-soft)}
 .carta.gira{animation:gira .45s ease}
 @keyframes gira{0%{transform:rotateY(90deg)}100%{transform:none}}
+/* melhorias: selos, inversão, habilidades e objeção */
+.promessa-2{display:block;font-family:var(--hand);font-weight:400;font-size:.55em;color:var(--navy);margin-top:6px;letter-spacing:0}
+.selos{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.selos li{display:flex;align-items:center;gap:6px;background:var(--white);border:2px solid #E4DCF6;border-radius:999px;padding:5px 13px;font-weight:800;font-size:14px}
+.inversao{background:var(--white)}
+.riscado{text-decoration:line-through;text-decoration-color:var(--coral);text-decoration-thickness:4px;color:var(--navy-soft)}
+.falas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:30px}
+.fala{display:flex;flex-direction:column;align-items:center;gap:12px}
+.fala img{width:104px;height:104px;border-radius:50%;object-fit:cover;border:4px solid var(--yellow);box-shadow:0 8px 18px rgba(30,43,111,.15)}
+.fala p{position:relative;background:var(--lilac);border-radius:18px;padding:12px 14px;font-family:var(--hand);font-size:21px;line-height:1.25;color:var(--navy)}
+.fala p::before{content:"";position:absolute;top:-9px;left:50%;margin-left:-9px;border:9px solid transparent;border-top:0;border-bottom-color:var(--lilac)}
+.hab-titulo{font-size:clamp(22px,4vw,28px);margin-top:42px}
+.habs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px;text-align:left}
+.hab{display:flex;gap:12px;align-items:flex-start;background:var(--white);border-radius:16px;padding:14px;box-shadow:0 4px 0 #E4DCF6}
+.hab-ico{flex:none;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:22px}
+.hab b{font-family:var(--display);font-size:18px}
+.hab p{font-size:14px;color:var(--navy-soft);margin-top:2px}
+.motivos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:28px;text-align:left}
+.motivo{background:var(--white);border-radius:18px;padding:18px;box-shadow:0 4px 0 #E4DCF6;display:flex;flex-direction:column;gap:6px}
+.motivo .emo{font-size:30px}
+.motivo b{font-family:var(--display);font-size:19px}
+.motivo p{font-size:14.5px;color:var(--navy-soft)}
+@media (max-width:820px){
+  .falas{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 12px}
+  .fala img{width:84px;height:84px}
+  .fala p{font-size:18px}
+  .habs{grid-template-columns:1fr}
+  .motivos{grid-template-columns:1fr}
+}
 /* carrossel com páginas reais do PDF */
 .carrossel{position:relative;max-width:980px;margin:26px auto 10px}
 .car-trilho{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:10px 4px 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
@@ -369,7 +398,13 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
   <div class="wrap hero-center">
     <div class="logo"><span class="zero">0</span> Missão Zero Tela</div>
     <span class="kicker">Para a hora do "só mais um vídeo"</span>
-    <h1 class="promessa-h1">100 missões prontas para a criança <span class="purple">largar a tela</span></h1>
+    <h1 class="promessa-h1">100 missões prontas para a criança <span class="purple">largar a tela</span><span class="promessa-2">…e soltar a imaginação!</span></h1>
+    <ul class="selos">
+      <li><span class="emo">🗺️</span>100 missões</li>
+      <li><span class="emo">⚡</span>Acesso imediato</li>
+      <li><span class="emo">🖨️</span>Imprima em casa</li>
+      <li><span class="emo">🎂</span>3 a 8 anos</li>
+    </ul>
     <p class="sub">Pintura, colagem, cabana, cozinha, jogos para o carro e brincadeiras calmas para antes de dormir. Atividades com o que você já tem em casa, organizadas por idade e por momento do dia, para fazer junto com o seu filho.</p>
     <ul class="ativ">
       <li><img src="img/aquarela.jpg" alt="Pintura" width="96" height="96"><span>Pintura</span></li>
@@ -481,6 +516,21 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
   </div>
 </section>
 
+<!-- INVERSÃO: o pedido muda -->
+<section class="inversao">
+  <div class="wrap center">
+    <span class="eyebrow">O pedido muda</span>
+    <h2>Hoje você escuta <s class="riscado">"só mais um vídeo"</s>.<br>A meta é escutar <span class="purple">"só mais uma missão"</span>.</h2>
+    <p class="lead" style="margin-top:14px">Quando a brincadeira vira aventura, quem pede para continuar é a criança. São frases assim que o Missão Zero Tela quer trazer para a sua casa:</p>
+    <div class="falas">
+        <div class="fala"><img src="img/momento-cinco.jpg" alt="" loading="lazy" width="120" height="120"><p>"Mãe, posso fazer só mais uma missão?"</p></div>
+        <div class="fala"><img src="img/desenho.jpg" alt="" loading="lazy" width="120" height="120"><p>"Pai, olha o que eu fiz sozinha!"</p></div>
+        <div class="fala"><img src="img/aquarela.jpg" alt="" loading="lazy" width="120" height="120"><p>"Amanhã tem missão de novo?"</p></div>
+        <div class="fala"><img src="img/blocos.jpg" alt="" loading="lazy" width="120" height="120"><p>"Deixa que eu conto a historinha!"</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- COMO FUNCIONA -->
 <section class="lilac">
   <div class="wrap center">
@@ -550,13 +600,14 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
       <div class="moment"><div class="mimg"><img src="img/momento-dormir.jpg" alt="Mãe lendo um livro para a filha na cama" loading="lazy" width="600" height="380"></div><div class="ico" style="background:var(--lilac)">🌙</div><h3>Antes de dormir</h3><p>Missões calmas para desacelerar.</p></div>
       <div class="moment"><div class="mimg"><img src="img/momento-cinco.jpg" alt="Mãe e filha rindo juntas" loading="lazy" width="600" height="380"></div><div class="ico" style="background:var(--gold-bg)">⏱️</div><h3>Só 5 minutos</h3><p>Para aquele intervalo em que ela pede o celular.</p></div>
     </div>
-    <div class="skills">
-      <span class="skill" style="background:var(--gold-bg)">Coordenação fina</span>
-      <span class="skill" style="background:var(--white)">Linguagem</span>
-      <span class="skill" style="background:var(--mint-bg)">Criatividade</span>
-      <span class="skill" style="background:var(--coral-bg)">Autonomia</span>
-      <span class="skill" style="background:var(--gold-bg)">Raciocínio</span>
-      <span class="skill" style="background:var(--white)">Vínculo com a família</span>
+    <h3 class="hab-titulo">E enquanto brinca, seu filho desenvolve <span class="purple">sem perceber</span></h3>
+    <div class="habs">
+      <div class="hab"><span class="hab-ico" style="background:var(--gold-bg)"><span class="emo">🎨</span></span><div><b>Criatividade</b><p>Inventa, constrói e imagina soluções novas.</p></div></div>
+      <div class="hab"><span class="hab-ico" style="background:var(--mint-bg)"><span class="emo">✋</span></span><div><b>Coordenação</b><p>Recorta, cola, pinta e monta com as próprias mãos.</p></div></div>
+      <div class="hab"><span class="hab-ico" style="background:var(--lilac)"><span class="emo">💬</span></span><div><b>Linguagem</b><p>Conta histórias, explica e se expressa melhor.</p></div></div>
+      <div class="hab"><span class="hab-ico" style="background:var(--coral-bg)"><span class="emo">🧩</span></span><div><b>Raciocínio</b><p>Compara, conta, planeja e resolve desafios.</p></div></div>
+      <div class="hab"><span class="hab-ico" style="background:var(--gold-bg)"><span class="emo">🦸</span></span><div><b>Autonomia</b><p>Sente orgulho do que fez sozinho.</p></div></div>
+      <div class="hab"><span class="hab-ico" style="background:var(--mint-bg)"><span class="emo">💛</span></span><div><b>Vínculo</b><p>Guarda na memória os momentos com você.</p></div></div>
     </div>
   </div>
 </section>
@@ -581,6 +632,21 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
   <div class="wrap center">
     <span class="eyebrow">Quem já usou</span>
     <h2>O que as mães estão dizendo</h2>
+  </div>
+</section>
+
+<!-- OBJEÇÃO -->
+<section class="lilac">
+  <div class="wrap center">
+    <span class="eyebrow">A dúvida de toda mãe</span>
+    <h2>"Mas será que meu filho <span class="purple">vai gostar</span>?"</h2>
+    <p class="lead" style="margin-top:14px">Ninguém precisa convencer a criança a brincar. O Missão Zero Tela foi pensado para ela querer começar:</p>
+    <div class="motivos">
+      <div class="motivo"><span class="emo">🦸</span><b>Ela é a heroína</b><p>Cada missão começa com uma historinha em que a criança é chamada pela Central para salvar o dia.</p></div>
+      <div class="motivo"><span class="emo">🎲</span><b>Ela escolhe</b><p>Deixe a criança escolher ou sortear a missão do dia. E criança gosta do que ela mesma escolheu.</p></div>
+      <div class="motivo"><span class="emo">⏱️</span><b>É rápido de começar</b><p>Missões de 5 a 30 minutos, só com o que tem em casa. Não dá tempo de perder o interesse.</p></div>
+      <div class="motivo"><span class="emo">🏅</span><b>Tem conquista</b><p>Missão cumprida vira carimbo no passaporte. Ver o passaporte enchendo dá vontade de continuar.</p></div>
+    </div>
   </div>
 </section>
 
