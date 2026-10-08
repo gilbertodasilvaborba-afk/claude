@@ -276,6 +276,21 @@ details p{padding-bottom:14px;color:var(--navy-soft)}
 .final-photo img{width:100%;height:auto;aspect-ratio:12/7;object-fit:cover}
 .final .btn{margin-top:26px}
 .cta-meio{text-align:center;margin-top:32px}
+.not-alone .promessa{font-family:var(--body);font-size:17px;font-weight:600;line-height:1.55;max-width:34ch;margin-top:10px;transform:rotate(2.5deg);transform-origin:left;color:var(--navy-soft)}
+.sorteio-box{max-width:520px;margin:26px auto 0;display:flex;flex-direction:column;align-items:center;gap:20px}
+.carta{width:100%;min-height:270px;background:var(--white);border:3px solid var(--navy);border-radius:22px;box-shadow:0 8px 0 var(--navy);padding:22px 22px 20px;text-align:left;display:flex;flex-direction:column;justify-content:center}
+.carta-vazia{text-align:center;font-size:56px;line-height:1.2}.carta-vazia b{display:block;font-size:18px;margin-top:8px}
+.carta .topo{display:flex;align-items:center;gap:12px}
+.carta .em{font-size:44px;line-height:1}
+.carta h3{font-size:24px;line-height:1.15}
+.carta .n{font-size:13px;font-weight:800;color:var(--purple);text-transform:uppercase;letter-spacing:.06em}
+.carta .tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.carta .tags span{background:#F1ECFB;border-radius:999px;padding:3px 12px;font-size:14px;font-weight:700}
+.carta .conv{font-family:var(--hand);font-size:21px;line-height:1.35;color:var(--purple);margin:4px 0 10px}
+.carta .mat{font-size:15px;color:var(--navy-soft)}
+.carta.gira{animation:gira .45s ease}
+@keyframes gira{0%{transform:rotateY(90deg)}100%{transform:none}}
+#planos .kit{display:block;width:100%;max-width:620px;height:auto;margin:18px auto 6px}
 .hero-cta .btn{margin-bottom:10px}
 #planos{scroll-margin-top:12px}
 
@@ -335,7 +350,8 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
 
       <div class="not-alone">
         <span class="hand">Você não está sozinha!</span>
-        <p>Muitas mães passam por isso todos os dias, mas <mark>existe uma saída divertida!</mark></p>
+        <p>Troque o "só mais um vídeo" por <mark>"mãe, qual é a missão de hoje?"</mark></p>
+        <p class="promessa">100 missões em historinha para crianças de 3 a 8 anos. Na próxima vez que ele pedir o celular, você tem uma brincadeira pronta <b>em 5 minutos</b>, só com o que já tem em casa.</p>
       </div>
 
       <ul class="feats">
@@ -347,7 +363,7 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
 
       <div class="hero-cta">
         <a class="btn pulse" href="#planos">Quero as missões</a>
-        <span class="fine">A partir de R$ 11,00 · garantia de 7 dias</span>
+        <span class="fine">100 missões no plano completo · a partir de R$ 11,00 · garantia de 7 dias</span>
       </div>
     </div>
 
@@ -405,6 +421,22 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
       <figure class="polaroid" style="margin:0"><img src="img/desenho.jpg" alt="Menina mostrando o desenho que fez" loading="lazy" width="640" height="480"><figcaption>Minha obra-prima<span>Linguagem e autoestima</span></figcaption></figure>
     </div>
     <div class="cta-meio"><a class="btn" href="#planos">Quero as missões</a></div>
+  </div>
+</section>
+
+<!-- SORTEIO: experimente uma missão -->
+<section class="sorteio" id="sorteio">
+  <div class="wrap center">
+    <span class="eyebrow">Experimente agora</span>
+    <h2>Sorteie uma missão e veja como é fácil</h2>
+    <p class="lead" style="margin:10px auto 0">São missões de verdade, tiradas do material. Imagine oferecer uma dessas hoje, no lugar do celular.</p>
+    <div class="sorteio-box">
+      <div class="carta" id="carta" aria-live="polite">
+        <div class="carta-vazia">🫙<b>Toque no botão para sortear</b></div>
+      </div>
+      <button class="btn pulse" type="button" id="sortear">🎲 Sortear uma missão</button>
+    </div>
+    <div class="cta-meio"><a class="btn" href="#planos">Quero as 100 missões</a></div>
   </div>
 </section>
 
@@ -539,8 +571,8 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
     <div class="guarantee">
       <div class="seal"><div><span>7</span>dias de<br>garantia</div></div>
       <div style="display:flex;flex-direction:column;gap:14px">
-        <h2>Risco zero para você</h2>
-        <p class="lead">Faça as missões com seu filho por 7 dias. Se não gostar, peça o reembolso e devolvemos 100% do valor. Sem perguntas e sem burocracia.</p>
+        <h2>Garantia Missão Cumprida</h2>
+        <p class="lead">Faça as missões com seu filho por 7 dias. Se ele não se animar ou se você não gostar, peça o reembolso e devolvemos 100% do valor. Sem perguntas e sem burocracia.</p>
       </div>
     </div>
   </div>
@@ -583,6 +615,8 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
     <span class="eyebrow">A próxima vez que ele pedir o celular…</span>
     <h2>…você vai ter uma <span class="purple">missão pronta</span> para oferecer</h2>
     <p class="lead" style="margin:14px auto 0">A infância passa rápido. As brincadeiras de hoje são as lembranças de amanhã.</p>
+    <p class="lead" style="margin:10px auto 0"><b>Comece hoje o Desafio 30 Dias Zero Tela:</b> uma missão por dia, com calendário para colar na geladeira.</p>
+    <div class="cta-meio"><a class="btn" href="#planos">Quero começar o desafio</a></div>
   </div>
 </section>
 
@@ -590,7 +624,8 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
 <section id="planos">
   <div class="wrap center">
     <span class="eyebrow">Escolha seu plano</span>
-    <h2>Menos que um lanche para ter meses de brincadeira</h2>
+    <h2>100 brincadeiras prontas por <span class="purple">menos de R$ 0,28 cada</span></h2>
+    <img class="kit" src="img/kit.webp" alt="Kit Missão Zero Tela: livro com 100 missões, cartas do pote, passaporte do explorador e quadro de conquistas" width="1000" height="860" loading="lazy" decoding="async">
     <div class="plans">
       <div class="plan">
         <h3>Plano Simples</h3>
@@ -677,6 +712,26 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
     const io = new IntersectionObserver((es) => { if (es.some(e => e.isIntersecting)) { io.disconnect(); if (window.mzt) mzt('ViewContent', { value: 27.90, currency: 'BRL', content_name: 'Planos Missão Zero Tela' }); } }, { threshold: .3 });
     io.observe(planos);
   }
+</script>
+<script>
+  /* sorteio de missões (12 missões reais do material) */
+  (function(){
+    const M = [{"n":1,"e":"🧸","t":"Resgate dos Bichinhos","a":"3 a 4 anos","min":15,"m":"Juntos","mat":["5 bichinhos de pelúcia ou bonecos","1 caixa (vira o hospital)","Fita crepe"],"c":"Agente, os bichinhos se perderam e estão com medo. Você consegue encontrar todos eles?"},{"n":9,"e":"🌈","t":"Arco-íris de Brinquedos","a":"3 a 4 anos","min":15,"m":"Sozinho","mat":["Brinquedos de várias cores"],"c":"A chuva apagou o arco-íris do céu. Vamos montar um novo no chão com os seus brinquedos?"},{"n":18,"e":"🏕️","t":"Cabana do Explorador","a":"3 a 4 anos","min":30,"m":"Juntos","mat":["1 lençol","2 cadeiras","Almofadas e uma lanterna"],"c":"Todo explorador precisa de uma base secreta. Vamos construir a sua?"},{"n":27,"e":"🦉","t":"Boa Noite, Casa","a":"3 a 4 anos","min":5,"m":"Juntos","mat":["Nenhum"],"c":"Antes de você dormir, a casa toda precisa ouvir boa noite. Vamos fazer a ronda?"},{"n":12,"e":"🏘️","t":"Cidade de Papel","a":"5 a 6 anos","min":20,"m":"Juntos","mat":["Folhas de papel","Giz de cera ou lápis de cor"],"c":"Agente, os moradores ficaram sem casa! Você aceita construir uma cidade nova?"},{"n":42,"e":"🔤","t":"Caça às Letras","a":"5 a 6 anos","min":15,"m":"Juntos","mat":["Nenhum"],"c":"A letra B fugiu e está escondida nas coisas da casa. Quantas coisas com B você acha?"},{"n":51,"e":"🧻","t":"Rabisco Mágico","a":"5 a 6 anos","min":10,"m":"Sozinho","mat":["1 guardanapo ou papel","1 caneta"],"c":"Eu faço um rabisco qualquer e você transforma em um desenho. Vamos ver o que vira?"},{"n":60,"e":"🎲","t":"Dado Gigante","a":"5 a 6 anos","min":20,"m":"Juntos","mat":["1 caixa quadrada","Papel, fita e caneta"],"c":"Esse dado gigante manda na gente. O que ele mandar, a gente faz!"},{"n":69,"e":"🗝️","t":"Caça ao Tesouro com Enigmas","a":"7 a 8 anos","min":30,"m":"Juntos","mat":["5 papeizinhos","Lápis","Um prêmio simples no final"],"c":"Agente, chegou um enigma e só você pode resolver. A primeira pista está no seu travesseiro."},{"n":77,"e":"🔠","t":"Abecedário da Estrada","a":"7 a 8 anos","min":15,"m":"Juntos","mat":["Nenhum"],"c":"O alfabeto se espalhou pelas placas. Você consegue achar de A a Z, em ordem?"},{"n":85,"e":"✈️","t":"Aviões Campeões","a":"7 a 8 anos","min":20,"m":"Juntos","mat":["3 folhas de papel","Fita métrica ou passos para medir"],"c":"Qual avião de papel voa mais longe? Vamos testar 3 modelos como cientistas."},{"n":93,"e":"💌","t":"Bilhetes Secretos de Carinho","a":"7 a 8 anos","min":10,"m":"Sozinho","mat":["Papeizinhos","Lápis"],"c":"Missão secreta: espalhar bilhetes de carinho pela casa sem ninguém ver. Você aceita?"}];
+    const carta = document.getElementById('carta'), bt = document.getElementById('sortear');
+    if (!carta || !bt) return;
+    let ult = -1;
+    const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+    bt.addEventListener('click', () => {
+      let i; do { i = Math.floor(Math.random() * M.length); } while (i === ult && M.length > 1); ult = i;
+      const m = M[i];
+      carta.classList.remove('gira'); void carta.offsetWidth; carta.classList.add('gira');
+      carta.innerHTML = '<div class="topo"><span class="em">' + m.e + '</span><div><span class="n">Missão ' + String(m.n).padStart(2,'0') + '</span><h3>' + esc(m.t) + '</h3></div></div>' +
+        '<div class="tags"><span>' + esc(m.a) + '</span><span>' + m.min + ' min</span><span>' + m.m + '</span></div>' +
+        '<p class="conv">"' + esc(m.c) + '"</p>' +
+        '<p class="mat"><b>Material:</b> ' + m.mat.map(esc).join(' · ') + '</p>';
+      bt.textContent = '🎲 Sortear outra missão';
+    });
+  })();
 </script>
 </body>
 </html>
