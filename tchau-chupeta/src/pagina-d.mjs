@@ -140,6 +140,8 @@ const valores = [
 const valorTotal = valores.reduce((t, [, v]) => t + Number(v.replace(',', '.')), 0).toFixed(2).replace('.', ',');
 const prox = (texto, alvo, extra = '') =>
   `<a class="btn ${extra}" href="${alvo}"><span class="cur" aria-hidden="true">👆</span>${texto}</a>`;
+// Botão de compra no meio da página: leva ao quadro do preço (o checkout fica só no preço).
+const irPreco = (texto, extra = '') => `<a class="btn compra ${extra}" href="#preco">${texto} <span aria-hidden="true">→</span></a>`;
 const ctaCheckout = (texto, extra = '') =>
   `<a class="btn compra ${extra}" href="${esc(OFERTA.checkout)}" data-checkout>${texto} <span aria-hidden="true">→</span></a>`;
 
@@ -252,6 +254,8 @@ section{padding:72px 0}
 .center{text-align:center}
 .mt{background:linear-gradient(transparent 52%,var(--yellow) 52%,var(--yellow) 90%,transparent 90%);padding:0 6px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .acao{margin-top:34px;text-align:center}
+.hero .cta-topo{margin-top:22px;text-align:left}
+@media(max-width:860px){.hero .cta-topo{text-align:center}}
 
 /* botões em pílula amarela, como na referência */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Baloo 2',sans-serif;font-weight:800;font-size:21px;letter-spacing:.01em;
@@ -467,6 +471,7 @@ ${pixelTag('pagina-d')}
       <h1><span class="l1">Seu filho(a) ainda</span><span class="l2">chupa</span><span class="l3">Chupeta?</span></h1>
       <p class="sozinha">Você não está sozinha!
         <span>Muitas mães passam por isso e se sentem frustradas, mas <mark>existe um caminho carinhoso!</mark></span></p>
+      <div class="acao cta-topo">${irPreco('Quero o Tchau Chupeta', 'pulse')}</div>
     </div>
   </div>
   <div class="foto">
@@ -526,6 +531,7 @@ ${pixelTag('pagina-d')}
       </div>
     </div>
     <p class="fecho reveal">A diferença não está na força de vontade. Está em <b>preparar a criança antes</b> e deixar ela participar.</p>
+    <div class="acao reveal">${irPreco('Quero preparar meu filho')}</div>
   </div>
 </section>
 
@@ -580,6 +586,7 @@ ${pixelTag('pagina-d')}
       </ul>
     </div>
     <p class="formato reveal">📲 Material digital ilustrado. Você recebe no e-mail, lê no celular e imprime as brincadeiras em casa.</p>
+    <div class="acao reveal">${irPreco('Quero o Tchau Chupeta')}</div>
   </div>
 </section>
 
