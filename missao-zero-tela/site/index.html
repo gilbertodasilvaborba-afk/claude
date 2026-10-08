@@ -229,7 +229,7 @@ mark{background:linear-gradient(transparent 45%,var(--yellow) 45%,var(--yellow) 
 .bonus p{font-size:15px;color:var(--navy-soft);margin-top:4px}
 
 /* Planos */
-.plans{display:grid;grid-template-columns:1fr 1.15fr;gap:22px;margin-top:40px;align-items:stretch;text-align:left}
+.plans{display:grid;grid-template-columns:minmax(0,560px);justify-content:center;gap:22px;margin-top:40px;align-items:stretch;text-align:left}
 .plan{background:var(--white);border:3px solid #E4DCF6;border-radius:26px;padding:26px;display:flex;flex-direction:column;gap:16px;min-width:0}
 .plan.pro{border-color:var(--navy);box-shadow:10px 12px 0 var(--yellow);position:relative}
 .ribbon{position:absolute;top:-18px;left:50%;transform:translateX(-50%);background:var(--purple);color:#fff;font-family:var(--display);font-weight:800;padding:6px 18px;border-radius:999px;white-space:nowrap;font-size:16px}
@@ -363,7 +363,7 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
 
       <div class="hero-cta">
         <a class="btn pulse" href="#planos">Quero as missões</a>
-        <span class="fine">100 missões no plano completo · a partir de R$ 11,00 · garantia de 7 dias</span>
+        <span class="fine">100 missões + 4 bônus por R$ 27,90 · garantia de 7 dias</span>
       </div>
     </div>
 
@@ -601,7 +601,6 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
       <details><summary>Como recebo o material?</summary><p>Logo após a confirmação do pagamento você recebe o acesso no seu e-mail. Pelo Pix, a liberação costuma ser em poucos minutos.</p></details>
       <details><summary>Preciso imprimir?</summary><p>Não é obrigatório. Dá para ler as missões no celular. As cartas do pote e o passaporte ficam melhores impressos, e há versão preto e branco.</p></details>
       <details><summary>Serve para qual idade?</summary><p>De 3 a 8 anos. No plano completo cada missão tem a faixa de idade indicada: 3–4, 5–6 e 7–8 anos.</p></details>
-      <details><summary>Qual a diferença entre os planos?</summary><p>O simples tem 20 historinhas-missão. O completo tem 100 missões separadas por idade e momento do dia, missões para a criança fazer sozinha e os 4 bônus.</p></details>
       <details><summary>Preciso comprar algum material?</summary><p>Não. As missões usam o que já existe em casa: papel, giz, caixas, lençol, colheres, potes.</p></details>
       <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia. É só pedir o reembolso e devolvemos 100% do valor.</p></details>
     </div>
@@ -623,26 +622,12 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
 <!-- PLANOS -->
 <section id="planos">
   <div class="wrap center">
-    <span class="eyebrow">Escolha seu plano</span>
+    <span class="eyebrow">Tudo isso por um preço só</span>
     <h2>100 brincadeiras prontas por <span class="purple">menos de R$ 0,28 cada</span></h2>
     <img class="kit" src="img/kit.webp" alt="Kit Missão Zero Tela: livro com 100 missões, cartas do pote, passaporte do explorador e quadro de conquistas" width="1000" height="860" loading="lazy" decoding="async">
     <div class="plans">
-      <div class="plan">
-        <h3>Plano Simples</h3>
-        <div class="price"><span class="cur">R$</span><span class="val">11</span><span class="cents">,00</span></div>
-        <span class="per">R$ 0,55 por missão</span>
-        <ul>
-          <li>20 historinhas-missão ilustradas</li>
-          <li>PDF para imprimir ou usar no celular</li>
-          <li>Acesso imediato</li>
-          <li class="no">80 missões extras</li>
-          <li class="no">Missões por momento do dia</li>
-          <li class="no">4 bônus exclusivos</li>
-        </ul>
-        <button class="plan-btn" type="button" id="btn-simples">Quero o simples</button>
-      </div>
       <div class="plan pro">
-        <span class="ribbon">Recomendado</span>
+        <span class="ribbon">Oferta de lançamento</span>
         <h3>Plano Completo</h3>
         <div class="price"><span class="cur">R$</span><span class="val">27</span><span class="cents">,90</span></div>
         <span class="per">Menos de R$ 0,28 por missão</span>
@@ -657,7 +642,7 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
           <li>Bônus 4: Desafio 30 Dias Zero Tela</li>
           <li>Versão preto e branco para economizar tinta</li>
         </ul>
-        <a class="plan-btn" href="#" data-checkout="completo">Quero o completo</a>
+        <a class="plan-btn" href="#" data-checkout="completo">Quero as 100 missões</a>
         <p class="secure">Pagamento seguro · Pix ou cartão · Acesso imediato</p>
       </div>
     </div>
@@ -672,15 +657,6 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
   </div>
 </footer>
 
-<div class="modal" id="upgrade" hidden role="dialog" aria-modal="true" aria-labelledby="up-title">
-  <div class="modal-box">
-    <span class="eyebrow">Espera!</span>
-    <h3 id="up-title" style="font-size:26px">Por mais R$ 16,90 você leva 80 missões extras e os 4 bônus</h3>
-    <p style="color:var(--navy-soft)">São 5 vezes mais brincadeiras, com o Pote de Missões, o Passaporte e o Guia "Desligar sem birra".</p>
-    <a class="btn" href="#" data-checkout="completo" id="up-yes">Sim, quero o completo</a>
-    <a class="skip" href="#" data-checkout="simples" id="up-no">Não, quero só as 20 missões</a>
-  </div>
-</div>
 
 <script>
   /* barra fixa do celular: só aparece depois que o botão do topo sai da tela, para não cobri-lo */
@@ -688,11 +664,6 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
   if (barra && ctaTopo && 'IntersectionObserver' in window) {
     new IntersectionObserver(([e]) => barra.classList.toggle('on', !e.isIntersecting && e.boundingClientRect.top < 0)).observe(ctaTopo);
   } else if (barra) barra.classList.add('on');
-  const modal = document.getElementById('upgrade');
-  document.getElementById('btn-simples').addEventListener('click', () => { modal.hidden = false; document.getElementById('up-yes').focus(); });
-  modal.addEventListener('click', e => { if (e.target === modal) modal.hidden = true; });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') modal.hidden = true; });
-  ['up-yes','up-no'].forEach(id => document.getElementById(id).addEventListener('click', () => { modal.hidden = true; }));
 </script>
 <script>
   /* ===== CONFIGURE AQUI ===== cole os links de checkout da sua plataforma (Kiwify, Hotmart, Cakto...) */
@@ -700,8 +671,7 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
     simples:  "https://pay.kiwify.com.br/zEL878x",
     completo: "https://pay.kiwify.com.br/iskMF8u"
   };
-  /* enquanto o link do plano simples não for configurado, a opção "só as 20 missões" fica escondida */
-  if (CHECKOUT.simples.includes('SEU-CHECKOUT')) { const n = document.getElementById('up-no'); if (n) n.hidden = true; }
+
   document.querySelectorAll('[data-checkout]').forEach(a => {
     a.href = CHECKOUT[a.dataset.checkout];
     a.addEventListener('click', () => { if (window.mzt) mzt('InitiateCheckout', { value: a.dataset.checkout === 'completo' ? 27.90 : 11.00, currency: 'BRL', content_name: 'Missão Zero Tela ' + a.dataset.checkout }); });
