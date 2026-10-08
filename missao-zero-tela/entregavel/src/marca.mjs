@@ -95,7 +95,12 @@ const OFERTAS = {
   },
   simples: {
     itens: ['<b>20 historinhas-missão</b> ilustradas, de 3 a 8 anos', 'Só com o que você <b>já tem em casa</b>', 'Passaporte com 20 carimbos + <b>certificado</b>'],
-    linha: 'Acesso imediato no seu e-mail', preco: 'R$ 11,00',
+    linha: 'Acesso imediato no seu e-mail', preco: 'R$ 9,90',
+  },
+  // oferta do popup do Básico: o mesmo Plano Completo por R$ 19,90
+  oferta: {
+    itens: ['<b>100 historinhas-missão</b> ilustradas, de 3 a 8 anos', 'Separadas por <b>idade</b> e por <b>momento do dia</b>', `<span style="color:${C.purple}">+ 4 bônus</span>: pote de missões, passaporte, guia "Desligar sem birra" e desafio 30 dias`],
+    linha: `<span style="background:${C.yellow};color:${C.navy};padding:4px 12px;border-radius:999px">Oferta especial</span>&nbsp; de <s style="color:#C4566A">R$ 27,90</s> por`, preco: 'R$ 19,90',
   },
 };
 
@@ -118,7 +123,8 @@ const bannerQuadrado = (t, k) => { const o = OFERTAS[k]; return `<div style="wid
   ${faixa(140, 82)}
   <div style="display:flex;justify-content:center;margin-top:6px">${mockup(t, 640, k === 'simples')}</div>
   <div style="padding:0 70px;margin-top:-6px">${lista(o.itens, 27)}</div>
-  <div style="display:flex;justify-content:center;margin-top:30px">${botao('Por apenas ' + o.preco, 46)}</div>
+  ${k === 'oferta' ? `<p style="text-align:center;margin-top:22px;font-weight:800;font-size:24px;color:#4A5385">${o.linha}</p>` : ''}
+  <div style="display:flex;justify-content:center;margin-top:${k === 'oferta' ? 10 : 30}px">${botao('Por apenas ' + o.preco, 46)}</div>
   <div style="position:absolute;right:30px;top:160px">${seloGarantia(160)}</div></div>`; };
 
 const bannerVertical = (t, k) => { const o = OFERTAS[k]; return `<div style="width:1080px;height:1350px;${fundo};position:relative;overflow:hidden">
@@ -274,7 +280,7 @@ if (process.argv[2] === 'capa') {
 }
 for (const [n, w, h, inner, tr] of logos) await render(n, w, h, inner, { png: true, transparent: tr, dir: LOGO });
 const t = await capturar(browser);
-for (const k of ['completo', 'simples']) {
+for (const k of ['completo', 'simples', 'oferta']) {
   await render(`${k}-banner-checkout-desktop`, 1320, 790, bannerDesktop(t, k));
   await render(`${k}-banner-checkout-mobile`, 1080, 1080, bannerQuadrado(t, k));
   await render(`${k}-banner-checkout-celular-topo`, 1080, 1350, bannerVertical(t, k));
