@@ -1,0 +1,7 @@
+{
+  "name": "reino-das-sereias-entregavel",
+  "private": true,
+  "type": "module",
+  "scripts": { "build": "node src/build.mjs" },
+  "dependencies": { "playwright": "^1.56.1" }
+}
