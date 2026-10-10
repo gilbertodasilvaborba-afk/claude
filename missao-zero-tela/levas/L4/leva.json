@@ -1,0 +1,119 @@
+{
+ "leva": "L4",
+ "produto": "Missão Zero Tela",
+ "cta_tela": "CLIQUE NO LINK",
+ "voz": {
+  "id": "c9611be8-aae9-4a93-bb1c-98dd6b7d52a4"
+ },
+ "legenda_estilo": "amarela",
+ "legenda_posicao": "meio",
+ "musica": "../L3/musicas/m04.m4a",
+ "ganchos": [
+  {
+   "titulo": [
+    "NO RESTAURANTE",
+    "TODOS NO CELULAR?"
+   ],
+   "fala": "No restaurante, todas as crianças estão no celular. A sua também?"
+  },
+  {
+   "titulo": [
+    "“TÔ ENTEDIADO”",
+    "EM 5 MINUTOS?"
+   ],
+   "fala": "Seu filho larga o tablet e cinco minutos depois diz: tô entediado?"
+  },
+  {
+   "titulo": [
+    "CULPA DE DAR",
+    "O CELULAR?"
+   ],
+   "fala": "Você também sente culpa toda vez que entrega o celular?"
+  }
+ ],
+ "corpos": [
+  {
+   "fala": "Você pode pensar: eu não tenho tempo para inventar brincadeira. Por isso tudo vem pronto: a historinha, a frase-convite, o passo a passo e o material, que é só papel, giz, caixa ou lençol. Leva cinco minutos para começar, e tem missão de dez minutos para os dias corridos."
+  },
+  {
+   "fala": "As missões são separadas por idade: três a quatro, cinco a seis e sete a oito anos. Assim seu filho não acha fácil demais nem difícil demais. Cada carta mostra o tempo, a bagunça e se é para fazer junto ou sozinho. Você escolhe em três segundos."
+  },
+  {
+   "fala": "Tem missão para cada momento do dia. Dia de chuva, para gastar energia dentro de casa. No restaurante, só com guardanapo e caneta. Na viagem de carro, jogos de olhar e adivinhar. E antes de dormir, missões calmas para desacelerar."
+  },
+  {
+   "fala": "Para virar hábito, vem o desafio de trinta dias, com uma missão por dia e um quadro de conquistas para colar na geladeira. Cada missão cumprida vira carimbo no passaporte do explorador. No fim, seu filho ganha um certificado para comemorar."
+  },
+  {
+   "fala": "Vinte minutos de brincadeira de verdade viram lembrança. Ele ri, inventa, constrói e chama você para ver. E você termina o dia sem aquela culpa, sabendo que esteve presente. A infância passa rápido, e são essas tardes que ficam."
+  }
+ ],
+ "cta": {
+  "fala": "Clique no link e conheça as missões."
+ },
+ "cenas": {
+  "excluir": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   15,
+   16,
+   17,
+   18,
+   19,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   37,
+   38,
+   39,
+   40,
+   41,
+   43,
+   44,
+   45,
+   47,
+   48,
+   49,
+   51,
+   52,
+   53,
+   54,
+   55,
+   57,
+   58,
+   59,
+   60,
+   61,
+   62,
+   63,
+   64,
+   66,
+   67,
+   68,
+   69,
+   70,
+   71
+  ]
+ }
+}
