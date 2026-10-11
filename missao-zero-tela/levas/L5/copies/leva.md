@@ -17,6 +17,21 @@
 | L5V13 | G5 | C1 |
 | L5V14 | G5 | C2 |
 | L5V15 | G5 | C3 |
+| L5V16 | G6 | C1 |
+| L5V17 | G6 | C2 |
+| L5V18 | G6 | C3 |
+| L5V19 | G7 | C1 |
+| L5V20 | G7 | C2 |
+| L5V21 | G7 | C3 |
+| L5V22 | G8 | C1 |
+| L5V23 | G8 | C2 |
+| L5V24 | G8 | C3 |
+| L5V25 | G9 | C1 |
+| L5V26 | G9 | C2 |
+| L5V27 | G9 | C3 |
+| L5V28 | G10 | C1 |
+| L5V29 | G10 | C2 |
+| L5V30 | G10 | C3 |
 
 ## Ganchos
 
@@ -25,6 +40,11 @@
 - **G3:** O que um lençol e uma colher têm a ver com o celular do seu filho?
 - **G4:** Tela demais pode atrapalhar o sono, a atenção e a vontade de brincar do seu filho.
 - **G5:** Pediatras recomendam no máximo uma hora de tela por dia até os cinco anos. E o seu filho?
+- **G6:** Se seu filho fica irritado toda vez que você tira o celular, presta atenção nisso.
+- **G7:** Quanto mais tela, menos brincadeira de verdade. E é brincando que a criança aprende.
+- **G8:** Seu filho só come, só espera ou só fica quieto com o celular na mão?
+- **G9:** Para de se sentir culpada. O problema nunca foi você.
+- **G10:** A tela acalma na hora, mas pode cobrar depois: mais birra e menos sono.
 
 ## Corpos
 

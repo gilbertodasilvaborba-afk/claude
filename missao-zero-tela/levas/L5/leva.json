@@ -63,6 +63,61 @@
     57,
     49
    ]
+  },
+  {
+   "titulo": [
+    "IRRITADO SEM",
+    "O CELULAR?"
+   ],
+   "fala": "Se seu filho fica irritado toda vez que você tira o celular, presta atenção nisso.",
+   "cenas": [
+    53,
+    52
+   ]
+  },
+  {
+   "titulo": [
+    "MAIS TELA,",
+    "MENOS BRINCADEIRA"
+   ],
+   "fala": "Quanto mais tela, menos brincadeira de verdade. E é brincando que a criança aprende.",
+   "cenas": [
+    55,
+    40
+   ]
+  },
+  {
+   "titulo": [
+    "SÓ FICA QUIETO",
+    "COM O CELULAR?"
+   ],
+   "fala": "Seu filho só come, só espera ou só fica quieto com o celular na mão?",
+   "cenas": [
+    57,
+    51
+   ]
+  },
+  {
+   "titulo": [
+    "O PROBLEMA",
+    "NÃO É VOCÊ"
+   ],
+   "fala": "Para de se sentir culpada. O problema nunca foi você.",
+   "cenas": [
+    59,
+    61
+   ]
+  },
+  {
+   "titulo": [
+    "A TELA ACALMA,",
+    "MAS COBRA DEPOIS"
+   ],
+   "fala": "A tela acalma na hora, mas pode cobrar depois: mais birra e menos sono.",
+   "cenas": [
+    55,
+    50
+   ]
   }
  ],
  "corpos": [
