@@ -16,8 +16,8 @@
    ],
    "fala": "Sete da noite. Em quase toda casa com criança, essa cena se repete.",
    "cenas": [
-    49,
-    52
+    55,
+    49
    ]
   },
   {
@@ -39,19 +39,205 @@
    "fala": "O que um lençol e uma colher têm a ver com o celular do seu filho?",
    "cenas": [
     33,
-    36
+    57
    ]
   }
  ],
  "corpos": [
   {
-   "fala": "Você chega cansada, o jantar no fogo, e ele pede o celular pela terceira vez. Você dá. Dez minutos depois vem a culpa. E na hora de desligar, vem o choro. Agora imagina outra noite. Em vez de dizer vai brincar, você diz: tem uma missão secreta para você. Ele sorteia uma carta no pote, escuta a historinha e descobre que só ele pode salvar a cidade de papel. Pega folha e giz e começa a construir. Vinte minutos depois, ele te chama para ver o que fez. E a tela fica para depois. É assim o Missão Zero Tela: cem historinhas em que seu filho é o herói, com o que você já tem em casa."
+   "fala": "Antes, a rotina aqui era sempre igual. Você chegava cansada, o jantar no fogo, e o celular virava a babá. O giz e o caderno ficavam esquecidos em cima da mesa. E no fim do dia vinha a culpa. Você sabia que não era o ideal, mas não tinha outra ideia. E quando tentava desligar, era choro. Foi aí que veio a virada: o Missão Zero Tela. Ele não tira a tela na marra. Ele coloca outra história no lugar. Cada missão começa com uma historinha em quadrinhos em que seu filho é o herói, e termina com um convite: você aceita a missão? Ele aceita, pega papel e giz, e a brincadeira começa. Agora imagina sua noite assim: ele desenhando, construindo, te chamando para ver o que fez. E você terminando o dia sem culpa, sabendo que esteve presente. São cem missões prontas, com o que você já tem em casa.",
+   "roteiro": [
+    {
+     "texto": "Antes, a rotina aqui era sempre igual.",
+     "cena": 57
+    },
+    {
+     "texto": "Você chegava cansada, o jantar no fogo, e o celular virava a babá.",
+     "cena": 55
+    },
+    {
+     "texto": "O giz e o caderno ficavam esquecidos em cima da mesa.",
+     "cena": 57
+    },
+    {
+     "texto": "E no fim do dia vinha a culpa. Você sabia que não era o ideal, mas não tinha outra ideia.",
+     "cena": 59
+    },
+    {
+     "texto": "E quando tentava desligar, era choro.",
+     "cena": [
+      52,
+      49
+     ]
+    },
+    {
+     "texto": "Foi aí que veio a virada: o Missão Zero Tela.",
+     "cena": 61
+    },
+    {
+     "texto": "Ele não tira a tela na marra. Ele coloca outra história no lugar.",
+     "cena": 61
+    },
+    {
+     "texto": "Cada missão começa com uma historinha em quadrinhos em que seu filho é o herói, e termina com um convite: você aceita a missão?",
+     "cena": 63
+    },
+    {
+     "texto": "Ele aceita, pega papel e giz, e a brincadeira começa.",
+     "cena": [
+      40,
+      46
+     ]
+    },
+    {
+     "texto": "Agora imagina sua noite assim: ele desenhando, construindo, te chamando para ver o que fez.",
+     "cena": [
+      34,
+      65
+     ]
+    },
+    {
+     "texto": "E você terminando o dia sem culpa, sabendo que esteve presente.",
+     "cena": 36
+    },
+    {
+     "texto": "São cem missões prontas, com o que você já tem em casa.",
+     "cena": [
+      47,
+      20
+     ]
+    }
+   ]
   },
   {
-   "fala": "Domingo, chovendo, ninguém sai de casa. Às nove da manhã ele já pediu o tablet, e você conhece o roteiro: um vídeo, depois outro, e o dia passa. Agora imagina esse mesmo domingo de outro jeito. Você abre a missão da Cabana do Explorador e lê o convite em voz alta: explorador, a tempestade chegou e você precisa de um abrigo. Ele puxa o lençol do sofá e as cadeiras da cozinha. Vocês constroem juntos, levam uma lanterna e leem uma história lá dentro. Quando você olha o relógio, já é hora do almoço. No Missão Zero Tela tem missão para cada momento: chuva, jantar, viagem e hora de dormir."
+   "fala": "Antes, todo fim de semana era igual. Às nove da manhã ele já estava no tablet. Um vídeo, depois outro, e o dia ia embora. Você até tentava: vai brincar com seus brinquedos. Mas em cinco minutos vinha o tô entediado. E a culpa de ver o fim de semana passar na frente da tela. A virada veio com o Missão Zero Tela, um jeito diferente de tirar a criança da tela. Em vez de uma ordem, um convite. Você lê a historinha: explorador, a tempestade chegou e você precisa de um abrigo. E ele vira o herói da missão. Os travesseiros e o lençol viram cabana. A caixa de papelão vira labirinto. E os irmãos entram na brincadeira. Imagina seus fins de semana assim: mais risada, mais bagunça boa e muito menos tela. Tem missão para cada momento: chuva, jantar, viagem e hora de dormir.",
+   "roteiro": [
+    {
+     "texto": "Antes, todo fim de semana era igual.",
+     "cena": 55
+    },
+    {
+     "texto": "Às nove da manhã ele já estava no tablet. Um vídeo, depois outro, e o dia ia embora.",
+     "cena": [
+      55,
+      57
+     ]
+    },
+    {
+     "texto": "Você até tentava: vai brincar com seus brinquedos. Mas em cinco minutos vinha o tô entediado.",
+     "cena": 51
+    },
+    {
+     "texto": "E a culpa de ver o fim de semana passar na frente da tela.",
+     "cena": 59
+    },
+    {
+     "texto": "A virada veio com o Missão Zero Tela, um jeito diferente de tirar a criança da tela.",
+     "cena": 61
+    },
+    {
+     "texto": "Em vez de uma ordem, um convite. Você lê a historinha: explorador, a tempestade chegou e você precisa de um abrigo.",
+     "cena": 61
+    },
+    {
+     "texto": "E ele vira o herói da missão.",
+     "cena": 63
+    },
+    {
+     "texto": "Os travesseiros e o lençol viram cabana.",
+     "cena": 33
+    },
+    {
+     "texto": "A caixa de papelão vira labirinto.",
+     "cena": [
+      20,
+      27
+     ]
+    },
+    {
+     "texto": "E os irmãos entram na brincadeira.",
+     "cena": 65
+    },
+    {
+     "texto": "Imagina seus fins de semana assim: mais risada, mais bagunça boa e muito menos tela.",
+     "cena": [
+      30,
+      36
+     ]
+    },
+    {
+     "texto": "Tem missão para cada momento: chuva, jantar, viagem e hora de dormir.",
+     "cena": [
+      43,
+      44
+     ]
+    }
+   ]
   },
   {
-   "fala": "Sabe por que ele não larga a tela? Não é teimosia. O desenho entrega tudo pronto: cor, som e história. Quando você desliga e diz vai brincar, sobra um vazio na frente dele. E ninguém gosta de vazio. Por isso só tirar não funciona. O que ajuda é colocar outra história no lugar, uma em que ele é o personagem principal. Foi pensando nisso que nasceu o Missão Zero Tela. Cada missão começa com uma historinha em quadrinhos que termina com um convite: você aceita a missão? E a brincadeira ganha começo, meio e fim, com papel, giz, caixa ou lençol. Feito para crianças de três a oito anos."
+   "fala": "Antes, a rotina aqui era uma guerra. Tirar o celular era choro. Deixar era culpa. Até entender por que ele não largava a tela: o desenho entrega tudo pronto, cor, som e história. Quando você desliga e diz vai brincar, sobra um vazio. E ninguém gosta de vazio. O mecanismo do Missão Zero Tela é colocar outra história no lugar. Uma historinha em que seu filho é o personagem principal, que termina com um convite: você aceita a missão? Ele aceita, e a brincadeira ganha começo, meio e fim. Com papel e giz, com uma caixa, ou com um lençol. Imagina ver seu filho trocar a tela por uma missão e te chamar para brincar junto. São cem missões para crianças de três a oito anos, prontas para você começar hoje.",
+   "roteiro": [
+    {
+     "texto": "Antes, a rotina aqui era uma guerra.",
+     "cena": 50
+    },
+    {
+     "texto": "Tirar o celular era choro. Deixar era culpa.",
+     "cena": [
+      52,
+      59
+     ]
+    },
+    {
+     "texto": "Até entender por que ele não largava a tela: o desenho entrega tudo pronto, cor, som e história.",
+     "cena": 55
+    },
+    {
+     "texto": "Quando você desliga e diz vai brincar, sobra um vazio. E ninguém gosta de vazio.",
+     "cena": 51
+    },
+    {
+     "texto": "O mecanismo do Missão Zero Tela é colocar outra história no lugar.",
+     "cena": 61
+    },
+    {
+     "texto": "Uma historinha em que seu filho é o personagem principal, que termina com um convite: você aceita a missão?",
+     "cena": [
+      61,
+      63
+     ]
+    },
+    {
+     "texto": "Ele aceita, e a brincadeira ganha começo, meio e fim.",
+     "cena": 63
+    },
+    {
+     "texto": "Com papel e giz,",
+     "cena": 40
+    },
+    {
+     "texto": "com uma caixa,",
+     "cena": 27
+    },
+    {
+     "texto": "ou com um lençol.",
+     "cena": 33
+    },
+    {
+     "texto": "Imagina ver seu filho trocar a tela por uma missão e te chamar para brincar junto.",
+     "cena": [
+      34,
+      65
+     ]
+    },
+    {
+     "texto": "São cem missões para crianças de três a oito anos, prontas para você começar hoje.",
+     "cena": [
+      36,
+      47
+     ]
+    }
+   ]
   }
  ],
  "cta": {
@@ -99,7 +285,19 @@
    50,
    51,
    52,
-   53
+   53,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59,
+   60,
+   61,
+   62,
+   63,
+   64,
+   65
   ]
  }
 }

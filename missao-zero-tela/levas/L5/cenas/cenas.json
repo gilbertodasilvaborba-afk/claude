@@ -465,5 +465,89 @@
   "duracao": 3.0,
   "produto": false,
   "origem": "h113.mp4"
+ },
+ {
+  "n": 54,
+  "arquivo": "c54.mp4",
+  "duracao": 5.0,
+  "produto": false,
+  "origem": "s1-tablet-noite.jpg"
+ },
+ {
+  "n": 55,
+  "arquivo": "c55.mp4",
+  "duracao": 7.93,
+  "produto": false,
+  "origem": "s1-tablet-noite.mp4"
+ },
+ {
+  "n": 56,
+  "arquivo": "c56.mp4",
+  "duracao": 5.0,
+  "produto": false,
+  "origem": "s2-celular-mesa.jpg"
+ },
+ {
+  "n": 57,
+  "arquivo": "c57.mp4",
+  "duracao": 5.67,
+  "produto": false,
+  "origem": "s2-celular-mesa.mp4"
+ },
+ {
+  "n": 58,
+  "arquivo": "c58.mp4",
+  "duracao": 5.0,
+  "produto": false,
+  "origem": "s3-mae-preocupada.jpg"
+ },
+ {
+  "n": 59,
+  "arquivo": "c59.mp4",
+  "duracao": 6.87,
+  "produto": false,
+  "origem": "s3-mae-preocupada.mp4"
+ },
+ {
+  "n": 60,
+  "arquivo": "c60.mp4",
+  "duracao": 5.0,
+  "produto": false,
+  "origem": "s4-mae-entrega-livro.jpg"
+ },
+ {
+  "n": 61,
+  "arquivo": "c61.mp4",
+  "duracao": 8.87,
+  "produto": false,
+  "origem": "s4-mae-entrega-livro.mp4"
+ },
+ {
+  "n": 62,
+  "arquivo": "c62.mp4",
+  "duracao": 5.0,
+  "produto": false,
+  "origem": "s5-desenhando-com-mae.jpg"
+ },
+ {
+  "n": 63,
+  "arquivo": "c63.mp4",
+  "duracao": 5.87,
+  "produto": false,
+  "origem": "s5-desenhando-com-mae.mp4"
+ },
+ {
+  "n": 64,
+  "arquivo": "c64.mp4",
+  "duracao": 5.0,
+  "produto": false,
+  "origem": "s6-blocos-irmaos.jpg"
+ },
+ {
+  "n": 65,
+  "arquivo": "c65.mp4",
+  "duracao": 6.87,
+  "produto": false,
+  "origem": "s6-blocos-irmaos.mp4"
  }
 ]
