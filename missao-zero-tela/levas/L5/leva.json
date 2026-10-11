@@ -41,6 +41,28 @@
     33,
     57
    ]
+  },
+  {
+   "titulo": [
+    "TELA DEMAIS",
+    "ATRAPALHA O SONO?"
+   ],
+   "fala": "Tela demais pode atrapalhar o sono, a atenção e a vontade de brincar do seu filho.",
+   "cenas": [
+    55,
+    52
+   ]
+  },
+  {
+   "titulo": [
+    "PEDIATRAS: ATÉ",
+    "1 HORA POR DIA"
+   ],
+   "fala": "Pediatras recomendam no máximo uma hora de tela por dia até os cinco anos. E o seu filho?",
+   "cenas": [
+    57,
+    49
+   ]
   }
  ],
  "corpos": [

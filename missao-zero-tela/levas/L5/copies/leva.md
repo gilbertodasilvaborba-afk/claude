@@ -11,12 +11,20 @@
 | L5V7 | G3 | C1 |
 | L5V8 | G3 | C2 |
 | L5V9 | G3 | C3 |
+| L5V10 | G4 | C1 |
+| L5V11 | G4 | C2 |
+| L5V12 | G4 | C3 |
+| L5V13 | G5 | C1 |
+| L5V14 | G5 | C2 |
+| L5V15 | G5 | C3 |
 
 ## Ganchos
 
 - **G1:** Sete da noite. Em quase toda casa com criança, essa cena se repete.
 - **G2:** Fica até o fim, porque o final dessa história pode mudar a sua noite.
 - **G3:** O que um lençol e uma colher têm a ver com o celular do seu filho?
+- **G4:** Tela demais pode atrapalhar o sono, a atenção e a vontade de brincar do seu filho.
+- **G5:** Pediatras recomendam no máximo uma hora de tela por dia até os cinco anos. E o seu filho?
 
 ## Corpos
 
