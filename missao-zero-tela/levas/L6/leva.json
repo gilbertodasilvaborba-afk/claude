@@ -1,0 +1,239 @@
+{
+ "leva": "L6",
+ "produto": "Missão Zero Tela",
+ "cta_tela": "VEJA COMO FUNCIONA",
+ "voz": {
+  "id": "c9611be8-aae9-4a93-bb1c-98dd6b7d52a4"
+ },
+ "legenda_estilo": "amarela",
+ "legenda_posicao": "meio",
+ "musica": "../L3/musicas/m03.m4a",
+ "ganchos": [
+  {
+   "titulo": [
+    "E SE FOSSE UMA",
+    "MISSÃO SECRETA?"
+   ],
+   "fala": "E se a brincadeira começasse com uma missão secreta?",
+   "cenas": [
+    57,
+    61
+   ]
+  },
+  {
+   "titulo": [
+    "3 PALAVRAS QUE",
+    "TIRAM DA TELA"
+   ],
+   "fala": "Três palavras que podem fazer seu filho largar o celular sem briga.",
+   "cenas": [
+    55,
+    61
+   ]
+  },
+  {
+   "titulo": [
+    "NÃO DIGA",
+    "“VAI BRINCAR”"
+   ],
+   "fala": "Não diga vai brincar. Diga isso aqui.",
+   "cenas": [
+    51,
+    61
+   ]
+  },
+  {
+   "titulo": [
+    "O SEGREDO É",
+    "UM CONVITE"
+   ],
+   "fala": "O segredo para tirar a criança da tela sem birra não é uma regra. É um convite.",
+   "cenas": [
+    52,
+    61
+   ]
+  },
+  {
+   "titulo": [
+    "ELE VIRA",
+    "O HERÓI"
+   ],
+   "fala": "E se o seu filho virasse o herói da história, em vez de assistir a do desenho?",
+   "cenas": [
+    55,
+    63
+   ]
+  }
+ ],
+ "corpos": [
+  {
+   "fala": "Antes, desligar o celular era sempre briga. Você diz vai brincar, e em cinco minutos a tela volta. E no fim do dia, sobra a culpa. Até descobrir que a criança não troca a tela por uma ordem. Ela troca por um convite. Funciona assim: seu filho sorteia uma carta no pote de missões. Vocês leem juntos uma historinha curta em que ele é o herói. Ele aceita o desafio e brinca com o que tem em casa: papel, giz, caixa ou lençol. No fim, ganha um carimbo no passaporte do explorador. E já pede a próxima missão. Imagina seu filho pedindo missão em vez de pedir o celular. São cem missões prontas, para crianças de três a oito anos.",
+   "roteiro": [
+    {
+     "texto": "Antes, desligar o celular era sempre briga.",
+     "cena": 52
+    },
+    {
+     "texto": "Você diz vai brincar, e em cinco minutos a tela volta.",
+     "cena": [
+      51,
+      57
+     ]
+    },
+    {
+     "texto": "E no fim do dia, sobra a culpa.",
+     "cena": 59
+    },
+    {
+     "texto": "Até descobrir que a criança não troca a tela por uma ordem. Ela troca por um convite.",
+     "cena": 61
+    },
+    {
+     "texto": "Funciona assim: seu filho sorteia uma carta no pote de missões.",
+     "cena": 47
+    },
+    {
+     "texto": "Vocês leem juntos uma historinha curta em que ele é o herói.",
+     "cena": 63
+    },
+    {
+     "texto": "Ele aceita o desafio e brinca com o que tem em casa: papel, giz, caixa ou lençol.",
+     "cena": [
+      40,
+      20,
+      33
+     ]
+    },
+    {
+     "texto": "No fim, ganha um carimbo no passaporte do explorador.",
+     "cena": 34
+    },
+    {
+     "texto": "E já pede a próxima missão.",
+     "cena": 65
+    },
+    {
+     "texto": "Imagina seu filho pedindo missão em vez de pedir o celular.",
+     "cena": [
+      36,
+      30
+     ]
+    },
+    {
+     "texto": "São cem missões prontas, para crianças de três a oito anos.",
+     "cena": [
+      43,
+      44
+     ]
+    }
+   ]
+  },
+  {
+   "fala": "Funciona assim: seu filho sorteia uma carta no pote de missões. Vocês leem juntos uma historinha curta em que ele é o herói. No final, a pergunta: você aceita a missão? Ele aceita e brinca com o que tem em casa. Uma caixa vira labirinto. Um lençol vira cabana. Uma folha vira uma cidade inteira. No fim, ganha um carimbo no passaporte do explorador, e já pensa na próxima. É o jeito mais simples de trocar o só mais um vídeo por brincadeira de verdade.",
+   "roteiro": [
+    {
+     "texto": "Funciona assim: seu filho sorteia uma carta no pote de missões.",
+     "cena": 47
+    },
+    {
+     "texto": "Vocês leem juntos uma historinha curta em que ele é o herói.",
+     "cena": [
+      61,
+      63
+     ]
+    },
+    {
+     "texto": "No final, a pergunta: você aceita a missão?",
+     "cena": 63
+    },
+    {
+     "texto": "Ele aceita e brinca com o que tem em casa.",
+     "cena": 40
+    },
+    {
+     "texto": "Uma caixa vira labirinto.",
+     "cena": 20
+    },
+    {
+     "texto": "Um lençol vira cabana.",
+     "cena": 33
+    },
+    {
+     "texto": "Uma folha vira uma cidade inteira.",
+     "cena": 44
+    },
+    {
+     "texto": "No fim, ganha um carimbo no passaporte do explorador, e já pensa na próxima.",
+     "cena": [
+      34,
+      65
+     ]
+    },
+    {
+     "texto": "É o jeito mais simples de trocar o só mais um vídeo por brincadeira de verdade.",
+     "cena": 36
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "fala": "Toque em saiba mais e veja como funciona."
+ },
+ "cenas": {
+  "excluir": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   28,
+   29,
+   31,
+   32,
+   35,
+   38,
+   39,
+   41,
+   42,
+   45,
+   48,
+   49,
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59,
+   60,
+   61,
+   62,
+   63,
+   64,
+   65
+  ]
+ }
+}
