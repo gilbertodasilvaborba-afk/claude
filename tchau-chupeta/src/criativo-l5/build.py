@@ -58,11 +58,19 @@ TITULO = ["ELE CHORA", "SEM A CHUPETA?"]
 
 # Versões com imagem real: mesmo roteiro, uma foto (Pexels ou IA) por frase. Ver cenas-fotos.json.
 FONTE = sys.argv[1] if len(sys.argv) > 1 else "ilustrado"
-NOME = {"ilustrado": "L5V1", "pexels": "L5V2-pexels", "ia": "L5V3-ia"}[FONTE]
+NOME = {"ilustrado": "L5V1", "pexels": "L5V2-pexels", "ia": "L5V3-ia", "unsplash": "L5V4-unsplash"}[FONTE]
 FOTOS = TRAB / "fotos" / FONTE
 ZOOM_IN, ZOOM_OUT = ((0.5, 0.5, 1.0), (0.5, 0.47, 1.14)), ((0.5, 0.47, 1.14), (0.5, 0.5, 1.0))
 F = lambda nome, mov=ZOOM_IN: ("photo", FOTOS / f"{nome}.jpg", *mov)
-if FONTE != "ilustrado":
+if FONTE == "unsplash":  # fotos gratuitas do Unsplash (licença comercial), escolhidas uma a uma
+    fotos = [
+        [F("choro-noite")], [F("quarto-noite", ZOOM_OUT)], [F("relogio"), F("choro-boca", ZOOM_OUT)], [F("mae-cansada")],
+        [F("chupeta-crianca"), F("chupeta-mae", ZOOM_OUT)], [F("culpa")], [F("chupeta-close"), F("dentista", ZOOM_OUT)],
+        None, [F("janela-tchau")], [F("leitura", ZOOM_OUT)], None, [F("desenho"), F("caixinha", ZOOM_OUT)],
+        [F("dormindo")], [F("abraco", ZOOM_OUT)], None, None,
+    ]
+    ROTEIRO = [(txt, novo or vis) for (txt, vis), novo in zip(ROTEIRO, fotos)]
+elif FONTE != "ilustrado":
     fotos = [
         [F("choro-noite")], [F("quarto-noite", ZOOM_OUT)], [F("acorda-chorando")], [F("mae-cansada", ZOOM_OUT)],
         [F("pede-chupeta")], [F("culpa", ZOOM_OUT)], [F("chupeta-close"), F("dentista", ZOOM_OUT)],
@@ -160,7 +168,17 @@ def main():
             elif vis[0] == "photo":
                 if not vis[1].exists():
                     sys.exit(f"falta a imagem {vis[1]} (rode: python3 src/criativo-l5/fotos.py {FONTE})")
-                movimento(vis[1], vis[2], vis[3], parte, saida, W, H)
+                from PIL import Image
+                im = Image.open(vis[1]).convert("RGB")
+                if im.width / im.height < 0.75:  # retrato: recorta em 9:16 e ocupa a tela toda
+                    cw = min(im.width, round(im.height * 9 / 16))
+                    ch = round(cw * 16 / 9)
+                    x, y = (im.width - cw) // 2, max(0, (im.height - ch) // 3)
+                    tmp = TRAB / f"{FONTE}_{vis[1].stem}_916.jpg"
+                    im.crop((x, y, x + cw, y + ch)).save(tmp, quality=92)
+                    movimento(tmp, vis[2], vis[3], parte, saida, W, H)
+                else:  # paisagem: no meio da tela, sobre a própria foto desfocada (como na referência)
+                    movimento(vis[1], vis[2], vis[3], parte, saida, W, round(W * im.height / im.width) // 2 * 2)
             elif vis[0] == "page":
                 movimento(pagina(vis[1]), vis[2], vis[3], parte, saida, 900, 1276)
             elif vis[0] == "clip":
