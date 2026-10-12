@@ -56,6 +56,22 @@ ROTEIRO = [
 ]
 TITULO = ["ELE CHORA", "SEM A CHUPETA?"]
 
+# Versões com imagem real: mesmo roteiro, uma foto (Pexels ou IA) por frase. Ver cenas-fotos.json.
+FONTE = sys.argv[1] if len(sys.argv) > 1 else "ilustrado"
+NOME = {"ilustrado": "L5V1", "pexels": "L5V2-pexels", "ia": "L5V3-ia"}[FONTE]
+FOTOS = TRAB / "fotos" / FONTE
+ZOOM_IN, ZOOM_OUT = ((0.5, 0.5, 1.0), (0.5, 0.47, 1.14)), ((0.5, 0.47, 1.14), (0.5, 0.5, 1.0))
+F = lambda nome, mov=ZOOM_IN: ("photo", FOTOS / f"{nome}.jpg", *mov)
+if FONTE != "ilustrado":
+    fotos = [
+        [F("choro-noite")], [F("quarto-noite", ZOOM_OUT)], [F("acorda-chorando")], [F("mae-cansada", ZOOM_OUT)],
+        [F("pede-chupeta")], [F("culpa", ZOOM_OUT)], [F("chupeta-close"), F("dentista", ZOOM_OUT)],
+        None, [F("janela-tchau")], [F("leitura", ZOOM_OUT)], None, [F("desenho"), F("caixinha", ZOOM_OUT)],
+        [F("dormindo")], [F("abraco", ZOOM_OUT)], None, None,
+    ]
+    ROTEIRO = [(txt, novo or vis) for (txt, vis), novo in zip(ROTEIRO, fotos)]
+FUNDO_FINAL = FOTOS / "abraco.jpg" if FONTE != "ilustrado" else STILLS / "leitura.png"
+
 
 def ff(*args):
     r = subprocess.run(["ffmpeg", "-y", "-v", "error", *map(str, args)], capture_output=True, text=True)
@@ -113,7 +129,7 @@ def clipe(mp4, dur, saida):
 
 def tela_final(dur, saida):
     n = max(2, round(dur * FPS))
-    fundo = STILLS / "leitura.png"
+    fundo = FUNDO_FINAL
     filtro = (f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},gblur=sigma=30,eq=brightness=-0.25,"
               f"loop=loop={n}:size=1,fps={FPS},trim=end_frame={n}[bg];[1:v]loop=loop={n}:size=1,trim=end_frame={n}[tx];[bg][tx]overlay=0:0,format=yuv420p")
     ff("-i", fundo, "-i", STILLS / "cta.png", "-filter_complex", filtro, "-frames:v", n,
@@ -138,9 +154,13 @@ def main():
         b = inicio[i + 1] if i + 1 < len(ROTEIRO) else total
         parte = (b - a) / len(visuais)
         for k, vis in enumerate(visuais):
-            saida = TRAB / f"s{i:02d}_{k}.mp4"
+            saida = TRAB / f"{FONTE}_s{i:02d}_{k}.mp4"
             if vis[0] == "still":
                 movimento(vis[1], vis[2], vis[3], parte, saida, W, round(W * 0.7) // 2 * 2)
+            elif vis[0] == "photo":
+                if not vis[1].exists():
+                    sys.exit(f"falta a imagem {vis[1]} (rode: python3 src/criativo-l5/fotos.py {FONTE})")
+                movimento(vis[1], vis[2], vis[3], parte, saida, W, H)
             elif vis[0] == "page":
                 movimento(pagina(vis[1]), vis[2], vis[3], parte, saida, 900, 1276)
             elif vis[0] == "clip":
@@ -148,8 +168,9 @@ def main():
             else:
                 tela_final(parte, saida)
             segs.append(saida)
+    lista = TRAB / f"lista-{FONTE}.txt"
     lista.write_text("".join(f"file '{s}'\n" for s in segs))
-    mudo = TRAB / "mudo.mp4"
+    mudo = TRAB / f"mudo-{FONTE}.mp4"
     ff("-f", "concat", "-safe", "0", "-i", lista, "-c", "copy", mudo)
 
     # legenda: título no gancho + blocos palavra a palavra (sem legenda na tela final)
@@ -171,11 +192,11 @@ def main():
     audio = TRAB / "audio.wav"
     ff(*ins, "-filter_complex", ";".join(filt), "-map", "[out]", "-ar", "44100", "-ac", "2", audio)
 
-    final = OUT / "L5V1.mp4"
-    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", "mudo.mp4", "-i", "audio.wav", "-vf", "subtitles=legenda.ass",
+    final = OUT / f"{NOME}.mp4"
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", mudo.name, "-i", "audio.wav", "-vf", "subtitles=legenda.ass",
                     "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k",
                     "-shortest", "-map_metadata", "-1", "-movflags", "+faststart", str(final)], cwd=TRAB, check=True)
-    (OUT / "L5V1.txt").write_text("L5V1\n\n" + "\n".join(txt for txt, _ in ROTEIRO) + "\n", encoding="utf-8")
+    (OUT / f"{NOME}.txt").write_text(f"{NOME}\n\n" + "\n".join(txt for txt, _ in ROTEIRO) + "\n", encoding="utf-8")
     print(f"ok {final} {total:.1f}s")
 
 
