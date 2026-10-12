@@ -114,7 +114,7 @@ const bedBack = (x, y, w) => `<rect x="${x}" y="${y - 160}" width="26" height="2
 const blanket = (x, y, w, color = C.peach) => `<path d="M${x + 10} ${y - 34} Q${x + w / 2} ${y - 70} ${x + w} ${y - 34} L${x + w} ${y + 40} L${x + 10} ${y + 40}Z" fill="${color}"/>
   <path d="M${x + 10} ${y - 34} Q${x + w / 2} ${y - 70} ${x + w} ${y - 34}" stroke="#fff" stroke-width="10" fill="none" opacity=".5"/>
   <rect x="${x}" y="${y + 30}" width="${w + 10}" height="40" rx="12" fill="#C9A27E"/>`;
-const clock = (x, y, t = '03:12') => `<rect x="${x}" y="${y}" width="150" height="70" rx="14" fill="#1E1B3E"/><text x="${x + 75}" y="${y + 50}" text-anchor="middle" font-family="Baloo 2" font-weight="800" font-size="44" fill="#FF7A6B">${t}</text>`;
+const clock = (x, y, t = '03:12') => `<rect x="${x}" y="${y}" width="150" height="70" rx="14" fill="#1E1B3E"/><text x="${x + 75}" y="${y + 50}" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-weight="800" font-size="44" fill="#FF7A6B">${t}</text>`;
 const nightstand = (x, y) => `<rect x="${x}" y="${y}" width="170" height="140" rx="14" fill="#8C6E9E"/><rect x="${x + 20}" y="${y + 50}" width="130" height="10" rx="5" fill="#6D5480"/>`;
 const giftBox = (x, y, s = 1) => `<g transform="translate(${x} ${y}) scale(${s})"><rect x="-60" y="-50" width="120" height="80" rx="10" fill="${C.peach}"/><rect x="-8" y="-50" width="16" height="80" fill="${C.sun}"/>
   <rect x="-68" y="-72" width="136" height="28" rx="8" fill="${C.peachDeep}"/></g>`;
