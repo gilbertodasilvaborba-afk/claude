@@ -320,5 +320,143 @@
   "duracao": 6.0,
   "produto": false,
   "origem": "52_pdf-129.mp4"
+ },
+ {
+  "n": 47,
+  "arquivo": "c47.mp4",
+  "duracao": 36.77,
+  "produto": false,
+  "origem": "60_L3c02.mp4"
+ },
+ {
+  "n": 48,
+  "arquivo": "c48.mp4",
+  "duracao": 35.37,
+  "produto": false,
+  "origem": "60_L3c07.mp4"
+ },
+ {
+  "n": 49,
+  "arquivo": "c49.mp4",
+  "duracao": 70.73,
+  "produto": false,
+  "origem": "60_L3c12.mp4"
+ },
+ {
+  "n": 50,
+  "arquivo": "c50.mp4",
+  "duracao": 39.0,
+  "produto": false,
+  "origem": "60_L3c14.mp4"
+ },
+ {
+  "n": 51,
+  "arquivo": "c51.mp4",
+  "duracao": 76.63,
+  "produto": false,
+  "origem": "60_L3c17.mp4"
+ },
+ {
+  "n": 52,
+  "arquivo": "c52.mp4",
+  "duracao": 60.17,
+  "produto": false,
+  "origem": "60_L3c18.mp4"
+ },
+ {
+  "n": 53,
+  "arquivo": "c53.mp4",
+  "duracao": 10.87,
+  "produto": false,
+  "origem": "60_L3c23.mp4"
+ },
+ {
+  "n": 54,
+  "arquivo": "c54.mp4",
+  "duracao": 20.6,
+  "produto": false,
+  "origem": "60_L3c24.mp4"
+ },
+ {
+  "n": 55,
+  "arquivo": "c55.mp4",
+  "duracao": 63.7,
+  "produto": false,
+  "origem": "60_L3c30.mp4"
+ },
+ {
+  "n": 56,
+  "arquivo": "c56.mp4",
+  "duracao": 18.0,
+  "produto": false,
+  "origem": "60_L3c31.mp4"
+ },
+ {
+  "n": 57,
+  "arquivo": "c57.mp4",
+  "duracao": 12.97,
+  "produto": false,
+  "origem": "60_L3c37.mp4"
+ },
+ {
+  "n": 58,
+  "arquivo": "c58.mp4",
+  "duracao": 18.83,
+  "produto": false,
+  "origem": "70_L4c13.mp4"
+ },
+ {
+  "n": 59,
+  "arquivo": "c59.mp4",
+  "duracao": 60.07,
+  "produto": false,
+  "origem": "70_L4c14.mp4"
+ },
+ {
+  "n": 60,
+  "arquivo": "c60.mp4",
+  "duracao": 31.77,
+  "produto": false,
+  "origem": "70_L4c36.mp4"
+ },
+ {
+  "n": 61,
+  "arquivo": "c61.mp4",
+  "duracao": 42.1,
+  "produto": false,
+  "origem": "70_L4c42.mp4"
+ },
+ {
+  "n": 62,
+  "arquivo": "c62.mp4",
+  "duracao": 39.57,
+  "produto": false,
+  "origem": "70_L4c46.mp4"
+ },
+ {
+  "n": 63,
+  "arquivo": "c63.mp4",
+  "duracao": 63.77,
+  "produto": false,
+  "origem": "70_L4c50.mp4"
+ },
+ {
+  "n": 64,
+  "arquivo": "c64.mp4",
+  "duracao": 89.6,
+  "produto": false,
+  "origem": "70_L4c56.mp4"
+ },
+ {
+  "n": 65,
+  "arquivo": "c65.mp4",
+  "duracao": 20.43,
+  "fonte": "L3"
+ },
+ {
+  "n": 66,
+  "arquivo": "c66.mp4",
+  "duracao": 44.67,
+  "fonte": "L3"
  }
 ]

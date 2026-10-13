@@ -1,0 +1,663 @@
+{
+ "leva": "L9",
+ "produto": "Missão Zero Tela",
+ "cta_tela": "TOQUE NO BOTÃO ABAIXO",
+ "voz": {
+  "id": "c9611be8-aae9-4a93-bb1c-98dd6b7d52a4",
+  "velocidade": 1.0
+ },
+ "legenda_estilo": "amarela",
+ "legenda_posicao": "meio",
+ "musica": "../L3/musicas/m03.m4a",
+ "ganchos": [
+  {
+   "titulo": [
+    "SEU FILHO SÓ",
+    "QUER SABER DE TELA?"
+   ],
+   "fala": "Se o seu filho pede o celular o dia inteiro, e você já não sabe mais o que fazer, assiste esse vídeo até o final. Em poucos minutos eu vou te mostrar um jeito simples de trocar a tela por brincadeira de verdade. Sem briga, e sem você precisar inventar nada.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Se o seu filho pede o celular o dia inteiro,",
+     "cena": [
+      1
+     ]
+    },
+    {
+     "texto": "e você já não sabe mais o que fazer,",
+     "cena": [
+      3
+     ]
+    },
+    {
+     "texto": "assiste esse vídeo até o final.",
+     "cena": [
+      28
+     ]
+    },
+    {
+     "texto": "Em poucos minutos eu vou te mostrar um jeito simples de trocar a tela por brincadeira de verdade.",
+     "cena": [
+      29,
+      32
+     ]
+    },
+    {
+     "texto": "Sem briga, e sem você precisar inventar nada.",
+     "cena": [
+      33
+     ]
+    }
+   ]
+  }
+ ],
+ "corpos": [
+  {
+   "fala": "Eu sei como é o seu dia. Você trabalha, cuida da casa, resolve mil coisas ao mesmo tempo. E quando finalmente para pra respirar, o celular parece a única saída. Só que aí chega a hora de desligar. Ele chora, grita, se joga no chão. E quando a tela some, vem o famoso: mãe, tô entediado. Aí bate aquela culpa. Será que eu tô deixando tempo demais? Será que eu tô fazendo tudo errado? Se você já se sentiu assim, respira. Você não é uma mãe ruim. Você é uma mãe cansada. E provavelmente já tentou de tudo. Comprou brinquedo novo, que ele largou em dois dias. Procurou ideia na internet, mas na hora a cabeça dá branco. E quando tentou só proibir, virou briga. Mas tem uma coisa que quase ninguém fala. O difícil não é desligar. É o vazio que fica quando a tela apaga. A criança não larga a tela por uma ordem. Ela larga por um convite. O que falta não é mais um brinquedo. É uma aventura em que ela é a heroína. Foi pensando nisso que nasceu o Missão Zero Tela. São cem historinhas-missão, pra crianças de três a oito anos. Cada uma começa com um convite que você lê em voz alta. Tipo assim: agente, a cidade sumiu, e só você pode construir uma nova. Pronto. A missão foi aceita, e a brincadeira começa. Com o que você já tem em casa: papel, giz, caixa de papelão, lençol. Você não precisa preparar nada. Cada missão já diz a idade, o tempo e o material. E elas estão separadas por momento: dia de chuva, antes do jantar, viagem. Agora imagina a sua casa daqui a algumas semanas. Em vez de choro na hora de desligar, ele vem te perguntar: mãe, qual é a missão de hoje? Uma cabana na sala. Um foguete de rolo de papel. Uma cidade inteira de papelão. E você, do lado, brincando junto, sem culpa. No plano completo, além das cem missões, você leva quatro bônus. O Pote de Missões, pra ele sortear a aventura do dia. O Passaporte do Explorador, com um carimbo a cada missão e um certificado no final. O guia Desligar sem birra, com frases prontas pra hora mais difícil. E o Desafio de trinta dias, pra transformar isso em hábito. Tudo isso sai por vinte e sete e noventa. Dá menos de trinta centavos por missão. E você tem sete dias de garantia. Se não gostar, é só pedir, e devolvemos cem por cento do valor. O risco é todo nosso. Isso é pra você que quer menos tela e mais brincadeira de verdade, sem precisar ser a mãe que só diz não. Hoje à noite já pode ser a primeira missão.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Eu sei como é o seu dia.",
+     "cena": [
+      61
+     ]
+    },
+    {
+     "texto": "Você trabalha, cuida da casa, resolve mil coisas ao mesmo tempo.",
+     "cena": [
+      48,
+      47
+     ]
+    },
+    {
+     "texto": "E quando finalmente para pra respirar, o celular parece a única saída.",
+     "cena": [
+      6
+     ]
+    },
+    {
+     "texto": "Só que aí chega a hora de desligar.",
+     "cena": [
+      8
+     ]
+    },
+    {
+     "texto": "Ele chora, grita, se joga no chão.",
+     "cena": [
+      4,
+      5
+     ]
+    },
+    {
+     "texto": "E quando a tela some, vem o famoso: mãe, tô entediado.",
+     "cena": [
+      53
+     ]
+    },
+    {
+     "texto": "Aí bate aquela culpa.",
+     "cena": [
+      56
+     ]
+    },
+    {
+     "texto": "Será que eu tô deixando tempo demais? Será que eu tô fazendo tudo errado?",
+     "cena": [
+      7,
+      9
+     ]
+    },
+    {
+     "texto": "Se você já se sentiu assim, respira.",
+     "cena": [
+      20
+     ]
+    },
+    {
+     "texto": "Você não é uma mãe ruim. Você é uma mãe cansada.",
+     "cena": [
+      22
+     ]
+    },
+    {
+     "texto": "E provavelmente já tentou de tudo.",
+     "cena": [
+      59
+     ]
+    },
+    {
+     "texto": "Comprou brinquedo novo, que ele largou em dois dias.",
+     "cena": [
+      52
+     ]
+    },
+    {
+     "texto": "Procurou ideia na internet, mas na hora a cabeça dá branco.",
+     "cena": [
+      58
+     ]
+    },
+    {
+     "texto": "E quando tentou só proibir, virou briga.",
+     "cena": [
+      54
+     ]
+    },
+    {
+     "texto": "Mas tem uma coisa que quase ninguém fala.",
+     "cena": [
+      10
+     ]
+    },
+    {
+     "texto": "O difícil não é desligar. É o vazio que fica quando a tela apaga.",
+     "cena": [
+      36
+     ]
+    },
+    {
+     "texto": "A criança não larga a tela por uma ordem. Ela larga por um convite.",
+     "cena": [
+      13
+     ]
+    },
+    {
+     "texto": "O que falta não é mais um brinquedo. É uma aventura em que ela é a heroína.",
+     "cena": [
+      30,
+      31
+     ]
+    },
+    {
+     "texto": "Foi pensando nisso que nasceu o Missão Zero Tela.",
+     "cena": [
+      34
+     ]
+    },
+    {
+     "texto": "São cem historinhas-missão, pra crianças de três a oito anos.",
+     "cena": [
+      37
+     ]
+    },
+    {
+     "texto": "Cada uma começa com um convite que você lê em voz alta.",
+     "cena": [
+      35
+     ]
+    },
+    {
+     "texto": "Tipo assim: agente, a cidade sumiu, e só você pode construir uma nova.",
+     "cena": [
+      38
+     ]
+    },
+    {
+     "texto": "Pronto. A missão foi aceita, e a brincadeira começa.",
+     "cena": [
+      2
+     ]
+    },
+    {
+     "texto": "Com o que você já tem em casa: papel, giz, caixa de papelão, lençol.",
+     "cena": [
+      15,
+      16,
+      17,
+      18
+     ]
+    },
+    {
+     "texto": "Você não precisa preparar nada.",
+     "cena": [
+      11
+     ]
+    },
+    {
+     "texto": "Cada missão já diz a idade, o tempo e o material.",
+     "cena": [
+      39
+     ]
+    },
+    {
+     "texto": "E elas estão separadas por momento: dia de chuva, antes do jantar, viagem.",
+     "cena": [
+      40,
+      49
+     ]
+    },
+    {
+     "texto": "Agora imagina a sua casa daqui a algumas semanas.",
+     "cena": [
+      62
+     ]
+    },
+    {
+     "texto": "Em vez de choro na hora de desligar, ele vem te perguntar: mãe, qual é a missão de hoje?",
+     "cena": [
+      21,
+      24
+     ]
+    },
+    {
+     "texto": "Uma cabana na sala. Um foguete de rolo de papel. Uma cidade inteira de papelão.",
+     "cena": [
+      51,
+      63,
+      50
+     ]
+    },
+    {
+     "texto": "E você, do lado, brincando junto, sem culpa.",
+     "cena": [
+      14,
+      23
+     ]
+    },
+    {
+     "texto": "No plano completo, além das cem missões, você leva quatro bônus.",
+     "cena": [
+      12
+     ]
+    },
+    {
+     "texto": "O Pote de Missões, pra ele sortear a aventura do dia.",
+     "cena": [
+      41,
+      42
+     ]
+    },
+    {
+     "texto": "O Passaporte do Explorador, com um carimbo a cada missão e um certificado no final.",
+     "cena": [
+      43,
+      44
+     ]
+    },
+    {
+     "texto": "O guia Desligar sem birra, com frases prontas pra hora mais difícil.",
+     "cena": [
+      45
+     ]
+    },
+    {
+     "texto": "E o Desafio de trinta dias, pra transformar isso em hábito.",
+     "cena": [
+      46
+     ]
+    },
+    {
+     "texto": "Tudo isso sai por vinte e sete e noventa.",
+     "cena": [
+      19
+     ]
+    },
+    {
+     "texto": "Dá menos de trinta centavos por missão.",
+     "cena": [
+      60
+     ]
+    },
+    {
+     "texto": "E você tem sete dias de garantia. Se não gostar, é só pedir, e devolvemos cem por cento do valor.",
+     "cena": [
+      55
+     ]
+    },
+    {
+     "texto": "O risco é todo nosso.",
+     "cena": [
+      57
+     ],
+     "ini": 4.0
+    },
+    {
+     "texto": "Isso é pra você que quer menos tela e mais brincadeira de verdade, sem precisar ser a mãe que só diz não.",
+     "cena": [
+      64,
+      25
+     ]
+    },
+    {
+     "texto": "Hoje à noite já pode ser a primeira missão.",
+     "cena": [
+      26
+     ]
+    }
+   ]
+  },
+  {
+   "fala": "Eu sei como é o seu dia. Você trabalha, cuida da casa, resolve mil coisas ao mesmo tempo. E quando finalmente para pra respirar, o celular parece a única saída. Só que aí chega a hora de desligar. Ele chora, grita, se joga no chão. E quando a tela some, vem o famoso: mãe, tô entediado. Aí bate aquela culpa. Será que eu tô deixando tempo demais? Será que eu tô fazendo tudo errado? Se você já se sentiu assim, respira. Você não é uma mãe ruim. Você é uma mãe cansada. E provavelmente já tentou de tudo. Comprou brinquedo novo, que ele largou em dois dias. Procurou ideia na internet, mas na hora a cabeça dá branco. E quando tentou só proibir, virou briga. Mas tem uma coisa que quase ninguém fala. O difícil não é desligar. É o vazio que fica quando a tela apaga. A criança não larga a tela por uma ordem. Ela larga por um convite. O que falta não é mais um brinquedo. É uma aventura em que ela é a heroína. Foi pensando nisso que nasceu o Missão Zero Tela. São cem historinhas-missão, pra crianças de três a oito anos. Cada uma começa com um convite que você lê em voz alta. Tipo assim: agente, a cidade sumiu, e só você pode construir uma nova. Pronto. A missão foi aceita, e a brincadeira começa. Com o que você já tem em casa: papel, giz, caixa de papelão, lençol. Você não precisa preparar nada. Cada missão já diz a idade, o tempo e o material. E elas estão separadas por momento: dia de chuva, antes do jantar, viagem. Agora imagina a sua casa daqui a algumas semanas. Em vez de choro na hora de desligar, ele vem te perguntar: mãe, qual é a missão de hoje? Uma cabana na sala. Um foguete de rolo de papel. Uma cidade inteira de papelão. E você, do lado, brincando junto, sem culpa. No plano completo, além das cem missões, você leva quatro bônus. O Pote de Missões, pra ele sortear a aventura do dia. O Passaporte do Explorador, com um carimbo a cada missão e um certificado no final. O guia Desligar sem birra, com frases prontas pra hora mais difícil. E o Desafio de trinta dias, pra transformar isso em hábito. E você tem sete dias de garantia. Se não gostar, é só pedir, e devolvemos cem por cento do valor. O risco é todo nosso. Isso é pra você que quer menos tela e mais brincadeira de verdade, sem precisar ser a mãe que só diz não. Hoje à noite já pode ser a primeira missão.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Eu sei como é o seu dia.",
+     "cena": [
+      61
+     ]
+    },
+    {
+     "texto": "Você trabalha, cuida da casa, resolve mil coisas ao mesmo tempo.",
+     "cena": [
+      48,
+      47
+     ]
+    },
+    {
+     "texto": "E quando finalmente para pra respirar, o celular parece a única saída.",
+     "cena": [
+      6
+     ]
+    },
+    {
+     "texto": "Só que aí chega a hora de desligar.",
+     "cena": [
+      8
+     ]
+    },
+    {
+     "texto": "Ele chora, grita, se joga no chão.",
+     "cena": [
+      4,
+      5
+     ]
+    },
+    {
+     "texto": "E quando a tela some, vem o famoso: mãe, tô entediado.",
+     "cena": [
+      53
+     ]
+    },
+    {
+     "texto": "Aí bate aquela culpa.",
+     "cena": [
+      56
+     ]
+    },
+    {
+     "texto": "Será que eu tô deixando tempo demais? Será que eu tô fazendo tudo errado?",
+     "cena": [
+      7,
+      9
+     ]
+    },
+    {
+     "texto": "Se você já se sentiu assim, respira.",
+     "cena": [
+      20
+     ]
+    },
+    {
+     "texto": "Você não é uma mãe ruim. Você é uma mãe cansada.",
+     "cena": [
+      22
+     ]
+    },
+    {
+     "texto": "E provavelmente já tentou de tudo.",
+     "cena": [
+      59
+     ]
+    },
+    {
+     "texto": "Comprou brinquedo novo, que ele largou em dois dias.",
+     "cena": [
+      52
+     ]
+    },
+    {
+     "texto": "Procurou ideia na internet, mas na hora a cabeça dá branco.",
+     "cena": [
+      58
+     ]
+    },
+    {
+     "texto": "E quando tentou só proibir, virou briga.",
+     "cena": [
+      54
+     ]
+    },
+    {
+     "texto": "Mas tem uma coisa que quase ninguém fala.",
+     "cena": [
+      10
+     ]
+    },
+    {
+     "texto": "O difícil não é desligar. É o vazio que fica quando a tela apaga.",
+     "cena": [
+      36
+     ]
+    },
+    {
+     "texto": "A criança não larga a tela por uma ordem. Ela larga por um convite.",
+     "cena": [
+      13
+     ]
+    },
+    {
+     "texto": "O que falta não é mais um brinquedo. É uma aventura em que ela é a heroína.",
+     "cena": [
+      30,
+      31
+     ]
+    },
+    {
+     "texto": "Foi pensando nisso que nasceu o Missão Zero Tela.",
+     "cena": [
+      34
+     ]
+    },
+    {
+     "texto": "São cem historinhas-missão, pra crianças de três a oito anos.",
+     "cena": [
+      37
+     ]
+    },
+    {
+     "texto": "Cada uma começa com um convite que você lê em voz alta.",
+     "cena": [
+      35
+     ]
+    },
+    {
+     "texto": "Tipo assim: agente, a cidade sumiu, e só você pode construir uma nova.",
+     "cena": [
+      38
+     ]
+    },
+    {
+     "texto": "Pronto. A missão foi aceita, e a brincadeira começa.",
+     "cena": [
+      2
+     ]
+    },
+    {
+     "texto": "Com o que você já tem em casa: papel, giz, caixa de papelão, lençol.",
+     "cena": [
+      15,
+      16,
+      17,
+      18
+     ]
+    },
+    {
+     "texto": "Você não precisa preparar nada.",
+     "cena": [
+      11
+     ]
+    },
+    {
+     "texto": "Cada missão já diz a idade, o tempo e o material.",
+     "cena": [
+      39
+     ]
+    },
+    {
+     "texto": "E elas estão separadas por momento: dia de chuva, antes do jantar, viagem.",
+     "cena": [
+      40,
+      49
+     ]
+    },
+    {
+     "texto": "Agora imagina a sua casa daqui a algumas semanas.",
+     "cena": [
+      62
+     ]
+    },
+    {
+     "texto": "Em vez de choro na hora de desligar, ele vem te perguntar: mãe, qual é a missão de hoje?",
+     "cena": [
+      21,
+      24
+     ]
+    },
+    {
+     "texto": "Uma cabana na sala. Um foguete de rolo de papel. Uma cidade inteira de papelão.",
+     "cena": [
+      51,
+      63,
+      50
+     ]
+    },
+    {
+     "texto": "E você, do lado, brincando junto, sem culpa.",
+     "cena": [
+      14,
+      23
+     ]
+    },
+    {
+     "texto": "No plano completo, além das cem missões, você leva quatro bônus.",
+     "cena": [
+      12
+     ]
+    },
+    {
+     "texto": "O Pote de Missões, pra ele sortear a aventura do dia.",
+     "cena": [
+      41,
+      42
+     ]
+    },
+    {
+     "texto": "O Passaporte do Explorador, com um carimbo a cada missão e um certificado no final.",
+     "cena": [
+      43,
+      44
+     ]
+    },
+    {
+     "texto": "O guia Desligar sem birra, com frases prontas pra hora mais difícil.",
+     "cena": [
+      45
+     ]
+    },
+    {
+     "texto": "E o Desafio de trinta dias, pra transformar isso em hábito.",
+     "cena": [
+      46
+     ]
+    },
+    {
+     "texto": "E você tem sete dias de garantia. Se não gostar, é só pedir, e devolvemos cem por cento do valor.",
+     "cena": [
+      55
+     ]
+    },
+    {
+     "texto": "O risco é todo nosso.",
+     "cena": [
+      57
+     ],
+     "ini": 4.0
+    },
+    {
+     "texto": "Isso é pra você que quer menos tela e mais brincadeira de verdade, sem precisar ser a mãe que só diz não.",
+     "cena": [
+      64,
+      25
+     ]
+    },
+    {
+     "texto": "Hoje à noite já pode ser a primeira missão.",
+     "cena": [
+      26
+     ]
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "fala": "Toca no botão aqui embaixo e garante o seu Missão Zero Tela."
+ },
+ "cenas": {
+  "excluir": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59,
+   60,
+   61,
+   62,
+   63,
+   64
+  ]
+ }
+}
