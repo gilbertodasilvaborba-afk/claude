@@ -1,0 +1,233 @@
+[
+ {
+  "n": 1,
+  "arquivo": "c01.mp4",
+  "duracao": 5.67,
+  "produto": false,
+  "origem": "01_celular-mesa.mp4"
+ },
+ {
+  "n": 2,
+  "arquivo": "c02.mp4",
+  "duracao": 20.07,
+  "produto": false,
+  "origem": "02_carro-papelao.mp4"
+ },
+ {
+  "n": 3,
+  "arquivo": "c03.mp4",
+  "duracao": 6.87,
+  "produto": false,
+  "origem": "03_mae-preocupada.mp4"
+ },
+ {
+  "n": 4,
+  "arquivo": "c04.mp4",
+  "duracao": 3.0,
+  "produto": false,
+  "origem": "04_tablet-choro.mp4"
+ },
+ {
+  "n": 5,
+  "arquivo": "c05.mp4",
+  "duracao": 2.8,
+  "produto": false,
+  "origem": "05_menino-chora.mp4"
+ },
+ {
+  "n": 6,
+  "arquivo": "c06.mp4",
+  "duracao": 7.93,
+  "produto": false,
+  "origem": "06_tablet-noite.mp4"
+ },
+ {
+  "n": 7,
+  "arquivo": "c07.mp4",
+  "duracao": 3.0,
+  "produto": false,
+  "origem": "07_tablet-choro2.mp4"
+ },
+ {
+  "n": 8,
+  "arquivo": "c08.mp4",
+  "duracao": 2.8,
+  "produto": false,
+  "origem": "08_bracos-cruzados.mp4"
+ },
+ {
+  "n": 9,
+  "arquivo": "c09.mp4",
+  "duracao": 3.0,
+  "produto": false,
+  "origem": "09_controle-choro.mp4"
+ },
+ {
+  "n": 10,
+  "arquivo": "c10.mp4",
+  "duracao": 8.87,
+  "produto": false,
+  "origem": "10_mae-livro.mp4"
+ },
+ {
+  "n": 11,
+  "arquivo": "c11.mp4",
+  "duracao": 22.2,
+  "produto": false,
+  "origem": "11_mesa-giz.mp4"
+ },
+ {
+  "n": 12,
+  "arquivo": "c12.mp4",
+  "duracao": 14.37,
+  "produto": false,
+  "origem": "12_mao-pintando.mp4"
+ },
+ {
+  "n": 13,
+  "arquivo": "c13.mp4",
+  "duracao": 5.87,
+  "produto": false,
+  "origem": "13_desenhando-mae.mp4"
+ },
+ {
+  "n": 14,
+  "arquivo": "c14.mp4",
+  "duracao": 5.2,
+  "produto": false,
+  "origem": "14_mae-filha-pintura.mp4"
+ },
+ {
+  "n": 15,
+  "arquivo": "c15.mp4",
+  "duracao": 29.47,
+  "produto": false,
+  "origem": "15_papel-flores.mp4"
+ },
+ {
+  "n": 16,
+  "arquivo": "c16.mp4",
+  "duracao": 30.6,
+  "produto": false,
+  "origem": "16_giz-melancia.mp4"
+ },
+ {
+  "n": 17,
+  "arquivo": "c17.mp4",
+  "duracao": 26.33,
+  "produto": false,
+  "origem": "17_caixa.mp4"
+ },
+ {
+  "n": 18,
+  "arquivo": "c18.mp4",
+  "duracao": 6.23,
+  "produto": false,
+  "origem": "18_lencol.mp4"
+ },
+ {
+  "n": 19,
+  "arquivo": "c19.mp4",
+  "duracao": 19.6,
+  "produto": false,
+  "origem": "19_bebe-pinta.mp4"
+ },
+ {
+  "n": 20,
+  "arquivo": "c20.mp4",
+  "duracao": 23.7,
+  "produto": false,
+  "origem": "20_paisagem.mp4"
+ },
+ {
+  "n": 21,
+  "arquivo": "c21.mp4",
+  "duracao": 6.87,
+  "produto": false,
+  "origem": "21_blocos-irmaos.mp4"
+ },
+ {
+  "n": 22,
+  "arquivo": "c22.mp4",
+  "duracao": 46.13,
+  "produto": false,
+  "origem": "22_mae-filho-chao.mp4"
+ },
+ {
+  "n": 23,
+  "arquivo": "c23.mp4",
+  "duracao": 14.57,
+  "produto": false,
+  "origem": "23_pai-chao.mp4"
+ },
+ {
+  "n": 24,
+  "arquivo": "c24.mp4",
+  "duracao": 14.87,
+  "produto": false,
+  "origem": "24_caixa-jogo.mp4"
+ },
+ {
+  "n": 25,
+  "arquivo": "c25.mp4",
+  "duracao": 60.57,
+  "produto": false,
+  "origem": "25_sorvete.mp4"
+ },
+ {
+  "n": 26,
+  "arquivo": "c26.mp4",
+  "duracao": 16.77,
+  "produto": false,
+  "origem": "26_praia.mp4"
+ },
+ {
+  "n": 27,
+  "arquivo": "c27.mp4",
+  "duracao": 6.93,
+  "produto": false,
+  "origem": "27_balanco.mp4"
+ },
+ {
+  "n": 28,
+  "arquivo": "c28.mp4",
+  "duracao": 4.0,
+  "produto": false,
+  "origem": "28_nave-papelao.mp4"
+ },
+ {
+  "n": 29,
+  "arquivo": "c29.mp4",
+  "duracao": 5.0,
+  "produto": false,
+  "origem": "29_foguete-papelao.mp4"
+ },
+ {
+  "n": 30,
+  "arquivo": "c30.mp4",
+  "duracao": 5.0,
+  "produto": false,
+  "origem": "30_castelo-papelao.mp4"
+ },
+ {
+  "n": 31,
+  "arquivo": "c31.mp4",
+  "duracao": 2.6,
+  "produto": false,
+  "origem": "32_cabecas-papelao.mp4"
+ },
+ {
+  "n": 32,
+  "arquivo": "c32.mp4",
+  "duracao": 4.5,
+  "produto": false,
+  "origem": "33_montando-foguete.mp4"
+ },
+ {
+  "n": 33,
+  "arquivo": "c33.mp4",
+  "duracao": 4.0,
+  "produto": false,
+  "origem": "34_nave-voando.mp4"
+ }
+]

@@ -1,0 +1,256 @@
+{
+ "leva": "L8",
+ "produto": "Missão Zero Tela",
+ "cta_tela": "VEJA COMO FUNCIONA",
+ "voz": {
+  "id": "c9611be8-aae9-4a93-bb1c-98dd6b7d52a4",
+  "velocidade": 1.0
+ },
+ "legenda_estilo": "amarela",
+ "legenda_posicao": "meio",
+ "musica": "../L3/musicas/m03.m4a",
+ "ganchos": [
+  {
+   "titulo": [
+    "E SE FOSSE UMA",
+    "MISSÃO SECRETA?"
+   ],
+   "fala": "E se a brincadeira do seu filho começasse com uma missão secreta?",
+   "cenas": [
+    28,
+    29
+   ]
+  },
+  {
+   "titulo": [
+    "UMA CAIXA E",
+    "UMA MISSÃO"
+   ],
+   "fala": "Uma caixa de papelão e uma missão secreta podem valer mais que qualquer desenho.",
+   "cenas": [
+    2,
+    33
+   ]
+  },
+  {
+   "titulo": [
+    "ELE NÃO PRECISA",
+    "DE MAIS BRINQUEDO"
+   ],
+   "fala": "Seu filho não precisa de mais um brinquedo. Ele precisa de uma missão.",
+   "cenas": [
+    30,
+    31
+   ]
+  },
+  {
+   "titulo": [
+    "CAIXA DE PAPELÃO",
+    "X CELULAR"
+   ],
+   "fala": "O que uma caixa de papelão tem que o celular não tem? Uma aventura em que ele é o herói.",
+   "cenas": [
+    1,
+    30
+   ]
+  },
+  {
+   "titulo": [
+    "VOCÊ ACEITA",
+    "A MISSÃO?"
+   ],
+   "fala": "Todo foguete de papelão começa com uma pergunta: você aceita a missão?",
+   "cenas": [
+    32,
+    29
+   ]
+  }
+ ],
+ "corpos": [
+  {
+   "fala": "Olha, eu sei como é. Você tira o celular, ele chora, e você acaba devolvendo só pra ter um pouco de paz. Mas a criança não larga a tela por uma ordem. Ela larga por um convite. Funciona assim: seu filho sorteia uma carta no pote de missões. Vocês leem juntos uma historinha curta em que ele é o herói. Ele aceita o desafio e brinca com o que tem em casa: papel, giz, caixa ou lençol. No fim, ganha um carimbo no passaporte do explorador, e já pede a próxima. São cem missões assim, pra crianças de três a oito anos.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Olha, eu sei como é.",
+     "cena": [
+      3
+     ]
+    },
+    {
+     "texto": "Você tira o celular, ele chora,",
+     "cena": [
+      4,
+      5
+     ]
+    },
+    {
+     "texto": "e você acaba devolvendo só pra ter um pouco de paz.",
+     "cena": [
+      6,
+      7
+     ]
+    },
+    {
+     "texto": "Mas a criança não larga a tela por uma ordem.",
+     "cena": [
+      8,
+      9
+     ]
+    },
+    {
+     "texto": "Ela larga por um convite.",
+     "cena": [
+      10
+     ]
+    },
+    {
+     "texto": "Funciona assim: seu filho sorteia uma carta no pote de missões.",
+     "cena": [
+      11,
+      12
+     ]
+    },
+    {
+     "texto": "Vocês leem juntos uma historinha curta em que ele é o herói.",
+     "cena": [
+      13,
+      14
+     ]
+    },
+    {
+     "texto": "Ele aceita o desafio e brinca com o que tem em casa: papel, giz, caixa ou lençol.",
+     "cena": [
+      15,
+      16,
+      17,
+      18
+     ]
+    },
+    {
+     "texto": "No fim, ganha um carimbo no passaporte do explorador, e já pede a próxima.",
+     "cena": [
+      19,
+      20,
+      21
+     ]
+    },
+    {
+     "texto": "São cem missões assim, pra crianças de três a oito anos.",
+     "cena": [
+      22,
+      23,
+      24
+     ]
+    }
+   ]
+  },
+  {
+   "fala": "Funciona assim. Você lê o convite em voz alta: agente, a cidade sumiu, e só você pode construir uma nova. Ele aceita na hora. Pega folha, giz e uma caixa, e começa a construir. Você não precisa inventar nada: cada carta já diz a idade, o tempo e o material. Leva cinco minutos para começar. No fim, ganha um carimbo no passaporte do explorador. E sabe o que ele pede depois? A próxima missão. São cem missões assim, pra crianças de três a oito anos.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Funciona assim. Você lê o convite em voz alta:",
+     "cena": [
+      10
+     ]
+    },
+    {
+     "texto": "agente, a cidade sumiu, e só você pode construir uma nova.",
+     "cena": [
+      13
+     ]
+    },
+    {
+     "texto": "Ele aceita na hora.",
+     "cena": [
+      21
+     ]
+    },
+    {
+     "texto": "Pega folha, giz e uma caixa, e começa a construir.",
+     "cena": [
+      15,
+      16,
+      17
+     ]
+    },
+    {
+     "texto": "Você não precisa inventar nada: cada carta já diz a idade, o tempo e o material.",
+     "cena": [
+      11,
+      12
+     ]
+    },
+    {
+     "texto": "Leva cinco minutos para começar.",
+     "cena": [
+      19
+     ]
+    },
+    {
+     "texto": "No fim, ganha um carimbo no passaporte do explorador.",
+     "cena": [
+      14
+     ]
+    },
+    {
+     "texto": "E sabe o que ele pede depois?",
+     "cena": [
+      22
+     ]
+    },
+    {
+     "texto": "A próxima missão.",
+     "cena": [
+      24
+     ]
+    },
+    {
+     "texto": "São cem missões assim, pra crianças de três a oito anos.",
+     "cena": [
+      23,
+      20
+     ]
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "fala": "Toca em saiba mais e vê como funciona."
+ },
+ "cenas": {
+  "excluir": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33
+  ]
+ }
+}
