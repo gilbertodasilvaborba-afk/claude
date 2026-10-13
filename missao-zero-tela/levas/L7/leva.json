@@ -17,8 +17,8 @@
    ],
    "fala": "E se a brincadeira do seu filho começasse com uma missão secreta?",
    "cenas": [
-    1,
-    2
+    28,
+    29
    ]
   }
  ],
@@ -130,7 +130,9 @@
    21,
    22,
    23,
-   24
+   24,
+   28,
+   29
   ]
  }
 }
