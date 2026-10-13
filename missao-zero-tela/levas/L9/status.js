@@ -1,1 +1,1 @@
-window.LEVA_STATUS = {"leva": "L9", "produto": "Missão Zero Tela", "fim": null, "etapa": "Gerando as vozes", "ganchos": ["SEU FILHO SÓ QUER SABER DE TELA?"], "corpos": 2, "log": ["Gerando 4 narrações na Cartesia"]};
+window.LEVA_STATUS = {"leva": "L9", "produto": "Missão Zero Tela", "fim": null, "etapa": "Gerando as vozes", "ganchos": ["SEU FILHO SÓ QUER SABER DE TELA?"], "corpos": 2, "log": ["Gerando 4 narrações na Cartesia", "Gerando 4 narrações na Cartesia"]};
