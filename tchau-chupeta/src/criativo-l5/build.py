@@ -68,10 +68,10 @@ if FONTE == "mix":  # fotos do Unsplash + vídeos curtos do Mixkit (os dois com 
     FOTOS = TRAB / "fotos" / "unsplash"
     F = lambda nome, mov=ZOOM_IN: ("photo", FOTOS / f"{nome}.jpg", *mov)
     fotos = [
-        [F("choro-noite")], [V(51399, 2)], [F("relogio"), V(22081, 6)], [V(6457, 3)],
-        [V(40421, 1), F("chupeta-crianca")], [V(8739, 3)], [V(49963, 2), F("dentista", ZOOM_OUT)],
+        [F("choro-noite")], [V(51399, 2)], [F("relogio"), V(4502, 2)], [F("mae-cansada")],
+        [V(40421, 1), F("chupeta-crianca")], [V(8739, 3)], [F("chupeta-close"), F("dentista", ZOOM_OUT)],
         None, [F("janela-tchau"), V(4433, 5)], [V(48637, 1)], None, [F("desenho"), F("caixinha", ZOOM_OUT)],
-        [F("dormindo"), V(4433, 15)], [V(49970, 0)], None, None,
+        [F("dormindo"), V(4433, 15)], [V(49467, 3.5)], None, None,
     ]
     ROTEIRO = [(txt, novo or vis) for (txt, vis), novo in zip(ROTEIRO, fotos)]
 elif FONTE == "unsplash":  # fotos gratuitas do Unsplash (licença comercial), escolhidas uma a uma
