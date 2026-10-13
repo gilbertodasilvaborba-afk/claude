@@ -1,6 +1,6 @@
 # L9 — Mini VSL Missão Zero Tela
 
-9:16, voz Isabella, música calma, legenda amarela. Cada frase tem a sua cena, nenhuma se repete.
+9:16, ~2min55s, voz Thalita (Microsoft, pt-BR), música calma, legenda amarela. Cada frase tem a sua cena, nenhuma se repete.
 
 - **L9V1**: versão para a página de vendas (com preço).
 - **L9V2**: mesma VSL sem o preço, para anúncio.
@@ -17,13 +17,13 @@ Título na tela: **SEU FILHO SÓ / QUER SABER DE TELA?**
 
 ## Corpo (L9V1)
 
-- Eu sei como é o seu dia.  _(cena 61)_
-- Você trabalha, cuida da casa, resolve mil coisas ao mesmo tempo.  _(cena 48, 47)_
+- Eu sei como é o seu dia.  _(cena 47)_
+- Você trabalha, cuida da casa, resolve mil coisas ao mesmo tempo.  _(cena 48)_
 - E quando finalmente para pra respirar, o celular parece a única saída.  _(cena 6)_
 - Só que aí chega a hora de desligar.  _(cena 8)_
 - Ele chora, grita, se joga no chão.  _(cena 4, 5)_
 - E quando a tela some, vem o famoso: mãe, tô entediado.  _(cena 53)_
-- Aí bate aquela culpa.  _(cena 56)_
+- Aí bate aquela culpa.  _(cena 61)_
 - Será que eu tô deixando tempo demais? Será que eu tô fazendo tudo errado?  _(cena 7, 9)_
 - Se você já se sentiu assim, respira.  _(cena 20)_
 - Você não é uma mãe ruim. Você é uma mãe cansada.  _(cena 22)_
@@ -32,7 +32,7 @@ Título na tela: **SEU FILHO SÓ / QUER SABER DE TELA?**
 - Procurou ideia na internet, mas na hora a cabeça dá branco.  _(cena 58)_
 - E quando tentou só proibir, virou briga.  _(cena 54)_
 - Mas tem uma coisa que quase ninguém fala.  _(cena 10)_
-- O difícil não é desligar. É o vazio que fica quando a tela apaga.  _(cena 36)_
+- O difícil não é desligar. É o vazio que fica quando a tela apaga.  _(cena 56)_
 - A criança não larga a tela por uma ordem. Ela larga por um convite.  _(cena 13)_
 - O que falta não é mais um brinquedo. É uma aventura em que ela é a heroína.  _(cena 30, 31)_
 - Foi pensando nisso que nasceu o Missão Zero Tela.  _(cena 34)_
@@ -43,10 +43,10 @@ Título na tela: **SEU FILHO SÓ / QUER SABER DE TELA?**
 - Com o que você já tem em casa: papel, giz, caixa de papelão, lençol.  _(cena 15, 16, 17, 18)_
 - Você não precisa preparar nada.  _(cena 11)_
 - Cada missão já diz a idade, o tempo e o material.  _(cena 39)_
-- E elas estão separadas por momento: dia de chuva, antes do jantar, viagem.  _(cena 40, 49)_
+- E elas estão separadas por momento: dia de chuva, antes do jantar, viagem.  _(cena 36, 49)_
 - Agora imagina a sua casa daqui a algumas semanas.  _(cena 62)_
 - Em vez de choro na hora de desligar, ele vem te perguntar: mãe, qual é a missão de hoje?  _(cena 21, 24)_
-- Uma cabana na sala. Um foguete de rolo de papel. Uma cidade inteira de papelão.  _(cena 51, 63, 50)_
+- Uma cabana na sala. Um foguete de rolo de papel. Uma cidade inteira de papelão.  _(cena 51, 40, 50)_
 - E você, do lado, brincando junto, sem culpa.  _(cena 14, 23)_
 - No plano completo, além das cem missões, você leva quatro bônus.  _(cena 12)_
 - O Pote de Missões, pra ele sortear a aventura do dia.  _(cena 41, 42)_

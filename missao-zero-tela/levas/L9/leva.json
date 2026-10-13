@@ -3,8 +3,8 @@
  "produto": "Missão Zero Tela",
  "cta_tela": "TOQUE NO BOTÃO ABAIXO",
  "voz": {
-  "id": "c9611be8-aae9-4a93-bb1c-98dd6b7d52a4",
-  "velocidade": 1.0
+  "id": "edge:pt-BR-ThalitaMultilingualNeural",
+  "velocidade": 1.05
  },
  "legenda_estilo": "amarela",
  "legenda_posicao": "meio",
@@ -60,14 +60,13 @@
     {
      "texto": "Eu sei como é o seu dia.",
      "cena": [
-      61
+      47
      ]
     },
     {
      "texto": "Você trabalha, cuida da casa, resolve mil coisas ao mesmo tempo.",
      "cena": [
-      48,
-      47
+      48
      ]
     },
     {
@@ -98,7 +97,7 @@
     {
      "texto": "Aí bate aquela culpa.",
      "cena": [
-      56
+      61
      ]
     },
     {
@@ -153,7 +152,7 @@
     {
      "texto": "O difícil não é desligar. É o vazio que fica quando a tela apaga.",
      "cena": [
-      36
+      56
      ]
     },
     {
@@ -223,7 +222,7 @@
     {
      "texto": "E elas estão separadas por momento: dia de chuva, antes do jantar, viagem.",
      "cena": [
-      40,
+      36,
       49
      ]
     },
@@ -244,7 +243,7 @@
      "texto": "Uma cabana na sala. Um foguete de rolo de papel. Uma cidade inteira de papelão.",
      "cena": [
       51,
-      63,
+      40,
       50
      ]
     },
@@ -334,14 +333,13 @@
     {
      "texto": "Eu sei como é o seu dia.",
      "cena": [
-      61
+      47
      ]
     },
     {
      "texto": "Você trabalha, cuida da casa, resolve mil coisas ao mesmo tempo.",
      "cena": [
-      48,
-      47
+      48
      ]
     },
     {
@@ -372,7 +370,7 @@
     {
      "texto": "Aí bate aquela culpa.",
      "cena": [
-      56
+      61
      ]
     },
     {
@@ -427,7 +425,7 @@
     {
      "texto": "O difícil não é desligar. É o vazio que fica quando a tela apaga.",
      "cena": [
-      36
+      56
      ]
     },
     {
@@ -497,7 +495,7 @@
     {
      "texto": "E elas estão separadas por momento: dia de chuva, antes do jantar, viagem.",
      "cena": [
-      40,
+      36,
       49
      ]
     },
@@ -518,7 +516,7 @@
      "texto": "Uma cabana na sala. Um foguete de rolo de papel. Uma cidade inteira de papelão.",
      "cena": [
       51,
-      63,
+      40,
       50
      ]
     },
@@ -656,7 +654,6 @@
    60,
    61,
    62,
-   63,
    64
   ]
  }
