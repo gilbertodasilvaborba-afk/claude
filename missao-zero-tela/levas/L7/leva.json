@@ -1,0 +1,150 @@
+{
+ "leva": "L7",
+ "produto": "Missão Zero Tela",
+ "cta_tela": "VEJA COMO FUNCIONA",
+ "voz": {
+  "id": "c9611be8-aae9-4a93-bb1c-98dd6b7d52a4",
+  "velocidade": 1.0
+ },
+ "legenda_estilo": "amarela",
+ "legenda_posicao": "meio",
+ "musica": "../L3/musicas/m03.m4a",
+ "ganchos": [
+  {
+   "titulo": [
+    "E SE FOSSE UMA",
+    "MISSÃO SECRETA?"
+   ],
+   "fala": "E se a brincadeira do seu filho começasse com uma missão secreta?",
+   "cenas": [
+    59,
+    61
+   ]
+  }
+ ],
+ "corpos": [
+  {
+   "fala": "Olha, eu sei como é. Você tira o celular, ele chora, e você acaba devolvendo só pra ter um pouco de paz. Mas a criança não larga a tela por uma ordem. Ela larga por um convite. Funciona assim: seu filho sorteia uma carta no pote de missões. Vocês leem juntos uma historinha curta em que ele é o herói. Ele aceita o desafio e brinca com o que tem em casa: papel, giz, caixa ou lençol. No fim, ganha um carimbo no passaporte do explorador, e já pede a próxima. São cem missões assim, pra crianças de três a oito anos.",
+   "roteiro": [
+    {
+     "texto": "Olha, eu sei como é.",
+     "cena": 59
+    },
+    {
+     "texto": "Você tira o celular, ele chora,",
+     "cena": [
+      57,
+      52
+     ]
+    },
+    {
+     "texto": "e você acaba devolvendo só pra ter um pouco de paz.",
+     "cena": 55
+    },
+    {
+     "texto": "Mas a criança não larga a tela por uma ordem.",
+     "cena": 59
+    },
+    {
+     "texto": "Ela larga por um convite.",
+     "cena": 61
+    },
+    {
+     "texto": "Funciona assim: seu filho sorteia uma carta no pote de missões.",
+     "cena": 47
+    },
+    {
+     "texto": "Vocês leem juntos uma historinha curta em que ele é o herói.",
+     "cena": 63
+    },
+    {
+     "texto": "Ele aceita o desafio e brinca com o que tem em casa: papel, giz, caixa ou lençol.",
+     "cena": [
+      40,
+      20,
+      33
+     ]
+    },
+    {
+     "texto": "No fim, ganha um carimbo no passaporte do explorador, e já pede a próxima.",
+     "cena": [
+      34,
+      65
+     ]
+    },
+    {
+     "texto": "São cem missões assim, pra crianças de três a oito anos.",
+     "cena": [
+      36,
+      44
+     ]
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "fala": "Toca em saiba mais e vê como funciona."
+ },
+ "cenas": {
+  "excluir": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   35,
+   37,
+   38,
+   39,
+   41,
+   42,
+   43,
+   45,
+   46,
+   48,
+   49,
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59,
+   60,
+   61,
+   62,
+   63,
+   64,
+   65
+  ]
+ }
+}

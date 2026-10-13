@@ -1,0 +1,15 @@
+# L7, Missão Zero Tela
+
+| Criativo | Gancho | Corpo |
+|---|---|---|
+| L7V1 | G1 | C1 |
+
+## Ganchos
+
+- **G1:** E se a brincadeira do seu filho começasse com uma missão secreta?
+
+## Corpos
+
+- **C1:** Olha, eu sei como é. Você tira o celular, ele chora, e você acaba devolvendo só pra ter um pouco de paz. Mas a criança não larga a tela por uma ordem. Ela larga por um convite. Funciona assim: seu filho sorteia uma carta no pote de missões. Vocês leem juntos uma historinha curta em que ele é o herói. Ele aceita o desafio e brinca com o que tem em casa: papel, giz, caixa ou lençol. No fim, ganha um carimbo no passaporte do explorador, e já pede a próxima. São cem missões assim, pra crianças de três a oito anos.
+
+**CTA:** Toca em saiba mais e vê como funciona.

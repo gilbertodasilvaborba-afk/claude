@@ -1,0 +1,1 @@
+window.LEVA_STATUS = {"inicio": 1791854564.414257, "fim": 1791854595.2083347, "etapa": "Pronto", "leva": "L7", "produto": "Missão Zero Tela", "ganchos": ["E SE FOSSE UMA MISSÃO SECRETA?"], "corpos": 1, "videos": [{"nome": "L7V1", "gancho": 1, "corpo": 1, "pronto": true}], "log": ["Gerando 3 narrações na Cartesia", "Vozes prontas em 4s", "1 vídeos prontos. Montagem em 27s"]};
