@@ -58,11 +58,23 @@ TITULO = ["ELE CHORA", "SEM A CHUPETA?"]
 
 # Versões com imagem real: mesmo roteiro, uma foto (Pexels ou IA) por frase. Ver cenas-fotos.json.
 FONTE = sys.argv[1] if len(sys.argv) > 1 else "ilustrado"
-NOME = {"ilustrado": "L5V1", "pexels": "L5V2-pexels", "ia": "L5V3-ia", "unsplash": "L5V4-unsplash"}[FONTE]
+NOME = {"ilustrado": "L5V1", "pexels": "L5V2-pexels", "ia": "L5V3-ia", "unsplash": "L5V4-unsplash", "mix": "L5V5-fotos-e-videos"}[FONTE]
 FOTOS = TRAB / "fotos" / FONTE
 ZOOM_IN, ZOOM_OUT = ((0.5, 0.5, 1.0), (0.5, 0.47, 1.14)), ((0.5, 0.47, 1.14), (0.5, 0.5, 1.0))
 F = lambda nome, mov=ZOOM_IN: ("photo", FOTOS / f"{nome}.jpg", *mov)
-if FONTE == "unsplash":  # fotos gratuitas do Unsplash (licença comercial), escolhidas uma a uma
+VIDEOS = TRAB / "videos"
+V = lambda vid, ini=0.0: ("video", VIDEOS / f"{vid}.mp4", ini)
+if FONTE == "mix":  # fotos do Unsplash + vídeos curtos do Mixkit (os dois com licença gratuita para anúncio)
+    FOTOS = TRAB / "fotos" / "unsplash"
+    F = lambda nome, mov=ZOOM_IN: ("photo", FOTOS / f"{nome}.jpg", *mov)
+    fotos = [
+        [F("choro-noite")], [V(51399, 2)], [F("relogio"), V(22081, 6)], [V(6457, 3)],
+        [V(40421, 1), F("chupeta-crianca")], [V(8739, 3)], [V(49963, 2), F("dentista", ZOOM_OUT)],
+        None, [F("janela-tchau"), V(4433, 5)], [V(48637, 1)], None, [F("desenho"), F("caixinha", ZOOM_OUT)],
+        [F("dormindo"), V(4433, 15)], [V(49970, 0)], None, None,
+    ]
+    ROTEIRO = [(txt, novo or vis) for (txt, vis), novo in zip(ROTEIRO, fotos)]
+elif FONTE == "unsplash":  # fotos gratuitas do Unsplash (licença comercial), escolhidas uma a uma
     fotos = [
         [F("choro-noite")], [F("quarto-noite", ZOOM_OUT)], [F("relogio"), F("choro-boca", ZOOM_OUT)], [F("mae-cansada")],
         [F("chupeta-crianca"), F("chupeta-mae", ZOOM_OUT)], [F("culpa")], [F("chupeta-close"), F("dentista", ZOOM_OUT)],
@@ -78,7 +90,7 @@ elif FONTE != "ilustrado":
         [F("dormindo")], [F("abraco", ZOOM_OUT)], None, None,
     ]
     ROTEIRO = [(txt, novo or vis) for (txt, vis), novo in zip(ROTEIRO, fotos)]
-FUNDO_FINAL = FOTOS / "abraco.jpg" if FONTE != "ilustrado" else STILLS / "leitura.png"
+FUNDO_FINAL = FOTOS / "abraco.jpg" if FONTE not in ("ilustrado",) else STILLS / "leitura.png"
 
 
 def ff(*args):
@@ -127,6 +139,15 @@ def movimento(img, a, b, dur, saida, largura_fg, altura_fg):
               f"loop=loop={n}:size=1,fps={FPS},trim=end_frame={n}[bg];"
               f"[b]{zp}[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2:shortest=1,format=yuv420p")
     ff("-i", img, "-filter_complex", filtro, "-frames:v", n, "-r", FPS,
+       "-c:v", "libx264", "-preset", "veryfast", "-crf", "19", saida)
+
+
+def video(mp4, ini, dur, saida):
+    """Trecho de vídeo horizontal recortado em 4:5 no centro, sobre o próprio vídeo desfocado."""
+    filtro = (f"[0:v]fps={FPS},split[a][b];"
+              f"[a]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},gblur=sigma=40,eq=brightness=-0.18[bg];"
+              f"[b]crop='min(iw,ih*4/5)':ih,scale=1080:1350[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2,format=yuv420p")
+    ff("-stream_loop", "-1", "-ss", f"{ini:.2f}", "-i", mp4, "-t", f"{dur:.3f}", "-filter_complex", filtro, "-an",
        "-c:v", "libx264", "-preset", "veryfast", "-crf", "19", saida)
 
 
@@ -181,6 +202,8 @@ def main():
                     movimento(vis[1], vis[2], vis[3], parte, saida, W, round(W * im.height / im.width) // 2 * 2)
             elif vis[0] == "page":
                 movimento(pagina(vis[1]), vis[2], vis[3], parte, saida, 900, 1276)
+            elif vis[0] == "video":
+                video(vis[1], vis[2], parte, saida)
             elif vis[0] == "clip":
                 clipe(vis[1], parte, saida)
             else:
