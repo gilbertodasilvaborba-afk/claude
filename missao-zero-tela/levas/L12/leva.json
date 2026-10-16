@@ -1,0 +1,168 @@
+{
+ "leva": "L12",
+ "produto": "Missão Zero Tela",
+ "cta_tela": "TOQUE EM SAIBA MAIS",
+ "voz": {
+  "id": "edge:pt-BR-ThalitaMultilingualNeural",
+  "velocidade": 1.05
+ },
+ "legenda_estilo": "amarela",
+ "legenda_posicao": "meio",
+ "musica": "../L3/musicas/m03.m4a",
+ "ganchos": [
+  {
+   "titulo": [
+    "COMO TIRAR SEU",
+    "FILHO DAS TELAS?"
+   ],
+   "fala": "Quer saber como tirar o seu filho das telas e evitar os problemas que o excesso de tela pode trazer no futuro?",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Quer saber como tirar o seu filho das telas",
+     "cena": [
+      1
+     ]
+    },
+    {
+     "texto": "e evitar os problemas que o excesso de tela pode trazer no futuro?",
+     "cena": [
+      7,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "corpos": [
+  {
+   "fala": "O jeito mais fácil de fazer isso é transformar tudo em uma brincadeira. Por mais que hoje você chegue em casa cansada, e o celular ou a TV acabe sendo o seu melhor amigo pra entreter a criança, e depois? Não vem aquela culpa, mãezinha? É por isso que criamos o Missão Zero Tela. São diversas atividades pro seu filho aprender se divertindo e evoluir com aprendizado de verdade, sem estimular o vício em telas. E você, mãe, sem aquela culpa no fim do dia.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "O jeito mais fácil de fazer isso é transformar tudo em uma brincadeira.",
+     "cena": [
+      28,
+      29
+     ]
+    },
+    {
+     "texto": "Por mais que hoje você chegue em casa cansada,",
+     "cena": [
+      3
+     ]
+    },
+    {
+     "texto": "e o celular ou a TV acabe sendo o seu melhor amigo pra entreter a criança,",
+     "cena": [
+      6,
+      9
+     ]
+    },
+    {
+     "texto": "e depois? Não vem aquela culpa, mãezinha?",
+     "cena": [
+      61
+     ]
+    },
+    {
+     "texto": "É por isso que criamos o Missão Zero Tela.",
+     "cena": [
+      34
+     ]
+    },
+    {
+     "texto": "São diversas atividades pro seu filho aprender se divertindo",
+     "cena": [
+      11,
+      15
+     ]
+    },
+    {
+     "texto": "e evoluir com aprendizado de verdade, sem estimular o vício em telas.",
+     "cena": [
+      21,
+      17
+     ]
+    },
+    {
+     "texto": "E você, mãe, sem aquela culpa no fim do dia.",
+     "cena": [
+      14,
+      22
+     ]
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "fala": "Clique em saiba mais e aproveite."
+ },
+ "cenas": {
+  "excluir": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59,
+   60,
+   61,
+   62,
+   63,
+   64,
+   65,
+   66
+  ]
+ }
+}
