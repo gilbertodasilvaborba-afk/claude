@@ -19,7 +19,13 @@
    "corte_max": 99,
    "roteiro": [
     {
-     "texto": "Mãe, se o seu filho chora toda vez que você tira o celular,",
+     "texto": "Mãe, se o seu filho chora",
+     "cena": [
+      5
+     ]
+    },
+    {
+     "texto": "toda vez que você tira o celular,",
      "cena": [
       4
      ]
@@ -27,7 +33,7 @@
     {
      "texto": "presta atenção nisso.",
      "cena": [
-      5
+      8
      ]
     }
    ],
@@ -67,11 +73,17 @@
     {
      "texto": "O truque das historinhas-missão:",
      "cena": [
-      28
+      35
      ]
     },
     {
-     "texto": "como fazer seu filho largar a tela sem precisar brigar.",
+     "texto": "como fazer seu filho largar a tela",
+     "cena": [
+      1
+     ]
+    },
+    {
+     "texto": "sem precisar brigar.",
      "cena": [
       2
      ]
@@ -113,11 +125,17 @@
     {
      "texto": "Daqui a vinte anos, do que o seu filho vai lembrar?",
      "cena": [
+      27
+     ]
+    },
+    {
+     "texto": "Do celular,",
+     "cena": [
       1
      ]
     },
     {
-     "texto": "Do celular, ou de você?",
+     "texto": "ou de você?",
      "cena": [
       13
      ]
@@ -134,18 +152,29 @@
     {
      "texto": "Não é birra à toa.",
      "cena": [
-      8
+      9
      ]
     },
     {
-     "texto": "Desenho e joguinho são feitos pra prender a atenção, e perto deles qualquer outra coisa parece sem graça.",
+     "texto": "Desenho e joguinho são feitos pra prender a atenção,",
      "cena": [
-      6,
+      6
+     ]
+    },
+    {
+     "texto": "e perto deles qualquer outra coisa parece sem graça.",
+     "cena": [
+      53
+     ]
+    },
+    {
+     "texto": "Aí você cede,",
+     "cena": [
       1
      ]
     },
     {
-     "texto": "Aí você cede, porque está exausta.",
+     "texto": "porque está exausta.",
      "cena": [
       3
      ]
@@ -171,17 +200,33 @@
      ]
     },
     {
-     "texto": "São cem historinhas em que o seu filho é o herói, com o que você já tem em casa.",
+     "texto": "São cem historinhas",
      "cena": [
-      37,
+      37
+     ]
+    },
+    {
+     "texto": "em que o seu filho é o herói,",
+     "cena": [
+      29
+     ]
+    },
+    {
+     "texto": "com o que você já tem em casa.",
+     "cena": [
       17
      ]
     },
     {
-     "texto": "E a hora de desligar deixa de ser briga e vira aventura.",
+     "texto": "E a hora de desligar deixa de ser briga",
      "cena": [
-      28,
-      29
+      22
+     ]
+    },
+    {
+     "texto": "e vira aventura.",
+     "cena": [
+      28
      ]
     }
    ]
@@ -205,7 +250,7 @@
     {
      "texto": "Quando vê, já passaram duas horas.",
      "cena": [
-      7
+      6
      ]
     },
     {
@@ -218,28 +263,50 @@
     {
      "texto": "Agora imagina outra cena.",
      "cena": [
-      20
+      28
      ],
      "marca": "virada"
     },
     {
-     "texto": "Seis da tarde, e ele vem correndo: mãe, qual é a missão de hoje?",
+     "texto": "Seis da tarde, e ele vem correndo:",
      "cena": [
-      21
+      47
      ]
     },
     {
-     "texto": "Ele monta um foguete de papelão enquanto você faz o jantar.",
+     "texto": "mãe, qual é a missão de hoje?",
      "cena": [
-      32,
+      10
+     ]
+    },
+    {
+     "texto": "Ele monta um foguete de papelão",
+     "cena": [
+      32
+     ]
+    },
+    {
+     "texto": "enquanto você faz o jantar.",
+     "cena": [
       29
      ]
     },
     {
-     "texto": "Isso é o Missão Zero Tela: cem missões prontas pra trocar a tela por brincadeira de verdade.",
+     "texto": "Isso é o Missão Zero Tela:",
      "cena": [
-      34,
+      34
+     ]
+    },
+    {
+     "texto": "cem missões prontas",
+     "cena": [
       37
+     ]
+    },
+    {
+     "texto": "pra trocar a tela por brincadeira de verdade.",
+     "cena": [
+      21
      ]
     }
    ]
@@ -251,14 +318,20 @@
     {
      "texto": "Toda mãe já tentou tirar o celular na marra.",
      "cena": [
-      9
+      4
      ]
     },
     {
-     "texto": "E toda mãe sabe como termina: choro, grito e negociação.",
+     "texto": "E toda mãe sabe como termina:",
      "cena": [
-      4,
-      5
+      8
+     ]
+    },
+    {
+     "texto": "choro, grito e negociação.",
+     "cena": [
+      5,
+      9
      ]
     },
     {
@@ -282,17 +355,38 @@
      ]
     },
     {
-     "texto": "Pronto. Ele aceita a missão e vai brincar com papel, giz e caixa.",
+     "texto": "Pronto. Ele aceita a missão",
      "cena": [
-      15,
-      16,
+      30
+     ]
+    },
+    {
+     "texto": "e vai brincar com papel,",
+     "cena": [
+      15
+     ]
+    },
+    {
+     "texto": "giz",
+     "cena": [
+      16
+     ]
+    },
+    {
+     "texto": "e caixa.",
+     "cena": [
       17
      ]
     },
     {
-     "texto": "São cem missões assim no Missão Zero Tela, pra crianças de três a oito anos.",
+     "texto": "São cem missões assim no Missão Zero Tela,",
      "cena": [
-      37,
+      37
+     ]
+    },
+    {
+     "texto": "pra crianças de três a oito anos.",
+     "cena": [
       22
      ]
     }
@@ -311,7 +405,7 @@
     {
      "texto": "Cores, sons e recompensa o tempo todo.",
      "cena": [
-      7
+      6
      ]
     },
     {
@@ -328,22 +422,39 @@
      "marca": "pergunta"
     },
     {
-     "texto": "A saída não é brigar com a tela. É dar pra ele algo mais emocionante.",
+     "texto": "A saída não é brigar com a tela.",
      "cena": [
-      28
+      10
      ],
      "marca": "virada"
     },
     {
-     "texto": "Uma missão secreta, em que ele é o herói da história.",
+     "texto": "É dar pra ele algo mais emocionante.",
+     "cena": [
+      28
+     ]
+    },
+    {
+     "texto": "Uma missão secreta,",
+     "cena": [
+      29
+     ]
+    },
+    {
+     "texto": "em que ele é o herói da história.",
      "cena": [
       30
      ]
     },
     {
-     "texto": "No Missão Zero Tela são cem missões assim, com o que você já tem em casa.",
+     "texto": "No Missão Zero Tela são cem missões assim,",
      "cena": [
-      34,
+      34
+     ]
+    },
+    {
+     "texto": "com o que você já tem em casa.",
+     "cena": [
       17
      ]
     },
@@ -386,25 +497,57 @@
      "marca": "virada"
     },
     {
-     "texto": "Cem missões rápidas pra fazer junto, com papel, giz, caixa e lençol.",
+     "texto": "Cem missões rápidas pra fazer junto,",
      "cena": [
-      11,
-      17,
+      11
+     ]
+    },
+    {
+     "texto": "com papel,",
+     "cena": [
+      15
+     ]
+    },
+    {
+     "texto": "giz,",
+     "cena": [
+      16
+     ]
+    },
+    {
+     "texto": "caixa",
+     "cena": [
+      17
+     ]
+    },
+    {
+     "texto": "e lençol.",
+     "cena": [
       18
      ]
     },
     {
-     "texto": "Cinco minutos pra começar, e uma memória que ele vai levar pra vida.",
+     "texto": "Cinco minutos pra começar,",
      "cena": [
-      14,
+      10
+     ]
+    },
+    {
+     "texto": "e uma memória que ele vai levar pra vida.",
+     "cena": [
+      14
+     ]
+    },
+    {
+     "texto": "Porque infância boa não se assiste.",
+     "cena": [
       22
      ]
     },
     {
-     "texto": "Porque infância boa não se assiste. Se vive.",
+     "texto": "Se vive.",
      "cena": [
-      23,
-      21
+      23
      ]
     }
    ]
@@ -439,12 +582,12 @@
    22,
    23,
    24,
+   27,
    28,
    29,
    30,
    31,
    32,
-   33,
    34,
    35,
    36,
