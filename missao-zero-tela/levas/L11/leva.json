@@ -1,0 +1,211 @@
+{
+ "leva": "L11",
+ "produto": "Missão Zero Tela",
+ "cta_tela": "VEJA COMO FUNCIONA",
+ "voz": {
+  "id": "c9611be8-aae9-4a93-bb1c-98dd6b7d52a4"
+ },
+ "legenda_estilo": "amarela",
+ "legenda_posicao": "meio",
+ "musica": "../L3/musicas/m03.m4a",
+ "ganchos": [
+  {
+   "titulo": [
+    "UMA MISSÃO SECRETA",
+    "PARA O SEU FILHO"
+   ],
+   "fala": "Seu filho tem uma missão secreta esperando por ele. E não é no celular.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Seu filho tem uma missão secreta esperando por ele.",
+     "cena": [
+      40
+     ]
+    },
+    {
+     "texto": "E não é no celular.",
+     "cena": [
+      41
+     ]
+    }
+   ]
+  },
+  {
+   "titulo": [
+    "AGENTE, SUA",
+    "MISSÃO DE HOJE É…"
+   ],
+   "fala": "Agente, sua missão de hoje é construir um foguete com uma caixa de papelão.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Agente, sua missão de hoje é construir um foguete",
+     "cena": [
+      42
+     ]
+    },
+    {
+     "texto": "com uma caixa de papelão.",
+     "cena": [
+      43
+     ]
+    }
+   ]
+  },
+  {
+   "titulo": [
+    "TROQUE A TELA",
+    "POR UMA MISSÃO"
+   ],
+   "fala": "O jeito mais fácil de tirar o celular da mão dele? Transformar a brincadeira em missão secreta.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "O jeito mais fácil de tirar o celular da mão dele?",
+     "cena": [
+      45
+     ]
+    },
+    {
+     "texto": "Transformar a brincadeira em missão secreta.",
+     "cena": [
+      44
+     ]
+    }
+   ]
+  },
+  {
+   "titulo": [
+    "DIGA ISSO AO",
+    "SEU FILHO HOJE"
+   ],
+   "fala": "Fala pro seu filho: chegou uma missão secreta pra você. E veja o que acontece.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Fala pro seu filho: chegou uma missão secreta pra você.",
+     "cena": [
+      30
+     ],
+     "ini": 3.0
+    },
+    {
+     "texto": "E veja o que acontece.",
+     "cena": [
+      12
+     ]
+    }
+   ]
+  },
+  {
+   "titulo": [
+    "DUAS PALAVRAS",
+    "QUE MUDAM TUDO"
+   ],
+   "fala": "Duas palavras que podem fazer seu filho largar o celular: missão secreta.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Duas palavras que podem fazer seu filho largar o celular:",
+     "cena": [
+      45
+     ]
+    },
+    {
+     "texto": "missão secreta.",
+     "cena": [
+      40
+     ]
+    }
+   ]
+  }
+ ],
+ "corpos": [
+  {
+   "fala": "Funciona assim: seu filho sorteia uma carta no pote de missões. Vocês leem juntos uma historinha curta em que ele é o herói. Ele aceita o desafio e brinca com o que tem em casa. No fim, ganha um carimbo no passaporte do explorador e já pensa na próxima.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Funciona assim:",
+     "cena": [
+      17
+     ]
+    },
+    {
+     "texto": "seu filho sorteia uma carta no pote de missões.",
+     "cena": [
+      17,
+      21
+     ],
+     "ini": 2.0
+    },
+    {
+     "texto": "Vocês leem juntos uma historinha curta em que ele é o herói.",
+     "cena": [
+      24
+     ]
+    },
+    {
+     "texto": "Ele aceita o desafio e brinca com o que tem em casa.",
+     "cena": [
+      30
+     ],
+     "ini": 14.0
+    },
+    {
+     "texto": "No fim, ganha um carimbo no passaporte do explorador",
+     "cena": [
+      14
+     ]
+    },
+    {
+     "texto": "e já pensa na próxima.",
+     "cena": [
+      7
+     ]
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "fala": "Toque em saiba mais e veja como funciona."
+ },
+ "cenas": {
+  "excluir": [
+   1,
+   3,
+   4,
+   5,
+   6,
+   8,
+   9,
+   10,
+   11,
+   13,
+   15,
+   16,
+   19,
+   20,
+   22,
+   25,
+   26,
+   27,
+   28,
+   29,
+   32,
+   33,
+   34,
+   35,
+   36,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45
+  ]
+ }
+}
