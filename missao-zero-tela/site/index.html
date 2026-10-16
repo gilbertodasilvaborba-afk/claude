@@ -402,6 +402,18 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
   .sticky.on{transform:none}
   .hero-cta .btn{width:100%}
 }
+/* MINI VSL */
+.vsl{padding-block:56px 60px;background:var(--cream)}
+.vsl .wrap{display:flex;flex-direction:column;align-items:center;text-align:center}
+.vsl h2{margin-bottom:8px}
+.vsl .lead{max-width:520px;margin:0 auto 24px}
+.vsl-box{position:relative;width:100%;max-width:340px;aspect-ratio:9/16;border-radius:26px;overflow:hidden;background:#111;border:6px solid var(--white);box-shadow:0 20px 50px rgba(30,43,111,.22)}
+.vsl-box video{width:100%;height:100%;object-fit:cover;display:block}
+.vsl-play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:10px;padding-bottom:20%;border:0;background:linear-gradient(to top,rgba(0,0,0,.55),rgba(0,0,0,0) 55%);cursor:pointer;color:#fff;font:800 16px/1.3 Nunito,sans-serif}
+.vsl-play .bola{width:84px;height:84px;border-radius:50%;background:var(--purple);display:grid;place-items:center;box-shadow:0 0 0 8px rgba(255,228,92,.85);animation:vslpulso 1.6s ease-in-out infinite}
+.vsl-play .bola svg{margin-left:6px}
+@keyframes vslpulso{50%{transform:scale(1.08)}}
+.vsl .hero-cta{margin-top:26px}
 </style>
 </head>
 <body>
@@ -457,6 +469,25 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
     </div>
   </div>
 </header>
+
+<!-- MINI VSL -->
+<section class="vsl" id="video">
+  <div class="wrap">
+    <h2>Veja em 3 minutos como funciona</h2>
+    <p class="lead">Aperte o play e descubra como trocar a tela por brincadeira de verdade, sem briga e sem precisar inventar nada.</p>
+    <div class="vsl-box">
+      <video id="vsl" src="video/vsl.mp4" poster="video/vsl-capa.jpg" preload="none" playsinline controlslist="nodownload" width="540" height="960"></video>
+      <button class="vsl-play" id="vsl-play" type="button" aria-label="Assistir ao vídeo com som">
+        <span class="bola"><svg width="34" height="34" viewBox="0 0 24 24" fill="#fff"><path d="M7 4.5v15l13-7.5z"/></svg></span>
+        <span>Toque para assistir com som</span>
+      </button>
+    </div>
+    <div class="hero-cta">
+      <a class="btn" href="#planos">Quero as missões
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
 
 <!-- DOR -->
 <section class="lilac">
@@ -774,6 +805,16 @@ footer{background:var(--navy);color:#C8CEEB;font-size:13px;text-align:center;pad
     t.addEventListener('scroll', () => requestAnimationFrame(marcar), { passive: true });
     window.addEventListener('resize', marcar); marcar();
   })();
+
+// Mini VSL: o play com som só começa quando a pessoa toca
+(function(){
+  const v=document.getElementById('vsl'), b=document.getElementById('vsl-play');
+  if(!v||!b) return;
+  b.addEventListener('click',()=>{
+    b.remove(); v.controls=true; const pr=v.play(); if(pr) pr.catch(()=>{});
+    if(window.clarity) clarity('event','vsl_play');
+  });
+})();
 </script>
 </body>
 </html>
