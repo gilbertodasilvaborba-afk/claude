@@ -1,0 +1,483 @@
+{
+ "leva": "L13",
+ "produto": "Missão Zero Tela",
+ "cta_tela": "VEJA COMO FUNCIONA",
+ "voz": {
+  "id": "edge:pt-BR-ThalitaMultilingualNeural",
+  "velocidade": 1.05
+ },
+ "legenda_estilo": "amarela",
+ "legenda_posicao": "meio",
+ "musica": "",
+ "ganchos": [
+  {
+   "titulo": [
+    "SEU FILHO CHORA",
+    "QUANDO TIRA A TELA?"
+   ],
+   "fala": "Mãe, se o seu filho chora toda vez que você tira o celular, presta atenção nisso.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Mãe, se o seu filho chora toda vez que você tira o celular,",
+     "cena": [
+      4
+     ]
+    },
+    {
+     "texto": "presta atenção nisso.",
+     "cena": [
+      5
+     ]
+    }
+   ],
+   "tecnica": "PAS com quebra de padrão"
+  },
+  {
+   "titulo": [
+    "SEIS DA TARDE.",
+    "VOCÊ CONHECE ESSA CENA"
+   ],
+   "fala": "Seis da tarde. Você chega cansada, e ele já está com o celular na mão.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Seis da tarde. Você chega cansada,",
+     "cena": [
+      3
+     ]
+    },
+    {
+     "texto": "e ele já está com o celular na mão.",
+     "cena": [
+      1
+     ]
+    }
+   ],
+   "tecnica": "Storytelling com antes e depois"
+  },
+  {
+   "titulo": [
+    "O TRUQUE DAS",
+    "HISTORINHAS-MISSÃO"
+   ],
+   "fala": "O truque das historinhas-missão: como fazer seu filho largar a tela sem precisar brigar.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "O truque das historinhas-missão:",
+     "cena": [
+      28
+     ]
+    },
+    {
+     "texto": "como fazer seu filho largar a tela sem precisar brigar.",
+     "cena": [
+      2
+     ]
+    }
+   ],
+   "tecnica": "Mecanismo único com nome"
+  },
+  {
+   "titulo": [
+    "NÃO É CULPA",
+    "SUA, MÃE"
+   ],
+   "fala": "Não é culpa sua que o seu filho não larga o celular.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Não é culpa sua",
+     "cena": [
+      3
+     ]
+    },
+    {
+     "texto": "que o seu filho não larga o celular.",
+     "cena": [
+      1
+     ]
+    }
+   ],
+   "tecnica": "Tirar a culpa e apontar o inimigo"
+  },
+  {
+   "titulo": [
+    "DO QUE ELE",
+    "VAI LEMBRAR?"
+   ],
+   "fala": "Daqui a vinte anos, do que o seu filho vai lembrar? Do celular, ou de você?",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Daqui a vinte anos, do que o seu filho vai lembrar?",
+     "cena": [
+      1
+     ]
+    },
+    {
+     "texto": "Do celular, ou de você?",
+     "cena": [
+      13
+     ]
+    }
+   ],
+   "tecnica": "Projeção do futuro e identidade"
+  }
+ ],
+ "corpos": [
+  {
+   "fala": "Não é birra à toa. Desenho e joguinho são feitos pra prender a atenção, e perto deles qualquer outra coisa parece sem graça. Aí você cede, porque está exausta. Mas no fim do dia, mãezinha... você não fica com aquela culpa? Foi por isso que criamos o Missão Zero Tela. Em vez de só tirar a tela, você oferece uma missão. São cem historinhas em que o seu filho é o herói, com o que você já tem em casa. E a hora de desligar deixa de ser briga e vira aventura.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Não é birra à toa.",
+     "cena": [
+      8
+     ]
+    },
+    {
+     "texto": "Desenho e joguinho são feitos pra prender a atenção, e perto deles qualquer outra coisa parece sem graça.",
+     "cena": [
+      6,
+      1
+     ]
+    },
+    {
+     "texto": "Aí você cede, porque está exausta.",
+     "cena": [
+      3
+     ]
+    },
+    {
+     "texto": "Mas no fim do dia, mãezinha... você não fica com aquela culpa?",
+     "cena": [
+      61
+     ],
+     "marca": "pergunta"
+    },
+    {
+     "texto": "Foi por isso que criamos o Missão Zero Tela.",
+     "cena": [
+      34
+     ],
+     "marca": "virada"
+    },
+    {
+     "texto": "Em vez de só tirar a tela, você oferece uma missão.",
+     "cena": [
+      10
+     ]
+    },
+    {
+     "texto": "São cem historinhas em que o seu filho é o herói, com o que você já tem em casa.",
+     "cena": [
+      37,
+      17
+     ]
+    },
+    {
+     "texto": "E a hora de desligar deixa de ser briga e vira aventura.",
+     "cena": [
+      28,
+      29
+     ]
+    }
+   ]
+  },
+  {
+   "fala": "Ainda tem o jantar, a casa, mil coisas pra fazer. Então você deixa. Só mais um pouquinho. Quando vê, já passaram duas horas. E na hora de dormir, mãezinha... não bate aquela culpa? Agora imagina outra cena. Seis da tarde, e ele vem correndo: mãe, qual é a missão de hoje? Ele monta um foguete de papelão enquanto você faz o jantar. Isso é o Missão Zero Tela: cem missões prontas pra trocar a tela por brincadeira de verdade.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Ainda tem o jantar, a casa, mil coisas pra fazer.",
+     "cena": [
+      48
+     ]
+    },
+    {
+     "texto": "Então você deixa. Só mais um pouquinho.",
+     "cena": [
+      6
+     ]
+    },
+    {
+     "texto": "Quando vê, já passaram duas horas.",
+     "cena": [
+      7
+     ]
+    },
+    {
+     "texto": "E na hora de dormir, mãezinha... não bate aquela culpa?",
+     "cena": [
+      61
+     ],
+     "marca": "pergunta"
+    },
+    {
+     "texto": "Agora imagina outra cena.",
+     "cena": [
+      20
+     ],
+     "marca": "virada"
+    },
+    {
+     "texto": "Seis da tarde, e ele vem correndo: mãe, qual é a missão de hoje?",
+     "cena": [
+      21
+     ]
+    },
+    {
+     "texto": "Ele monta um foguete de papelão enquanto você faz o jantar.",
+     "cena": [
+      32,
+      29
+     ]
+    },
+    {
+     "texto": "Isso é o Missão Zero Tela: cem missões prontas pra trocar a tela por brincadeira de verdade.",
+     "cena": [
+      34,
+      37
+     ]
+    }
+   ]
+  },
+  {
+   "fala": "Toda mãe já tentou tirar o celular na marra. E toda mãe sabe como termina: choro, grito e negociação. E depois, mãezinha... você não fica com aquela culpa? O truque é não tirar a tela. É trocar por uma missão. Você lê um convite curtinho: agente, a cidade sumiu, e só você pode construir uma nova. Pronto. Ele aceita a missão e vai brincar com papel, giz e caixa. São cem missões assim no Missão Zero Tela, pra crianças de três a oito anos.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Toda mãe já tentou tirar o celular na marra.",
+     "cena": [
+      9
+     ]
+    },
+    {
+     "texto": "E toda mãe sabe como termina: choro, grito e negociação.",
+     "cena": [
+      4,
+      5
+     ]
+    },
+    {
+     "texto": "E depois, mãezinha... você não fica com aquela culpa?",
+     "cena": [
+      61
+     ],
+     "marca": "pergunta"
+    },
+    {
+     "texto": "O truque é não tirar a tela. É trocar por uma missão.",
+     "cena": [
+      10
+     ],
+     "marca": "virada"
+    },
+    {
+     "texto": "Você lê um convite curtinho: agente, a cidade sumiu, e só você pode construir uma nova.",
+     "cena": [
+      38
+     ]
+    },
+    {
+     "texto": "Pronto. Ele aceita a missão e vai brincar com papel, giz e caixa.",
+     "cena": [
+      15,
+      16,
+      17
+     ]
+    },
+    {
+     "texto": "São cem missões assim no Missão Zero Tela, pra crianças de três a oito anos.",
+     "cena": [
+      37,
+      22
+     ]
+    }
+   ]
+  },
+  {
+   "fala": "Os desenhos e joguinhos são feitos pra prender a atenção dele. Cores, sons e recompensa o tempo todo. Perto disso, qualquer brinquedo parece sem graça. Mas mesmo assim, mãezinha... você não sente aquela culpa no fim do dia? A saída não é brigar com a tela. É dar pra ele algo mais emocionante. Uma missão secreta, em que ele é o herói da história. No Missão Zero Tela são cem missões assim, com o que você já tem em casa. E você deixa de ser a mãe que só diz não.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Os desenhos e joguinhos são feitos pra prender a atenção dele.",
+     "cena": [
+      6
+     ]
+    },
+    {
+     "texto": "Cores, sons e recompensa o tempo todo.",
+     "cena": [
+      7
+     ]
+    },
+    {
+     "texto": "Perto disso, qualquer brinquedo parece sem graça.",
+     "cena": [
+      53
+     ]
+    },
+    {
+     "texto": "Mas mesmo assim, mãezinha... você não sente aquela culpa no fim do dia?",
+     "cena": [
+      61
+     ],
+     "marca": "pergunta"
+    },
+    {
+     "texto": "A saída não é brigar com a tela. É dar pra ele algo mais emocionante.",
+     "cena": [
+      28
+     ],
+     "marca": "virada"
+    },
+    {
+     "texto": "Uma missão secreta, em que ele é o herói da história.",
+     "cena": [
+      30
+     ]
+    },
+    {
+     "texto": "No Missão Zero Tela são cem missões assim, com o que você já tem em casa.",
+     "cena": [
+      34,
+      17
+     ]
+    },
+    {
+     "texto": "E você deixa de ser a mãe que só diz não.",
+     "cena": [
+      14
+     ]
+    }
+   ]
+  },
+  {
+   "fala": "Hoje a rotina é corrida, eu sei. E o celular vira a babá mais fácil da casa. Mas quando ele dorme, mãezinha... não fica aquela culpa no peito? Foi pra essas mães que criamos o Missão Zero Tela. Cem missões rápidas pra fazer junto, com papel, giz, caixa e lençol. Cinco minutos pra começar, e uma memória que ele vai levar pra vida. Porque infância boa não se assiste. Se vive.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Hoje a rotina é corrida, eu sei.",
+     "cena": [
+      48
+     ]
+    },
+    {
+     "texto": "E o celular vira a babá mais fácil da casa.",
+     "cena": [
+      6
+     ]
+    },
+    {
+     "texto": "Mas quando ele dorme, mãezinha... não fica aquela culpa no peito?",
+     "cena": [
+      3
+     ],
+     "marca": "pergunta"
+    },
+    {
+     "texto": "Foi pra essas mães que criamos o Missão Zero Tela.",
+     "cena": [
+      34
+     ],
+     "marca": "virada"
+    },
+    {
+     "texto": "Cem missões rápidas pra fazer junto, com papel, giz, caixa e lençol.",
+     "cena": [
+      11,
+      17,
+      18
+     ]
+    },
+    {
+     "texto": "Cinco minutos pra começar, e uma memória que ele vai levar pra vida.",
+     "cena": [
+      14,
+      22
+     ]
+    },
+    {
+     "texto": "Porque infância boa não se assiste. Se vive.",
+     "cena": [
+      23,
+      21
+     ]
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "fala": "Toque em saiba mais e veja como funciona."
+ },
+ "cenas": {
+  "excluir": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59,
+   60,
+   61,
+   62,
+   63,
+   64,
+   65,
+   66
+  ]
+ }
+}
