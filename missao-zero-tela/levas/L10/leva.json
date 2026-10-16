@@ -1,0 +1,118 @@
+{
+ "leva": "L10",
+ "produto": "Misión Cero Pantallas",
+ "cta_tela": "MIRA CÓMO FUNCIONA",
+ "voz": {
+  "id": "edge:es-MX-DaliaNeural",
+  "velocidade": 1.0
+ },
+ "legenda_estilo": "amarela",
+ "legenda_posicao": "meio",
+ "musica": "../L3/musicas/m03.m4a",
+ "ganchos": [
+  {
+   "titulo": [
+    "¿Y SI FUERA UNA",
+    "MISIÓN SECRETA?"
+   ],
+   "fala": "¿Y si el juego de tu hijo empezara con una misión secreta?",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "¿Y si el juego de tu hijo",
+     "cena": [
+      30
+     ],
+     "ini": 9.0
+    },
+    {
+     "texto": "empezara con una misión secreta?",
+     "cena": [
+      21
+     ]
+    }
+   ]
+  }
+ ],
+ "corpos": [
+  {
+   "fala": "Funciona así: tu hijo saca una carta del frasco de misiones. Leen juntos una historia corta en la que él es el héroe. Acepta el desafío y juega con lo que tiene en casa. Al final, gana un sello en su pasaporte de explorador, y ya piensa en la siguiente.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Funciona así:",
+     "cena": [
+      17
+     ]
+    },
+    {
+     "texto": "tu hijo saca una carta del frasco de misiones.",
+     "cena": [
+      17,
+      21
+     ],
+     "ini": 2.0
+    },
+    {
+     "texto": "Leen juntos una historia corta en la que él es el héroe.",
+     "cena": [
+      24
+     ]
+    },
+    {
+     "texto": "Acepta el desafío y juega con lo que tiene en casa.",
+     "cena": [
+      30
+     ],
+     "ini": 14.0
+    },
+    {
+     "texto": "Al final, gana un sello en su pasaporte de explorador,",
+     "cena": [
+      14
+     ]
+    },
+    {
+     "texto": "y ya piensa en la siguiente.",
+     "cena": [
+      7
+     ]
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "fala": "Toca en más información y mira cómo funciona."
+ },
+ "cenas": {
+  "excluir": [
+   1,
+   3,
+   4,
+   5,
+   6,
+   8,
+   9,
+   10,
+   11,
+   13,
+   15,
+   16,
+   19,
+   20,
+   22,
+   25,
+   26,
+   27,
+   28,
+   29,
+   32,
+   33,
+   34,
+   35,
+   36,
+   38,
+   39
+  ]
+ }
+}

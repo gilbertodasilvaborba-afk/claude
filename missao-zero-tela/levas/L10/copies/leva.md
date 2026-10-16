@@ -1,0 +1,15 @@
+# L10, Misión Cero Pantallas
+
+| Criativo | Gancho | Corpo |
+|---|---|---|
+| L10V1 | G1 | C1 |
+
+## Ganchos
+
+- **G1:** ¿Y si el juego de tu hijo empezara con una misión secreta?
+
+## Corpos
+
+- **C1:** Funciona así: tu hijo saca una carta del frasco de misiones. Leen juntos una historia corta en la que él es el héroe. Acepta el desafío y juega con lo que tiene en casa. Al final, gana un sello en su pasaporte de explorador, y ya piensa en la siguiente.
+
+**CTA:** Toca en más información y mira cómo funciona.
