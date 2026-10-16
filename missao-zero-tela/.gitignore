@@ -4,3 +4,4 @@ levas/*/cenas/*.mp4
 levas/*/*.log
 node_modules/
 levas/*/pinterest-bruto.json
+__pycache__/
