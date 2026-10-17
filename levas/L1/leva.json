@@ -1,0 +1,22 @@
+{
+  "leva": "L1",
+  "produto": "Panes para Diabéticos",
+  "cta_tela": "ENVÍA UN MENSAJE",
+  "legenda_estilo": "amarela",
+  "legenda_posicao": "meio",
+  "voz": {"id": "ae823354-f9be-4aef-8543-f569644136b4"},
+  "ganchos": [
+    {"titulo": ["SIEMPRE LO MISMO", "¿YA TE CANSASTE?"], "fala": "Años desayunando lo mismo, hasta que empecé a hacer mi propio pan."},
+    {"titulo": ["PAN CASERO", "¿SALE MAL?"], "fala": "Dicen que el pan casero siempre sale mal. Mira cómo me sale a mis setenta años."},
+    {"titulo": ["PAN RECIÉN", "HORNEADO"], "fala": "Si te gusta el pan recién horneado en el desayuno, quédate un momento y mira esto."}
+  ],
+  "corpos": [
+    {"fala": "Cada receta trae los ingredientes en gramos y los pasos con fotos. Yo peso todo en la balanza, mezclo y al horno. Es tan claro que, aunque nunca hayas hecho pan, puedes seguirlo paso a paso con calma."},
+    {"fala": "No necesito pasar horas en la cocina. La preparación activa son quince a veinte minutos. Hay panes sin reposo y otros sin amasar. Mezclas, horneas y sigues con tu día. Tú eliges el que mejor se acomoda a tu rutina."},
+    {"fala": "¿No tienes horno? No hay problema. Hay panes de sartén, con avena, linaza o garbanzo, y hasta un pan de yuca sin huevo. Siempre hay una receta que se adapta a lo que tienes en tu cocina."},
+    {"fala": "Pan de zanahoria con girasol, de coco, de quinoa con nueces, focaccia de romero, pan pita y hasta pan para hot dog. Son cincuenta recetas distintas, para que tu desayuno nunca más sea el mismo de siempre."},
+    {"fala": "Te envío el recetario con las cincuenta recetas, la guía de utensilios y despensa, y las orientaciones de porciones para respetar tu plan alimentario. Todo en un PDF que recibes por WhatsApp, para tenerlo siempre a la mano."}
+  ],
+  "cta": {"fala": "Toca en enviar mensaje y te mando el recetario por WhatsApp."},
+  "cenas": {"excluir": []}
+}
