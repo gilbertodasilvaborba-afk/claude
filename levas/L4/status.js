@@ -1,0 +1,1 @@
+window.LEVA_STATUS = {"inicio": 1792361177.6000805, "fim": null, "etapa": "Escrevendo as copies", "leva": "L4", "produto": "", "ganchos": [], "corpos": 5, "videos": [], "log": []};
