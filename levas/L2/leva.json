@@ -1,0 +1,58 @@
+{
+  "leva": "L2",
+  "produto": "Panes para Diabéticos",
+  "cta_tela": "ENVÍA UN MENSAJE",
+  "legenda_estilo": "amarela",
+  "legenda_posicao": "meio",
+  "voz": {
+    "id": "ae823354-f9be-4aef-8543-f569644136b4"
+  },
+  "ganchos": [
+    {
+      "titulo": [
+        "PAN CASERO",
+        "PARA MI NIETA"
+      ],
+      "fala": "Mi nieta me pidió pan casero para el desayuno. Así lo hice."
+    },
+    {
+      "titulo": [
+        "EL ERROR DEL",
+        "PAN CASERO"
+      ],
+      "fala": "El error número uno del pan casero: no pesar. Yo lo cometí por años."
+    },
+    {
+      "titulo": [
+        "SIN HORNO",
+        "SIN AMASAR"
+      ],
+      "fala": "¿Pan casero sin horno y sin amasar? Sí se puede. Mira esto."
+    }
+  ],
+  "corpos": [
+    {
+      "fala": "Por eso este recetario trae todo en gramos, con fotos de cada paso. Pesas, mezclas, horneas, y sabes exactamente qué estás haciendo. Sin adivinar, sin tirar ingredientes, sin ese miedo a que el pan no salga. Yo lo sigo paso a paso."
+    },
+    {
+      "fala": "Y no necesitas pasar la mañana en la cocina. Son quince a veinte minutos de trabajo, y el horno hace el resto. Hay panes sin reposo, panes sin amasar y hasta panes de sartén, sin horno. Tú eliges según tu día."
+    },
+    {
+      "fala": "¿Nunca hiciste pan y te da miedo equivocarte? Yo también empecé así. Cada receta tiene siete pasos claros y una nota con lo que debes cuidar. Y la guía de despensa te explica con qué ingredientes trabajar y cómo cambiarlos con cuidado."
+    },
+    {
+      "fala": "Imagina tu semana: lunes, pan de zanahoria con girasol. Martes, pan de coco. Miércoles, focaccia de romero. Cincuenta recetas para que tu desayuno nunca más se repita, con panes de quinoa, de garbanzo, pita y hasta para hot dog."
+    },
+    {
+      "fala": "Te envío ahora el recetario por WhatsApp: cincuenta recetas, guía de utensilios y despensa, y orientaciones de porciones para respetar tu plan alimentario. Léelo con calma, haz tu primera receta esta semana y cuéntame cómo te va."
+    }
+  ],
+  "cta": {
+    "fala": "Toca el botón, escríbeme, y te envío el recetario ahora por WhatsApp."
+  },
+  "cenas": {
+    "excluir": []
+  },
+  "musica": "musicas/m_897.mp3",
+  "volume_musica": 0.12
+}
