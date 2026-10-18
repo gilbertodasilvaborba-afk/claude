@@ -51,7 +51,17 @@
     "fala": "Toca el botón, escríbeme, y te envío el recetario ahora por WhatsApp."
   },
   "cenas": {
-    "excluir": []
+    "excluir": [
+      6,
+      7,
+      8,
+      9,
+      18,
+      19,
+      21,
+      22,
+      27
+    ]
   },
   "musica": "musicas/m_897.mp3",
   "volume_musica": 0.12
