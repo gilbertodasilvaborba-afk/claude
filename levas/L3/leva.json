@@ -1,0 +1,68 @@
+{
+  "leva": "L3",
+  "produto": "Panes para Diabéticos",
+  "cta_tela": "ENVÍA UN MENSAJE",
+  "legenda_estilo": "amarela",
+  "legenda_posicao": "meio",
+  "voz": {
+    "id": "ae823354-f9be-4aef-8543-f569644136b4"
+  },
+  "musica": "musicas/m_897.mp3",
+  "volume_musica": 0.12,
+  "ganchos": [
+    {
+      "titulo": [
+        "PAN SIN GLUTEN",
+        "HECHO EN CASA"
+      ],
+      "fala": "Pan casero sin gluten, para quienes viven sin trigo. Mira lo que preparé hoy."
+    },
+    {
+      "titulo": [
+        "EL ERROR DEL",
+        "PAN SIN GLUTEN"
+      ],
+      "fala": "Pan sin gluten casero: el error número uno es no pesar. Yo lo cometí."
+    },
+    {
+      "titulo": [
+        "SIN GLUTEN",
+        "SIN HORNO"
+      ],
+      "fala": "Pan sin gluten, sin horno y sin amasar. Sí se puede. Mira esto."
+    }
+  ],
+  "corpos": [
+    {
+      "fala": "Cada receta trae todo en gramos, con fotos de cada paso, y harinas sin gluten como arroz, almendra y garbanzo. Pesas, mezclas, horneas, y sabes exactamente qué estás haciendo. Sin adivinar y sin tirar ingredientes. Yo lo sigo paso a paso."
+    },
+    {
+      "fala": "Y no necesitas pasar la mañana en la cocina. Son quince a veinte minutos de trabajo, y el horno hace el resto. Hay panes sin reposo, sin amasar y hasta de sartén, sin horno. Todos con harinas sin gluten. Tú eliges según tu día."
+    },
+    {
+      "fala": "Y para cocinar con tranquilidad, el recetario incluye una guía con seis cuidados contra el contacto cruzado, desde revisar etiquetas hasta usar avena certificada sin gluten. Cada receta lista sus ingredientes, para que verifiques todo antes de empezar."
+    },
+    {
+      "fala": "Imagina tu semana sin gluten: lunes, pan de zanahoria con girasol. Martes, pan de coco. Miércoles, focaccia de romero. Más de cuarenta recetas, con panes de quinoa, de garbanzo, pita y hasta para hot dog."
+    },
+    {
+      "fala": "Te envío ahora el recetario por WhatsApp: más de cuarenta recetas con harinas sin gluten, guía de utensilios y despensa, cuidados contra el contacto cruzado y orientaciones de porciones. Léelo con calma, haz tu primera receta esta semana y cuéntame cómo te va."
+    }
+  ],
+  "cta": {
+    "fala": "Toca el botón, escríbeme, y te envío el recetario ahora por WhatsApp."
+  },
+  "cenas": {
+    "excluir": [
+      6,
+      7,
+      8,
+      9,
+      18,
+      19,
+      21,
+      22,
+      27
+    ]
+  }
+}
