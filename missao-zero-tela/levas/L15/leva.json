@@ -1,0 +1,199 @@
+{
+ "leva": "L15",
+ "produto": "Missão Zero Tela",
+ "cta_tela": "TOQUE EM SAIBA MAIS",
+ "voz": {
+  "id": "edge:pt-BR-ThalitaMultilingualNeural",
+  "velocidade": 1.05
+ },
+ "legenda_estilo": "amarela",
+ "legenda_posicao": "meio",
+ "musica": "",
+ "ganchos": [
+  {
+   "titulo": [
+    "ELE ACORDA",
+    "PEDINDO O CELULAR?"
+   ],
+   "fala": "Seu filho acorda e a primeira coisa que pede é o celular? Isso tem solução.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Seu filho acorda e a primeira coisa que pede é o celular?",
+     "cena": [
+      89
+     ]
+    },
+    {
+     "texto": "Isso tem solução.",
+     "cena": [
+      86
+     ]
+    }
+   ]
+  }
+ ],
+ "corpos": [
+  {
+   "fala": "A saída mais simples é trocar a tela por uma aventura. A rotina aperta, e muitas vezes o desenho é o único jeito de você conseguir terminar o que precisa. Mas no fim do dia, mãezinha... não aperta o seu coração? Foi pensando em você que criamos o Missão Zero Tela. São cem missões em forma de historinha, em que o seu filho é o herói e brinca com o que já tem em casa. E você termina o dia sabendo que fez diferente.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "A saída mais simples é trocar a tela por uma aventura.",
+     "cena": [
+      85
+     ]
+    },
+    {
+     "texto": "A rotina aperta,",
+     "cena": [
+      79
+     ]
+    },
+    {
+     "texto": "e muitas vezes o desenho é o único jeito de você conseguir terminar o que precisa.",
+     "cena": [
+      87
+     ]
+    },
+    {
+     "texto": "Mas no fim do dia, mãezinha... não aperta o seu coração?",
+     "cena": [
+      88
+     ],
+     "marca": "pergunta"
+    },
+    {
+     "texto": "Foi pensando em você que criamos o Missão Zero Tela.",
+     "cena": [
+      66
+     ],
+     "marca": "virada"
+    },
+    {
+     "texto": "São cem missões em forma de historinha,",
+     "cena": [
+      67
+     ]
+    },
+    {
+     "texto": "em que o seu filho é o herói",
+     "cena": [
+      81
+     ]
+    },
+    {
+     "texto": "e brinca com o que já tem em casa.",
+     "cena": [
+      20
+     ]
+    },
+    {
+     "texto": "E você termina o dia",
+     "cena": [
+      32
+     ]
+    },
+    {
+     "texto": "sabendo que fez diferente.",
+     "cena": [
+      84
+     ]
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "fala": "Toque em saiba mais e comece hoje."
+ },
+ "cenas": {
+  "excluir": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   31,
+   32,
+   33,
+   34,
+   35,
+   37,
+   38,
+   39,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59,
+   60,
+   61,
+   62,
+   63,
+   64,
+   65,
+   66,
+   67,
+   68,
+   69,
+   70,
+   71,
+   72,
+   73,
+   74,
+   75,
+   76,
+   77,
+   78,
+   79,
+   80,
+   81,
+   82,
+   83,
+   84,
+   85,
+   86,
+   87,
+   88,
+   89
+  ]
+ }
+}
