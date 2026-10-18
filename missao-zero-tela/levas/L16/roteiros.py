@@ -1,0 +1,61 @@
+"""Roteiros da L16: 5 criativos novos no modelo do L12V1, só com cenas novas (Mixkit) e páginas do produto ainda não usadas."""
+import json
+V = [
+ dict(tecnica="A noite", titulo=["NOVE DA NOITE", "E ELE NO TABLET?"],
+  gancho=[("Nove da noite e seu filho ainda está grudado no tablet?", [4], "")],
+  corpo=[("Você pede pra desligar, e vem o choro.", [12], ""),
+         ("Aí você cede, porque o dia foi longo demais.", [49], ""),
+         ("Mas quando ele dorme, mãezinha... não bate aquela culpa?", [45], "pergunta"),
+         ("Foi por isso que criamos o Missão Zero Tela.", [58], "virada"),
+         ("Em vez da tela, uma historinha em que ele é o herói,", [61], ""),
+         ("e uma missão pra fazer junto com você.", [36], ""),
+         ("E a noite termina com abraço, não com briga.", [43], "")]),
+ dict(tecnica="O tempo", titulo=["TELA OU", "BRINCADEIRA?"],
+  gancho=[("Quanto tempo de tela seu filho teve hoje?", [1], ""), ("E quanto de brincadeira com você?", [29], "")],
+  corpo=[("A semana voa.", [48], ""), ("Entre trabalho, casa e cansaço,", [50], ""), ("o celular vira a babá mais fácil.", [2], ""),
+         ("E no domingo à noite, mãezinha... não fica a sensação de que faltou você?", [16], "pergunta"),
+         ("Foi pensando nisso que criamos o Missão Zero Tela.", [58], "virada"),
+         ("São cem missões pra fazer junto:", [60], ""),
+         ("desenhar,", [28], ""), ("montar,", [33], ""), ("construir com caixa de papelão.", [25], ""),
+         ("Poucos minutos pra começar, e a semana já fica diferente.", [41], "")]),
+ dict(tecnica="A crença errada", titulo=["TIRAR NÃO", "RESOLVE"],
+  gancho=[("Só tirar o tablet não resolve.", [3], ""), ("O que resolve é trocar.", [31], "")],
+  corpo=[("Quando você só tira, sobra um vazio,", [14], ""), ("e o vazio vira birra.", [12], ""),
+         ("A criança precisa de algo tão interessante quanto a tela.", [57], ""),
+         ("E depois de tanto não, mãezinha... você não fica com o coração apertado?", [18], "pergunta"),
+         ("Foi pra isso que criamos o Missão Zero Tela.", [58], "virada"),
+         ("Cada missão é uma historinha que vira brincadeira:", [62], ""),
+         ("pintar,", [30], ""), ("montar,", [32], ""), ("construir.", [26], ""),
+         ("Ele troca a tela por aventura,", [25], ""), ("e você troca a briga por risada.", [55], "")]),
+ dict(tecnica="O desejo", titulo=["IMAGINA ISSO", "SEM BRIGA"],
+  gancho=[("Imagina seu filho trocando o tablet", [5], ""), ("por uma brincadeira com você, sem briga.", [51], "")],
+  corpo=[("Hoje parece impossível, eu sei.", [47], ""), ("A tela prende,", [7], ""), ("ele reclama,", [15], ""),
+         ("e você já não tem energia.", [21], ""),
+         ("E quando ele chora, mãezinha... não dá vontade de desistir?", [18], "pergunta"),
+         ("Foi pensando em você que criamos o Missão Zero Tela.", [58], "virada"),
+         ("Cem missões em forma de historinha,", [63], ""),
+         ("com papel, giz,", [30], ""), ("blocos", [33], ""), ("e caixa.", [25], ""),
+         ("Ele vira o herói,", [31], ""), ("e você vira a parceira de aventura, não a mãe que só diz não.", [36], "")]),
+ dict(tecnica="Chamar o público", titulo=["MÃE QUE CHEGA", "CANSADA"],
+  gancho=[("Mãe que trabalha fora e chega cansada:", [47], ""), ("esse vídeo é pra você.", [49], "")],
+  corpo=[("Você abre a porta, e ele está no celular.", [2], ""),
+         ("Ainda tem o jantar, o banho, a casa.", [52], ""),
+         ("E na hora de dormir, mãezinha... não pesa aquela culpa?", [45], "pergunta"),
+         ("Foi pra você que criamos o Missão Zero Tela.", [58], "virada"),
+         ("Missões prontas e curtinhas pra fazer junto,", [59], ""),
+         ("até na cozinha,", [56], ""), ("com o que já tem em casa.", [26], ""),
+         ("E o pouco tempo que vocês têm vira o melhor momento do dia.", [53], "")]),
+]
+for v in V:
+    ns = [n for _, c, _ in v["gancho"] + v["corpo"] for n in c]
+    assert len(ns) == len(set(ns)), (v["tecnica"], ns)
+item = lambda tr: [{"texto": t, "cena": c, **({"marca": m} if m else {})} for t, c, m in tr]
+cfg = {"leva": "L16", "produto": "Missão Zero Tela", "cta_tela": "VEJA COMO FUNCIONA",
+       "voz": {"id": "edge:pt-BR-ThalitaMultilingualNeural", "velocidade": 1.05},
+       "legenda_estilo": "amarela", "legenda_posicao": "meio", "musica": "",
+       "ganchos": [{"titulo": v["titulo"], "fala": " ".join(t for t, *_ in v["gancho"]), "corte_max": 99, "roteiro": item(v["gancho"]), "tecnica": v["tecnica"]} for v in V],
+       "corpos": [{"fala": " ".join(t for t, *_ in v["corpo"]), "corte_max": 99, "roteiro": item(v["corpo"])} for v in V],
+       "cta": {"fala": "Toque em saiba mais e veja como funciona."},
+       "cenas": {"excluir": [n for n in range(1, 65) if n not in (8, 9, 34)]}}
+json.dump(cfg, open("L16/leva.json", "w"), ensure_ascii=False, indent=1)
+print("ok")
