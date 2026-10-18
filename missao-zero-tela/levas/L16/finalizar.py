@@ -44,12 +44,14 @@ for n in nomes:
     T = dura(trab / f"g{i}.wav") + w[indice(c["roteiro"], "virada", False)]["s"] - 0.08
     estilo = "piano"
     tens = trab / f"tensao{i}.wav"
-    subprocess.run(["python3", str(L.parent.parent / "src" / "tensao2.py"), str(tens), f"{T + 0.1:.2f}", estilo], check=True)
+    # tensão: "Shame" (Mixkit, licença livre), cortada no ponto da virada
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(L / "musicas" / "mk553.mp3"), "-af",
+                    f"atrim=0:{T:.2f},afade=t=in:d=0.4,afade=t=out:st={T - 0.35:.2f}:d=0.35", "-ar", "44100", "-ac", "2", str(tens)], check=True)
     voz = trab / f"{n}-sem-musica.mp4"
     shutil.copy(L / "videos" / f"{n}.mp4", voz)
     total = dura(voz)
     d = int(T * 1000)
-    fc = (f"[1:a]aresample=44100,aformat=channel_layouts=stereo,volume=0.45[t];"
+    fc = (f"[1:a]aresample=44100,aformat=channel_layouts=stereo,volume=0.32[t];"
           f"[2:a]aresample=44100,aformat=channel_layouts=stereo,atrim=9:{9 + total - T + 0.5:.2f},asetpts=PTS-STARTPTS,"
           f"afade=t=in:d=0.25,afade=t=out:st={max(0, total - T - 1.2):.2f}:d=1.2,volume=0.36,adelay={d}|{d}[h];"
           f"[0:a]aformat=channel_layouts=stereo[v];[v][t][h]amix=inputs=3:duration=first:normalize=0,alimiter=limit=0.95[a]")

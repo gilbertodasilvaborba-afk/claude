@@ -28,7 +28,7 @@ V = [
          ("pintar,", [30], ""), ("montar,", [32], ""), ("construir.", [26], ""),
          ("Ele troca a tela por aventura,", [25], ""), ("e você troca a briga por risada.", [55], "")]),
  dict(tecnica="O desejo", titulo=["IMAGINA ISSO", "SEM BRIGA"],
-  gancho=[("Imagina seu filho trocando o tablet", [5], ""), ("por uma brincadeira com você, sem briga.", [51], "")],
+  gancho=[("Imagina seu filho trocando o tablet", [5], ""), ("por uma brincadeira com você, sem briga.", [55], "")],
   corpo=[("Hoje parece impossível, eu sei.", [47], ""), ("A tela prende,", [7], ""), ("ele reclama,", [15], ""),
          ("e você já não tem energia.", [21], ""),
          ("E quando ele chora, mãezinha... não dá vontade de desistir?", [18], "pergunta"),
