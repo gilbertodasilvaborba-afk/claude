@@ -1,0 +1,88 @@
+{
+  "leva": "L4",
+  "produto": "Panes para Diabéticos",
+  "cta_tela": "ENVÍA UN MENSAJE",
+  "legenda_estilo": "amarela",
+  "legenda_posicao": "meio",
+  "voz": {
+    "id": "ae823354-f9be-4aef-8543-f569644136b4"
+  },
+  "musica": "musicas/m_897.mp3",
+  "volume_musica": 0.12,
+  "ganchos": [
+    {
+      "titulo": [
+        "SIN GLUTEN",
+        "EN TU COCINA"
+      ],
+      "fala": "Dejé de buscar pan sin gluten en la tienda. Ahora lo hago en mi cocina."
+    },
+    {
+      "titulo": [
+        "SIN GLUTEN",
+        "8 INGREDIENTES"
+      ],
+      "fala": "Pan de zanahoria sin gluten con solo ocho ingredientes. Mira cuáles."
+    },
+    {
+      "titulo": [
+        "SIN GLUTEN",
+        "A MIS 70 AÑOS"
+      ],
+      "fala": "A mis setenta años aprendí a hacer pan sin gluten. Tú también puedes."
+    }
+  ],
+  "corpos": [
+    {
+      "fala": "Te muestro mi receta favorita: pan de zanahoria con semillas de girasol. Son quince a veinte minutos de trabajo, con harina de arroz y de almendras, y sin reposo. Está en la página diez del recetario, con fotos de cada paso."
+    },
+    {
+      "fala": "No es solo pan de molde. Hay baguette crujiente, pan pita, focaccia de romero, panecillos suaves y pan para hot dog. Todo con harinas sin gluten como arroz, almendra y garbanzo. Así la mesa de la familia no se siente distinta."
+    },
+    {
+      "fala": "Hacerlo en casa te da el control: tú ves cada ingrediente, tú pesas cada gramo y tú decides qué entra. Cada receta lista todo lo que lleva, y como siempre, revisa las etiquetas antes de empezar. Sin sorpresas en tu mesa."
+    },
+    {
+      "fala": "¿Tu pan se desarma o no crece? Para eso el recetario trae una guía de qué hacer cuando algo no sale como esperabas: la causa más probable y un ajuste a la vez. Así aprendes con cada receta, sin rendirte."
+    },
+    {
+      "fala": "Escríbeme y te envío el recetario por WhatsApp: más de cuarenta recetas con harinas sin gluten, guía de utensilios, cuidados contra el contacto cruzado y una guía para guardar porciones. Pruébalo, haz una receta y cuéntame cuál te gustó más."
+    }
+  ],
+  "cta": {
+    "fala": "Toca el botón y escríbeme: tu recetario de panes sin gluten llega por WhatsApp."
+  },
+  "cenas": {
+    "excluir": [
+      6,
+      7,
+      8,
+      9,
+      18,
+      19,
+      21,
+      22,
+      27,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49
+    ]
+  }
+}
