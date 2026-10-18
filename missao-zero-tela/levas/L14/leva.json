@@ -1,0 +1,255 @@
+{
+ "leva": "L14",
+ "produto": "Missão Zero Tela",
+ "cta_tela": "TOQUE EM SAIBA MAIS",
+ "voz": {
+  "id": "edge:pt-BR-ThalitaMultilingualNeural",
+  "velocidade": 1.05
+ },
+ "legenda_estilo": "amarela",
+ "legenda_posicao": "meio",
+ "musica": "",
+ "ganchos": [
+  {
+   "titulo": [
+    "CHORA QUANDO",
+    "TIRA O CELULAR?"
+   ],
+   "fala": "Ele chora quando você tira o celular? Veja como tirar seu filho das telas.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Ele chora quando você tira o celular?",
+     "cena": [
+      4
+     ]
+    },
+    {
+     "texto": "Veja como tirar seu filho das telas.",
+     "cena": [
+      2
+     ]
+    }
+   ]
+  },
+  {
+   "titulo": [
+    "NA MARRA",
+    "NÃO FUNCIONA"
+   ],
+   "fala": "Tirar o celular na marra não funciona. Veja como tirar seu filho das telas.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Tirar o celular na marra não funciona.",
+     "cena": [
+      8
+     ]
+    },
+    {
+     "texto": "Veja como tirar seu filho das telas.",
+     "cena": [
+      32
+     ]
+    }
+   ]
+  },
+  {
+   "titulo": [
+    "MÃE DE CRIANÇA",
+    "DE 3 A 8 ANOS"
+   ],
+   "fala": "Mãe de criança de três a oito anos: veja como tirar seu filho das telas.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Mãe de criança de três a oito anos:",
+     "cena": [
+      1
+     ]
+    },
+    {
+     "texto": "veja como tirar seu filho das telas.",
+     "cena": [
+      30
+     ]
+    }
+   ]
+  },
+  {
+   "titulo": [
+    "QUANTAS HORAS",
+    "DE TELA HOJE?"
+   ],
+   "fala": "Seu filho passou horas na tela hoje? Veja como tirar ele das telas sem briga.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Seu filho passou horas na tela hoje?",
+     "cena": [
+      1
+     ]
+    },
+    {
+     "texto": "Veja como tirar ele das telas sem briga.",
+     "cena": [
+      10
+     ]
+    }
+   ]
+  },
+  {
+   "titulo": [
+    "E SE ELE PEDISSE",
+    "PRA BRINCAR?"
+   ],
+   "fala": "Imagina seu filho pedindo pra brincar em vez do celular. Veja como chegar lá.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Imagina seu filho pedindo pra brincar em vez do celular.",
+     "cena": [
+      23
+     ]
+    },
+    {
+     "texto": "Veja como chegar lá.",
+     "cena": [
+      33
+     ]
+    }
+   ]
+  }
+ ],
+ "corpos": [
+  {
+   "fala": "O jeito mais fácil de fazer isso é transformar tudo em uma brincadeira. Por mais que hoje você chegue em casa cansada, e o celular ou a TV acabe sendo o seu melhor amigo pra entreter a criança. E depois, mãezinha... você não fica com aquela culpa? É por isso que criamos o Missão Zero Tela. São diversas atividades pro seu filho aprender se divertindo e evoluir com aprendizado de verdade, sem estimular o vício em telas. E você, mãe, sem aquela culpa no fim do dia.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "O jeito mais fácil de fazer isso é transformar tudo em uma brincadeira.",
+     "cena": [
+      28,
+      29
+     ]
+    },
+    {
+     "texto": "Por mais que hoje você chegue em casa cansada,",
+     "cena": [
+      3
+     ]
+    },
+    {
+     "texto": "e o celular ou a TV acabe sendo o seu melhor amigo pra entreter a criança.",
+     "cena": [
+      6,
+      9
+     ]
+    },
+    {
+     "texto": "E depois, mãezinha... você não fica com aquela culpa?",
+     "cena": [
+      61
+     ]
+    },
+    {
+     "texto": "É por isso que criamos o Missão Zero Tela.",
+     "cena": [
+      34
+     ]
+    },
+    {
+     "texto": "São diversas atividades pro seu filho aprender se divertindo",
+     "cena": [
+      11,
+      15
+     ]
+    },
+    {
+     "texto": "e evoluir com aprendizado de verdade, sem estimular o vício em telas.",
+     "cena": [
+      21,
+      17
+     ]
+    },
+    {
+     "texto": "E você, mãe, sem aquela culpa no fim do dia.",
+     "cena": [
+      14,
+      22
+     ]
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "fala": "Clique em saiba mais e aproveite."
+ },
+ "cenas": {
+  "excluir": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59,
+   60,
+   61,
+   62,
+   63,
+   64,
+   65,
+   66
+  ]
+ }
+}
