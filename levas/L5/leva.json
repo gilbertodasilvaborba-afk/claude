@@ -1,0 +1,101 @@
+{
+  "leva": "L5",
+  "produto": "Panes para Diabéticos",
+  "cta_tela": "ENVÍA UN MENSAJE",
+  "legenda_estilo": "amarela",
+  "legenda_posicao": "meio",
+  "voz": {
+    "id": "ae823354-f9be-4aef-8543-f569644136b4"
+  },
+  "musica": "musicas/m_897.mp3",
+  "volume_musica": 0.12,
+  "ganchos": [
+    {
+      "titulo": [
+        "SIN HORNO",
+        "SIN GLUTEN"
+      ],
+      "fala": "Pan sin gluten sin horno y sin amasar, en menos de veinte minutos. Mira."
+    },
+    {
+      "titulo": [
+        "PAN SIN GLUTEN",
+        "ESTE ERROR"
+      ],
+      "fala": "El error que más arruina el pan sin gluten: no pesar. Yo lo cometí."
+    },
+    {
+      "titulo": [
+        "SIN GLUTEN",
+        "SIN AMASAR"
+      ],
+      "fala": "A mis setenta años descubrí esto: pan sin gluten que no necesita amasar."
+    }
+  ],
+  "corpos": [
+    {
+      "fala": "Mezclas, horneas y listo. Quince a veinte minutos de trabajo. Escríbeme ahora y te envío el recetario por WhatsApp."
+    },
+    {
+      "fala": "Más de cuarenta recetas: pan de zanahoria, de coco, focaccia, pita y hasta pan para hot dog. Todas con harinas sin gluten. Escríbeme y elige tu primera receta."
+    },
+    {
+      "fala": "Cada receta trae gramos exactos y fotos de cada paso, y una guía por si algo no sale como esperabas. Escríbeme y empieza hoy."
+    },
+    {
+      "fala": "Te envío el recetario primero por WhatsApp y lo lees con calma, sin presión. Más de cuarenta recetas sin gluten, con guía de contacto cruzado. Escríbeme ahora."
+    },
+    {
+      "fala": "¿Quieres saber cuál es mi receta favorita? Es la de zanahoria con girasol, página diez. Escríbeme la palabra receta y te la mando con todo el recetario."
+    }
+  ],
+  "cta": {
+    "fala": "Toca el botón y escríbeme ahora."
+  },
+  "cenas": {
+    "excluir": [
+      6,
+      7,
+      8,
+      9,
+      18,
+      19,
+      21,
+      22,
+      27,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49
+    ],
+    "primeiras": [
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40
+    ]
+  }
+}

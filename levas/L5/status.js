@@ -1,1 +1,1 @@
-window.LEVA_STATUS = {"inicio": 1792414634.1912248, "fim": null, "etapa": "Escrevendo as copies", "leva": "L5", "produto": "", "ganchos": [], "corpos": 5, "videos": [], "log": []};
+window.LEVA_STATUS = {"inicio": 1792414634.1912248, "fim": null, "etapa": "Gerando as vozes", "leva": "L5", "produto": "Panes para Diabéticos", "ganchos": ["SIN HORNO SIN GLUTEN", "PAN SIN GLUTEN ESTE ERROR", "SIN GLUTEN SIN AMASAR"], "corpos": 5, "videos": [], "log": ["Gerando 9 narrações na Cartesia"]};
