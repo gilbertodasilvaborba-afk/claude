@@ -38,10 +38,10 @@
 
 ## Corpos
 
-- **C1:** Zanahoria, huevos, aceite, harina de arroz, harina de almendras, semillas de girasol, polvo de hornear y sal. Mezclas, horneas, y listo. Está en un recetario de casi cincuenta recetas sin gluten, con fotos de cada paso. Tiene un valor, pero primero lo recibes y tú decides. Escríbeme la palabra receta.
-- **C2:** Muchas recetas usan tazas y cucharadas. Con harinas sin gluten, unos gramos de más cambian toda la masa. Por eso mi recetario de casi cincuenta recetas va en gramos exactos, con fotos de cada paso. Tiene un valor, pero primero lo recibes y tú decides. Escríbeme.
-- **C3:** Me escribes por WhatsApp y te envío primero el recetario completo, casi cincuenta recetas. Lo lees con calma, haces una receta, y solo si te gusta decides si quieres apoyar. Tiene un valor, pero sin pagos por adelantado.
-- **C4:** Imagina tu semana: lunes, pan de zanahoria con girasol. Martes, pan de coco. Miércoles, focaccia de romero. Casi cincuenta recetas sin gluten, con panes de quinoa, de garbanzo, pita y hasta para hot dog. Tiene un valor, pero primero lo recibes y tú decides. Escríbeme ahora.
-- **C5:** Se llama pan de sartén. Harina de avena certificada sin gluten, un huevo y yogur: mezclas y a la sartén. Y hay cinco versiones en un recetario de casi cincuenta recetas. Tiene un valor, pero primero lo recibes y tú decides. Escríbeme la palabra sartén.
+- **C1:** Zanahoria, huevos, aceite, harinas de arroz y de almendras, semillas de girasol, polvo de hornear y sal. Mezclas, horneas y listo. Una de casi cincuenta recetas. El recetario tiene un valor, pero primero lo recibes y tú decides. Escríbeme: receta.
+- **C2:** Muchas recetas usan tazas y cucharadas. Con harinas sin gluten, unos gramos de más cambian la masa. Mi recetario va en gramos exactos. Tiene un valor, pero primero lo recibes y tú decides. Escríbeme.
+- **C3:** Me escribes por WhatsApp y te envío primero el recetario, casi cincuenta recetas. Lo lees con calma, haces una receta, y solo si te gusta decides si quieres apoyar. Tiene un valor, pero sin pagos por adelantado.
+- **C4:** Imagina tu semana: lunes, pan de zanahoria con girasol. Martes, de coco. Miércoles, focaccia de romero. Casi cincuenta recetas sin gluten, con pita y hasta pan para hot dog. Tiene un valor, pero primero lo recibes y tú decides. Escríbeme.
+- **C5:** Se llama pan de sartén: harina de avena certificada sin gluten, un huevo y yogur. Mezclas y a la sartén. Hay cinco versiones en un recetario de casi cincuenta recetas. Tiene un valor, pero primero lo recibes y tú decides. Escríbeme: sartén.
 
-**CTA:** Toca el botón y escríbeme. Primero lo recibes, tú decides después.
+**CTA:** Toca el botón y escríbeme. Primero lo recibes, tú decides.
