@@ -1,0 +1,1 @@
+window.LEVA_STATUS = {"inicio": 1792445651.2732527, "fim": null, "etapa": "Gerando as vozes", "leva": "L6", "produto": "Panes para Diabéticos", "ganchos": ["SIN GLUTEN 8 INGREDIENTES", "NO ES TU CULPA PAN SIN GLUTEN", "RECÍBELO PRIMERO PAN SIN GLUTEN", "PAN SIN GLUTEN PARA MI NIETA", "SIN HORNO SIN GLUTEN"], "corpos": 5, "videos": [], "log": ["Gerando 11 narrações na Cartesia"]};
