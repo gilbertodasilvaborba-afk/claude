@@ -38,10 +38,10 @@
 
 ## Corpos
 
-- **C1:** Zanahoria, huevos, aceite, harina de arroz, harina de almendras, semillas de girasol, polvo de hornear y sal. Mezclas, horneas, y listo. Está en el recetario, con fotos de cada paso. Escríbeme la palabra receta y te lo envío.
-- **C2:** Muchas recetas usan tazas y cucharadas. Con harinas sin gluten, unos gramos de más cambian toda la masa. Por eso aquí todo va en gramos exactos, con fotos de cada paso. Escríbeme y te envío el recetario primero.
-- **C3:** Me escribes por WhatsApp y te envío primero el recetario completo, más de cuarenta recetas. Lo lees con calma, haces una receta, y solo si te gusta decides si quieres apoyar. Sin pagos por adelantado.
-- **C4:** Imagina tu semana: lunes, pan de zanahoria con girasol. Martes, pan de coco. Miércoles, focaccia de romero. Más de cuarenta recetas sin gluten, con panes de quinoa, de garbanzo, pita y hasta para hot dog. Escríbeme ahora y te lo envío.
-- **C5:** Se llama pan de sartén. Harina de avena certificada sin gluten, un huevo y yogur: mezclas y a la sartén. El recetario trae cinco versiones. Escríbeme la palabra sartén y te lo envío por WhatsApp.
+- **C1:** Zanahoria, huevos, aceite, harina de arroz, harina de almendras, semillas de girasol, polvo de hornear y sal. Mezclas, horneas, y listo. Está en un recetario de casi cincuenta recetas sin gluten, con fotos de cada paso. Tiene un valor, pero primero lo recibes y tú decides. Escríbeme la palabra receta.
+- **C2:** Muchas recetas usan tazas y cucharadas. Con harinas sin gluten, unos gramos de más cambian toda la masa. Por eso mi recetario de casi cincuenta recetas va en gramos exactos, con fotos de cada paso. Tiene un valor, pero primero lo recibes y tú decides. Escríbeme.
+- **C3:** Me escribes por WhatsApp y te envío primero el recetario completo, casi cincuenta recetas. Lo lees con calma, haces una receta, y solo si te gusta decides si quieres apoyar. Tiene un valor, pero sin pagos por adelantado.
+- **C4:** Imagina tu semana: lunes, pan de zanahoria con girasol. Martes, pan de coco. Miércoles, focaccia de romero. Casi cincuenta recetas sin gluten, con panes de quinoa, de garbanzo, pita y hasta para hot dog. Tiene un valor, pero primero lo recibes y tú decides. Escríbeme ahora.
+- **C5:** Se llama pan de sartén. Harina de avena certificada sin gluten, un huevo y yogur: mezclas y a la sartén. Y hay cinco versiones en un recetario de casi cincuenta recetas. Tiene un valor, pero primero lo recibes y tú decides. Escríbeme la palabra sartén.
 
-**CTA:** Toca el botón y escríbeme ahora.
+**CTA:** Toca el botón y escríbeme. Primero lo recibes, tú decides después.
