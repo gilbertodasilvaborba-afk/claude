@@ -1,0 +1,116 @@
+{
+  "leva": "L6",
+  "produto": "Panes para Diabéticos",
+  "cta_tela": "ENVÍA UN MENSAJE",
+  "legenda_estilo": "amarela",
+  "legenda_posicao": "meio",
+  "voz": {
+    "id": "ae823354-f9be-4aef-8543-f569644136b4"
+  },
+  "musica": "musicas/m_897.mp3",
+  "volume_musica": 0.12,
+  "ganchos": [
+    {
+      "titulo": [
+        "SIN GLUTEN",
+        "8 INGREDIENTES"
+      ],
+      "fala": "Hay un pan sin gluten que se hace con ocho ingredientes y sin amasar. Mira cuál."
+    },
+    {
+      "titulo": [
+        "NO ES TU CULPA",
+        "PAN SIN GLUTEN"
+      ],
+      "fala": "No es tu culpa que el pan sin gluten te salga mal. Es esto."
+    },
+    {
+      "titulo": [
+        "RECÍBELO PRIMERO",
+        "PAN SIN GLUTEN"
+      ],
+      "fala": "Antes de pagar nada, recibe el recetario de pan sin gluten."
+    },
+    {
+      "titulo": [
+        "PAN SIN GLUTEN",
+        "PARA MI NIETA"
+      ],
+      "fala": "Mi nieta me pidió pan casero sin gluten para el desayuno. Así lo hice."
+    },
+    {
+      "titulo": [
+        "SIN HORNO",
+        "SIN GLUTEN"
+      ],
+      "fala": "Pan sin gluten sin horno y sin amasar, en menos de veinte minutos. Mira."
+    }
+  ],
+  "corpos": [
+    {
+      "fala": "Zanahoria, huevos, aceite, harinas de arroz y de almendras, semillas de girasol, polvo de hornear y sal. Mezclas, horneas y listo. Una de casi cincuenta recetas. El recetario tiene un valor, pero primero lo recibes y tú decides. Escríbeme: receta."
+    },
+    {
+      "fala": "Muchas recetas usan tazas y cucharadas. Con harinas sin gluten, unos gramos de más cambian la masa. Mi recetario va en gramos exactos. Tiene un valor, pero primero lo recibes y tú decides. Escríbeme."
+    },
+    {
+      "fala": "Me escribes por WhatsApp y te envío primero el recetario, casi cincuenta recetas. Lo lees con calma, haces una receta, y solo si te gusta decides si quieres apoyar. Tiene un valor, pero sin pagos por adelantado."
+    },
+    {
+      "fala": "Imagina tu semana: lunes, pan de zanahoria con girasol. Martes, de coco. Miércoles, focaccia de romero. Casi cincuenta recetas sin gluten, con pita y hasta pan para hot dog. Tiene un valor, pero primero lo recibes y tú decides. Escríbeme."
+    },
+    {
+      "fala": "Se llama pan de sartén: harina de avena certificada sin gluten, un huevo y yogur. Mezclas y a la sartén. Hay cinco versiones en un recetario de casi cincuenta recetas. Tiene un valor, pero primero lo recibes y tú decides. Escríbeme: sartén."
+    }
+  ],
+  "cta": {
+    "fala": "Toca el botón y escríbeme. Primero lo recibes, tú decides."
+  },
+  "cenas": {
+    "excluir": [
+      6,
+      7,
+      8,
+      9,
+      18,
+      19,
+      21,
+      22,
+      27,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49
+    ],
+    "primeiras": [
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40
+    ]
+  }
+}
