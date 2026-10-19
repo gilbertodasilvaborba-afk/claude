@@ -1,0 +1,102 @@
+{
+  "leva": "L8",
+  "produto": "Panes para Diabéticos",
+  "cta_tela": "ENVÍA UN MENSAJE",
+  "legenda_estilo": "amarela",
+  "legenda_posicao": "meio",
+  "voz": {
+    "id": "ae823354-f9be-4aef-8543-f569644136b4"
+  },
+  "musica": "musicas/m_897.mp3",
+  "volume_musica": 0.12,
+  "ganchos": [
+    {
+      "titulo": [
+        "MI NIETA QUISO",
+        "PAN SIN GLUTEN"
+      ],
+      "fala": "Mi nieta quiso probar pan sin gluten y yo no sabía cómo. Así lo resolví."
+    },
+    {
+      "titulo": [
+        "PAN SIN GLUTEN",
+        "EN FAMILIA"
+      ],
+      "fala": "Este domingo hay pan sin gluten en la mesa de mi familia. Te muestro cómo."
+    },
+    {
+      "titulo": [
+        "SIN HORNO",
+        "SIN GLUTEN"
+      ],
+      "fala": "Pan sin gluten sin horno y sin amasar, en menos de veinte minutos. Mira."
+    }
+  ],
+  "corpos": [
+    {
+      "fala": "Imagina tu semana: lunes, pan de zanahoria con girasol. Martes, de coco. Miércoles, focaccia de romero. ¿Cuál harías primero? Escríbeme y te cuento cómo conseguir el recetario."
+    },
+    {
+      "fala": "Hay pan pita, baguette, panecillos suaves y hasta pan para hot dog. Todo con harinas sin gluten, en casi cincuenta recetas. ¿Cuál te gustaría probar primero? Escríbeme y te cuento cómo conseguirlo."
+    },
+    {
+      "fala": "Zanahoria, huevos, aceite, harinas de arroz y de almendras, semillas de girasol, polvo de hornear y sal. Ocho ingredientes y listo. Escríbeme la palabra receta y te cuento cómo conseguir el recetario."
+    },
+    {
+      "fala": "Son casi cincuenta recetas con gramos exactos, fotos de cada paso y una guía de cuidados contra el contacto cruzado. Escríbeme y te muestro cómo es por dentro, sin compromiso."
+    },
+    {
+      "fala": "Se llama pan de sartén: harina de avena certificada sin gluten, un huevo y yogur. Mezclas y a la sartén. Hay cinco versiones. Escríbeme la palabra sartén y te cuento cómo conseguirlo."
+    }
+  ],
+  "cta": {
+    "fala": "Toca el botón y escríbeme, te cuento todo por WhatsApp."
+  },
+  "cenas": {
+    "excluir": [
+      6,
+      7,
+      8,
+      9,
+      18,
+      19,
+      21,
+      22,
+      27,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49
+    ],
+    "primeiras": [
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40
+    ]
+  }
+}
