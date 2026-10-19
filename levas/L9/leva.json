@@ -1,5 +1,5 @@
 {
-  "leva": "L8",
+  "leva": "L9",
   "produto": "Panes para Diabéticos",
   "cta_tela": "ENVÍA UN MENSAJE",
   "legenda_estilo": "amarela",
@@ -12,41 +12,55 @@
   "ganchos": [
     {
       "titulo": [
-        "MI NIETA QUISO",
-        "PAN SIN GLUTEN"
+        "SIN GLUTEN",
+        "NO ES ADIÓS"
       ],
-      "fala": "Mi nieta quiso probar pan sin gluten y yo no sabía cómo. Así lo resolví."
+      "fala": "Vivir sin gluten no significa decir adiós al pan."
     },
     {
       "titulo": [
-        "PAN SIN GLUTEN",
-        "EN FAMILIA"
-      ],
-      "fala": "Este domingo hay pan sin gluten en la mesa de mi familia. Te muestro cómo."
-    },
-    {
-      "titulo": [
-        "SIN HORNO",
+        "BAGUETTE",
         "SIN GLUTEN"
       ],
-      "fala": "Pan sin gluten sin horno y sin amasar, en menos de veinte minutos. Mira."
+      "fala": "El olor del baguette recién horneado, ahora también sin gluten."
+    },
+    {
+      "titulo": [
+        "FOCACCIA",
+        "SIN GLUTEN"
+      ],
+      "fala": "¿Focaccia sin gluten? Sí, y se hace con harina de arroz."
+    },
+    {
+      "titulo": [
+        "SIN RENUNCIAR",
+        "AL PAN"
+      ],
+      "fala": "Nadie debería renunciar al pan que ama. Yo encontré cómo."
+    },
+    {
+      "titulo": [
+        "UN PAN",
+        "PARA TODOS"
+      ],
+      "fala": "Un mismo pan para todos en la mesa, también para quien evita el gluten."
     }
   ],
   "corpos": [
     {
-      "fala": "Imagina tu semana: lunes, pan de zanahoria con girasol. Martes, de coco. Miércoles, focaccia de romero. ¿Cuál harías primero? Escríbeme y te cuento cómo conseguir el recetario."
+      "fala": "Baguette, focaccia y pan pita: los panes que todos amamos, en versión sin gluten, hechos en tu cocina. No hay que dejar atrás los panes que nos encantan. ¿Cuál harías primero? Escríbeme y te cuento cómo conseguir el recetario."
     },
     {
-      "fala": "Hay pan pita, baguette, panecillos suaves y hasta pan para hot dog. Todo con harinas sin gluten, en casi cincuenta recetas. ¿Cuál te gustaría probar primero? Escríbeme y te cuento cómo conseguirlo."
+      "fala": "Con harina de arroz y de almendras, en gramos exactos y con fotos de cada paso. Y no solo baguette: también focaccia de romero y pan para hot dog. Escríbeme la palabra baguette y te cuento cómo conseguir el recetario."
     },
     {
-      "fala": "Zanahoria, huevos, aceite, harinas de arroz y de almendras, semillas de girasol, polvo de hornear y sal. Ocho ingredientes y listo. Escríbeme la palabra receta y te cuento cómo conseguir el recetario."
+      "fala": "Focaccia de romero, pan pita y pan para hot dog: tres clásicos de siempre, con harinas sin gluten. La focaccia, además, va sin huevo. ¿Cuál harías primero? Escríbeme y te cuento cómo conseguir el recetario."
     },
     {
-      "fala": "Son casi cincuenta recetas con gramos exactos, fotos de cada paso y una guía de cuidados contra el contacto cruzado. Escríbeme y te muestro cómo es por dentro, sin compromiso."
+      "fala": "Hice baguette, focaccia y pan pita con harinas sin gluten, y la mesa de la familia volvió a tener pan para todos. Cada receta va en gramos exactos, con fotos de cada paso. Escríbeme y te cuento cómo conseguir el recetario."
     },
     {
-      "fala": "Se llama pan de sartén: harina de avena certificada sin gluten, un huevo y yogur. Mezclas y a la sartén. Hay cinco versiones. Escríbeme la palabra sartén y te cuento cómo conseguirlo."
+      "fala": "Pan para hot dog, baguette y focaccia, hechos con harinas sin gluten para que nadie en casa se quede sin su pan favorito. ¿Cuál preparas el domingo? Escríbeme la palabra pan y te cuento cómo conseguir el recetario."
     }
   ],
   "cta": {
@@ -86,17 +100,12 @@
       49
     ],
     "primeiras": [
-      30,
-      31,
-      32,
-      33,
-      34,
-      35,
-      36,
-      37,
-      38,
-      39,
-      40
-    ]
+      50,
+      50,
+      51,
+      52,
+      53
+    ],
+    "primeiras_embaralhar": false
   }
 }
