@@ -48,3 +48,14 @@ Formato vertical para Meta (Stories/Reels/Feed 9:16). Mantém a identidade do fo
   (a imagem enviada está com baixa resolução). Incluir se a GSI oferecer.
 - Os nomes dos cursos foram lidos de uma imagem borrada: **conferir cada um com o catálogo oficial da GSI** antes de rodar anúncio.
 - O logo é uma recriação simples; trocar pelo arquivo oficial. Para Meta, manter a nota de rodapé (*) com a fonte.
+
+---
+
+# Versão 2 (paleta oficial verde GSI + pessoas + lista de 12 cursos)
+`png/v2-feed-4x5.png` (1080x1350) e `png/v2-stories-9x16.png` (1080x1920). Fonte: `html/v2-*.html`.
+- Paleta e logo vêm da referência da GSI (fundo #0B4E2D, círculos #18593B, logo branco extraído para `assets/logo-gsi-branco.png`).
+- Fotos de pessoas: Unsplash (Unsplash License, uso comercial permitido), em `assets/fotos/`. IDs: solda 1455165814004,
+  administração 1590650213165, segurança 1622612023350, mecânica 1625047509248, eletrotécnica 1758101755915,
+  laboratório 1766297248084, logística 1781559818983, redes 1783419538460.
+- Algumas fotos mostram o profissional de costas ou só as mãos (segurança, solda, eletro). Trocar por fotos com rosto se preferir.
+- A v1 (`meta-*.png`, azul/âmbar) foi descartada por fugir da paleta.
