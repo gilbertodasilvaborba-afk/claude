@@ -2,6 +2,6 @@
   "name": "missao-zero-tela-entregavel",
   "private": true,
   "type": "module",
-  "scripts": { "build": "node src/build.mjs" },
+  "scripts": { "build": "node src/build.mjs", "build:es": "node src/build-es.mjs" },
   "dependencies": { "playwright": "^1.56.1" }
 }
