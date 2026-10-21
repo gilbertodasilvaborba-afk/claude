@@ -1,0 +1,171 @@
+{
+ "leva": "L17",
+ "produto": "Misión Cero Pantallas",
+ "cta_tela": "TOCA EN MÁS INFO",
+ "voz": {
+  "id": "edge:es-MX-DaliaNeural",
+  "velocidade": 1.0
+ },
+ "legenda_estilo": "amarela",
+ "legenda_posicao": "meio",
+ "musica": "",
+ "ganchos": [
+  {
+   "titulo": [
+    "¿CÓMO SACARLO",
+    "DE LAS PANTALLAS?"
+   ],
+   "fala": "¿Quieres saber cómo sacar a tu hijo de las pantallas y evitar los problemas que el exceso de pantallas puede traer en el futuro?",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "¿Quieres saber cómo sacar a tu hijo de las pantallas",
+     "cena": [
+      1
+     ]
+    },
+    {
+     "texto": "y evitar los problemas que el exceso de pantallas puede traer en el futuro?",
+     "cena": [
+      7,
+      4
+     ]
+    }
+   ]
+  }
+ ],
+ "corpos": [
+  {
+   "fala": "La forma más fácil de hacerlo es convertir todo en un juego. Aunque hoy llegues a casa cansada, y el celular o la tele terminen siendo tu mejor aliado para entretener al niño. Y después, mamá... ¿no te queda esa culpa? Por eso creamos Misión Cero Pantallas. Son muchas actividades para que tu hijo aprenda divirtiéndose y crezca con aprendizaje de verdad, sin alimentar la adicción a las pantallas. Y tú, mamá, sin esa culpa al final del día.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "La forma más fácil de hacerlo es convertir todo en un juego.",
+     "cena": [
+      28,
+      29
+     ]
+    },
+    {
+     "texto": "Aunque hoy llegues a casa cansada,",
+     "cena": [
+      3
+     ]
+    },
+    {
+     "texto": "y el celular o la tele terminen siendo tu mejor aliado para entretener al niño.",
+     "cena": [
+      6,
+      9
+     ]
+    },
+    {
+     "texto": "Y después, mamá... ¿no te queda esa culpa?",
+     "cena": [
+      61
+     ],
+     "marca": "pergunta"
+    },
+    {
+     "texto": "Por eso creamos Misión Cero Pantallas.",
+     "cena": [
+      67
+     ],
+     "marca": "virada"
+    },
+    {
+     "texto": "Son muchas actividades para que tu hijo aprenda divirtiéndose",
+     "cena": [
+      11,
+      15
+     ]
+    },
+    {
+     "texto": "y crezca con aprendizaje de verdad, sin alimentar la adicción a las pantallas.",
+     "cena": [
+      21,
+      17
+     ]
+    },
+    {
+     "texto": "Y tú, mamá, sin esa culpa al final del día.",
+     "cena": [
+      14,
+      22
+     ]
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "fala": "Toca en más información y aprovecha."
+ },
+ "cenas": {
+  "excluir": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59,
+   60,
+   61,
+   62,
+   63,
+   64,
+   65,
+   66,
+   67
+  ]
+ }
+}

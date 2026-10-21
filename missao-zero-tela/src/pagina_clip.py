@@ -42,7 +42,7 @@ else:
                f"[{ultimo}][p{k}]overlay={x}:{620 + dy}[o{k}];")
         ultimo = f"o{k}"
     texto = (titulo or "").replace(":", "\\:")
-    fc += (f"[{ultimo}]drawtext=fontfile={RAIZ / 'fonts' / 'Baloo2-latin.woff2'}:text='{texto}':fontsize=125:fontcolor=#1E2A4A:borderw=3:bordercolor=#1E2A4A:"
+    fc += (f"[{ultimo}]drawtext=fontfile={RAIZ / 'fonts' / 'Baloo2-latin.woff2'}:text='{texto}':fontsize={min(125, int(125 * 16 / max(16, len(titulo or ''))))}:fontcolor=#1E2A4A:borderw=3:bordercolor=#1E2A4A:"
            f"x=(w-tw)/2:y=330,scale=2160:3840,zoompan=z='1+0.08*on/{quadros}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={quadros}:s=1080x1920:fps=30")
 subprocess.run(["ffmpeg", "-v", "error", "-y", *entradas, "-filter_complex", fc, "-frames:v", str(quadros),
                 "-c:v", "libx264", "-crf", "20", "-pix_fmt", "yuv420p", "-an", saida], check=True)
