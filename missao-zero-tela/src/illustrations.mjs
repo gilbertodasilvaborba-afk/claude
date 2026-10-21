@@ -42,11 +42,11 @@ export const art = {
 };
 
 // Carta de missão (igual às da página, em escala)
-export function missionCard({ num, emoji, title, tags = [], artSvg, bg = C.sky, w = 340, rot = 0, x, y, z = 1 }) {
+export function missionCard({ num, emoji, title, tags = [], artSvg, bg = C.sky, w = 340, rot = 0, x, y, z = 1, label = 'Missão' }) {
   const pos = x !== undefined ? `position:absolute;left:${x}px;top:${y}px;z-index:${z};` : '';
   return `<div style="${pos}width:${w}px;transform:rotate(${rot}deg);background:#fff;color:${C.ink};border:4px solid ${C.ink};border-radius:26px;padding:${w * 0.06}px;box-shadow:8px 10px 0 rgba(30,42,74,.18)">
     <div style="display:flex;justify-content:space-between;align-items:center;font-weight:900;font-size:${w * 0.055}px">
-      <span style="background:${C.ink};color:#fff;border-radius:999px;padding:3px 14px">Missão ${num}</span><span style="font-size:${w * 0.08}px">${emoji}</span></div>
+      <span style="background:${C.ink};color:#fff;border-radius:999px;padding:3px 14px">${label} ${num}</span><span style="font-size:${w * 0.08}px">${emoji}</span></div>
     <div style="height:${w * 0.45}px;border-radius:16px;margin:${w * 0.045}px 0;display:grid;place-items:center;background:${bg}">${artSvg}</div>
     <div style="font-family:'Baloo 2';font-weight:800;font-size:${w * 0.085}px;line-height:1.05">${title}</div>
     <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:${w * 0.03}px">${tags.map((t) => `<span style="background:${C.sky};border:2px solid ${C.line};border-radius:999px;padding:2px 12px;font-weight:800;font-size:${w * 0.048}px;color:${C.inkSoft}">${t}</span>`).join('')}</div>
