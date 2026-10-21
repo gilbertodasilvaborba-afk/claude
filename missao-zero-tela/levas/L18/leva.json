@@ -1,0 +1,516 @@
+{
+ "leva": "L18",
+ "produto": "Misión Cero Pantallas",
+ "cta_tela": "TOCA EN MÁS INFO",
+ "voz": {
+  "id": "edge:es-MX-DaliaNeural",
+  "velocidade": 1.0
+ },
+ "legenda_estilo": "amarela",
+ "legenda_posicao": "meio",
+ "musica": "",
+ "ganchos": [
+  {
+   "titulo": [
+    "¿Y NUESTROS",
+    "NIÑOS?"
+   ],
+   "fala": "Antes los niños crecían jugando en el patio y escuchando historias de la abuela. ¿Y los nuestros?",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Antes los niños crecían jugando en el patio",
+     "cena": [
+      84
+     ]
+    },
+    {
+     "texto": "y escuchando historias de la abuela.",
+     "cena": [
+      75
+     ]
+    },
+    {
+     "texto": "¿Y los nuestros?",
+     "cena": [
+      85
+     ]
+    }
+   ],
+   "tecnica": "Nostalgia y familia"
+  },
+  {
+   "titulo": [
+    "¿VIDEOS O",
+    "LA BIBLIA?"
+   ],
+   "fala": "Tu hijo se sabe de memoria los videos del celular... ¿y cuántas historias de la Biblia conoce?",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Tu hijo se sabe de memoria los videos del celular...",
+     "cena": [
+      1
+     ]
+    },
+    {
+     "texto": "¿y cuántas historias de la Biblia conoce?",
+     "cena": [
+      72
+     ]
+    }
+   ],
+   "tecnica": "La fe"
+  },
+  {
+   "titulo": [
+    "10 DE LA NOCHE",
+    "Y EN LA TABLETA"
+   ],
+   "fala": "Son las diez de la noche y tu chiquito sigue pegado a la tableta.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Son las diez de la noche y tu chiquito sigue pegado a la tableta.",
+     "cena": [
+      5
+     ]
+    }
+   ],
+   "tecnica": "La noche"
+  },
+  {
+   "titulo": [
+    "EL ARCA DE NOÉ",
+    "CON UNA CAJA"
+   ],
+   "fala": "Imagina a tu hijo construyendo el Arca de Noé con una caja, en lugar de ver la tableta.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Imagina a tu hijo construyendo el Arca de Noé con una caja,",
+     "cena": [
+      89
+     ]
+    },
+    {
+     "texto": "en lugar de ver la tableta.",
+     "cena": [
+      7
+     ]
+    }
+   ],
+   "tecnica": "El deseo"
+  },
+  {
+   "titulo": [
+    "CON FE Y",
+    "SIN PANTALLAS"
+   ],
+   "fala": "Criar hijos con fe en un mundo lleno de pantallas sí es posible. Mira cómo.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Criar hijos con fe en un mundo lleno de pantallas",
+     "cena": [
+      71
+     ]
+    },
+    {
+     "texto": "sí es posible. Mira cómo.",
+     "cena": [
+      83
+     ]
+    }
+   ],
+   "tecnica": "La promesa"
+  }
+ ],
+ "corpos": [
+  {
+   "fala": "Hoy el celular hace de niñera. Llegas cansada, el día no alcanza, y la pantalla parece la única salida. Pero en la noche, mamá... ¿no te pesa el corazón? Por eso creamos Misión Cero Pantallas: cien misiones para jugar en familia, con lo que tienes en casa, y con historias de la Biblia que enseñan valores mientras se divierten.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Hoy el celular hace de niñera.",
+     "cena": [
+      2
+     ]
+    },
+    {
+     "texto": "Llegas cansada, el día no alcanza,",
+     "cena": [
+      49
+     ]
+    },
+    {
+     "texto": "y la pantalla parece la única salida.",
+     "cena": [
+      4
+     ]
+    },
+    {
+     "texto": "Pero en la noche, mamá... ¿no te pesa el corazón?",
+     "cena": [
+      45
+     ],
+     "marca": "pergunta"
+    },
+    {
+     "texto": "Por eso creamos Misión Cero Pantallas:",
+     "cena": [
+      88
+     ],
+     "marca": "virada"
+    },
+    {
+     "texto": "cien misiones para jugar en familia,",
+     "cena": [
+      36
+     ]
+    },
+    {
+     "texto": "con lo que tienes en casa,",
+     "cena": [
+      25
+     ]
+    },
+    {
+     "texto": "y con historias de la Biblia que enseñan valores mientras se divierten.",
+     "cena": [
+      74
+     ]
+    }
+   ]
+  },
+  {
+   "fala": "Y no es tu culpa: esos videos están hechos para atraparlos. Pero cuando lo ves tan pegado, mamá... ¿no te preguntas qué valores está aprendiendo? Por eso creamos Misión Cero Pantallas. Cada misión es un juego con una historia de la Biblia: construir el arca de Noé, ser valiente como David, ayudar como el buen samaritano. Fe y diversión, sin pantallas.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Y no es tu culpa: esos videos están hechos para atraparlos.",
+     "cena": [
+      57
+     ]
+    },
+    {
+     "texto": "Pero cuando lo ves tan pegado, mamá... ¿no te preguntas qué valores está aprendiendo?",
+     "cena": [
+      3
+     ],
+     "marca": "pergunta"
+    },
+    {
+     "texto": "Por eso creamos Misión Cero Pantallas.",
+     "cena": [
+      88
+     ],
+     "marca": "virada"
+    },
+    {
+     "texto": "Cada misión es un juego con una historia de la Biblia:",
+     "cena": [
+      82
+     ]
+    },
+    {
+     "texto": "construir el arca de Noé,",
+     "cena": [
+      33
+     ]
+    },
+    {
+     "texto": "ser valiente como David,",
+     "cena": [
+      84
+     ]
+    },
+    {
+     "texto": "ayudar como el buen samaritano.",
+     "cena": [
+      52
+     ]
+    },
+    {
+     "texto": "Fe y diversión, sin pantallas.",
+     "cena": [
+      66
+     ]
+    }
+   ]
+  },
+  {
+   "fala": "Le pides que la apague y empieza el berrinche. Tú cedes, porque ya no puedes más. Pero cuando por fin se duerme, mamá... ¿no te queda esa culpa? Por eso creamos Misión Cero Pantallas: misiones cortitas para hacer juntos antes de dormir, con una historia de la Biblia y una oración sencilla. La noche termina con abrazo, no con pleito.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Le pides que la apague y empieza el berrinche.",
+     "cena": [
+      12
+     ]
+    },
+    {
+     "texto": "Tú cedes, porque ya no puedes más.",
+     "cena": [
+      50
+     ]
+    },
+    {
+     "texto": "Pero cuando por fin se duerme, mamá... ¿no te queda esa culpa?",
+     "cena": [
+      45
+     ],
+     "marca": "pergunta"
+    },
+    {
+     "texto": "Por eso creamos Misión Cero Pantallas:",
+     "cena": [
+      88
+     ],
+     "marca": "virada"
+    },
+    {
+     "texto": "misiones cortitas para hacer juntos antes de dormir,",
+     "cena": [
+      53
+     ]
+    },
+    {
+     "texto": "con una historia de la Biblia",
+     "cena": [
+      73
+     ]
+    },
+    {
+     "texto": "y una oración sencilla.",
+     "cena": [
+      68
+     ]
+    },
+    {
+     "texto": "La noche termina con abrazo, no con pleito.",
+     "cena": [
+      43
+     ]
+    }
+   ]
+  },
+  {
+   "fala": "Hoy parece imposible, lo sé. La pantalla lo atrapa y tú ya no tienes energía. Y cuando llora, mamá... ¿no te dan ganas de rendirte? Por eso creamos Misión Cero Pantallas: cien misiones con cajas, sábanas, papel y colores, inspiradas en historias de la Biblia. Él se convierte en el héroe, y tú en su compañera de aventura.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Hoy parece imposible, lo sé.",
+     "cena": [
+      47
+     ]
+    },
+    {
+     "texto": "La pantalla lo atrapa",
+     "cena": [
+      57
+     ]
+    },
+    {
+     "texto": "y tú ya no tienes energía.",
+     "cena": [
+      21
+     ]
+    },
+    {
+     "texto": "Y cuando llora, mamá... ¿no te dan ganas de rendirte?",
+     "cena": [
+      18
+     ],
+     "marca": "pergunta"
+    },
+    {
+     "texto": "Por eso creamos Misión Cero Pantallas:",
+     "cena": [
+      88
+     ],
+     "marca": "virada"
+    },
+    {
+     "texto": "cien misiones con cajas, sábanas, papel y colores,",
+     "cena": [
+      30
+     ]
+    },
+    {
+     "texto": "inspiradas en historias de la Biblia.",
+     "cena": [
+      74
+     ]
+    },
+    {
+     "texto": "Él se convierte en el héroe,",
+     "cena": [
+      31
+     ]
+    },
+    {
+     "texto": "y tú en su compañera de aventura.",
+     "cena": [
+      36
+     ]
+    }
+   ]
+  },
+  {
+   "fala": "Lo que siembras hoy, él lo cosecha mañana. Pero entre el trabajo y la casa, la tableta siempre gana. Y en la noche, mamá... ¿no te queda esa culpa? Por eso creamos Misión Cero Pantallas: juegos con lo que tienes en casa, historias de la Biblia y valores para toda la vida. Unos minutos al día, y tu casa cambia.",
+   "corte_max": 99,
+   "roteiro": [
+    {
+     "texto": "Lo que siembras hoy, él lo cosecha mañana.",
+     "cena": [
+      76
+     ]
+    },
+    {
+     "texto": "Pero entre el trabajo y la casa,",
+     "cena": [
+      48
+     ]
+    },
+    {
+     "texto": "la tableta siempre gana.",
+     "cena": [
+      85
+     ]
+    },
+    {
+     "texto": "Y en la noche, mamá... ¿no te queda esa culpa?",
+     "cena": [
+      14
+     ],
+     "marca": "pergunta"
+    },
+    {
+     "texto": "Por eso creamos Misión Cero Pantallas:",
+     "cena": [
+      88
+     ],
+     "marca": "virada"
+    },
+    {
+     "texto": "juegos con lo que tienes en casa,",
+     "cena": [
+      56
+     ]
+    },
+    {
+     "texto": "historias de la Biblia",
+     "cena": [
+      72
+     ]
+    },
+    {
+     "texto": "y valores para toda la vida.",
+     "cena": [
+      78
+     ]
+    },
+    {
+     "texto": "Unos minutos al día, y tu casa cambia.",
+     "cena": [
+      65
+     ]
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "fala": "Toca en más información y conoce las misiones."
+ },
+ "cenas": {
+  "excluir": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59,
+   60,
+   61,
+   62,
+   63,
+   64,
+   65,
+   66,
+   67,
+   68,
+   69,
+   70,
+   71,
+   72,
+   73,
+   74,
+   75,
+   76,
+   77,
+   78,
+   79,
+   81,
+   82,
+   83,
+   84,
+   85,
+   86,
+   87,
+   88,
+   89
+  ]
+ }
+}
