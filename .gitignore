@@ -2,3 +2,7 @@ levas/L1/mix/
 levas/L1/build/
 levas/L1/cenas*
 levas/L1/*.log
+levas/L1/entregaveis/out_*.html
+levas/L1/entregaveis/prev/
+levas/L1/entregaveis/pdf/
+levas/L1/entregaveis/dbg.js
