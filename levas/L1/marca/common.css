@@ -1,0 +1,3 @@
+:root{--cream:#f6ecd9;--cream2:#efe0c3;--brown:#4a2c17;--brown2:#7a4a26;--gold:#b98a4a}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Caladea','Liberation Serif',serif;color:var(--brown)}
