@@ -1,0 +1,1 @@
+window.LEVA_STATUS = {"inicio": 1792800868.2571816, "fim": null, "etapa": "Buscando cenas no TikTok", "leva": "L1", "produto": "", "ganchos": [], "corpos": 5, "videos": [], "log": ["Buscando cenas: pão sem glúten, tirando pão do forno, pão caseiro fatiado, pão saindo da forma"]};
