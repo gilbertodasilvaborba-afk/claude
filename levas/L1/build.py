@@ -4,7 +4,7 @@ AUDIO=[p for p in os.listdir("/root/.claude/uploads/548fd3a2-23ae-5d69-aba4-95b6
 AUDIO="/root/.claude/uploads/548fd3a2-23ae-5d69-aba4-95b69ba9a437/"+AUDIO
 WORDS=json.load(open("/tmp/claude-0/-home-user-claude/548fd3a2-23ae-5d69-aba4-95b69ba9a437/scratchpad/words.json"))
 DUR=50.4
-FOCUS={50031:0.16,50025:0.92,24906:0.45}
+FOCUS={43916:0.4,50031:0.16,50025:0.92,24906:0.45}
 def path(i):
     for d in ("hd","clips"):
         p=f"{M}/{d}/{i}.mp4"
@@ -19,10 +19,11 @@ V=[
  dict(hook=[(29357,3.0),(46333,6.0),(50031,2.7)],t=["PÃO DE VERDADE","SEM GLÚTEN"],cap="white"),
  dict(hook=[(24906,2.0),(50031,2.7)],t=["A RECEITA","DA VOVÓ"],cap="yellow"),
  dict(hook=[(6948,5.0),(50025,4.4),(50031,2.7)],t=["+200 RECEITAS","SEM GLÚTEN"],cap="box"),
+ dict(hook=[(43916,0.6,2.0),(21310,3.0,1.0)],t=["PÃO NA MESA","SEM CULPA"],cap="white"),
 ]
 def pieces(v,i):
     out=[]; hk=v["hook"]; L=3.0/len(hk)
-    for c,ss in hk: out.append((c,ss,L))
+    for h in hk: out.append((h[0],h[1],h[2] if len(h)>2 else L))
     for bi,(a,b,pool) in enumerate(BEATS):
         n=max(1,round((b-a)/2.6)); L=(b-a)/n
         for k in range(n): out.append((pool[(i*2+bi+k)%len(pool)],1.0+0.7*((i+k)%3),L))
