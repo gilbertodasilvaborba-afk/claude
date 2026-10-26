@@ -1,0 +1,19 @@
+{
+  "leva": "L3",
+  "produto": "GSI Assessoria Educacional",
+  "cta_tela": "CLIQUE EM SAIBA MAIS",
+  "legenda_estilo": "branca",
+  "legenda_posicao": "meio",
+  "ganchos": [
+    {"titulo": ["COMECE 2027", "COM CERTIFICADO"], "fala": "Termine seus estudos e comece dois mil e vinte e sete com o certificado em mãos."},
+    {"titulo": ["COMECE O ANO", "FORMADO"], "fala": "Dois mil e vinte e sete está chegando. Termine seus estudos e comece o ano formado."},
+    {"titulo": ["JÁ PENSOU?", "COMECE 2027"], "fala": "Já pensou começar o ano novo com o certificado em mãos?"}
+  ],
+  "corpos": [
+    {"fala": "Alcance todos os objetivos que você tem, com a gente."},
+    {"fala": "Faculdade, curso técnico, concurso ou uma vaga melhor. Alcance os objetivos que você tem, com a gente."},
+    {"fala": "Estude do seu jeito, no seu ritmo, e alcance todos os objetivos que você tem, com a gente."}
+  ],
+  "cta": {"fala": "Clique em saiba mais."},
+  "cenas": {"excluir": []}
+}
