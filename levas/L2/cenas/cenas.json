@@ -1,0 +1,30 @@
+[
+ {
+  "n": 1,
+  "arquivo": "c01.mp4",
+  "duracao": 5.0,
+  "produto": false,
+  "origem": "mulher1.png"
+ },
+ {
+  "n": 2,
+  "arquivo": "c02.mp4",
+  "duracao": 5.0,
+  "produto": false,
+  "origem": "homem2.png"
+ },
+ {
+  "n": 3,
+  "arquivo": "c03.mp4",
+  "duracao": 5.0,
+  "produto": false,
+  "origem": "mulher2.png"
+ },
+ {
+  "n": 4,
+  "arquivo": "c04.mp4",
+  "duracao": 5.0,
+  "produto": false,
+  "origem": "homem1.png"
+ }
+]

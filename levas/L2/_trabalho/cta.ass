@@ -1,0 +1,15 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Legenda,DejaVu Sans,66,&H00FFFFFF,&H000000FF,&H00000000,&H78000000,-1,0,0,0,100,100,0,0,1,7,2,5,70,70,0,1
+Style: Titulo,DejaVu Sans,88,&H0000D4FF,&H000000FF,&H00000000,&H78000000,-1,0,0,0,100,100,0,0,1,8,2,5,70,70,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:02.67,Titulo,,0,0,0,,{\pos(540,900)\c&H00FFFFFF&\fs117}GSI ASSESSORIA\NEDUCACIONAL\N{\c&H0000D4FF&\fs82}CLIQUE EM SAIBA MAIS
