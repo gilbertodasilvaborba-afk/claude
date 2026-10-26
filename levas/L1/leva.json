@@ -1,21 +1,59 @@
 {
   "leva": "L1",
-  "produto": "EJA EAD GSI Assessoria Educacional",
+  "produto": "GSI Assessoria Educacional",
   "cta_tela": "TOQUE EM SAIBA MAIS",
   "legenda_estilo": "branca",
   "legenda_posicao": "meio",
   "ganchos": [
-    {"titulo": ["COMECE 2027", "FORMADO"], "fala": "Imagina começar dois mil e vinte e sete com o Ensino Médio concluído."},
-    {"titulo": ["FALTAM POUCAS", "SEMANAS"], "fala": "Faltam poucas semanas para dois mil e vinte e sete. Ainda dá tempo de começar."},
-    {"titulo": ["PERDEU VAGA", "SEM O MÉDIO?"], "fala": "Já perdeu uma vaga porque não tinha o Ensino Médio completo?"}
+    {
+      "titulo": [
+        "CONCLUA SEUS",
+        "ESTUDOS EM 2027"
+      ],
+      "fala": "Imagina concluir os seus estudos já no início de dois mil e vinte e sete."
+    },
+    {
+      "titulo": [
+        "AINDA DÁ TEMPO",
+        "DE CONCLUIR"
+      ],
+      "fala": "Ainda dá tempo de concluir seus estudos no início de dois mil e vinte e sete."
+    },
+    {
+      "titulo": [
+        "PERDEU VAGA",
+        "SEM O MÉDIO?"
+      ],
+      "fala": "Já perdeu uma vaga porque não tinha o Ensino Médio completo?"
+    }
   ],
   "corpos": [
-    {"fala": "No EJA EAD da GSI você estuda pelo celular ou pelo computador. Faz as aulas online, passa pela prova de proficiência com uma certificadora parceira e recebe o certificado. Tudo sem sair de casa, do jeito que cabe na sua rotina."},
-    {"fala": "Sem horário fixo e sem sala de aula. Você estuda quando puder, no seu ritmo. O prazo médio é de três a seis meses, tanto para quem parou no Ensino Fundamental quanto no Médio. E tem suporte pedagógico das oito às dezoito, de segunda a sábado."},
-    {"fala": "Acha que é tarde para voltar a estudar? Não é. O EJA EAD é para quem parou lá atrás e quer recomeçar. Você estuda no seu horário, com suporte pedagógico, e vai concluindo etapa por etapa, sem pressão."},
-    {"fala": "Pensa em você chegando em dois mil e vinte e sete com o certificado a caminho e a porta aberta para a faculdade, um curso técnico, um concurso ou uma vaga melhor. Esse futuro começa com a sua decisão agora."},
-    {"fala": "Com a GSI Assessoria Educacional você recebe aulas online, suporte pedagógico das oito às dezoito, de segunda a sábado, e um certificado válido em todo o território nacional. Ensino Fundamental ou Médio, do seu jeito, tudo cem por cento online."}
+    {
+      "fala": "Você estuda pelo celular ou pelo computador, faz as aulas online, passa pela prova de proficiência com uma certificadora parceira e recebe o certificado. Tudo de casa, no seu ritmo. Quem começa agora pode concluir os estudos no início de dois mil e vinte e sete."
+    },
+    {
+      "fala": "Sem horário fixo e sem sala de aula. Você estuda quando puder, no seu ritmo. O prazo médio é de três a seis meses, e quem começa agora pode concluir no início de dois mil e vinte e sete. E tem suporte pedagógico das oito às dezoito, de segunda a sábado."
+    },
+    {
+      "fala": "Acha que é tarde para voltar a estudar? Não é. É para quem parou lá atrás e quer recomeçar. Você estuda no seu horário, com suporte pedagógico, e pode concluir os seus estudos já no início de dois mil e vinte e sete, sem pressão."
+    },
+    {
+      "fala": "Pensa em você no início de dois mil e vinte e sete, com os estudos concluídos e a porta aberta para a faculdade, um curso técnico, um concurso ou uma vaga melhor. Esse futuro começa com a sua decisão agora."
+    },
+    {
+      "fala": "Com a GSI Assessoria Educacional você recebe aulas online, suporte pedagógico das oito às dezoito, de segunda a sábado, e um certificado válido em todo o território nacional. Ensino Fundamental ou Médio, do seu jeito, para concluir os estudos no início de dois mil e vinte e sete."
+    }
   ],
-  "cta": {"fala": "Toque em saiba mais e fale com a gente."},
-  "cenas": {"excluir": []}
+  "cta": {
+    "fala": "Toque em saiba mais e fale com a gente."
+  },
+  "cenas": {
+    "excluir": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  }
 }

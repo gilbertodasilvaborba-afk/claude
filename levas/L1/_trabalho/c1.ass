@@ -12,14 +12,16 @@ Style: Titulo,DejaVu Sans,88,&H0000D4FF,&H000000FF,&H00000000,&H78000000,-1,0,0,
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.00,0:00:02.60,Legenda,,0,0,0,,{\pos(540,1180)\fs74}NO EJA EAD DA GSI VOCÊ
-Dialogue: 0,0:00:02.60,0:00:03.66,Legenda,,0,0,0,,{\pos(540,1180)\fs86}ESTUDA PELO CELULAR
-Dialogue: 0,0:00:03.66,0:00:04.73,Legenda,,0,0,0,,{\pos(540,1180)\fs86}OU PELO COMPUTADOR.
-Dialogue: 0,0:00:04.73,0:00:05.89,Legenda,,0,0,0,,{\pos(540,1180)\fs82}FAZ AS AULAS ONLINE,
-Dialogue: 0,0:00:05.89,0:00:06.81,Legenda,,0,0,0,,{\pos(540,1180)\fs86}PASSA PELA PROVA
-Dialogue: 0,0:00:06.81,0:00:07.65,Legenda,,0,0,0,,{\pos(540,1180)\fs86}DE PROFICIÊNCIA
-Dialogue: 0,0:00:07.65,0:00:09.27,Legenda,,0,0,0,,{\pos(540,1180)\fs54}COM UMA CERTIFICADORA PARCEIRA
-Dialogue: 0,0:00:09.27,0:00:10.57,Legenda,,0,0,0,,{\pos(540,1180)\fs71}E RECEBE O CERTIFICADO.
-Dialogue: 0,0:00:10.57,0:00:11.87,Legenda,,0,0,0,,{\pos(540,1180)\fs74}TUDO SEM SAIR DE CASA,
-Dialogue: 0,0:00:11.87,0:00:12.89,Legenda,,0,0,0,,{\pos(540,1180)\fs86}DO JEITO QUE CABE
-Dialogue: 0,0:00:12.89,0:00:14.00,Legenda,,0,0,0,,{\pos(540,1180)\fs86}NA SUA ROTINA.
+Dialogue: 0,0:00:00.00,0:00:01.25,Legenda,,0,0,0,,{\pos(540,1180)\fs68}VOCÊ ESTUDA PELO CELULAR
+Dialogue: 0,0:00:01.25,0:00:02.25,Legenda,,0,0,0,,{\pos(540,1180)\fs86}OU PELO COMPUTADOR,
+Dialogue: 0,0:00:02.25,0:00:03.32,Legenda,,0,0,0,,{\pos(540,1180)\fs82}FAZ AS AULAS ONLINE,
+Dialogue: 0,0:00:03.32,0:00:04.19,Legenda,,0,0,0,,{\pos(540,1180)\fs86}PASSA PELA PROVA
+Dialogue: 0,0:00:04.19,0:00:04.96,Legenda,,0,0,0,,{\pos(540,1180)\fs86}DE PROFICIÊNCIA
+Dialogue: 0,0:00:04.96,0:00:06.48,Legenda,,0,0,0,,{\pos(540,1180)\fs54}COM UMA CERTIFICADORA PARCEIRA
+Dialogue: 0,0:00:06.48,0:00:07.68,Legenda,,0,0,0,,{\pos(540,1180)\fs71}E RECEBE O CERTIFICADO.
+Dialogue: 0,0:00:07.68,0:00:08.42,Legenda,,0,0,0,,{\pos(540,1180)\fs86}TUDO DE CASA,
+Dialogue: 0,0:00:08.42,0:00:09.15,Legenda,,0,0,0,,{\pos(540,1180)\fs86}NO SEU RITMO.
+Dialogue: 0,0:00:09.15,0:00:10.32,Legenda,,0,0,0,,{\pos(540,1180)\fs74}QUEM COMEÇA AGORA PODE
+Dialogue: 0,0:00:10.32,0:00:11.31,Legenda,,0,0,0,,{\pos(540,1180)\fs86}CONCLUIR OS ESTUDOS
+Dialogue: 0,0:00:11.31,0:00:12.26,Legenda,,0,0,0,,{\pos(540,1180)\fs86}NO INÍCIO DE DOIS
+Dialogue: 0,0:00:12.26,0:00:13.83,Legenda,,0,0,0,,{\pos(540,1180)\fs86}MIL E VINTE E SETE.

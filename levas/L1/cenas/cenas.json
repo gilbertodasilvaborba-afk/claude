@@ -54,5 +54,33 @@
   "duracao": 4.97,
   "produto": true,
   "origem": "duvidas-8.png"
+ },
+ {
+  "n": 9,
+  "arquivo": "c09.mp4",
+  "duracao": 4.97,
+  "produto": true,
+  "origem": "produto-logo.png"
+ },
+ {
+  "n": 10,
+  "arquivo": "c10.mp4",
+  "duracao": 4.97,
+  "produto": true,
+  "origem": "produto-ilustracao.png"
+ },
+ {
+  "n": 11,
+  "arquivo": "c11.mp4",
+  "duracao": 4.97,
+  "produto": true,
+  "origem": "produto-dispositivos.png"
+ },
+ {
+  "n": 12,
+  "arquivo": "c12.mp4",
+  "duracao": 4.97,
+  "produto": true,
+  "origem": "produto-rotina.png"
  }
 ]
