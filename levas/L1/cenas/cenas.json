@@ -1,0 +1,58 @@
+[
+ {
+  "n": 1,
+  "arquivo": "c01.mp4",
+  "duracao": 5.0,
+  "produto": false,
+  "origem": "mulher1.png"
+ },
+ {
+  "n": 2,
+  "arquivo": "c02.mp4",
+  "duracao": 5.0,
+  "produto": false,
+  "origem": "mulher2.png"
+ },
+ {
+  "n": 3,
+  "arquivo": "c03.mp4",
+  "duracao": 5.0,
+  "produto": false,
+  "origem": "homem1.png"
+ },
+ {
+  "n": 4,
+  "arquivo": "c04.mp4",
+  "duracao": 4.97,
+  "produto": true,
+  "origem": "como-1.png"
+ },
+ {
+  "n": 5,
+  "arquivo": "c05.mp4",
+  "duracao": 4.97,
+  "produto": true,
+  "origem": "como-2.png"
+ },
+ {
+  "n": 6,
+  "arquivo": "c06.mp4",
+  "duracao": 4.97,
+  "produto": true,
+  "origem": "como-4.png"
+ },
+ {
+  "n": 7,
+  "arquivo": "c07.mp4",
+  "duracao": 4.97,
+  "produto": true,
+  "origem": "como-6.png"
+ },
+ {
+  "n": 8,
+  "arquivo": "c08.mp4",
+  "duracao": 4.97,
+  "produto": true,
+  "origem": "duvidas-8.png"
+ }
+]
