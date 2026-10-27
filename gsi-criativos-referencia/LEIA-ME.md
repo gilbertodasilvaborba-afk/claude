@@ -24,3 +24,6 @@ Roteiro, na ordem, com a origem de cada trecho:
 5. Sabrina (r4): "Certificado válido em todo o território nacional" (cortado "reconhecido e")
 6. Cartão "COMECE 2027 FORMADO NO ENSINO MÉDIO" + penumbra (r2): "Clica aqui no Saiba Mais que eu te digo como."
 7. Cartão final da GSI Assessoria Educacional.
+
+### Criativo C, versão suave
+Mesmo roteiro, com: fusão de imagem entre cenas (0,06 a 0,25 s), emenda de áudio com sobreposição, fala da Sabrina contínua por baixo da tela da plataforma (sem corte de áudio) e trilha suave sintetizada (livre de direitos) bem baixa por baixo de tudo.
