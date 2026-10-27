@@ -5,7 +5,7 @@ Origem: vídeos enviados pelo cliente (apresentador e cenas da empresa anterior)
 ## O que foi cortado
 - Toda a menção à empresa anterior (fala e legenda) e o logo/arroba dela.
 - "iniciar 2025 formado", "reconhecido pelo MEC" e "com toda legalidade" (afirmações não aplicáveis à GSI ou desatualizadas).
-- A pergunta "ainda esse ano?" do take do parque (não vale mais para o fim de 2026).
+- Versão B1: a fala "ainda esse ano?" do gancho do parque (não vale mais para o fim de 2026). A versão B2 mantém a fala original.
 
 ## O que foi acrescentado
 - Cartão branco "COMECE 2027 FORMADO NO ENSINO MÉDIO" (no estilo dos cartões do próprio vídeo).
