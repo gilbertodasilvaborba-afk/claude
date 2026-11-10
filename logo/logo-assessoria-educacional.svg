@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Chapéu de formatura">
+  <!-- base do capelo -->
+  <path d="M136 232 V324 C136 372 196 396 256 396 C316 396 376 372 376 324 V232 L256 300 Z" fill="#1E3A8A"/>
+  <!-- tampa (mortarboard) -->
+  <path d="M256 112 L472 206 L256 300 L40 206 Z" fill="#2B4FBF"/>
+  <!-- botão central -->
+  <circle cx="256" cy="206" r="12" fill="#F5B82E"/>
+  <!-- cordão e pingente -->
+  <path d="M256 206 L430 232 V318" fill="none" stroke="#F5B82E" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M430 312 L418 366 H442 Z" fill="#F5B82E"/>
+  <circle cx="430" cy="312" r="10" fill="#F5B82E"/>
+</svg>
